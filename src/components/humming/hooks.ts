@@ -5,7 +5,12 @@ import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
 import {useAgent, useSession} from '#/state/session'
 import * as Toast from '#/components/Toast'
-import {formatHaneul, getCreatorInfo, subscribeToCreator} from './api'
+import {
+  formatHaneul,
+  getCreatorInfo,
+  purchasePost,
+  subscribeToCreator,
+} from './api'
 
 export function useCreatorInfo(did: string) {
   const agent = useAgent()
@@ -32,6 +37,28 @@ export function useSubscribeMutation(did: string) {
     },
     onError: e => {
       Toast.show(`구독 실패: ${String(e)}`, {type: 'error'})
+    },
+  })
+}
+
+export function usePurchaseMutation(postUri: string) {
+  const agent = useAgent()
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: () => {
+      const postId = /\/(\d+)$/.exec(postUri)?.[1]
+      if (!postId) throw new Error('구매 가능한 게시물이 아닙니다')
+      return purchasePost(agent, postId)
+    },
+    onSuccess: res => {
+      Toast.show(
+        `구매 완료! 이 게시물을 영구 열람합니다 (tx: ${res.digest.slice(0, 8)}…, ${formatHaneul(res.priceGeunhwa)})`,
+        {type: 'success'},
+      )
+      void queryClient.invalidateQueries()
+    },
+    onError: e => {
+      Toast.show(`구매 실패: ${String(e)}`, {type: 'error'})
     },
   })
 }

@@ -64,6 +64,15 @@ export function subscribeToCreator(
   })
 }
 
+export function purchasePost(
+  agent: AtpAgent,
+  postId: string,
+): Promise<{digest: string; priceGeunhwa: number; postId: string}> {
+  return callFacade(agent, 'app.humming.monetization.purchasePost', undefined, {
+    postId,
+  })
+}
+
 export function tipCreator(
   agent: AtpAgent,
   creator: string,

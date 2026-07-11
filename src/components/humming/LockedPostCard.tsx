@@ -9,20 +9,26 @@ import {Lock_Stroke2_Corner2_Rounded as Lock} from '#/components/icons/Lock'
 import * as Prompt from '#/components/Prompt'
 import {Text} from '#/components/Typography'
 import {formatHaneul} from './api'
-import {formatTier, hummingLockOf, useSubscribeMutation} from './hooks'
+import {
+  formatTier,
+  hummingLockOf,
+  usePurchaseMutation,
+  useSubscribeMutation,
+} from './hooks'
 
 export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
   const t = useTheme()
   const lock = hummingLockOf(post)
   const promptControl = Prompt.usePromptControl()
+  const purchasePromptControl = Prompt.usePromptControl()
   const {mutate: subscribe, isPending} = useSubscribeMutation(post.author.did)
+  const {mutate: purchase, isPending: isPurchasing} = usePurchaseMutation(
+    post.uri,
+  )
 
   if (!lock) return null
 
-  const purchaseNote =
-    lock.reason === 'paywall' && lock.priceGeunhwa
-      ? ` · 단건 구매 ${formatHaneul(lock.priceGeunhwa)}`
-      : ''
+  const purchasable = lock.reason === 'paywall' && !!lock.priceGeunhwa
 
   return (
     <View
@@ -55,7 +61,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
         </Text>
       )}
       <Text style={[a.text_sm, a.text_center, t.atoms.text_contrast_medium]}>
-        열람 자격은 Haneul 온체인 구독 상태로 판정됩니다{purchaseNote}
+        열람 자격은 Haneul 온체인 구독·구매 상태로 판정됩니다
       </Text>
       {lock.tier && (
         <>
@@ -82,6 +88,35 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             title={`@${post.author.handle} 구독`}
             description={`${formatTier(lock.tier)} 요금이 내 Haneul 지갑에서 결제됩니다. 플랫폼 수수료를 제외한 전액이 크리에이터에게 온체인으로 즉시 정산됩니다.`}
             onConfirm={() => subscribe()}
+            confirmButtonCta="온체인 결제"
+          />
+        </>
+      )}
+      {purchasable && (
+        <>
+          <Button
+            testID="hummingPurchaseBtn"
+            size="large"
+            color="secondary"
+            disabled={isPurchasing}
+            style={[a.self_stretch]}
+            label={`이 게시물만 구매 — ${formatHaneul(lock.priceGeunhwa!)}`}
+            onPress={e => {
+              e.preventDefault()
+              e.stopPropagation()
+              purchasePromptControl.open()
+            }}>
+            <ButtonText>
+              {isPurchasing
+                ? '온체인 결제 중…'
+                : `이 게시물만 구매 — ${formatHaneul(lock.priceGeunhwa!)}`}
+            </ButtonText>
+          </Button>
+          <Prompt.Basic
+            control={purchasePromptControl}
+            title="게시물 단건 구매"
+            description={`${formatHaneul(lock.priceGeunhwa!)}이 내 Haneul 지갑에서 결제되고, 이 게시물을 구독 없이 영구 열람합니다. 구매 기록은 체인에 남습니다.`}
+            onConfirm={() => purchase()}
             confirmButtonCta="온체인 결제"
           />
         </>
