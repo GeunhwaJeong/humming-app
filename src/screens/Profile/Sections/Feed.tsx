@@ -19,6 +19,8 @@ import {
 import {type ListRef} from '#/view/com/util/List'
 import {LoadLatestBtn} from '#/view/com/util/load-latest/LoadLatestBtn'
 import {atoms as a, ios, useTheme} from '#/alf'
+import {useCreatorInfo} from '#/components/humming/hooks'
+import {LockedWallPanel} from '#/components/humming/LockedWallPanel'
 import {EditBig_Stroke1_Corner0_Rounded as EditIcon} from '#/components/icons/EditBig'
 import {Text} from '#/components/Typography'
 import {IS_IOS, IS_NATIVE} from '#/env'
@@ -71,7 +73,15 @@ export function ProfileFeedSection({
     scrollToTop: onScrollToTop,
   }))
 
+  // 전면 잠금 프로필('hide' 모드)은 비구독자에게 빈 피드가 오므로,
+  // 그 자리에 담벼락 잠금 패널(통계 + 구독 CTA)을 렌더
+  const authorDid = feed.startsWith('author|') ? feed.split('|')[1] : ''
+  const {data: creatorInfo} = useCreatorInfo(authorDid)
+
   const renderPostsEmpty = useCallback(() => {
+    if (creatorInfo?.profileLocked && !creatorInfo.viewer.subscribed) {
+      return <LockedWallPanel did={authorDid} />
+    }
     return (
       <View style={[a.flex_1, a.justify_center, a.align_center]}>
         <EmptyState
@@ -83,7 +93,14 @@ export function ProfileFeedSection({
         />
       </View>
     )
-  }, [_, emptyStateButton, emptyStateIcon, emptyStateMessage])
+  }, [
+    _,
+    emptyStateButton,
+    emptyStateIcon,
+    emptyStateMessage,
+    creatorInfo,
+    authorDid,
+  ])
 
   useEffect(() => {
     if (IS_IOS && isFocused && scrollElRef.current) {

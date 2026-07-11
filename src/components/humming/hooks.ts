@@ -13,7 +13,7 @@ export function useCreatorInfo(did: string) {
   return useQuery({
     queryKey: ['humming-creator', did],
     queryFn: () => getCreatorInfo(agent, did),
-    enabled: hasSession && currentAccount?.did !== did,
+    enabled: !!did && hasSession && currentAccount?.did !== did,
   })
 }
 
