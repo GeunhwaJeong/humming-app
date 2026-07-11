@@ -10,6 +10,7 @@ import {Gift1_Stroke2_Corner0_Rounded as Gift} from '#/components/icons/Gift1'
 import {
   PostControlButton,
   PostControlButtonIcon,
+  PostControlButtonText,
 } from '#/components/PostControls/PostControlButton'
 import * as Prompt from '#/components/Prompt'
 import * as Toast from '#/components/Toast'
@@ -52,6 +53,7 @@ export function HummingTipButton({
         onPress={() => promptControl.open()}
         label={`@${post.author.handle}에게 ${formatHaneul(TIP_GEUNHWA)} 팁 보내기`}>
         <PostControlButtonIcon icon={Gift} />
+        {big && <PostControlButtonText>팁 보내기</PostControlButtonText>}
       </PostControlButton>
       <Prompt.Basic
         control={promptControl}

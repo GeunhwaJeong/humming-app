@@ -9,6 +9,8 @@ export const GEUNHWA_PER_HANEUL = 1_000_000_000
 export interface CreatorInfo {
   tier: {id: string; price: number; periodMs: number} | null
   viewer: {subscribed: boolean; expiresMs: number | null}
+  profileLocked?: boolean
+  stats?: {posts: number}
 }
 
 export function formatHaneul(geunhwa: number): string {

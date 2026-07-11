@@ -1,48 +1,26 @@
-// Humming: on-chain subscription button for creator profiles.
-// Renders only when the creator has a tier on the Haneul chain; the
-// subscribe payment (with its platform fee split) settles on-chain.
+// Humming: compact on-chain subscription button for the profile header
+// action row. The full card below the bio is ProfileSubscribeCard.
 import {type AppBskyActorDefs} from '@atproto/api'
-import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
-import {useAgent, useSession} from '#/state/session'
+import {useSession} from '#/state/session'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {Star_Stroke2_Corner0_Rounded as Star} from '#/components/icons/Star'
 import * as Prompt from '#/components/Prompt'
 import * as Toast from '#/components/Toast'
-import {formatHaneul, getCreatorInfo, subscribeToCreator} from './api'
+import {formatHaneul} from './api'
+import {useCreatorInfo, useSubscribeMutation} from './hooks'
 
 export function HummingSubscribeButton({
   profile,
 }: {
   profile: AppBskyActorDefs.ProfileViewDetailed
 }) {
-  const agent = useAgent()
-  const {hasSession, currentAccount} = useSession()
-  const queryClient = useQueryClient()
+  const {currentAccount} = useSession()
   const promptControl = Prompt.usePromptControl()
+  const {data} = useCreatorInfo(profile.did)
+  const {mutate: subscribe, isPending} = useSubscribeMutation(profile.did)
 
   const isMe = currentAccount?.did === profile.did
-  const {data} = useQuery({
-    queryKey: ['humming-creator', profile.did],
-    queryFn: () => getCreatorInfo(agent, profile.did),
-    enabled: hasSession && !isMe,
-  })
-
-  const {mutate: subscribe, isPending} = useMutation({
-    mutationFn: () => subscribeToCreator(agent, profile.did),
-    onSuccess: res => {
-      Toast.show(
-        `구독 완료! 온체인 tx: ${res.digest.slice(0, 8)}… (${formatHaneul(res.priceGeunhwa)})`,
-        {type: 'success'},
-      )
-      // 구독 즉시 페이월 게시물이 열리므로 피드/프로필 전체 재조회
-      void queryClient.invalidateQueries()
-    },
-    onError: e => {
-      Toast.show(`구독 실패: ${String(e)}`, {type: 'error'})
-    },
-  })
-
   if (!data?.tier || isMe) return null
 
   const {tier, viewer} = data

@@ -37,6 +37,8 @@ import {
 import {atoms as a, useTheme} from '#/alf'
 import {Button} from '#/components/Button'
 import {DebugFieldDisplay} from '#/components/DebugFieldDisplay'
+import {hummingLockOf} from '#/components/humming/hooks'
+import {LockedPostCard} from '#/components/humming/LockedPostCard'
 import {CalendarClock_Stroke2_Corner0_Rounded as CalendarClockIcon} from '#/components/icons/CalendarClock'
 import {Trash_Stroke2_Corner0_Rounded as TrashIcon} from '#/components/icons/Trash'
 import {GalleryBleed} from '#/components/images/Gallery'
@@ -395,7 +397,9 @@ const ThreadItemAnchorInner = memo(function ThreadItemAnchorInner({
                 style={[a.pb_sm]}
                 additionalCauses={additionalPostAlerts}
               />
-              {richText?.text ? (
+              {hummingLockOf(post) ? (
+                <LockedPostCard post={post} />
+              ) : richText?.text ? (
                 <RichText
                   enableTags
                   selectable

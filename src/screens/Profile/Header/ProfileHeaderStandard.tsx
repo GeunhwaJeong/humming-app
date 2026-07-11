@@ -27,6 +27,7 @@ import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {DebugFieldDisplay} from '#/components/DebugFieldDisplay'
 import {useDialogControl} from '#/components/Dialog'
 import {MessageProfileButton} from '#/components/dms/MessageProfileButton'
+import {ProfileSubscribeCard} from '#/components/humming/ProfileSubscribeCard'
 import {HummingSubscribeButton} from '#/components/humming/SubscribeButton'
 import {ArrowShareRight_Stroke2_Corner2_Rounded as ArrowShareRight} from '#/components/icons/ArrowShareRight'
 import {PlusLarge_Stroke2_Corner0_Rounded as Plus} from '#/components/icons/Plus'
@@ -161,6 +162,8 @@ let ProfileHeaderStandard = ({
               {profile.associated?.germ && (
                 <GermButton germ={profile.associated.germ} profile={profile} />
               )}
+
+              <ProfileSubscribeCard profile={profile} />
 
               {!isMe &&
                 !isBlockedUser &&

@@ -31,6 +31,8 @@ import {
 import {atoms as a, useTheme} from '#/alf'
 import {DebugFieldDisplay} from '#/components/DebugFieldDisplay'
 import {useInteractionState} from '#/components/hooks/useInteractionState'
+import {hummingLockOf} from '#/components/humming/hooks'
+import {LockedPostCard} from '#/components/humming/LockedPostCard'
 import {Trash_Stroke2_Corner0_Rounded as TrashIcon} from '#/components/icons/Trash'
 import {
   GalleryBleed,
@@ -315,7 +317,9 @@ const ThreadItemPostInner = memo(function ThreadItemPostInner({
                 style={[a.pb_2xs]}
                 additionalCauses={additionalPostAlerts}
               />
-              {richText?.text ? (
+              {hummingLockOf(post) ? (
+                <LockedPostCard post={post} />
+              ) : richText?.text ? (
                 <View style={[a.mb_2xs]}>
                   <RichText
                     enableTags

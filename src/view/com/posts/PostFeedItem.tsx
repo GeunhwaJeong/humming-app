@@ -34,6 +34,8 @@ import {Link} from '#/view/com/util/Link'
 import {PostMeta} from '#/view/com/util/PostMeta'
 import {PreviewableUserAvatar} from '#/view/com/util/UserAvatar'
 import {atoms as a, select, useTheme} from '#/alf'
+import {hummingLockOf} from '#/components/humming/hooks'
+import {LockedPostCard} from '#/components/humming/LockedPostCard'
 import {
   GalleryBleed,
   maybeApplyGalleryOffsetStyles,
@@ -498,7 +500,9 @@ let PostContent = ({
         style={[a.pb_xs]}
         additionalCauses={additionalPostAlerts}
       />
-      {richText.text ? (
+      {hummingLockOf(post) ? (
+        <LockedPostCard post={post} />
+      ) : richText.text ? (
         <View style={[a.mb_2xs]}>
           <RichText
             enableTags
