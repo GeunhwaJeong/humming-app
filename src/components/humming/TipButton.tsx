@@ -30,7 +30,13 @@ export function HummingTipButton({
   const promptControl = Prompt.usePromptControl()
 
   const {mutate: tip, isPending} = useMutation({
-    mutationFn: () => tipCreator(agent, post.author.did, TIP_GEUNHWA),
+    mutationFn: () =>
+      tipCreator(
+        agent,
+        post.author.did,
+        TIP_GEUNHWA,
+        /\/(\d+)$/.exec(post.uri)?.[1],
+      ),
     onSuccess: res => {
       Toast.show(
         `팁 전송 완료! ${formatHaneul(res.amountGeunhwa)} → @${post.author.handle} (tx: ${res.digest.slice(0, 8)}…)`,

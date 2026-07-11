@@ -77,9 +77,12 @@ export function tipCreator(
   agent: AtpAgent,
   creator: string,
   amountGeunhwa: number,
+  postId?: string,
 ): Promise<{digest: string; amountGeunhwa: number}> {
   return callFacade(agent, 'app.humming.monetization.tip', undefined, {
     creator,
     amountGeunhwa,
+    // 글에 귀속된 팁은 온체인 TipSent 이벤트에 post_id로 기록됨
+    postId,
   })
 }
