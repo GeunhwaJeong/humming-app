@@ -7,10 +7,12 @@ import {BLUESKY_PROXY_DID, CHAT_PROXY_DID, IS_DEV} from '#/env'
 export const LOCAL_DEV_SERVICE =
   Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'
 export const STAGING_SERVICE = 'https://staging.bsky.dev'
-export const BSKY_SERVICE = 'https://bsky.social'
+// Humming: the XRPC facade in front of the Haneul chain is the home server.
+export const HUMMING_SERVICE = 'http://localhost:3025'
+export const BSKY_SERVICE = HUMMING_SERVICE
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
-export const PUBLIC_BSKY_SERVICE = 'https://public.api.bsky.app'
-export const DEFAULT_SERVICE = BSKY_SERVICE
+export const PUBLIC_BSKY_SERVICE = HUMMING_SERVICE
+export const DEFAULT_SERVICE = HUMMING_SERVICE
 const HELP_DESK_LANG = 'en-us'
 export const HELP_DESK_URL = `https://blueskyweb.zendesk.com/hc/${HELP_DESK_LANG}`
 export const CHAT_SERVICE = 'https://api.bsky.chat'

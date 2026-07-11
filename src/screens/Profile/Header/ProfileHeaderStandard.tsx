@@ -27,6 +27,7 @@ import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {DebugFieldDisplay} from '#/components/DebugFieldDisplay'
 import {useDialogControl} from '#/components/Dialog'
 import {MessageProfileButton} from '#/components/dms/MessageProfileButton'
+import {HummingSubscribeButton} from '#/components/humming/SubscribeButton'
 import {ArrowShareRight_Stroke2_Corner2_Rounded as ArrowShareRight} from '#/components/icons/ArrowShareRight'
 import {PlusLarge_Stroke2_Corner0_Rounded as Plus} from '#/components/icons/Plus'
 import {
@@ -385,6 +386,8 @@ export function HeaderStandardButtons({
               <MessageProfileButton profile={profile} />
             </>
           )}
+
+          {hasSession && <HummingSubscribeButton profile={profile} />}
 
           {(!minimal || !profile.viewer?.following) && (
             <Button

@@ -2,7 +2,11 @@ import {useState} from 'react'
 import {type DidDocument, getPdsEndpoint} from '@atproto/common-web'
 import {useQuery, useQueryClient} from '@tanstack/react-query'
 
-import {DEFAULT_SERVICE, PUBLIC_BSKY_SERVICE} from '#/lib/constants'
+import {
+  DEFAULT_SERVICE,
+  HUMMING_SERVICE,
+  PUBLIC_BSKY_SERVICE,
+} from '#/lib/constants'
 import {useDebouncedValue} from '#/lib/hooks/useDebouncedValue'
 import {isNetworkError} from '#/lib/strings/errors'
 import {logger} from '#/logger'
@@ -162,6 +166,11 @@ export async function resolvePdsForIdentifier(
       identifier: norm,
       did,
     })
+    // Humming: *.hum.haneul identities live on the Haneul chain and resolve
+    // through the facade, not DNS — did:web documents don't exist for them.
+    if (did.startsWith('did:web:') && did.endsWith('.hum.haneul')) {
+      return {did, pdsUrl: HUMMING_SERVICE}
+    }
     const doc = await withResolveTimeout(signal => resolveDidDoc(did, signal))
     logger.debug('pds-detection: resolved DID doc', {
       did,

@@ -24,6 +24,7 @@ import {
   useProgressGuideControls,
 } from '#/state/shell/progress-guide'
 import {atoms as a, useBreakpoints, useTheme} from '#/alf'
+import {HummingTipButton} from '#/components/humming/TipButton'
 import {Reply as Bubble} from '#/components/icons/Reply'
 import {useFormatPostStatCount} from '#/components/PostControls/util'
 import * as Skele from '#/components/Skeleton'
@@ -311,6 +312,7 @@ let PostControls = ({
         <View />
       </View>
       <View style={[a.flex_row, a.justify_end, secondaryControlSpacingStyles]}>
+        <HummingTipButton post={post} big={big} />
         <BookmarkButton
           post={post}
           big={big}
