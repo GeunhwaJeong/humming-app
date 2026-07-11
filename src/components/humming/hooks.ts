@@ -42,6 +42,7 @@ export interface HummingLock {
   reason: 'paywall' | 'profile'
   priceGeunhwa: number | null
   tier: {priceGeunhwa: number; periodMs: number} | null
+  media?: {images: number; videos: number}
 }
 
 export function hummingLockOf(

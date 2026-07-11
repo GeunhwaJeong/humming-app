@@ -42,6 +42,18 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
       <Text style={[a.text_md, a.font_bold, t.atoms.text_contrast_medium]}>
         구독자 전용 게시물입니다
       </Text>
+      {!!(lock.media?.images || lock.media?.videos) && (
+        <Text
+          testID="hummingMediaTeaser"
+          style={[a.text_sm, t.atoms.text_contrast_medium]}>
+          {[
+            lock.media.images ? `🖼 사진 ${lock.media.images}` : null,
+            lock.media.videos ? `🎬 영상 ${lock.media.videos}` : null,
+          ]
+            .filter(Boolean)
+            .join(' · ')}
+        </Text>
+      )}
       <Text style={[a.text_sm, a.text_center, t.atoms.text_contrast_medium]}>
         열람 자격은 Haneul 온체인 구독 상태로 판정됩니다{purchaseNote}
       </Text>

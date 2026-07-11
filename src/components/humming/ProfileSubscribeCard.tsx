@@ -87,6 +87,8 @@ export function ProfileSubscribeCard({
         )}
         <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
           게시물 {stats?.posts ?? 0}개
+          {stats?.images ? ` · 🖼 ${stats.images}` : ''}
+          {stats?.videos ? ` · 🎬 ${stats.videos}` : ''}
           {profileLocked && !viewer.subscribed
             ? ' · 전부 구독자에게만 공개됩니다'
             : ''}

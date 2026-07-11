@@ -10,7 +10,7 @@ export interface CreatorInfo {
   tier: {id: string; price: number; periodMs: number} | null
   viewer: {subscribed: boolean; expiresMs: number | null}
   profileLocked?: boolean
-  stats?: {posts: number}
+  stats?: {posts: number; images?: number; videos?: number}
 }
 
 export function formatHaneul(geunhwa: number): string {

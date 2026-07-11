@@ -49,6 +49,8 @@ export function LockedWallPanel({did}: {did: string}) {
         <View style={[a.flex_row, a.align_center, a.justify_between]}>
           <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
             게시물 {stats?.posts ?? 0}개
+            {stats?.images ? ` · 🖼 ${stats.images}` : ''}
+            {stats?.videos ? ` · 🎬 ${stats.videos}` : ''}
           </Text>
           <Lock size="xs" style={t.atoms.text_contrast_low} />
         </View>
