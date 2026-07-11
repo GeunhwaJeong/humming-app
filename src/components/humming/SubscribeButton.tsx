@@ -4,7 +4,7 @@ import {type AppBskyActorDefs} from '@atproto/api'
 
 import {useSession} from '#/state/session'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
-import {Star_Stroke2_Corner0_Rounded as Star} from '#/components/icons/Star'
+import {CircleCheck_Stroke2_Corner0_Rounded as CircleCheck} from '#/components/icons/CircleCheck'
 import * as Prompt from '#/components/Prompt'
 import * as Toast from '#/components/Toast'
 import {formatHaneul} from './api'
@@ -39,7 +39,7 @@ export function HummingSubscribeButton({
             : '?'
           Toast.show(`구독 중이에요. ${until}까지 유효 (온체인 판정)`)
         }}>
-        <ButtonIcon icon={Star} />
+        <ButtonIcon icon={CircleCheck} />
         <ButtonText>구독 중</ButtonText>
       </Button>
     )
@@ -54,7 +54,6 @@ export function HummingSubscribeButton({
         disabled={isPending}
         label={`구독 — ${monthly}`}
         onPress={() => promptControl.open()}>
-        <ButtonIcon icon={Star} />
         <ButtonText>{isPending ? '결제 중…' : `구독 ${monthly}`}</ButtonText>
       </Button>
       <Prompt.Basic
