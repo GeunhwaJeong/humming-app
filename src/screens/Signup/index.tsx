@@ -22,7 +22,6 @@ import {
 } from '#/screens/Signup/state'
 import {StepCaptcha} from '#/screens/Signup/StepCaptcha'
 import {StepHandle} from '#/screens/Signup/StepHandle'
-import {StepInfo} from '#/screens/Signup/StepInfo'
 import {atoms as a, native, useBreakpoints, useTheme} from '#/alf'
 import {AppLanguageDropdown} from '#/components/AppLanguageDropdown'
 import {Divider} from '#/components/Divider'
@@ -53,13 +52,10 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
   }, [ax])
 
   const activeStarterPack = useActiveStarterPack()
-  const {
-    data: starterPack,
-    isFetching: isFetchingStarterPack,
-    isError: isErrorStarterPack,
-  } = useStarterPackQuery({
-    uri: activeStarterPack?.uri,
-  })
+  const {data: starterPack, isFetching: isFetchingStarterPack} =
+    useStarterPackQuery({
+      uri: activeStarterPack?.uri,
+    })
 
   // eslint-disable-next-line react/hook-use-state
   const [isFetchedAtMount] = useState(starterPack != null)
@@ -70,7 +66,6 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
     data: serviceInfo,
     isFetching,
     isError,
-    refetch,
   } = useServiceQuery(state.serviceUrl)
 
   useEffect(() => {
@@ -183,43 +178,27 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
                       !gtMobile && {paddingBottom: 100},
                     ]}>
                     <View style={[a.gap_sm, a.pb_3xl]}>
-                      <Text
-                        style={[
-                          a.font_semi_bold,
-                          t.atoms.text_contrast_medium,
-                        ]}>
-                        <Trans>
-                          Step {state.activeStep + 1} of{' '}
-                          {state.serviceDescription &&
-                          !state.serviceDescription.phoneVerificationRequired
-                            ? '2'
-                            : '3'}
-                        </Trans>
-                      </Text>
                       <Text style={[a.text_3xl, a.font_semi_bold]}>
-                        {state.activeStep === SignupStep.INFO ? (
-                          <Trans>Your account</Trans>
-                        ) : state.activeStep === SignupStep.HANDLE ? (
-                          <Trans>Choose your username</Trans>
-                        ) : (
+                        {state.activeStep === SignupStep.CAPTCHA ? (
                           <Trans>Complete the challenge</Trans>
+                        ) : (
+                          <Trans>Choose your username</Trans>
                         )}
                       </Text>
+                      {state.activeStep !== SignupStep.CAPTCHA && (
+                        <Text style={[a.text_md, t.atoms.text_contrast_medium]}>
+                          <Trans>
+                            닉네임이 곧 지갑입니다 — 계정을 만들면 온체인 이름과
+                            지갑이 함께 발급됩니다.
+                          </Trans>
+                        </Text>
+                      )}
                     </View>
 
-                    {state.activeStep === SignupStep.INFO ? (
-                      <StepInfo
-                        onPressBack={onPressBack}
-                        isLoadingStarterPack={
-                          isFetchingStarterPack && !isErrorStarterPack
-                        }
-                        isServerError={isError}
-                        refetchServer={() => void refetch()}
-                      />
-                    ) : state.activeStep === SignupStep.HANDLE ? (
-                      <StepHandle />
-                    ) : (
+                    {state.activeStep === SignupStep.CAPTCHA ? (
                       <StepCaptcha />
+                    ) : (
+                      <StepHandle onPressBack={onPressBack} />
                     )}
 
                     <Divider />

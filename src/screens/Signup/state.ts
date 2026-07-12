@@ -5,7 +5,6 @@ import {
   type ComAtprotoServerDescribeServer,
 } from '@atproto/api'
 import {useLingui} from '@lingui/react/macro'
-import * as EmailValidator from 'email-validator'
 
 import {DEFAULT_SERVICE} from '#/lib/constants'
 import {cleanError} from '#/lib/strings/errors'
@@ -90,7 +89,9 @@ export const initialState: SignupState = {
   analytics: undefined,
 
   hasPrev: false,
-  activeStep: SignupStep.INFO,
+  // Humming: 가입 = 닉네임 = 지갑. 이메일/생년월일 단계 없이 닉네임 화면에서 시작
+  // (Uniswap Unitag과 동일한 name-first 온보딩 — 지갑·서브네임 발급은 서버가 뒤에서 처리)
+  activeStep: SignupStep.HANDLE,
   screenTransitionDirection: 'Forward',
 
   serviceUrl: DEFAULT_SERVICE,
@@ -263,36 +264,19 @@ export function useSubmitSignup() {
 
   return useCallback(
     async (state: SignupState, dispatch: (action: SignupAction) => void) => {
-      if (!state.email) {
-        dispatch({type: 'setStep', value: SignupStep.INFO})
-        return dispatch({
-          type: 'setError',
-          value: l`Please enter your email.`,
-          field: 'email',
-        })
-      }
-      if (!EmailValidator.validate(state.email)) {
-        dispatch({type: 'setStep', value: SignupStep.INFO})
-        return dispatch({
-          type: 'setError',
-          value: l`Your email appears to be invalid.`,
-          field: 'email',
-        })
-      }
-      if (!state.password) {
-        dispatch({type: 'setStep', value: SignupStep.INFO})
-        return dispatch({
-          type: 'setError',
-          value: l`Please choose your password.`,
-          field: 'password',
-        })
-      }
+      // Humming: 이메일 없이 닉네임+비밀번호만으로 가입 (지갑·서브네임은 서버 발급)
       if (!state.handle) {
-        dispatch({type: 'setStep', value: SignupStep.HANDLE})
         return dispatch({
           type: 'setError',
           value: l`Please choose your handle.`,
           field: 'handle',
+        })
+      }
+      if (!state.password) {
+        return dispatch({
+          type: 'setError',
+          value: l`Please choose your password.`,
+          field: 'password',
         })
       }
       if (
@@ -316,7 +300,8 @@ export function useSubmitSignup() {
         await createAccount(
           {
             service: state.serviceUrl,
-            email: state.email,
+            // 파사드는 이메일을 쓰지 않음 — 타입 요건만 채우는 합성 값
+            email: state.email || `${state.handle}@humming.local`,
             handle: createFullHandle(state.handle, state.userDomain),
             password: state.password,
             birthDate: state.dateOfBirth,
@@ -347,7 +332,7 @@ export function useSubmitSignup() {
             value: l`Invite code not accepted. Check that you input it correctly and try again.`,
             field: 'invite-code',
           })
-          dispatch({type: 'setStep', value: SignupStep.INFO})
+          dispatch({type: 'setStep', value: SignupStep.HANDLE})
           return
         }
 
@@ -360,7 +345,7 @@ export function useSubmitSignup() {
           value: error,
           field: isHandleError ? 'handle' : undefined,
         })
-        dispatch({type: 'setStep', value: isHandleError ? 2 : 1})
+        dispatch({type: 'setStep', value: SignupStep.HANDLE})
 
         ax.logger.error('Signup Flow Error', {
           errorMessage: error,

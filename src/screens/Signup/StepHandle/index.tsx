@@ -27,18 +27,20 @@ import * as TextField from '#/components/forms/TextField'
 import {useThrottledValue} from '#/components/hooks/useThrottledValue'
 import {At_Stroke2_Corner0_Rounded as AtIcon} from '#/components/icons/At'
 import {Check_Stroke2_Corner0_Rounded as CheckIcon} from '#/components/icons/Check'
+import {Lock_Stroke2_Corner0_Rounded as Lock} from '#/components/icons/Lock'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 import {IS_WEB} from '#/env'
 import {BackNextButtons} from '../BackNextButtons'
 import {HandleSuggestions} from './HandleSuggestions'
 
-export function StepHandle() {
+export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
   const {_} = useLingui()
   const ax = useAnalytics()
   const t = useTheme()
   const {state, dispatch} = useSignupContext()
   const [draftValue, setDraftValue] = useState(state.handle)
+  const [draftPassword, setDraftPassword] = useState(state.password)
   const isNextLoading = useThrottledValue(state.isLoading, 500)
 
   /*
@@ -69,8 +71,12 @@ export function StepHandle() {
       type: 'setHandle',
       value: handle,
     })
+    dispatch({
+      type: 'setPassword',
+      value: draftPassword,
+    })
 
-    if (!validCheck.overall) {
+    if (!validCheck.overall || draftPassword.length < 8) {
       return
     }
 
@@ -125,7 +131,12 @@ export function StepHandle() {
       type: 'setHandle',
       value: handle,
     })
-    dispatch({type: 'prev'})
+    // Humming: 닉네임이 첫(유일) 단계 — 뒤로 가면 가입 자체를 빠져나감
+    if (onPressBack) {
+      onPressBack()
+    } else {
+      dispatch({type: 'prev'})
+    }
     ax.metric('signup:backPressed', {activeStep: state.activeStep})
   }
 
@@ -136,8 +147,15 @@ export function StepHandle() {
     isHandleAvailable &&
     !isHandleAvailable.available
   const isNotReady = isPending || !hasDebounceSettled
+  const isPasswordTooShort =
+    draftPassword.length > 0 && draftPassword.length < 8
   const isNextDisabled =
-    !validCheck.overall || !!state.error || isNotReady ? true : isHandleTaken
+    !validCheck.overall ||
+    !!state.error ||
+    isNotReady ||
+    draftPassword.length < 8
+      ? true
+      : isHandleTaken
 
   const textFieldInvalid =
     isHandleTaken ||
@@ -267,12 +285,41 @@ export function StepHandle() {
           </View>
         </LayoutAnimationConfig>
       </View>
+      <View style={[a.gap_sm, a.pt_lg]}>
+        <TextField.Root
+          isInvalid={isPasswordTooShort || state.errorField === 'password'}>
+          <TextField.Icon icon={Lock} />
+          <TextField.Input
+            testID="passwordInput"
+            onChangeText={val => {
+              if (state.error) {
+                dispatch({type: 'setError', value: ''})
+              }
+              setDraftPassword(val)
+            }}
+            label="비밀번호 (8자 이상)"
+            value={draftPassword}
+            secureTextEntry
+            autoCapitalize="none"
+            autoCorrect={false}
+            autoComplete="new-password"
+          />
+        </TextField.Root>
+        <View style={{minHeight: 21}}>
+          {isPasswordTooShort && (
+            <RequirementText>
+              <Trans>비밀번호는 8자 이상이어야 합니다</Trans>
+            </RequirementText>
+          )}
+        </View>
+      </View>
       <Animated.View layout={native(LinearTransition)}>
         <BackNextButtons
           isLoading={isNextLoading}
           isNextDisabled={isNextDisabled}
           onBackPress={onBackPress}
           onNextPress={() => void onNextPress()}
+          overrideNextText="계정 생성"
         />
       </Animated.View>
     </>
