@@ -6,8 +6,11 @@ import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 import {useAgent, useSession} from '#/state/session'
 import * as Toast from '#/components/Toast'
 import {
+  becomeCreator,
   formatHaneul,
   getCreatorInfo,
+  getEarnings,
+  type LockMode,
   purchasePost,
   subscribeToCreator,
 } from './api'
@@ -59,6 +62,39 @@ export function usePurchaseMutation(postUri: string) {
     },
     onError: e => {
       Toast.show(`구매 실패: ${String(e)}`, {type: 'error'})
+    },
+  })
+}
+
+// 내 수익/크리에이터 여부 — 사이드바 진입점과 수익 대시보드가 공유
+export function useEarnings() {
+  const agent = useAgent()
+  const {hasSession, currentAccount} = useSession()
+  return useQuery({
+    queryKey: ['humming-earnings', currentAccount?.did],
+    queryFn: () => getEarnings(agent),
+    enabled: hasSession,
+  })
+}
+
+export function useBecomeCreatorMutation() {
+  const agent = useAgent()
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (input: {
+      priceGeunhwa: number
+      periodDays: number
+      lockMode: LockMode
+    }) => becomeCreator(agent, input),
+    onSuccess: res => {
+      Toast.show(
+        `크리에이터 전환 완료! 티어가 온체인에 생성되었습니다 (tx: ${res.digest.slice(0, 8)}…)`,
+        {type: 'success'},
+      )
+      void queryClient.invalidateQueries()
+    },
+    onError: e => {
+      Toast.show(`전환 실패: ${String(e)}`, {type: 'error'})
     },
   })
 }

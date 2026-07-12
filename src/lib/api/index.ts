@@ -51,6 +51,8 @@ interface PostOpts {
   replyTo?: string
   onStateChange?: (state: string) => void
   langs?: string[]
+  // Humming: 단건 가격(geunhwa) — 서버가 글 작성 tx에 페이월 생성을 체이닝
+  paywallGeunhwa?: number
 }
 
 export async function post(
@@ -124,6 +126,12 @@ export async function post(
       embed,
       langs,
       labels,
+    }
+    if (i === 0 && opts.paywallGeunhwa) {
+      // 스레드 첫 글에만 페이월 — 레코드의 개방 필드로 파사드에 전달
+      ;(record as Record<string, unknown>).humming = {
+        paywallGeunhwa: opts.paywallGeunhwa,
+      }
     }
     writes.push({
       $type: 'com.atproto.repo.applyWrites#create',

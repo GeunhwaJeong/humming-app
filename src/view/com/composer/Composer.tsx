@@ -126,6 +126,7 @@ import {atoms as a, native, useBreakpoints, useTheme, web} from '#/alf'
 import {Admonition} from '#/components/Admonition'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as EmojiPicker from '#/components/EmojiPicker'
+import {PaywallButton} from '#/components/humming/PaywallButton'
 import {CircleInfo_Stroke2_Corner0_Rounded as CircleInfoIcon} from '#/components/icons/CircleInfo'
 import {EmojiArc_Stroke2_Corner0_Rounded as EmojiSmileIcon} from '#/components/icons/Emoji'
 import {PlusLarge_Stroke2_Corner0_Rounded as PlusIcon} from '#/components/icons/Plus'
@@ -289,6 +290,8 @@ export const ComposePost = ({
   const [isPublishing, setIsPublishing] = useState(false)
   const [publishingStage, setPublishingStage] = useState('')
   const [error, setError] = useState('')
+  // Humming: 이 글의 단건 가격(HANEUL 문자열) — null이면 공개 글
+  const [paywallHaneul, setPaywallHaneul] = useState<string | null>(null)
 
   /**
    * Track when a draft was created so we can measure draft age in metrics.
@@ -1047,6 +1050,9 @@ export const ComposePost = ({
           replyTo: replyTo?.uri,
           onStateChange: setPublishingStage,
           langs: currentLanguages,
+          paywallGeunhwa: paywallHaneul
+            ? Math.round(Number(paywallHaneul) * 1_000_000_000)
+            : undefined,
         })
       ).uris[0]
 
@@ -1257,6 +1263,7 @@ export const ComposePost = ({
     emptyPostsPromptControl,
     getFilteredThread,
     linkQueries,
+    paywallHaneul,
   ])
 
   const handleConfirmSkipEmpty = () => {
@@ -1376,6 +1383,8 @@ export const ComposePost = ({
         showAddButton={
           !isEmptyPost(activePost) && (!nextPost || !isEmptyPost(nextPost))
         }
+        paywallHaneul={paywallHaneul}
+        onPaywallChange={setPaywallHaneul}
         onError={setError}
         onSelectVideo={selectVideo}
         onAddPost={() => {
@@ -2094,6 +2103,8 @@ function ComposerFooter({
   post,
   dispatch,
   showAddButton,
+  paywallHaneul,
+  onPaywallChange,
   onSelectVideo,
   onAddPost,
   currentLanguages,
@@ -2105,6 +2116,8 @@ function ComposerFooter({
   post: PostDraft
   dispatch: (action: PostAction) => void
   showAddButton: boolean
+  paywallHaneul: string | null
+  onPaywallChange: (v: string | null) => void
   onError: (error: string) => void
   onSelectVideo: (
     postId: string,
@@ -2239,6 +2252,11 @@ function ComposerFooter({
                 onAdd={onImageAdd}
               />
               <SelectGifBtn onSelectGif={onSelectGif} disabled={!!media} />
+              {/* Humming: 열람 설정 — 단건 가격이 글과 같은 tx로 온체인 확정 */}
+              <PaywallButton
+                valueHaneul={paywallHaneul}
+                onChange={onPaywallChange}
+              />
               {IS_WEB && gtPhone ? (
                 <EmojiPicker.Root nextFocusRef={textInputRef}>
                   <EmojiPicker.Trigger label={l`Open emoji picker`}>

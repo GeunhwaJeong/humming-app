@@ -86,3 +86,45 @@ export function tipCreator(
     postId,
   })
 }
+
+export type LockMode = 'open' | 'tease' | 'lock'
+
+export interface EarningsItem {
+  kind: 'subscription' | 'tip' | 'purchase'
+  from: string
+  postId?: string | null
+  grossGeunhwa: number
+  netGeunhwa: number
+  atMs: number
+  tx: string
+}
+
+export interface Earnings {
+  totals: {
+    subscriptionGeunhwa: number
+    tipGeunhwa: number
+    purchaseGeunhwa: number
+    totalGeunhwa: number
+  }
+  items: EarningsItem[]
+  tier: {id: string; priceGeunhwa: number; periodMs: number} | null
+  isCreator: boolean
+}
+
+// 티어 생성(+잠금 모드)을 본인 지갑 서명으로 온체인 확정 — KYC 통과 시 verified 배지
+export function becomeCreator(
+  agent: AtpAgent,
+  input: {priceGeunhwa: number; periodDays: number; lockMode: LockMode},
+): Promise<{digest: string; verified: boolean}> {
+  return callFacade(
+    agent,
+    'app.humming.creator.becomeCreator',
+    undefined,
+    input,
+  )
+}
+
+// 온체인 이벤트(Subscribed/TipSent/PostPurchased) 집계 — 체인이 곧 정산 장부
+export function getEarnings(agent: AtpAgent): Promise<Earnings> {
+  return callFacade<Earnings>(agent, 'app.humming.creator.getEarnings')
+}
