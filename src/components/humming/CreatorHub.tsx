@@ -4,6 +4,10 @@
 // 크리에이터에겐 온체인 이벤트 집계 수익 장부를 보여준다.
 import {useState} from 'react'
 import {View} from 'react-native'
+import {type MessageDescriptor} from '@lingui/core'
+import {msg} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 
 import {PressableWithHover} from '#/view/com/util/PressableWithHover'
 import {atoms as a, useTheme} from '#/alf'
@@ -17,26 +21,31 @@ import {Text} from '#/components/Typography'
 import {formatHaneul, GEUNHWA_PER_HANEUL, type LockMode} from './api'
 import {useBecomeCreatorMutation, useEarnings} from './hooks'
 
-const LOCK_MODES: {value: LockMode; label: string; desc: string}[] = [
+const LOCK_MODES: {
+  value: LockMode
+  label: MessageDescriptor
+  desc: MessageDescriptor
+}[] = [
   {
     value: 'open',
-    label: '전체 공개',
-    desc: '글은 공개, 원하는 글만 개별 유료화',
+    label: msg`Open`,
+    desc: msg`Posts stay public — put a price only on the ones you choose`,
   },
   {
     value: 'tease',
-    label: '티저',
-    desc: '잠긴 글이 미리보기 카드로 노출 (전환 유도)',
+    label: msg`Tease`,
+    desc: msg`Locked posts show as teaser cards (drives conversion)`,
   },
   {
     value: 'lock',
-    label: '전면 잠금',
-    desc: '구독자 외에는 프로필 담벼락만 보임',
+    label: msg`Full lock`,
+    desc: msg`Non-subscribers only see your profile wall`,
   },
 ]
 
 /** 사이드바 진입점 — 크리에이터 여부에 따라 온보딩 또는 수익 대시보드를 연다. */
 export function CreatorNavItem({minimal}: {minimal: boolean}) {
+  const {_} = useLingui()
   const t = useTheme()
   const {data: earnings} = useEarnings()
   const control = Dialog.useDialogControl()
@@ -57,7 +66,9 @@ export function CreatorNavItem({minimal}: {minimal: boolean}) {
         hoverStyle={t.atoms.bg_contrast_25}
         onPress={() => control.open()}
         accessibilityRole="button"
-        accessibilityLabel={isCreator ? '내 수익' : '크리에이터 되기'}
+        accessibilityLabel={
+          isCreator ? _(msg`My earnings`) : _(msg`Become a creator`)
+        }
         accessibilityHint=""
         testID="hummingCreatorNavItem">
         <View
@@ -67,11 +78,15 @@ export function CreatorNavItem({minimal}: {minimal: boolean}) {
         {!minimal && (
           <View style={[a.flex_1]}>
             <Text style={[a.text_xl]}>
-              {isCreator ? '내 수익' : '크리에이터 되기'}
+              {isCreator ? (
+                <Trans>My earnings</Trans>
+              ) : (
+                <Trans>Become a creator</Trans>
+              )}
             </Text>
             {!isCreator && (
               <Text style={[a.text_xs, t.atoms.text_contrast_medium]}>
-                수익의 95%를 받으세요
+                <Trans>Keep 95% of what you earn</Trans>
               </Text>
             )}
           </View>
@@ -92,6 +107,7 @@ export function BecomeCreatorDialog({
 }: {
   control: Dialog.DialogControlProps
 }) {
+  const {_, i18n} = useLingui()
   const t = useTheme()
   const [kycAgreed, setKycAgreed] = useState(false)
   const [price, setPrice] = useState('1')
@@ -110,18 +126,25 @@ export function BecomeCreatorDialog({
     )
   }
 
+  const priceLabel = priceValid ? formatHaneul(priceGeunhwa) : '?'
+
   return (
     <Dialog.Outer control={control}>
       <Dialog.Handle />
       <Dialog.ScrollableInner
-        label="크리에이터 되기"
+        label={_(msg`Become a creator`)}
         style={[{maxWidth: 440}, a.w_full]}>
         <View style={[a.gap_lg]}>
           <View style={[a.gap_xs]}>
-            <Text style={[a.text_2xl, a.font_semi_bold]}>크리에이터 되기</Text>
+            <Text style={[a.text_2xl, a.font_semi_bold]}>
+              <Trans>Become a creator</Trans>
+            </Text>
             <Text style={[a.text_md, t.atoms.text_contrast_medium]}>
-              구독료의 95%가 내 Haneul 지갑으로 즉시 정산됩니다. 정산 대기도,
-              출금 신청도 없습니다 — 결제와 동시에 온체인으로 도착합니다.
+              <Trans>
+                95% of every subscription settles straight to your Haneul
+                wallet. No payout queue, no withdrawal request — the money
+                arrives on-chain the moment a fan pays.
+              </Trans>
             </Text>
           </View>
 
@@ -133,10 +156,10 @@ export function BecomeCreatorDialog({
                 a.font_semi_bold,
                 t.atoms.text_contrast_medium,
               ]}>
-              1. 본인 인증
+              <Trans>1. Identity verification</Trans>
             </Text>
             <Button
-              label="본인 인증 동의"
+              label={_(msg`Verify your identity`)}
               size="large"
               variant="solid"
               color={kycAgreed ? 'secondary' : 'primary'}
@@ -144,9 +167,11 @@ export function BecomeCreatorDialog({
               testID="hummingKycAgree">
               {kycAgreed && <ButtonIcon icon={CheckIcon} />}
               <ButtonText>
-                {kycAgreed
-                  ? '본인 인증 완료 (인증 배지 발급)'
-                  : '본인 인증하기 (KYC)'}
+                {kycAgreed ? (
+                  <Trans>Identity verified (badge issued)</Trans>
+                ) : (
+                  <Trans>Verify your identity (KYC)</Trans>
+                )}
               </ButtonText>
             </Button>
           </View>
@@ -159,12 +184,12 @@ export function BecomeCreatorDialog({
                 a.font_semi_bold,
                 t.atoms.text_contrast_medium,
               ]}>
-              2. 월 구독료 (30일, HANEUL)
+              <Trans>2. Monthly subscription price (30 days, HANEUL)</Trans>
             </Text>
             <TextField.Root isInvalid={!priceValid && price !== ''}>
               <TextField.Input
                 testID="hummingTierPrice"
-                label="구독료 (HANEUL)"
+                label={_(msg`Subscription price (HANEUL)`)}
                 value={price}
                 onChangeText={setPrice}
                 keyboardType="decimal-pad"
@@ -174,7 +199,7 @@ export function BecomeCreatorDialog({
             </TextField.Root>
             {!priceValid && price !== '' && (
               <Text style={[a.text_sm, {color: t.palette.negative_500}]}>
-                0.01 ~ 100 HANEUL 사이로 입력하세요
+                <Trans>Enter a price between 0.01 and 100 HANEUL</Trans>
               </Text>
             )}
           </View>
@@ -187,19 +212,19 @@ export function BecomeCreatorDialog({
                 a.font_semi_bold,
                 t.atoms.text_contrast_medium,
               ]}>
-              3. 내 글 공개 방식
+              <Trans>3. How your posts are shown</Trans>
             </Text>
             {LOCK_MODES.map(m => (
               <Button
                 key={m.value}
-                label={m.label}
+                label={i18n._(m.label)}
                 size="large"
                 variant={lockMode === m.value ? 'solid' : 'outline'}
                 color={lockMode === m.value ? 'primary' : 'secondary'}
                 onPress={() => setLockMode(m.value)}
                 testID={`hummingLockMode-${m.value}`}>
                 <View style={[a.flex_1, a.align_start]}>
-                  <ButtonText>{m.label}</ButtonText>
+                  <ButtonText>{i18n._(m.label)}</ButtonText>
                   <Text
                     style={[
                       a.text_xs,
@@ -207,7 +232,7 @@ export function BecomeCreatorDialog({
                         ? {color: t.palette.white}
                         : t.atoms.text_contrast_medium,
                     ]}>
-                    {m.desc}
+                    {i18n._(m.desc)}
                   </Text>
                 </View>
               </Button>
@@ -215,7 +240,7 @@ export function BecomeCreatorDialog({
           </View>
 
           <Button
-            label="크리에이터로 전환"
+            label={_(msg`Become a creator`)}
             size="large"
             variant="solid"
             color="primary"
@@ -224,9 +249,11 @@ export function BecomeCreatorDialog({
             testID="hummingBecomeCreatorSubmit">
             {mutation.isPending && <ButtonIcon icon={Loader} />}
             <ButtonText>
-              {mutation.isPending
-                ? '온체인 확정 중…'
-                : `전환하기 — ${priceValid ? formatHaneul(priceGeunhwa) : '?'} / 30일`}
+              {mutation.isPending ? (
+                <Trans>Confirming on-chain…</Trans>
+              ) : (
+                <Trans>Convert — {priceLabel} / 30 days</Trans>
+              )}
             </ButtonText>
           </Button>
         </View>
@@ -236,11 +263,11 @@ export function BecomeCreatorDialog({
   )
 }
 
-const KIND_LABEL = {
-  subscription: '구독',
-  tip: '팁',
-  purchase: '단건구매',
-} as const
+const KIND_LABEL: Record<string, MessageDescriptor> = {
+  subscription: msg`Subscription`,
+  tip: msg`Tip`,
+  purchase: msg`Purchase`,
+}
 
 /** 내 수익: 온체인 이벤트 집계 장부 — 체인이 원본이라 서버 없이도 재구성 가능한 숫자들. */
 export function EarningsDialog({
@@ -248,6 +275,7 @@ export function EarningsDialog({
 }: {
   control: Dialog.DialogControlProps
 }) {
+  const {_, i18n} = useLingui()
   const t = useTheme()
   const {data: earnings, isLoading} = useEarnings()
 
@@ -255,14 +283,18 @@ export function EarningsDialog({
     <Dialog.Outer control={control}>
       <Dialog.Handle />
       <Dialog.ScrollableInner
-        label="내 수익"
+        label={_(msg`My earnings`)}
         style={[{maxWidth: 440}, a.w_full]}>
         <View style={[a.gap_lg]}>
           <View style={[a.gap_xs]}>
-            <Text style={[a.text_2xl, a.font_semi_bold]}>내 수익</Text>
+            <Text style={[a.text_2xl, a.font_semi_bold]}>
+              <Trans>My earnings</Trans>
+            </Text>
             <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-              모든 항목이 Haneul 온체인 이벤트에서 집계됩니다 (수수료 5% 제외
-              순수령액)
+              <Trans>
+                Every line is aggregated from Haneul on-chain events (net of the
+                5% platform fee)
+              </Trans>
             </Text>
           </View>
           {isLoading || !earnings ? (
@@ -273,27 +305,34 @@ export function EarningsDialog({
                 style={[a.p_lg, a.rounded_md, t.atoms.bg_contrast_25, a.gap_xs]}
                 testID="hummingEarningsTotal">
                 <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-                  총 순수령
+                  <Trans>Total net earnings</Trans>
                 </Text>
                 <Text style={[a.text_3xl, a.font_bold]}>
                   {formatHaneul(earnings.totals.totalGeunhwa)}
                 </Text>
                 <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-                  구독 {formatHaneul(earnings.totals.subscriptionGeunhwa)} · 팁{' '}
-                  {formatHaneul(earnings.totals.tipGeunhwa)} · 단건{' '}
-                  {formatHaneul(earnings.totals.purchaseGeunhwa)}
+                  <Trans>
+                    Subscriptions{' '}
+                    {formatHaneul(earnings.totals.subscriptionGeunhwa)} · Tips{' '}
+                    {formatHaneul(earnings.totals.tipGeunhwa)} · Purchases{' '}
+                    {formatHaneul(earnings.totals.purchaseGeunhwa)}
+                  </Trans>
                 </Text>
                 {earnings.tier && (
                   <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-                    내 티어: {formatHaneul(earnings.tier.priceGeunhwa)} /{' '}
-                    {Math.round(earnings.tier.periodMs / 86_400_000)}일
+                    <Trans>
+                      My tier: {formatHaneul(earnings.tier.priceGeunhwa)} /{' '}
+                      {Math.round(earnings.tier.periodMs / 86_400_000)} days
+                    </Trans>
                   </Text>
                 )}
               </View>
               <View style={[a.gap_sm]}>
                 {earnings.items.length === 0 && (
                   <Text style={[t.atoms.text_contrast_medium]}>
-                    아직 수익 내역이 없습니다 — 첫 구독자를 기다리는 중!
+                    <Trans>
+                      No earnings yet — waiting for your first subscriber!
+                    </Trans>
                   </Text>
                 )}
                 {earnings.items.map(item => (
@@ -307,11 +346,12 @@ export function EarningsDialog({
                     ]}>
                     <View>
                       <Text style={[a.text_md]}>
-                        {KIND_LABEL[item.kind]} · {item.from}
-                        {item.postId ? ` (글 ${item.postId})` : ''}
+                        {i18n._(KIND_LABEL[item.kind] ?? msg`Payment`)} ·{' '}
+                        {item.from}
+                        {item.postId ? ` · ${_(msg`post ${item.postId}`)}` : ''}
                       </Text>
                       <Text style={[a.text_xs, t.atoms.text_contrast_medium]}>
-                        {new Date(item.atMs).toLocaleString('ko-KR')} · tx{' '}
+                        {new Date(item.atMs).toLocaleString(i18n.locale)} · tx{' '}
                         {item.tx.slice(0, 8)}…
                       </Text>
                     </View>

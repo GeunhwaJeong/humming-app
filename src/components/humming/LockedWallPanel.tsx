@@ -2,16 +2,19 @@
 // feed — a large lock glyph over a muted area, an aggregate stats bar,
 // and a full-width subscribe CTA. Mirrors the classic paysite layout.
 import {View} from 'react-native'
+import {msg, plural} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
 import {Lock_Stroke2_Corner2_Rounded as Lock} from '#/components/icons/Lock'
 import * as Prompt from '#/components/Prompt'
 import {Text} from '#/components/Typography'
-import {formatHaneul} from './api'
-import {useCreatorInfo, useSubscribeMutation} from './hooks'
+import {formatTier, useCreatorInfo, useSubscribeMutation} from './hooks'
 
 export function LockedWallPanel({did}: {did: string}) {
+  const {_, i18n} = useLingui()
   const t = useTheme()
   // 우리 정체성 체계에서 did:web:<handle> — 표기용 핸들은 DID에서 유도
   const handle = did.startsWith('did:web:') ? did.slice('did:web:'.length) : did
@@ -21,7 +24,10 @@ export function LockedWallPanel({did}: {did: string}) {
 
   if (!data?.tier) return null
   const {tier, stats} = data
-  const monthly = `${formatHaneul(tier.price)} / ${Math.round(tier.periodMs / 86_400_000)}일`
+  const monthly = formatTier(i18n, {
+    priceGeunhwa: tier.price,
+    periodMs: tier.periodMs,
+  })
 
   return (
     <View testID="hummingLockedWallPanel" style={[a.w_full, a.px_lg, a.py_lg]}>
@@ -48,7 +54,9 @@ export function LockedWallPanel({did}: {did: string}) {
         ]}>
         <View style={[a.flex_row, a.align_center, a.justify_between]}>
           <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-            게시물 {stats?.posts ?? 0}개
+            {i18n._(
+              plural(stats?.posts ?? 0, {one: '# post', other: '# posts'}),
+            )}
             {stats?.images ? ` · 🖼 ${stats.images}` : ''}
             {stats?.videos ? ` · 🎬 ${stats.videos}` : ''}
           </Text>
@@ -60,21 +68,25 @@ export function LockedWallPanel({did}: {did: string}) {
           color="primary"
           disabled={isPending}
           style={[a.self_stretch]}
-          label={`구독하여 사용자의 게시물 보기 — ${monthly}`}
+          label={_(msg`Subscribe to see their posts — ${monthly}`)}
           onPress={() => promptControl.open()}>
           <ButtonText>
-            {isPending
-              ? '온체인 결제 중…'
-              : `구독하여 사용자의 게시물 보기 — ${monthly}`}
+            {isPending ? (
+              <Trans>Paying on-chain…</Trans>
+            ) : (
+              <Trans>Subscribe to see their posts — {monthly}</Trans>
+            )}
           </ButtonText>
         </Button>
       </View>
       <Prompt.Basic
         control={promptControl}
-        title={`@${handle} 구독`}
-        description={`${monthly} 요금이 내 Haneul 지갑에서 결제됩니다. 플랫폼 수수료를 제외한 전액이 크리에이터에게 온체인으로 즉시 정산됩니다.`}
+        title={_(msg`Subscribe to @${handle}`)}
+        description={_(
+          msg`${monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain.`,
+        )}
         onConfirm={() => subscribe()}
-        confirmButtonCta="온체인 결제"
+        confirmButtonCta={_(msg`Pay on-chain`)}
       />
     </View>
   )

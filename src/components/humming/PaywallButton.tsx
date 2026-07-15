@@ -3,6 +3,9 @@
 // Bluesky의 threadgate(답글 제한)와는 별개의 축: 저건 상호작용, 이건 열람.
 import {useState} from 'react'
 import {View} from 'react-native'
+import {msg} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
@@ -19,6 +22,7 @@ export function PaywallButton({
   valueHaneul: string | null
   onChange: (v: string | null) => void
 }) {
+  const {_} = useLingui()
   const t = useTheme()
   const control = Dialog.useDialogControl()
   const [draft, setDraft] = useState(valueHaneul ?? '0.5')
@@ -32,7 +36,11 @@ export function PaywallButton({
     <>
       <Button
         style={a.p_sm}
-        label={isSet ? `유료 글 (${valueHaneul} HANEUL)` : '열람 설정'}
+        label={
+          isSet
+            ? _(msg`Paid post (${valueHaneul} HANEUL)`)
+            : _(msg`Viewing access`)
+        }
         variant="ghost"
         shape="round"
         color={isSet ? 'primary' : 'secondary'}
@@ -50,21 +58,26 @@ export function PaywallButton({
       <Dialog.Outer control={control}>
         <Dialog.Handle />
         <Dialog.ScrollableInner
-          label="열람 설정"
+          label={_(msg`Viewing access`)}
           style={[{maxWidth: 400}, a.w_full]}>
           <View style={[a.gap_lg]}>
             <View style={[a.gap_xs]}>
-              <Text style={[a.text_2xl, a.font_semi_bold]}>열람 설정</Text>
+              <Text style={[a.text_2xl, a.font_semi_bold]}>
+                <Trans>Viewing access</Trans>
+              </Text>
               <Text style={[a.text_md, t.atoms.text_contrast_medium]}>
-                가격을 붙이면 구독자는 무료로, 그 외에는 단건 결제로 열람합니다.
-                가격은 글과 함께 온체인에 확정됩니다.
+                <Trans>
+                  Add a price and subscribers read for free while everyone else
+                  pays per post. The price is fixed on-chain together with the
+                  post.
+                </Trans>
               </Text>
             </View>
             <View style={[a.gap_sm]}>
               <TextField.Root isInvalid={!draftValid && draft !== ''}>
                 <TextField.Input
                   testID="hummingPaywallPrice"
-                  label="단건 가격 (HANEUL)"
+                  label={_(msg`Price per post (HANEUL)`)}
                   value={draft}
                   onChangeText={setDraft}
                   keyboardType="decimal-pad"
@@ -74,14 +87,14 @@ export function PaywallButton({
               </TextField.Root>
               {!draftValid && draft !== '' && (
                 <Text style={[a.text_sm, {color: t.palette.negative_500}]}>
-                  0.01 ~ 100 HANEUL 사이로 입력하세요
+                  <Trans>Enter a price between 0.01 and 100 HANEUL</Trans>
                 </Text>
               )}
             </View>
             <View style={[a.flex_row, a.gap_sm]}>
               {isSet && (
                 <Button
-                  label="무료로 전환"
+                  label={_(msg`Make it free`)}
                   size="large"
                   variant="solid"
                   color="secondary"
@@ -91,11 +104,13 @@ export function PaywallButton({
                     control.close()
                   }}
                   testID="hummingPaywallClear">
-                  <ButtonText>무료로 전환</ButtonText>
+                  <ButtonText>
+                    <Trans>Make it free</Trans>
+                  </ButtonText>
                 </Button>
               )}
               <Button
-                label="유료 글로 설정"
+                label={_(msg`Set as paid post`)}
                 size="large"
                 variant="solid"
                 color="primary"
@@ -106,7 +121,9 @@ export function PaywallButton({
                   control.close()
                 }}
                 testID="hummingPaywallApply">
-                <ButtonText>유료 글로 설정 — {draft} HANEUL</ButtonText>
+                <ButtonText>
+                  <Trans>Set as paid — {draft} HANEUL</Trans>
+                </ButtonText>
               </Button>
             </View>
           </View>

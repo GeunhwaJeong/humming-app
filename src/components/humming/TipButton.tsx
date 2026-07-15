@@ -2,6 +2,9 @@
 // Fixed demo amount; the transfer settles on the Haneul chain with the
 // platform fee split applied by the contract.
 import {type AppBskyFeedDefs} from '@atproto/api'
+import {msg} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 import {useMutation} from '@tanstack/react-query'
 
 import {type Shadow} from '#/state/cache/types'
@@ -25,6 +28,7 @@ export function HummingTipButton({
   post: Shadow<AppBskyFeedDefs.PostView>
   big?: boolean
 }) {
+  const {_} = useLingui()
   const agent = useAgent()
   const {hasSession, currentAccount} = useSession()
   const promptControl = Prompt.usePromptControl()
@@ -38,17 +42,21 @@ export function HummingTipButton({
         /\/(\d+)$/.exec(post.uri)?.[1],
       ),
     onSuccess: res => {
-      Toast.show(
-        `팁 전송 완료! ${formatHaneul(res.amountGeunhwa)} → @${post.author.handle} (tx: ${res.digest.slice(0, 8)}…)`,
-        {type: 'success'},
-      )
+      const amount = formatHaneul(res.amountGeunhwa)
+      const handle = post.author.handle
+      const tx = res.digest.slice(0, 8)
+      Toast.show(_(msg`Tip sent! ${amount} → @${handle} (tx: ${tx}…)`), {
+        type: 'success',
+      })
     },
     onError: e => {
-      Toast.show(`팁 실패: ${String(e)}`, {type: 'error'})
+      Toast.show(_(msg`Tip failed: ${String(e)}`), {type: 'error'})
     },
   })
 
   if (!hasSession || currentAccount?.did === post.author.did) return null
+
+  const tipAmount = formatHaneul(TIP_GEUNHWA)
 
   return (
     <>
@@ -57,16 +65,22 @@ export function HummingTipButton({
         big={big}
         disabled={isPending}
         onPress={() => promptControl.open()}
-        label={`@${post.author.handle}에게 ${formatHaneul(TIP_GEUNHWA)} 팁 보내기`}>
+        label={_(msg`Send a ${tipAmount} tip to @${post.author.handle}`)}>
         <PostControlButtonIcon icon={Gift} />
-        {big && <PostControlButtonText>팁 보내기</PostControlButtonText>}
+        {big && (
+          <PostControlButtonText>
+            <Trans>Send tip</Trans>
+          </PostControlButtonText>
+        )}
       </PostControlButton>
       <Prompt.Basic
         control={promptControl}
-        title={`@${post.author.handle}에게 팁 보내기`}
-        description={`${formatHaneul(TIP_GEUNHWA)}이 내 Haneul 지갑에서 크리에이터 지갑으로 온체인 전송됩니다 (플랫폼 수수료 자동 공제).`}
+        title={_(msg`Send a tip to @${post.author.handle}`)}
+        description={_(
+          msg`${tipAmount} will be sent on-chain from your Haneul wallet straight to the creator's wallet (platform fee deducted automatically).`,
+        )}
         onConfirm={() => tip()}
-        confirmButtonCta="팁 보내기"
+        confirmButtonCta={_(msg`Send tip`)}
       />
     </>
   )

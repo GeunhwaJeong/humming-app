@@ -138,6 +138,17 @@ msgstr "{0, plural, one {# new join request} other {# new join requests}}"
 msgid "{0, plural, one {# person} other {# people}} reacted – {1}"
 msgstr "{0, plural, one {# person} other {# people}} reacted – {1}"
 
+#. placeholder {0}: lock.media.images
+#: src/components/humming/LockedPostCard.tsx:63
+msgid "{0, plural, one {# photo} other {# photos}}"
+msgstr "{0, plural, one {# photo} other {# photos}}"
+
+#. placeholder {0}: stats?.posts ?? 0
+#: src/components/humming/LockedWallPanel.tsx:58
+#: src/components/humming/ProfileSubscribeCard.tsx:106
+msgid "{0, plural, one {# post} other {# posts}}"
+msgstr "{0, plural, one {# post} other {# posts}}"
+
 #. placeholder {0}: quoteCount ?? 0
 #: src/screens/Post/PostQuotes.tsx:34
 msgid "{0, plural, one {# quote} other {# quotes}}"
@@ -160,6 +171,11 @@ msgstr ""
 #: src/view/shell/Drawer.tsx:557
 msgid "{0, plural, one {# unread item} other {# unread items}}"
 msgstr ""
+
+#. placeholder {0}: lock.media.videos
+#: src/components/humming/LockedPostCard.tsx:66
+msgid "{0, plural, one {# video} other {# videos}}"
+msgstr "{0, plural, one {# video} other {# videos}}"
 
 #. How long it takes to read an article, in minutes. Displayed in a short form, e.g. "5m" for 5 minutes.
 #. placeholder {0}: view.readingTime
@@ -699,6 +715,15 @@ msgstr "{memberCount}/{memberLimit}"
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr ""
 
+#: src/components/humming/ProfileSubscribeCard.tsx:93
+#: src/components/humming/SubscribeButton.tsx:79
+msgid "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period."
+msgstr "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period."
+
+#: src/components/humming/LockedWallPanel.tsx:86
+msgid "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
+msgstr "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
+
 #. placeholder {0}: reaction.value
 #: src/components/dms/getReactionInfo.ts:65
 msgid "{name} reacted {0} to {target}"
@@ -724,6 +749,14 @@ msgstr ""
 #: src/screens/Settings/FindContactsSettings.tsx:457
 msgid "{numMatches, plural, one {# contact found} other {# contacts found}}"
 msgstr ""
+
+#: src/components/humming/hooks.ts:138
+msgid "{price} / {days} days"
+msgstr "{price} / {days} days"
+
+#: src/components/humming/LockedPostCard.tsx:138
+msgid "{price} will be charged from your Haneul wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain."
+msgstr "{price} will be charged from your Haneul wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain."
 
 #: src/components/NewskieDialog.tsx:115
 msgid "{profileName} joined Bluesky {timeAgoString} ago"
@@ -759,6 +792,14 @@ msgstr "{requestCount, plural, one {# request} other {# requests}}"
 #: src/screens/Messages/ConversationSettings/MembersAndRequests.tsx:56
 msgid "{requestCount}+ requests"
 msgstr "{requestCount}+ requests"
+
+#: src/components/humming/LockedPostCard.tsx:105
+msgid "{tierLabel} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
+msgstr "{tierLabel} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
+
+#: src/components/humming/TipButton.tsx:80
+msgid "{tipAmount} will be sent on-chain from your Haneul wallet straight to the creator's wallet (platform fee deducted automatically)."
+msgstr "{tipAmount} will be sent on-chain from your Haneul wallet straight to the creator's wallet (platform fee deducted automatically)."
 
 #. trending topic time spent trending. should be as short as possible to fit in a pill
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:191
@@ -889,6 +930,14 @@ msgstr ""
 msgid "⚠Invalid Handle"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:159
+msgid "1. Identity verification"
+msgstr "1. Identity verification"
+
+#: src/components/humming/CreatorHub.tsx:187
+msgid "2. Monthly subscription price (30 days, HANEUL)"
+msgstr "2. Monthly subscription price (30 days, HANEUL)"
+
 #: src/components/dialogs/MutedWords.tsx:202
 #: src/components/dialogs/MutedWords.tsx:551
 #: src/components/dialogs/MutedWords.tsx:554
@@ -898,6 +947,10 @@ msgstr ""
 #: src/screens/Login/LoginForm.tsx:436
 msgid "2FA Confirmation"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:215
+msgid "3. How your posts are shown"
+msgstr "3. How your posts are shown"
 
 #: src/components/dialogs/MutedWords.tsx:241
 #: src/components/dialogs/MutedWords.tsx:565
@@ -910,6 +963,10 @@ msgstr ""
 #: src/components/dialogs/MutedWords.tsx:561
 msgid "7 days"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:143
+msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
+msgstr "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
 
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
@@ -1009,6 +1066,10 @@ msgstr ""
 #: src/view/com/composer/select-language/SuggestedLanguage.tsx:460
 msgid "Accept this language suggestion"
 msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:74
+msgid "Access is verified by your on-chain subscription and purchase state on Haneul"
+msgstr "Access is verified by your on-chain subscription and purchase state on Haneul"
 
 #: src/components/intents/GroupChatJoinDialog.tsx:119
 msgid "Access requested! The group owner will review your request."
@@ -1127,6 +1188,10 @@ msgstr ""
 #: src/view/com/composer/labels/LabelsBtn.tsx:108
 msgid "Add a content warning"
 msgstr ""
+
+#: src/components/humming/PaywallButton.tsx:69
+msgid "Add a price and subscribers read for free while everyone else pays per post. The price is fixed on-chain together with the post."
+msgstr "Add a price and subscribers read for free while everyone else pays per post. The price is fixed on-chain together with the post."
 
 #: src/features/liveNow/components/GoLiveDialog.tsx:114
 msgid "Add a temporary live status to your profile. When someone clicks on your avatar, they’ll see information about your live event."
@@ -1435,6 +1500,10 @@ msgstr "All of these words"
 #: src/screens/Search/components/AdvancedSearchDialog/MediaDropdown.tsx:27
 msgid "All posts"
 msgstr "All posts"
+
+#: src/components/humming/ProfileSubscribeCard.tsx:111
+msgid "All posts are for subscribers only"
+msgstr "All posts are for subscribers only"
 
 #: src/view/screens/Feeds.tsx:700
 msgid "All the feeds you've saved, right in one place."
@@ -2049,6 +2118,14 @@ msgstr "Based on your network, we think you're in <0>{geolocationString}</0>. Th
 msgid "Based on your network, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
 msgstr "Based on your network, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
 
+#: src/components/humming/CreatorHub.tsx:70
+#: src/components/humming/CreatorHub.tsx:84
+#: src/components/humming/CreatorHub.tsx:135
+#: src/components/humming/CreatorHub.tsx:140
+#: src/components/humming/CreatorHub.tsx:243
+msgid "Become a creator"
+msgstr "Become a creator"
+
 #: src/view/screens/Lists.tsx:35
 #: src/view/screens/ModerationModlists.tsx:35
 msgid "Before creating a list, you must first verify your email."
@@ -2376,6 +2453,15 @@ msgstr ""
 #: src/screens/Bookmarks.tsx:295
 msgid "Button to go back to the home timeline"
 msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:136
+msgid "Buy this post"
+msgstr "Buy this post"
+
+#: src/components/humming/LockedPostCard.tsx:120
+#: src/components/humming/LockedPostCard.tsx:130
+msgid "Buy this post only — {price}"
+msgstr "Buy this post only — {price}"
 
 #. The owner (creator) of a group chat.
 #. placeholder {0}: createSanitizedDisplayName( joinLinkPreview.owner, true, moderateProfile( joinLinkPreview.owner, moderationOpts, ).ui('displayName'), )
@@ -3110,6 +3196,10 @@ msgstr ""
 msgid "Confirmation code"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:253
+msgid "Confirming on-chain…"
+msgstr "Confirming on-chain…"
+
 #: src/screens/Login/ForgotPasswordForm.tsx:132
 msgid "Connecting to service..."
 msgstr ""
@@ -3280,6 +3370,15 @@ msgstr "Conversation left"
 #: src/screens/Messages/JoinRequests.tsx:229
 msgid "Conversation not found."
 msgstr "Conversation not found."
+
+#. placeholder {0}: String(e)
+#: src/components/humming/hooks.ts:111
+msgid "Conversion failed: {0}"
+msgstr "Conversion failed: {0}"
+
+#: src/components/humming/CreatorHub.tsx:255
+msgid "Convert — {priceLabel} / 30 days"
+msgstr "Convert — {priceLabel} / 30 days"
 
 #: src/screens/Settings/AboutSettings.tsx:169
 msgid "Copied build version to clipboard"
@@ -3560,6 +3659,7 @@ msgstr ""
 #: src/components/WelcomeModal.tsx:166
 #: src/screens/Messages/JoinRequest.tsx:310
 #: src/screens/Signup/index.tsx:136
+#: src/screens/Signup/StepHandle/index.tsx:322
 #: src/view/com/auth/SplashScreen.tsx:106
 #: src/view/com/auth/SplashScreen.web.tsx:116
 #: src/view/shell/bottom-bar/BottomBar.tsx:351
@@ -4505,6 +4605,11 @@ msgstr ""
 msgid "Enter a password"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:202
+#: src/components/humming/PaywallButton.tsx:90
+msgid "Enter a price between 0.01 and 100 HANEUL"
+msgstr "Enter a price between 0.01 and 100 HANEUL"
+
 #: src/components/dialogs/MutedWords.tsx:136
 #: src/components/dialogs/MutedWords.tsx:137
 msgid "Enter a word or tag"
@@ -4595,6 +4700,10 @@ msgstr ""
 #: src/screens/Search/SearchResults.tsx:175
 msgid "Error: {error}"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:294
+msgid "Every line is aggregated from Haneul on-chain events (net of the 5% platform fee)"
+msgstr "Every line is aggregated from Haneul on-chain events (net of the 5% platform fee)"
 
 #: src/components/WhoCanReply.tsx:85
 msgid "Everybody can reply"
@@ -5581,6 +5690,10 @@ msgstr ""
 msgid "From these people"
 msgstr "From these people"
 
+#: src/components/humming/CreatorHub.tsx:41
+msgid "Full lock"
+msgstr "Full lock"
+
 #: src/components/StarterPack/ProfileStarterPacks.tsx:337
 msgid "Generate a starter pack"
 msgstr ""
@@ -6262,6 +6375,10 @@ msgstr ""
 msgid "I'm on Bluesky as {0} - come find me! https://bsky.app/download"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:171
+msgid "Identity verified (badge issued)"
+msgstr "Identity verified (badge issued)"
+
 #: src/components/Lightbox/Lightbox.web.tsx:246
 msgid "If alt text is long, toggles alt text expanded state"
 msgstr ""
@@ -6712,6 +6829,10 @@ msgstr ""
 #: src/lib/interests.ts:63
 msgid "Journalism"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:89
+msgid "Keep 95% of what you earn"
+msgstr "Keep 95% of what you earn"
 
 #: src/view/com/composer/Composer.tsx:1548
 #: src/view/com/composer/Composer.tsx:1558
@@ -7233,6 +7354,10 @@ msgstr "Lock this group chat"
 msgid "Locked"
 msgstr "Locked"
 
+#: src/components/humming/CreatorHub.tsx:37
+msgid "Locked posts show as teaser cards (drives conversion)"
+msgstr "Locked posts show as teaser cards (drives conversion)"
+
 #: src/Navigation.tsx:326
 msgid "Log"
 msgstr ""
@@ -7283,6 +7408,11 @@ msgstr "Love GIFs"
 #: src/components/dialogs/EmailDialog/index.tsx:39
 msgid "Make adjustments to email settings for your account"
 msgstr ""
+
+#: src/components/humming/PaywallButton.tsx:97
+#: src/components/humming/PaywallButton.tsx:108
+msgid "Make it free"
+msgstr "Make it free"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:311
 msgid "Make one for me"
@@ -7711,6 +7841,13 @@ msgstr "Mutual group chats"
 msgid "My birthdate"
 msgstr "My birthdate"
 
+#: src/components/humming/CreatorHub.tsx:70
+#: src/components/humming/CreatorHub.tsx:82
+#: src/components/humming/CreatorHub.tsx:286
+#: src/components/humming/CreatorHub.tsx:291
+msgid "My earnings"
+msgstr "My earnings"
+
 #: src/screens/StarterPack/Wizard/StepDetails.tsx:77
 msgid "My favorite feeds and people - join me!"
 msgstr "My favorite feeds and people - join me!"
@@ -7722,6 +7859,12 @@ msgstr ""
 #: src/screens/StarterPack/Wizard/StepDetails.tsx:49
 msgid "My starter pack"
 msgstr "My starter pack"
+
+#. placeholder {0}: formatHaneul(earnings.tier.priceGeunhwa)
+#. placeholder {1}: Math.round(earnings.tier.periodMs / 86_400_000)
+#: src/components/humming/CreatorHub.tsx:323
+msgid "My tier: {0} / {1} days"
+msgstr "My tier: {0} / {1} days"
 
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:416
 msgid "Name"
@@ -7980,6 +8123,10 @@ msgstr ""
 msgid "No drafts yet"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:333
+msgid "No earnings yet — waiting for your first subscriber!"
+msgstr "No earnings yet — waiting for your first subscriber!"
+
 #: src/features/liveNow/components/EditLiveDialog.tsx:134
 msgid "No expiry set"
 msgstr ""
@@ -8187,6 +8334,10 @@ msgstr ""
 #: src/lib/moderation/useGlobalLabelStrings.ts:42
 msgid "Non-sexual Nudity"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:42
+msgid "Non-subscribers only see your profile wall"
+msgstr "Non-subscribers only see your profile wall"
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:263
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:266
@@ -8429,6 +8580,10 @@ msgstr "Oops, this profile doesn't exist. Try scanning another one."
 #: src/view/screens/Profile.tsx:132
 msgid "Oops!"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:31
+msgid "Open"
+msgstr "Open"
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:66
 msgid "Open advanced search options"
@@ -8776,6 +8931,10 @@ msgstr "Owner must lock the group before leaving."
 msgid "Page not found"
 msgstr ""
 
+#: src/components/humming/PaywallButton.tsx:41
+msgid "Paid post ({valueHaneul} HANEUL)"
+msgstr "Paid post ({valueHaneul} HANEUL)"
+
 #. Accessibility label for the icon-only pill that filters the GIF picker to celebration/party GIFs.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:85
 msgid "Party GIFs"
@@ -8790,9 +8949,17 @@ msgstr "Party GIFs"
 msgid "Password"
 msgstr ""
 
+#: src/screens/Signup/StepHandle/index.tsx:300
+msgid "Password (8+ characters)"
+msgstr "Password (8+ characters)"
+
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:70
 msgid "Password changed"
 msgstr ""
+
+#: src/screens/Signup/StepHandle/index.tsx:311
+msgid "Password must be at least 8 characters long"
+msgstr "Password must be at least 8 characters long"
 
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:125
 msgid "Password must be at least 8 characters long."
@@ -8818,6 +8985,26 @@ msgstr ""
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/web-controls/VideoControls.tsx:346
 msgid "Pause video"
 msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:108
+#: src/components/humming/LockedPostCard.tsx:141
+#: src/components/humming/LockedWallPanel.tsx:89
+#: src/components/humming/ProfileSubscribeCard.tsx:96
+#: src/components/humming/SubscribeButton.tsx:82
+msgid "Pay on-chain"
+msgstr "Pay on-chain"
+
+#: src/components/humming/LockedPostCard.tsx:95
+#: src/components/humming/LockedPostCard.tsx:128
+#: src/components/humming/LockedWallPanel.tsx:75
+#: src/components/humming/ProfileSubscribeCard.tsx:83
+#: src/components/humming/SubscribeButton.tsx:69
+msgid "Paying on-chain…"
+msgstr "Paying on-chain…"
+
+#: src/components/humming/CreatorHub.tsx:349
+msgid "Payment"
+msgstr "Payment"
 
 #: src/screens/ProfileList/index.tsx:167
 #: src/screens/Search/SearchResults.tsx:94
@@ -9168,6 +9355,11 @@ msgctxt "description"
 msgid "Post"
 msgstr ""
 
+#. placeholder {0}: item.postId
+#: src/components/humming/CreatorHub.tsx:352
+msgid "post {0}"
+msgstr "post {0}"
+
 #: src/view/screens/Profile.tsx:475
 #: src/view/screens/Profile.tsx:476
 msgid "Post a photo"
@@ -9287,6 +9479,10 @@ msgstr ""
 msgid "Posts hidden"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:32
+msgid "Posts stay public — put a price only on the ones you choose"
+msgstr "Posts stay public — put a price only on the ones you choose"
+
 #: src/components/dialogs/LinkWarning.tsx:89
 msgid "Potentially misleading link"
 msgstr ""
@@ -9322,6 +9518,10 @@ msgstr ""
 #: src/components/Lightbox/Lightbox.web.tsx:197
 msgid "Previous image"
 msgstr ""
+
+#: src/components/humming/PaywallButton.tsx:80
+msgid "Price per post (HANEUL)"
+msgstr "Price per post (HANEUL)"
 
 #: src/screens/Settings/LanguageSettings.tsx:141
 #: src/screens/Settings/LanguageSettings.tsx:157
@@ -9432,6 +9632,19 @@ msgstr ""
 #: src/view/com/composer/Composer.tsx:1871
 msgid "Publish reply"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:269
+msgid "Purchase"
+msgstr "Purchase"
+
+#. placeholder {0}: String(e)
+#: src/components/humming/hooks.ts:74
+msgid "Purchase failed: {0}"
+msgstr "Purchase failed: {0}"
+
+#: src/components/humming/hooks.ts:67
+msgid "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
+msgstr "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
 
 #: src/screens/Settings/NotificationSettings/components/SettingPreview.tsx:31
 msgid "Push"
@@ -10802,6 +11015,16 @@ msgstr ""
 msgid "Self-harm or dangerous behaviors"
 msgstr ""
 
+#. placeholder {0}: post.author.handle
+#: src/components/humming/TipButton.tsx:68
+msgid "Send a {tipAmount} tip to @{0}"
+msgstr "Send a {tipAmount} tip to @{0}"
+
+#. placeholder {0}: post.author.handle
+#: src/components/humming/TipButton.tsx:78
+msgid "Send a tip to @{0}"
+msgstr "Send a tip to @{0}"
+
 #: src/components/contacts/screens/PhoneInput.tsx:255
 #: src/components/contacts/screens/PhoneInput.tsx:260
 msgid "Send code"
@@ -10845,6 +11068,11 @@ msgstr ""
 msgid "Send the message from your phone"
 msgstr ""
 
+#: src/components/humming/TipButton.tsx:72
+#: src/components/humming/TipButton.tsx:83
+msgid "Send tip"
+msgstr "Send tip"
+
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:304
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:121
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:124
@@ -10876,6 +11104,14 @@ msgstr ""
 #: src/screens/Settings/AppIconSettings/index.tsx:176
 msgid "Set app icon to {0}"
 msgstr ""
+
+#: src/components/humming/PaywallButton.tsx:125
+msgid "Set as paid — {draft} HANEUL"
+msgstr "Set as paid — {draft} HANEUL"
+
+#: src/components/humming/PaywallButton.tsx:113
+msgid "Set as paid post"
+msgstr "Set as paid post"
 
 #: src/screens/Login/SetNewPasswordForm.tsx:99
 msgid "Set new password"
@@ -11656,6 +11892,16 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+#: src/components/humming/ProfileSubscribeCard.tsx:79
+#: src/components/humming/ProfileSubscribeCard.tsx:85
+#: src/components/humming/SubscribeButton.tsx:65
+msgid "Subscribe — {monthly}"
+msgstr "Subscribe — {monthly}"
+
+#: src/components/humming/SubscribeButton.tsx:71
+msgid "Subscribe {monthly}"
+msgstr "Subscribe {monthly}"
+
 #. placeholder {0}: highlightedPublisher.name
 #: src/components/Post/Embed/StandardSiteEmbed/index.tsx:447
 #: src/components/Post/Embed/StandardSiteEmbed/index.tsx:476
@@ -11667,10 +11913,22 @@ msgstr "Subscribe on {0}"
 msgid "Subscribe to {publicationTitle} on {0}"
 msgstr "Subscribe to {publicationTitle} on {0}"
 
+#. placeholder {0}: post.author.handle
+#. placeholder {0}: profile.handle
+#: src/components/humming/LockedPostCard.tsx:103
+#: src/components/humming/ProfileSubscribeCard.tsx:91
+#: src/components/humming/SubscribeButton.tsx:77
+msgid "Subscribe to @{0}"
+msgstr "Subscribe to @{0}"
+
 #. placeholder {0}: labelerInfo.creator.handle
 #: src/screens/Profile/Sections/Labels.tsx:231
 msgid "Subscribe to @{0} to use these labels:"
 msgstr ""
+
+#: src/components/humming/LockedWallPanel.tsx:84
+msgid "Subscribe to @{handle}"
+msgstr "Subscribe to @{handle}"
 
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:252
 msgid "Subscribe to account activity"
@@ -11680,6 +11938,11 @@ msgstr ""
 msgid "Subscribe to Labeler"
 msgstr ""
 
+#: src/components/humming/LockedWallPanel.tsx:71
+#: src/components/humming/LockedWallPanel.tsx:77
+msgid "Subscribe to see their posts — {monthly}"
+msgstr "Subscribe to see their posts — {monthly}"
+
 #: src/screens/Profile/Header/ProfileHeaderLabeler.tsx:316
 msgid "Subscribe to this labeler"
 msgstr ""
@@ -11687,6 +11950,61 @@ msgstr ""
 #: src/screens/ProfileList/components/SubscribeMenu.tsx:63
 msgid "Subscribe to this list"
 msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:87
+#: src/components/humming/LockedPostCard.tsx:97
+msgid "Subscribe to view — {tierLabel}"
+msgstr "Subscribe to view — {tierLabel}"
+
+#: src/components/humming/SubscribeButton.tsx:52
+msgid "Subscribed"
+msgstr "Subscribed"
+
+#: src/components/humming/ProfileSubscribeCard.tsx:62
+#: src/components/humming/SubscribeButton.tsx:41
+msgid "Subscribed — {monthly}"
+msgstr "Subscribed — {monthly}"
+
+#: src/components/humming/ProfileSubscribeCard.tsx:67
+msgid "Subscribed ✓"
+msgstr "Subscribed ✓"
+
+#: src/components/humming/ProfileSubscribeCard.tsx:65
+msgid "Subscribed ✓ · until {untilDate}"
+msgstr "Subscribed ✓ · until {untilDate}"
+
+#: src/components/humming/hooks.ts:40
+msgid "Subscribed! On-chain tx: {tx}… ({price})"
+msgstr "Subscribed! On-chain tx: {tx}… ({price})"
+
+#: src/components/humming/SubscribeButton.tsx:47
+msgid "Subscribed. Valid until {until} (verified on-chain)."
+msgstr "Subscribed. Valid until {until} (verified on-chain)."
+
+#: src/components/humming/LockedPostCard.tsx:55
+msgid "Subscribers-only post"
+msgstr "Subscribers-only post"
+
+#: src/components/humming/CreatorHub.tsx:267
+#: src/components/humming/ProfileSubscribeCard.tsx:53
+msgid "Subscription"
+msgstr "Subscription"
+
+#. placeholder {0}: String(e)
+#: src/components/humming/hooks.ts:47
+msgid "Subscription failed: {0}"
+msgstr "Subscription failed: {0}"
+
+#: src/components/humming/CreatorHub.tsx:192
+msgid "Subscription price (HANEUL)"
+msgstr "Subscription price (HANEUL)"
+
+#. placeholder {0}: formatHaneul(earnings.totals.subscriptionGeunhwa)
+#. placeholder {1}: formatHaneul(earnings.totals.tipGeunhwa)
+#. placeholder {2}: formatHaneul(earnings.totals.purchaseGeunhwa)
+#: src/components/humming/CreatorHub.tsx:314
+msgid "Subscriptions {0} · Tips {1} · Purchases {2}"
+msgstr "Subscriptions {0} · Tips {1} · Purchases {2}"
 
 #: src/ageAssurance/components/RedirectOverlay.tsx:252
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:160
@@ -11892,6 +12210,10 @@ msgstr ""
 #: src/components/ProgressGuide/List.tsx:111
 msgid "Teach our algorithm what you like"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:36
+msgid "Tease"
+msgstr "Tease"
 
 #: src/lib/interests.ts:73
 msgid "Tech"
@@ -12492,6 +12814,10 @@ msgstr ""
 msgid "This person is blocking you"
 msgstr "This person is blocking you"
 
+#: src/components/humming/hooks.ts:59
+msgid "This post cannot be purchased"
+msgstr "This post cannot be purchased"
+
 #. placeholder {0}: niceDate(i18n, createdAt)
 #. placeholder {1}: niceDate(i18n, indexedAt)
 #: src/screens/PostThread/components/ThreadItemAnchor.tsx:647
@@ -12652,6 +12978,19 @@ msgstr ""
 msgid "Time remaining: {0, plural, one {# second} other {# seconds}}"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:268
+msgid "Tip"
+msgstr "Tip"
+
+#. placeholder {0}: String(e)
+#: src/components/humming/TipButton.tsx:53
+msgid "Tip failed: {0}"
+msgstr "Tip failed: {0}"
+
+#: src/components/humming/TipButton.tsx:48
+msgid "Tip sent! {amount} → @{handle} (tx: {tx}…)"
+msgstr "Tip sent! {amount} → @{handle} (tx: {tx}…)"
+
 #: src/components/SendErrorReportDialog.tsx:68
 msgid "Title"
 msgstr "Title"
@@ -12714,6 +13053,10 @@ msgstr ""
 #: src/Navigation.tsx:485
 msgid "Topic"
 msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:308
+msgid "Total net earnings"
+msgstr "Total net earnings"
 
 #: src/components/dms/MessageContextMenu.tsx:191
 #: src/components/dms/MessageContextMenu.tsx:194
@@ -13442,6 +13785,14 @@ msgstr ""
 msgid "Verify your email"
 msgstr ""
 
+#: src/components/humming/CreatorHub.tsx:162
+msgid "Verify your identity"
+msgstr "Verify your identity"
+
+#: src/components/humming/CreatorHub.tsx:173
+msgid "Verify your identity (KYC)"
+msgstr "Verify your identity (KYC)"
+
 #: src/ageAssurance/components/RedirectOverlay.tsx:297
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:209
 msgid "Verifying"
@@ -13687,6 +14038,12 @@ msgstr ""
 #: src/components/verification/VerificationCheckButton.tsx:92
 msgid "View your verifications"
 msgstr ""
+
+#: src/components/humming/PaywallButton.tsx:42
+#: src/components/humming/PaywallButton.tsx:61
+#: src/components/humming/PaywallButton.tsx:66
+msgid "Viewing access"
+msgstr "Viewing access"
 
 #: src/components/images/AutoSizedImage.tsx:222
 #: src/components/images/AutoSizedImage.tsx:254
@@ -14134,6 +14491,10 @@ msgstr ""
 #: src/components/dms/DateDivider.tsx:29
 msgid "Yesterday"
 msgstr ""
+
+#: src/components/humming/hooks.ts:104
+msgid "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
+msgstr "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
 
 #: src/components/verification/VerifierDialog.tsx:61
 msgid "You are a trusted verifier"
@@ -14798,6 +15159,10 @@ msgstr ""
 msgid "Your name, avatar, the name of the group chat, and the number of members will be visible to everyone."
 msgstr "Your name, avatar, the name of the group chat, and the number of members will be visible to everyone."
 
+#: src/screens/Signup/index.tsx:190
+msgid "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
+msgstr "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
+
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:72
 msgid "Your password has been changed successfully! Please use your new password when you sign in to Bluesky from now on."
 msgstr ""
@@ -14855,11 +15220,3 @@ msgstr "Your username and password will be shared with <0>{host}</0>. If you don
 #: src/components/verification/VerificationsDialog.tsx:67
 msgid "Your verifications"
 msgstr ""
-
-#: src/screens/Signup/index.tsx:190
-msgid "닉네임이 곧 지갑입니다 — 계정을 만들면 온체인 이름과 지갑이 함께 발급됩니다."
-msgstr "닉네임이 곧 지갑입니다 — 계정을 만들면 온체인 이름과 지갑이 함께 발급됩니다."
-
-#: src/screens/Signup/StepHandle/index.tsx:311
-msgid "비밀번호는 8자 이상이어야 합니다"
-msgstr "비밀번호는 8자 이상이어야 합니다"

@@ -2,6 +2,9 @@
 // copy, and a full-width subscribe CTA that settles on the Haneul chain.
 import {View} from 'react-native'
 import {type AppBskyFeedDefs} from '@atproto/api'
+import {msg, plural} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
@@ -17,6 +20,7 @@ import {
 } from './hooks'
 
 export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
+  const {_, i18n} = useLingui()
   const t = useTheme()
   const lock = hummingLockOf(post)
   const promptControl = Prompt.usePromptControl()
@@ -29,6 +33,8 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
   if (!lock) return null
 
   const purchasable = lock.reason === 'paywall' && !!lock.priceGeunhwa
+  const tierLabel = lock.tier ? formatTier(i18n, lock.tier) : ''
+  const price = lock.priceGeunhwa ? formatHaneul(lock.priceGeunhwa) : ''
 
   return (
     <View
@@ -46,22 +52,29 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
       ]}>
       <Lock size="xl" style={t.atoms.text_contrast_low} />
       <Text style={[a.text_md, a.font_bold, t.atoms.text_contrast_medium]}>
-        구독자 전용 게시물입니다
+        <Trans>Subscribers-only post</Trans>
       </Text>
       {!!(lock.media?.images || lock.media?.videos) && (
         <Text
           testID="hummingMediaTeaser"
           style={[a.text_sm, t.atoms.text_contrast_medium]}>
           {[
-            lock.media.images ? `🖼 사진 ${lock.media.images}` : null,
-            lock.media.videos ? `🎬 영상 ${lock.media.videos}` : null,
+            lock.media.images
+              ? `🖼 ${i18n._(plural(lock.media.images, {one: '# photo', other: '# photos'}))}`
+              : null,
+            lock.media.videos
+              ? `🎬 ${i18n._(plural(lock.media.videos, {one: '# video', other: '# videos'}))}`
+              : null,
           ]
             .filter(Boolean)
             .join(' · ')}
         </Text>
       )}
       <Text style={[a.text_sm, a.text_center, t.atoms.text_contrast_medium]}>
-        열람 자격은 Haneul 온체인 구독·구매 상태로 판정됩니다
+        <Trans>
+          Access is verified by your on-chain subscription and purchase state on
+          Haneul
+        </Trans>
       </Text>
       {lock.tier && (
         <>
@@ -71,24 +84,28 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             color="primary"
             disabled={isPending}
             style={[a.self_stretch, a.mt_xs]}
-            label={`구독하고 게시물 보기 — ${formatTier(lock.tier)}`}
+            label={_(msg`Subscribe to view — ${tierLabel}`)}
             onPress={e => {
               e.preventDefault()
               e.stopPropagation()
               promptControl.open()
             }}>
             <ButtonText>
-              {isPending
-                ? '온체인 결제 중…'
-                : `구독하고 게시물 보기 — ${formatTier(lock.tier)}`}
+              {isPending ? (
+                <Trans>Paying on-chain…</Trans>
+              ) : (
+                <Trans>Subscribe to view — {tierLabel}</Trans>
+              )}
             </ButtonText>
           </Button>
           <Prompt.Basic
             control={promptControl}
-            title={`@${post.author.handle} 구독`}
-            description={`${formatTier(lock.tier)} 요금이 내 Haneul 지갑에서 결제됩니다. 플랫폼 수수료를 제외한 전액이 크리에이터에게 온체인으로 즉시 정산됩니다.`}
+            title={_(msg`Subscribe to @${post.author.handle}`)}
+            description={_(
+              msg`${tierLabel} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain.`,
+            )}
             onConfirm={() => subscribe()}
-            confirmButtonCta="온체인 결제"
+            confirmButtonCta={_(msg`Pay on-chain`)}
           />
         </>
       )}
@@ -100,24 +117,28 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             color="secondary"
             disabled={isPurchasing}
             style={[a.self_stretch]}
-            label={`이 게시물만 구매 — ${formatHaneul(lock.priceGeunhwa!)}`}
+            label={_(msg`Buy this post only — ${price}`)}
             onPress={e => {
               e.preventDefault()
               e.stopPropagation()
               purchasePromptControl.open()
             }}>
             <ButtonText>
-              {isPurchasing
-                ? '온체인 결제 중…'
-                : `이 게시물만 구매 — ${formatHaneul(lock.priceGeunhwa!)}`}
+              {isPurchasing ? (
+                <Trans>Paying on-chain…</Trans>
+              ) : (
+                <Trans>Buy this post only — {price}</Trans>
+              )}
             </ButtonText>
           </Button>
           <Prompt.Basic
             control={purchasePromptControl}
-            title="게시물 단건 구매"
-            description={`${formatHaneul(lock.priceGeunhwa!)}이 내 Haneul 지갑에서 결제되고, 이 게시물을 구독 없이 영구 열람합니다. 구매 기록은 체인에 남습니다.`}
+            title={_(msg`Buy this post`)}
+            description={_(
+              msg`${price} will be charged from your Haneul wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain.`,
+            )}
             onConfirm={() => purchase()}
-            confirmButtonCta="온체인 결제"
+            confirmButtonCta={_(msg`Pay on-chain`)}
           />
         </>
       )}

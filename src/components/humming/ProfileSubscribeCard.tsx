@@ -2,6 +2,9 @@
 // tier price, on-chain subscribe CTA, post stats, locked-profile notice.
 import {View} from 'react-native'
 import {type AppBskyActorDefs} from '@atproto/api'
+import {msg, plural} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 
 import {useSession} from '#/state/session'
 import {atoms as a, useTheme} from '#/alf'
@@ -9,14 +12,14 @@ import {Button, ButtonText} from '#/components/Button'
 import {Lock_Stroke2_Corner2_Rounded as Lock} from '#/components/icons/Lock'
 import * as Prompt from '#/components/Prompt'
 import {Text} from '#/components/Typography'
-import {formatHaneul} from './api'
-import {useCreatorInfo, useSubscribeMutation} from './hooks'
+import {formatTier, useCreatorInfo, useSubscribeMutation} from './hooks'
 
 export function ProfileSubscribeCard({
   profile,
 }: {
   profile: AppBskyActorDefs.ProfileViewDetailed
 }) {
+  const {_, i18n} = useLingui()
   const t = useTheme()
   const {currentAccount} = useSession()
   const promptControl = Prompt.usePromptControl()
@@ -27,7 +30,13 @@ export function ProfileSubscribeCard({
   if (isMe || !data?.tier) return null
 
   const {tier, viewer, profileLocked, stats} = data
-  const monthly = `${formatHaneul(tier.price)} / ${Math.round(tier.periodMs / 86_400_000)}일`
+  const monthly = formatTier(i18n, {
+    priceGeunhwa: tier.price,
+    periodMs: tier.periodMs,
+  })
+  const untilDate = viewer.expiresMs
+    ? new Date(viewer.expiresMs).toLocaleDateString(i18n.locale)
+    : null
 
   return (
     <View
@@ -41,7 +50,7 @@ export function ProfileSubscribeCard({
         t.atoms.bg_contrast_25,
       ]}>
       <Text style={[a.text_sm, a.font_bold, t.atoms.text_contrast_medium]}>
-        구독
+        <Trans>Subscription</Trans>
       </Text>
       {viewer.subscribed ? (
         <Button
@@ -50,12 +59,13 @@ export function ProfileSubscribeCard({
           color="secondary"
           disabled
           style={[a.self_stretch]}
-          label={`구독 중 — ${monthly}`}>
+          label={_(msg`Subscribed — ${monthly}`)}>
           <ButtonText>
-            구독 중 ✓
-            {viewer.expiresMs
-              ? ` · ${new Date(viewer.expiresMs).toLocaleDateString('ko-KR')}까지`
-              : ''}
+            {untilDate ? (
+              <Trans>Subscribed ✓ · until {untilDate}</Trans>
+            ) : (
+              <Trans>Subscribed ✓</Trans>
+            )}
           </ButtonText>
         </Button>
       ) : (
@@ -66,18 +76,24 @@ export function ProfileSubscribeCard({
             color="primary"
             disabled={isPending}
             style={[a.self_stretch]}
-            label={`구독하기 — ${monthly}`}
+            label={_(msg`Subscribe — ${monthly}`)}
             onPress={() => promptControl.open()}>
             <ButtonText>
-              {isPending ? '온체인 결제 중…' : `구독하기 — ${monthly}`}
+              {isPending ? (
+                <Trans>Paying on-chain…</Trans>
+              ) : (
+                <Trans>Subscribe — {monthly}</Trans>
+              )}
             </ButtonText>
           </Button>
           <Prompt.Basic
             control={promptControl}
-            title={`@${profile.handle} 구독`}
-            description={`${monthly} 요금이 내 Haneul 지갑에서 결제됩니다. 플랫폼 수수료를 제외한 전액이 크리에이터에게 온체인으로 즉시 정산되고, 구독 기간 판정도 체인이 합니다.`}
+            title={_(msg`Subscribe to @${profile.handle}`)}
+            description={_(
+              msg`${monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period.`,
+            )}
             onConfirm={() => subscribe()}
-            confirmButtonCta="온체인 결제"
+            confirmButtonCta={_(msg`Pay on-chain`)}
           />
         </>
       )}
@@ -86,11 +102,11 @@ export function ProfileSubscribeCard({
           <Lock size="xs" style={t.atoms.text_contrast_low} />
         )}
         <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-          게시물 {stats?.posts ?? 0}개
+          {i18n._(plural(stats?.posts ?? 0, {one: '# post', other: '# posts'}))}
           {stats?.images ? ` · 🖼 ${stats.images}` : ''}
           {stats?.videos ? ` · 🎬 ${stats.videos}` : ''}
           {profileLocked && !viewer.subscribed
-            ? ' · 전부 구독자에게만 공개됩니다'
+            ? ` · ${_(msg`All posts are for subscribers only`)}`
             : ''}
         </Text>
       </View>

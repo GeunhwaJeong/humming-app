@@ -1,6 +1,9 @@
 // Humming: shared creator-info query + subscribe mutation, used by the
 // profile header button, the profile subscribe card, and locked post cards.
 import {type AppBskyFeedDefs} from '@atproto/api'
+import {type I18n} from '@lingui/core'
+import {msg} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
 import {useAgent, useSession} from '#/state/session'
@@ -26,42 +29,49 @@ export function useCreatorInfo(did: string) {
 }
 
 export function useSubscribeMutation(did: string) {
+  const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: () => subscribeToCreator(agent, did),
     onSuccess: res => {
-      Toast.show(
-        `구독 완료! 온체인 tx: ${res.digest.slice(0, 8)}… (${formatHaneul(res.priceGeunhwa)})`,
-        {type: 'success'},
-      )
+      const tx = res.digest.slice(0, 8)
+      const price = formatHaneul(res.priceGeunhwa)
+      Toast.show(_(msg`Subscribed! On-chain tx: ${tx}… (${price})`), {
+        type: 'success',
+      })
       // 구독 즉시 잠긴 게시물이 열리므로 피드/프로필 전체 재조회
       void queryClient.invalidateQueries()
     },
     onError: e => {
-      Toast.show(`구독 실패: ${String(e)}`, {type: 'error'})
+      Toast.show(_(msg`Subscription failed: ${String(e)}`), {type: 'error'})
     },
   })
 }
 
 export function usePurchaseMutation(postUri: string) {
+  const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: () => {
       const postId = /\/(\d+)$/.exec(postUri)?.[1]
-      if (!postId) throw new Error('구매 가능한 게시물이 아닙니다')
+      if (!postId) throw new Error(_(msg`This post cannot be purchased`))
       return purchasePost(agent, postId)
     },
     onSuccess: res => {
+      const tx = res.digest.slice(0, 8)
+      const price = formatHaneul(res.priceGeunhwa)
       Toast.show(
-        `구매 완료! 이 게시물을 영구 열람합니다 (tx: ${res.digest.slice(0, 8)}…, ${formatHaneul(res.priceGeunhwa)})`,
+        _(
+          msg`Purchased! This post is unlocked for you permanently (tx: ${tx}…, ${price})`,
+        ),
         {type: 'success'},
       )
       void queryClient.invalidateQueries()
     },
     onError: e => {
-      Toast.show(`구매 실패: ${String(e)}`, {type: 'error'})
+      Toast.show(_(msg`Purchase failed: ${String(e)}`), {type: 'error'})
     },
   })
 }
@@ -78,6 +88,7 @@ export function useEarnings() {
 }
 
 export function useBecomeCreatorMutation() {
+  const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
   return useMutation({
@@ -87,14 +98,17 @@ export function useBecomeCreatorMutation() {
       lockMode: LockMode
     }) => becomeCreator(agent, input),
     onSuccess: res => {
+      const tx = res.digest.slice(0, 8)
       Toast.show(
-        `크리에이터 전환 완료! 티어가 온체인에 생성되었습니다 (tx: ${res.digest.slice(0, 8)}…)`,
+        _(
+          msg`You are a creator now! Your tier has been created on-chain (tx: ${tx}…)`,
+        ),
         {type: 'success'},
       )
       void queryClient.invalidateQueries()
     },
     onError: e => {
-      Toast.show(`전환 실패: ${String(e)}`, {type: 'error'})
+      Toast.show(_(msg`Conversion failed: ${String(e)}`), {type: 'error'})
     },
   })
 }
@@ -115,9 +129,11 @@ export function hummingLockOf(
   return lock?.locked ? lock : undefined
 }
 
-export function formatTier(tier: {
-  priceGeunhwa: number
-  periodMs: number
-}): string {
-  return `${formatHaneul(tier.priceGeunhwa)} / ${Math.round(tier.periodMs / 86_400_000)}일`
+export function formatTier(
+  i18n: I18n,
+  tier: {priceGeunhwa: number; periodMs: number},
+): string {
+  const price = formatHaneul(tier.priceGeunhwa)
+  const days = Math.round(tier.periodMs / 86_400_000)
+  return i18n._(msg`${price} / ${days} days`)
 }

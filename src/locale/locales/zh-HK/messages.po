@@ -24,7 +24,7 @@ msgid "\"{interestsDisplayName}\" category (active)"
 msgstr "「{interestsDisplayName}」類別（已揀選）"
 
 #. A reply summary in chat
-#: src/components/dms/MessageItem.tsx:882
+#: src/components/dms/MessageItem.tsx:901
 msgid "(blocked message hidden)"
 msgstr "（已隱藏封鎖嘅訊息）"
 
@@ -39,7 +39,7 @@ msgid "(contains embedded content)"
 msgstr "（包含嵌入內容）"
 
 #. A reply summary in chat
-#: src/components/dms/MessageItem.tsx:896
+#: src/components/dms/MessageItem.tsx:915
 msgid "(deleted message)"
 msgstr "（已刪除訊息）"
 
@@ -54,7 +54,7 @@ msgid "(invalid chat invite link)"
 msgstr "（無效嘅傾偈邀請連結）"
 
 #. A reply summary in chat
-#: src/components/dms/MessageItem.tsx:890
+#: src/components/dms/MessageItem.tsx:909
 msgid "(message sent before you joined)"
 msgstr ""
 
@@ -73,14 +73,9 @@ msgid "(quoted post)"
 msgstr "（引用帖文）"
 
 #. placeholder {0}: labels.length
-#: src/components/moderation/LabelsOnMe.tsx:63
+#: src/components/moderation/LabelsOnMe.tsx:57
 msgid "{0, plural, one {# account label} other {# account labels}}"
 msgstr "{0, plural, other {# 個帳號標記}}"
-
-#. placeholder {0}: labels.length
-#: src/components/moderation/LabelsOnMe.tsx:69
-msgid "{0, plural, one {# content label} other {# content labels}}"
-msgstr "{0, plural, other {# 個內容標記}}"
 
 #. placeholder {0}: diff.value
 #: src/lib/hooks/useTimeAgo.ts:169
@@ -107,6 +102,16 @@ msgstr "{0, plural, other {搵到 # 個朋友！}}"
 msgid "{0, plural, one {# hour} other {# hours}}"
 msgstr "{0, plural, one {#個鐘} other {#個鐘}}"
 
+#. placeholder {0}: labels.length
+#: src/components/moderation/PostAlerts.tsx:149
+msgid "{0, plural, one {# label applied to your post} other {# labels applied to your post}}"
+msgstr ""
+
+#. placeholder {0}: labels.length
+#: src/components/moderation/PostAlerts.tsx:156
+msgid "{0, plural, one {# label applied} other {# labels applied}}"
+msgstr ""
+
 #. placeholder {0}: likeCount ?? 0
 #: src/screens/Post/PostLikedBy.tsx:34
 msgid "{0, plural, one {# like} other {# likes}}"
@@ -128,15 +133,26 @@ msgid "{0, plural, one {# month} other {# months}}"
 msgstr "{0, plural, one {# 個月} other {# 個月}}"
 
 #. placeholder {0}: convo.details.unreadJoinRequestCount
-#: src/screens/Messages/components/ChatListItem.tsx:225
+#: src/screens/Messages/components/ChatListItem.tsx:224
 msgid "{0, plural, one {# new join request} other {# new join requests}}"
 msgstr "{0, plural, other {# 個新加入申請}}"
 
 #. placeholder {0}: reactions.length
 #. placeholder {1}: groupedReactions.map(g => g.value).join(' ')
-#: src/components/dms/MessageItem.tsx:351
+#: src/components/dms/MessageItem.tsx:370
 msgid "{0, plural, one {# person} other {# people}} reacted – {1}"
 msgstr "{0, plural, other {# 個人}}畀咗個 {1} 反應"
+
+#. placeholder {0}: lock.media.images
+#: src/components/humming/LockedPostCard.tsx:63
+msgid "{0, plural, one {# photo} other {# photos}}"
+msgstr ""
+
+#. placeholder {0}: stats?.posts ?? 0
+#: src/components/humming/LockedWallPanel.tsx:58
+#: src/components/humming/ProfileSubscribeCard.tsx:106
+msgid "{0, plural, one {# post} other {# posts}}"
+msgstr ""
 
 #. placeholder {0}: quoteCount ?? 0
 #: src/screens/Post/PostQuotes.tsx:34
@@ -160,6 +176,11 @@ msgstr "{0, plural, one {# 秒鐘} other {# 秒鐘}}"
 #: src/view/shell/Drawer.tsx:557
 msgid "{0, plural, one {# unread item} other {# unread items}}"
 msgstr "{0, plural, one {# 條未讀} other {# 條未讀}}"
+
+#. placeholder {0}: lock.media.videos
+#: src/components/humming/LockedPostCard.tsx:66
+msgid "{0, plural, one {# video} other {# videos}}"
+msgstr ""
 
 #. How long it takes to read an article, in minutes. Displayed in a short form, e.g. "5m" for 5 minutes.
 #. placeholder {0}: view.readingTime
@@ -252,7 +273,7 @@ msgid "{0} following"
 msgstr "{0} 個跟緊"
 
 #. placeholder {0}: sanitizeHandle(profile.handle, '@')
-#: src/components/dms/MessageItem.tsx:704
+#: src/components/dms/MessageItem.tsx:723
 msgid "{0} is blocking you"
 msgstr "{0} 已封鎖你"
 
@@ -262,7 +283,7 @@ msgid "{0} is live"
 msgstr "{0} 直播緊"
 
 #. placeholder {0}: createFullHandle(draftValue, state.userDomain)
-#: src/screens/Signup/StepHandle/index.tsx:211
+#: src/screens/Signup/StepHandle/index.tsx:229
 msgid "{0} is not available"
 msgstr "{0} 俾人用咗"
 
@@ -310,7 +331,7 @@ msgstr "已輸入 {0} 個字元，最多輸入 50 個字元"
 
 #. placeholder {0}: createSanitizedDisplayName(memberSender)
 #. placeholder {1}: reaction.value
-#: src/components/dms/MessageItem.tsx:346
+#: src/components/dms/MessageItem.tsx:365
 msgid "{0} reacted {1}"
 msgstr "{0} 畀咗個 {1} 反應"
 
@@ -452,7 +473,7 @@ msgstr "{count, plural, other {# 個新加入申請}}"
 msgid "{count, plural, one {# request} other {# requests}}"
 msgstr "{count, plural, other {# 個邀請}}"
 
-#: src/view/shell/desktop/LeftNav.tsx:484
+#: src/view/shell/desktop/LeftNav.tsx:485
 msgid "{count, plural, one {# unread item} other {# unread items}}"
 msgstr "{count, plural, one {# 條未讀} other {# 條未讀}}"
 
@@ -664,7 +685,7 @@ msgstr "{hours, plural, other {# 個鐘}}"
 msgid "{JOIN_REQUESTS_THRESHOLD}+ new join requests"
 msgstr "{JOIN_REQUESTS_THRESHOLD}+ 個新加入申請"
 
-#: src/screens/Messages/components/ChatListItem.tsx:220
+#: src/screens/Messages/components/ChatListItem.tsx:219
 msgctxt "Displayed when there are more than 20 requests to join a group chat"
 msgid "{JOIN_REQUESTS_THRESHOLD}+ new join requests"
 msgstr "{JOIN_REQUESTS_THRESHOLD}+ 個新加入申請"
@@ -699,6 +720,15 @@ msgstr "{memberCount}/{memberLimit}"
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, other {# 分鐘}}"
 
+#: src/components/humming/ProfileSubscribeCard.tsx:93
+#: src/components/humming/SubscribeButton.tsx:79
+msgid "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period."
+msgstr ""
+
+#: src/components/humming/LockedWallPanel.tsx:86
+msgid "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
+msgstr ""
+
 #. placeholder {0}: reaction.value
 #: src/components/dms/getReactionInfo.ts:65
 msgid "{name} reacted {0} to {target}"
@@ -725,6 +755,14 @@ msgstr "{notificationCount, plural, one {# 條未讀} other {# 條未讀}}"
 msgid "{numMatches, plural, one {# contact found} other {# contacts found}}"
 msgstr "{numMatches, plural, other {搵到 # 個聯絡人}}"
 
+#: src/components/humming/hooks.ts:138
+msgid "{price} / {days} days"
+msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:138
+msgid "{price} will be charged from your Haneul wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain."
+msgstr ""
+
 #: src/components/NewskieDialog.tsx:115
 msgid "{profileName} joined Bluesky {timeAgoString} ago"
 msgstr "「{profileName}」喺 {timeAgoString}前加入咗 Bluesky"
@@ -738,15 +776,15 @@ msgstr "「{profileName}」喺 {timeAgoString}前使用新手包加入咗 Bluesk
 msgid "{rank}."
 msgstr "{rank}."
 
-#: src/components/dms/MessageItem.tsx:791
+#: src/components/dms/MessageItem.tsx:810
 msgid "{replierDisplayName} replied"
 msgstr "{replierDisplayName} 覆咗"
 
-#: src/components/dms/MessageItem.tsx:790
+#: src/components/dms/MessageItem.tsx:809
 msgid "{replierDisplayName} replied to {originalName}"
 msgstr "{replierDisplayName} 覆咗 {originalName}"
 
-#: src/components/dms/MessageItem.tsx:788
+#: src/components/dms/MessageItem.tsx:807
 msgid "{replierDisplayName} replied to you"
 msgstr "{replierDisplayName} 覆咗你"
 
@@ -759,6 +797,14 @@ msgstr "{requestCount, plural, other {# 個邀請}}"
 #: src/screens/Messages/ConversationSettings/MembersAndRequests.tsx:56
 msgid "{requestCount}+ requests"
 msgstr "{requestCount}+ 個邀請"
+
+#: src/components/humming/LockedPostCard.tsx:105
+msgid "{tierLabel} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
+msgstr ""
+
+#: src/components/humming/TipButton.tsx:80
+msgid "{tipAmount} will be sent on-chain from your Haneul wallet straight to the creator's wallet (platform fee deducted automatically)."
+msgstr ""
 
 #. trending topic time spent trending. should be as short as possible to fit in a pill
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:191
@@ -779,7 +825,9 @@ msgid "{userName}'s verifications"
 msgstr "{userName} 嘅驗證"
 
 #. Number of images beyond the first 3
+#. placeholder {0}: labels.length
 #. placeholder {0}: totalNumber - 3
+#: src/components/moderation/PostAlerts.tsx:155
 #: src/view/com/composer/ComposerReplyTo.tsx:278
 msgid "+{0}"
 msgstr "+{0}"
@@ -820,28 +868,28 @@ msgstr "<0>{0}</0> {1, plural, one {個跟緊} other {個跟緊}}"
 #. Like count display, the <0> tags enclose the number of likes in bold (will never be 0)
 #. placeholder {0}: formatPostStatCount(post.likeCount)
 #. placeholder {1}: post.likeCount
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:492
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:495
 msgid "<0>{0}</0> {1, plural, one {like} other {likes}}"
 msgstr "<0>{0}</0> {1, plural, other {人讚佢}}"
 
 #. Quote count display, the <0> tags enclose the number of quotes in bold (will never be 0)
 #. placeholder {0}: formatPostStatCount(post.quoteCount)
 #. placeholder {1}: post.quoteCount
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:473
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:476
 msgid "<0>{0}</0> {1, plural, one {quote} other {quotes}}"
 msgstr "<0>{0}</0> {1, plural, other {次引用}}"
 
 #. Repost count display, the <0> tags enclose the number of reposts in bold (will never be 0)
 #. placeholder {0}: formatPostStatCount(post.repostCount)
 #. placeholder {1}: post.repostCount
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:452
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:455
 msgid "<0>{0}</0> {1, plural, one {repost} other {reposts}}"
 msgstr "<0>{0}</0> {1, plural, other {次轉發}}"
 
 #. Save count display, the <0> tags enclose the number of saves in bold (will never be 0)
 #. placeholder {0}: formatPostStatCount(post.bookmarkCount)
 #. placeholder {1}: post.bookmarkCount
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:510
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:513
 msgid "<0>{0}</0> {1, plural, one {save} other {saves}}"
 msgstr "<0>{0}</0> {1, plural, other {次收藏}}"
 
@@ -868,8 +916,8 @@ msgstr "<0>{0}</0> 嘅成員"
 msgid "<0>{displayName}</0><1/><2> added you</2>"
 msgstr "<0>{displayName}</0><1/><2> 已將你加入</2>"
 
-#: src/screens/Hashtag.tsx:226
-#: src/screens/Search/SearchResults.tsx:432
+#: src/screens/Hashtag.tsx:230
+#: src/screens/Search/SearchResults.tsx:381
 msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Bluesky.</4>"
 msgstr "<0>登入</0><1>或</1><2>建立帳號</2><3></3><4>就可以搵到新聞、體育、政治，同埋 Bluesky 上面嘅大小事。</4>"
 
@@ -887,6 +935,14 @@ msgstr "<0>你</0> 同<1> </1><2>{0} </2>經已喺你嘅新手包度"
 msgid "⚠Invalid Handle"
 msgstr "⚠無效嘅帳號代碼"
 
+#: src/components/humming/CreatorHub.tsx:159
+msgid "1. Identity verification"
+msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:187
+msgid "2. Monthly subscription price (30 days, HANEUL)"
+msgstr ""
+
 #: src/components/dialogs/MutedWords.tsx:202
 #: src/components/dialogs/MutedWords.tsx:551
 #: src/components/dialogs/MutedWords.tsx:554
@@ -896,6 +952,10 @@ msgstr "24 個鐘"
 #: src/screens/Login/LoginForm.tsx:436
 msgid "2FA Confirmation"
 msgstr "雙重驗證"
+
+#: src/components/humming/CreatorHub.tsx:215
+msgid "3. How your posts are shown"
+msgstr ""
 
 #: src/components/dialogs/MutedWords.tsx:241
 #: src/components/dialogs/MutedWords.tsx:565
@@ -908,6 +968,10 @@ msgstr "30 日"
 #: src/components/dialogs/MutedWords.tsx:561
 msgid "7 days"
 msgstr "7 日"
+
+#: src/components/humming/CreatorHub.tsx:143
+msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
+msgstr ""
 
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
@@ -942,7 +1006,7 @@ msgstr "已傳送新代碼"
 msgid "A new form of verification"
 msgstr "全新嘅驗證機制"
 
-#: src/components/dms/MessageItem.tsx:801
+#: src/components/dms/MessageItem.tsx:820
 msgid "A reply to a message sent before you joined"
 msgstr ""
 
@@ -1008,6 +1072,10 @@ msgstr "接受邀請"
 msgid "Accept this language suggestion"
 msgstr "套用此建議語言"
 
+#: src/components/humming/LockedPostCard.tsx:74
+msgid "Access is verified by your on-chain subscription and purchase state on Haneul"
+msgstr ""
+
 #: src/components/intents/GroupChatJoinDialog.tsx:119
 msgid "Access requested! The group owner will review your request."
 msgstr "已送出申請！請等待羣組擁有者審覈加入申請。"
@@ -1056,12 +1124,12 @@ msgctxt "toast"
 msgid "Account muted"
 msgstr "已靜音帳號"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:107
+#: src/components/moderation/ModerationDetailsDialog.tsx:123
 #: src/lib/moderation/useModerationCauseDescription.ts:99
 msgid "Account Muted"
 msgstr "已靜音帳號"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:93
+#: src/components/moderation/ModerationDetailsDialog.tsx:109
 msgid "Account Muted by List"
 msgstr "帳號已被清單靜音"
 
@@ -1074,8 +1142,8 @@ msgid "Account removed from quick access"
 msgstr "已從快速存取度移除帳號"
 
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:109
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:87
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:295
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:89
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:299
 #: src/view/com/profile/ProfileMenu.tsx:169
 msgctxt "toast"
 msgid "Account unblocked"
@@ -1126,6 +1194,10 @@ msgstr "加 {displayName} 到新手包"
 msgid "Add a content warning"
 msgstr "新增內容警告"
 
+#: src/components/humming/PaywallButton.tsx:69
+msgid "Add a price and subscribers read for free while everyone else pays per post. The price is fixed on-chain together with the post."
+msgstr ""
+
 #: src/features/liveNow/components/GoLiveDialog.tsx:114
 msgid "Add a temporary live status to your profile. When someone clicks on your avatar, they’ll see information about your live event."
 msgstr "喺你嘅個人檔案度加入臨時直播狀態，喺人撳開你嘅頭像嗰陣，佢哋就會睇到你相關嘅直播活動資訊喇。"
@@ -1156,16 +1228,16 @@ msgstr "新增替代文字（可選）"
 
 #: src/screens/Settings/Settings.tsx:575
 #: src/screens/Settings/Settings.tsx:578
-#: src/view/shell/desktop/LeftNav.tsx:276
-#: src/view/shell/desktop/LeftNav.tsx:279
+#: src/view/shell/desktop/LeftNav.tsx:277
+#: src/view/shell/desktop/LeftNav.tsx:280
 msgid "Add another account"
 msgstr "加多個帳號"
 
-#: src/view/com/composer/Composer.tsx:1601
+#: src/view/com/composer/Composer.tsx:1610
 msgid "Add another post"
 msgstr "加多另一條帖文"
 
-#: src/view/com/composer/Composer.tsx:2267
+#: src/view/com/composer/Composer.tsx:2285
 msgid "Add another post to thread"
 msgstr "加多另一條帖文到討論串"
 
@@ -1415,9 +1487,9 @@ msgid "All friends followed!"
 msgstr "成功跟晒所有朋友！"
 
 #: src/components/dialogs/LanguageSelectDialog.tsx:255
-#: src/screens/Search/components/SearchLanguageDropdown.tsx:73
-#: src/screens/Search/components/SearchLanguageDropdown.tsx:122
-#: src/screens/Search/components/SearchLanguageDropdown.tsx:124
+#: src/screens/Search/components/SearchLanguageDropdown.tsx:65
+#: src/screens/Search/components/SearchLanguageDropdown.tsx:94
+#: src/screens/Search/components/SearchLanguageDropdown.tsx:96
 msgid "All languages"
 msgstr "所有語言"
 
@@ -1433,6 +1505,10 @@ msgstr "所有包含呢啲字詞"
 #: src/screens/Search/components/AdvancedSearchDialog/MediaDropdown.tsx:27
 msgid "All posts"
 msgstr "所有帖文"
+
+#: src/components/humming/ProfileSubscribeCard.tsx:111
+msgid "All posts are for subscribers only"
+msgstr ""
 
 #: src/view/screens/Feeds.tsx:700
 msgid "All the feeds you've saved, right in one place."
@@ -1668,7 +1744,7 @@ msgstr "出咗問題，唔該試多次。"
 msgid "An mockup of a iPhone showing the Bluesky app open to the profile of a verified user with a blue checkmark next to their display name."
 msgstr "一張使用 iPhone 嘅示範圖，顯示住 Bluesky 應用程式開咗喺一個驗證咗用戶嘅個人檔案度，喺佢哋名稱隔籬有個藍色剔號標記。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:138
+#: src/components/moderation/ModerationDetailsDialog.tsx:154
 #: src/lib/moderation/useModerationCauseDescription.ts:145
 msgid "an unknown labeler"
 msgstr "未知嘅標記服務"
@@ -1783,21 +1859,26 @@ msgstr "應用程式專用密碼"
 msgid "App Passwords"
 msgstr "應用程式專用密碼"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:155
-#: src/components/moderation/LabelsOnMeDialog.tsx:158
+#: src/components/moderation/LabelsOnMeDialog.tsx:169
+#: src/components/moderation/LabelsOnMeDialog.tsx:172
+#: src/components/moderation/ModerationDetailsDialog.tsx:223
 msgid "Appeal"
 msgstr "申訴"
 
 #. placeholder {0}: strings.name
-#: src/components/moderation/LabelsOnMeDialog.tsx:282
+#: src/components/moderation/AppealForm.tsx:93
 msgid "Appeal \"{0}\" label"
 msgstr "申訴「{0}」標記"
+
+#: src/components/moderation/ModerationDetailsDialog.tsx:159
+msgid "Appeal label"
+msgstr ""
 
 #: src/features/liveNow/components/GoLiveDisabledDialog.tsx:93
 msgid "Appeal livestream suspension"
 msgstr "申請解除直播停權"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:272
+#: src/components/moderation/AppealForm.tsx:83
 #: src/features/liveNow/components/GoLiveDisabledDialog.tsx:83
 #: src/screens/Messages/components/ChatDisabled.tsx:125
 msgctxt "toast"
@@ -1820,6 +1901,10 @@ msgstr "申請解除停權"
 msgid "Appeal this decision"
 msgstr "對此決定提出申訴"
 
+#: src/components/moderation/ModerationDetailsDialog.tsx:219
+msgid "Appeal this label"
+msgstr ""
+
 #: src/Navigation.tsx:396
 #: src/screens/Settings/AppearanceSettings.tsx:73
 #: src/screens/Settings/Settings.tsx:225
@@ -1838,12 +1923,12 @@ msgid "Apply Pull Request"
 msgstr "套用 Pull Request"
 
 #. placeholder {0}: niceDate(i18n, createdAt, 'medium')
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:632
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:635
 msgid "Archived from {0}"
 msgstr "封存於 {0}"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:603
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:641
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:606
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:644
 msgid "Archived post"
 msgstr "封存咗嘅帖文"
 
@@ -1909,7 +1994,7 @@ msgstr "你確定要喺你嘅動態源度刪除呢個？"
 msgid "Are you sure you want to rescind your request to join {0}?"
 msgstr "你確定要撤回申請加入 {0}？"
 
-#: src/view/com/composer/Composer.tsx:1737
+#: src/view/com/composer/Composer.tsx:1746
 msgid "Are you sure you'd like to discard this post?"
 msgstr "你確定要放棄發布呢條帖文？"
 
@@ -1985,8 +2070,8 @@ msgstr "用到"
 #: src/components/dms/InitiateChatFlow.tsx:540
 #: src/components/dms/InitiateChatFlow.tsx:758
 #: src/components/dms/InitiateChatFlow.tsx:765
-#: src/components/moderation/LabelsOnMeDialog.tsx:334
-#: src/components/moderation/LabelsOnMeDialog.tsx:335
+#: src/components/moderation/AppealForm.tsx:145
+#: src/components/moderation/AppealForm.tsx:146
 #: src/screens/Login/ChooseAccountForm.tsx:96
 #: src/screens/Login/ChooseAccountForm.tsx:100
 #: src/screens/Login/ForgotPasswordForm.tsx:119
@@ -2038,6 +2123,14 @@ msgstr ""
 msgid "Based on your network, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
 msgstr "根據你網絡連結資訊，我哋估你而家喺 <0>{region}</0>。若然你用緊 VPN 嘅話，可能會估錯。"
 
+#: src/components/humming/CreatorHub.tsx:70
+#: src/components/humming/CreatorHub.tsx:84
+#: src/components/humming/CreatorHub.tsx:135
+#: src/components/humming/CreatorHub.tsx:140
+#: src/components/humming/CreatorHub.tsx:243
+msgid "Become a creator"
+msgstr ""
+
 #: src/view/screens/Lists.tsx:35
 #: src/view/screens/ModerationModlists.tsx:35
 msgid "Before creating a list, you must first verify your email."
@@ -2073,11 +2166,11 @@ msgstr "喺你接收 {name} 帖文通知之前，你必須驗證你嘅電郵。"
 msgid "Before you can message another user, you must first verify your email."
 msgstr "喺你傳送訊息畀其他人之前，你必須驗證你嘅電郵先。"
 
-#: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:318
+#: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:319
 msgid "Begin"
 msgstr "開始"
 
-#: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:312
+#: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:313
 msgid "Begin age assurance process"
 msgstr "開始年齡驗證流程"
 
@@ -2101,7 +2194,7 @@ msgstr "生日"
 #: src/components/moderation/BlockDialog.tsx:192
 #: src/components/moderation/BlockDialog.tsx:211
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:227
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:190
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:194
 msgid "Block"
 msgstr "封鎖"
 
@@ -2220,7 +2313,7 @@ msgstr "bloomscrolling booksky"
 msgid "Bluesky"
 msgstr "Bluesky"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:657
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:660
 msgid "Bluesky cannot confirm the authenticity of the claimed date."
 msgstr "Bluesky 無法確認貼文發布日期嘅真實性。"
 
@@ -2366,6 +2459,15 @@ msgstr "商業"
 msgid "Button to go back to the home timeline"
 msgstr "去返首頁時間軸粒掣"
 
+#: src/components/humming/LockedPostCard.tsx:136
+msgid "Buy this post"
+msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:120
+#: src/components/humming/LockedPostCard.tsx:130
+msgid "Buy this post only — {price}"
+msgstr ""
+
 #. The owner (creator) of a group chat.
 #. placeholder {0}: createSanitizedDisplayName( joinLinkPreview.owner, true, moderateProfile( joinLinkPreview.owner, moderationOpts, ).ui('displayName'), )
 #. placeholder {0}: sanitizeHandle(handle, '@')
@@ -2475,11 +2577,11 @@ msgstr "需要取用相機權限"
 #: src/screens/Settings/Settings.tsx:300
 #: src/screens/Takendown.tsx:102
 #: src/screens/Takendown.tsx:105
-#: src/view/com/composer/Composer.tsx:1815
-#: src/view/com/composer/Composer.tsx:1825
+#: src/view/com/composer/Composer.tsx:1824
+#: src/view/com/composer/Composer.tsx:1834
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:44
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:53
-#: src/view/shell/desktop/LeftNav.tsx:228
+#: src/view/shell/desktop/LeftNav.tsx:229
 msgid "Cancel"
 msgstr "咪喇"
 
@@ -2495,7 +2597,7 @@ msgstr "取消重新啓動兼登出"
 msgid "Cancel reply"
 msgstr "唔再覆佢"
 
-#: src/screens/Search/Shell.tsx:608
+#: src/screens/Search/Shell.tsx:595
 msgid "Cancel search"
 msgstr "唔再搵嘢"
 
@@ -2503,9 +2605,9 @@ msgstr "唔再搵嘢"
 msgid "Cancels signing in so you can check your username"
 msgstr ""
 
-#: src/components/PostControls/index.tsx:108
-#: src/components/PostControls/index.tsx:138
-#: src/components/PostControls/index.tsx:166
+#: src/components/PostControls/index.tsx:109
+#: src/components/PostControls/index.tsx:139
+#: src/components/PostControls/index.tsx:167
 #: src/state/shell/composer/index.tsx:105
 msgid "Cannot interact with a blocked user"
 msgstr "唔得同被封鎖嘅用戶互動"
@@ -2610,7 +2712,7 @@ msgstr "清單建立後會係一個獨立嘅副本，新手包有咩變更都會
 #: src/lib/hooks/useNotificationHandler.ts:133
 #: src/Navigation.tsx:491
 #: src/view/shell/bottom-bar/BottomBar.tsx:242
-#: src/view/shell/desktop/LeftNav.tsx:698
+#: src/view/shell/desktop/LeftNav.tsx:699
 #: src/view/shell/Drawer.tsx:525
 msgid "Chat"
 msgstr "傾偈"
@@ -2785,7 +2887,7 @@ msgstr "自訂你自己嘅時間軸！社羣建立嘅動態源會幫你搵到啱
 msgid "Choose your password"
 msgstr "設定你嘅密碼"
 
-#: src/screens/Signup/index.tsx:203
+#: src/screens/Signup/index.tsx:185
 msgid "Choose your username"
 msgstr "設定你嘅用戶名稱"
 
@@ -2872,7 +2974,7 @@ msgstr "撳呢度睇吓此羣組傾偈嘅邀請連結"
 msgid "Click to open tag menu for {0}"
 msgstr "撳低去打開 {0} 嘅標籤選單"
 
-#: src/components/dms/MessageItem.tsx:623
+#: src/components/dms/MessageItem.tsx:642
 msgid "Click to retry failed message"
 msgstr "撳低去試多次傳送訊息"
 
@@ -3004,7 +3106,7 @@ msgstr "刪咗歡迎介面"
 msgid "Closes password update alert"
 msgstr "閂咗密碼更新警示"
 
-#: src/view/com/composer/Composer.tsx:1823
+#: src/view/com/composer/Composer.tsx:1832
 msgid "Closes post composer and discards post draft"
 msgstr "閂咗帖文編輯器兼棄置草稿"
 
@@ -3047,18 +3149,18 @@ msgstr "社羣準則"
 msgid "Complete onboarding and start using your account"
 msgstr "攪掂入門指導跟住開始使用你嘅帳號"
 
-#: src/screens/Signup/index.tsx:205
+#: src/screens/Signup/index.tsx:183
 msgid "Complete the challenge"
 msgstr "完成呢個挑戰"
 
 #: src/lib/hotkeys/index.tsx:66
 #: src/view/com/feeds/ComposerPrompt.tsx:147
-#: src/view/shell/desktop/LeftNav.tsx:587
+#: src/view/shell/desktop/LeftNav.tsx:588
 msgid "Compose new post"
 msgstr "撰寫新帖文"
 
 #. placeholder {0}: MAX_GRAPHEME_LENGTH || 0
-#: src/view/com/composer/Composer.tsx:1699
+#: src/view/com/composer/Composer.tsx:1708
 msgid "Compose posts up to {0, plural, other {# characters}} in length"
 msgstr "撰寫最多 {0, plural,other {# 個字元}}嘅帖文"
 
@@ -3066,11 +3168,11 @@ msgstr "撰寫最多 {0, plural,other {# 個字元}}嘅帖文"
 msgid "Compose reply"
 msgstr "撰寫回覆"
 
-#: src/view/com/composer/Composer.tsx:2671
+#: src/view/com/composer/Composer.tsx:2689
 msgid "Compressing GIF..."
 msgstr "壓縮緊 GIF……"
 
-#: src/view/com/composer/Composer.tsx:2673
+#: src/view/com/composer/Composer.tsx:2691
 msgid "Compressing video..."
 msgstr "壓縮緊條片……"
 
@@ -3098,6 +3200,10 @@ msgstr "確認"
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:151
 msgid "Confirmation code"
 msgstr "驗證碼"
+
+#: src/components/humming/CreatorHub.tsx:253
+msgid "Confirming on-chain…"
+msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:132
 msgid "Connecting to service..."
@@ -3128,8 +3234,8 @@ msgid "Contact our support team"
 msgstr "聯絡我哋嘅支援團隊"
 
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:156
-#: src/screens/Signup/index.tsx:250
-#: src/screens/Signup/index.tsx:253
+#: src/screens/Signup/index.tsx:229
+#: src/screens/Signup/index.tsx:232
 msgid "Contact support"
 msgstr "聯絡支援"
 
@@ -3179,7 +3285,7 @@ msgstr "我哋精選咗啲喺唔同社交網絡搵到，可能會啱你心水嘅
 msgid "Content languages"
 msgstr "內容語言"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:86
+#: src/components/moderation/ModerationDetailsDialog.tsx:102
 #: src/lib/moderation/useModerationCauseDescription.ts:83
 msgid "Content Not Available"
 msgstr "睇唔到呢個內容"
@@ -3188,7 +3294,7 @@ msgstr "睇唔到呢個內容"
 msgid "Content promoting or depicting self-harm"
 msgstr "鼓吹或提倡自殘內容"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:54
+#: src/components/moderation/ModerationDetailsDialog.tsx:70
 #: src/components/moderation/ScreenHider.tsx:100
 #: src/lib/moderation/useGlobalLabelStrings.ts:22
 #: src/lib/moderation/useModerationCauseDescription.ts:46
@@ -3248,7 +3354,7 @@ msgstr "繼續去下一步"
 msgid "Conversation"
 msgstr "對話"
 
-#: src/screens/Messages/components/ChatListItem.tsx:322
+#: src/screens/Messages/components/ChatListItem.tsx:321
 msgid "Conversation deleted"
 msgstr "已刪除對話"
 
@@ -3270,11 +3376,20 @@ msgstr "已離開對話"
 msgid "Conversation not found."
 msgstr "搵唔到對話。"
 
+#. placeholder {0}: String(e)
+#: src/components/humming/hooks.ts:111
+msgid "Conversion failed: {0}"
+msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:255
+msgid "Convert — {priceLabel} / 30 days"
+msgstr ""
+
 #: src/screens/Settings/AboutSettings.tsx:169
 msgid "Copied build version to clipboard"
 msgstr "已複製組建版本號到剪貼簿"
 
-#: src/screens/Search/Shell.tsx:523
+#: src/screens/Search/Shell.tsx:515
 msgid "Copied link to clipboard"
 msgstr "已複製連結到剪貼簿"
 
@@ -3548,7 +3663,8 @@ msgstr "幫我建立一個新手包"
 #: src/components/WelcomeModal.tsx:158
 #: src/components/WelcomeModal.tsx:166
 #: src/screens/Messages/JoinRequest.tsx:310
-#: src/screens/Signup/index.tsx:141
+#: src/screens/Signup/index.tsx:136
+#: src/screens/Signup/StepHandle/index.tsx:322
 #: src/view/com/auth/SplashScreen.tsx:106
 #: src/view/com/auth/SplashScreen.web.tsx:116
 #: src/view/shell/bottom-bar/BottomBar.tsx:351
@@ -3562,8 +3678,8 @@ msgstr "建立帳號"
 
 #: src/components/dialogs/Signin.tsx:87
 #: src/components/dialogs/Signin.tsx:89
-#: src/screens/Hashtag.tsx:235
-#: src/screens/Search/SearchResults.tsx:438
+#: src/screens/Hashtag.tsx:236
+#: src/screens/Search/SearchResults.tsx:387
 msgid "Create an account"
 msgstr "建立一個帳號"
 
@@ -3796,7 +3912,7 @@ msgstr "刪除我嘅帳號"
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:796
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:798
-#: src/view/com/composer/Composer.tsx:1711
+#: src/view/com/composer/Composer.tsx:1720
 msgid "Delete post"
 msgstr "刪除帖文"
 
@@ -3947,9 +4063,9 @@ msgstr "停用"
 
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:101
 #: src/screens/Profile/Header/EditProfileDialog.tsx:79
-#: src/view/com/composer/Composer.tsx:1491
-#: src/view/com/composer/Composer.tsx:1535
-#: src/view/com/composer/Composer.tsx:1744
+#: src/view/com/composer/Composer.tsx:1500
+#: src/view/com/composer/Composer.tsx:1544
+#: src/view/com/composer/Composer.tsx:1753
 #: src/view/com/composer/drafts/DraftItem.tsx:242
 #: src/view/com/composer/drafts/DraftsButton.tsx:131
 msgid "Discard"
@@ -3960,14 +4076,14 @@ msgstr "棄置"
 msgid "Discard changes?"
 msgstr "係咪要放棄變更？"
 
-#: src/view/com/composer/Composer.tsx:1489
+#: src/view/com/composer/Composer.tsx:1498
 #: src/view/com/composer/drafts/DraftItem.tsx:239
 #: src/view/com/composer/drafts/DraftsButton.tsx:98
 msgid "Discard draft?"
 msgstr "係咪要棄置份草稿？"
 
-#: src/view/com/composer/Composer.tsx:1506
-#: src/view/com/composer/Composer.tsx:1736
+#: src/view/com/composer/Composer.tsx:1515
+#: src/view/com/composer/Composer.tsx:1745
 msgid "Discard post?"
 msgstr "係咪要放棄發布？"
 
@@ -4005,7 +4121,7 @@ msgstr "跳過"
 msgid "Dismiss banner"
 msgstr "忽略提示"
 
-#: src/view/com/composer/Composer.tsx:2592
+#: src/view/com/composer/Composer.tsx:2610
 msgid "Dismiss error"
 msgstr "跳過錯誤"
 
@@ -4118,7 +4234,7 @@ msgstr "唔使驚！你所有現存嘅訊息同設定經已儲存，只要驗證
 msgid "Done"
 msgstr "攪掂"
 
-#: src/components/dms/MessageItem.tsx:521
+#: src/components/dms/MessageItem.tsx:540
 msgid "Double tap or long press the message to add a reaction"
 msgstr "撳兩吓或撳住訊息去加入反應"
 
@@ -4176,7 +4292,7 @@ msgstr "網上起底"
 msgid "Drafts"
 msgstr "草稿"
 
-#: src/view/com/composer/text-input/TextInput.web.tsx:366
+#: src/view/com/composer/text-input/TextInput.web.tsx:369
 msgid "Drop to add images"
 msgstr "拖放即可加入圖片"
 
@@ -4320,12 +4436,12 @@ msgstr "編輯帖文互動設定"
 #: src/screens/Profile/Header/EditProfileDialog.tsx:265
 #: src/screens/Profile/Header/EditProfileDialog.tsx:271
 #: src/screens/Profile/Header/ProfileHeaderLabeler.tsx:299
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:330
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:334
 msgid "Edit profile"
 msgstr "編輯個人檔案"
 
 #: src/screens/Profile/Header/ProfileHeaderLabeler.tsx:302
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:332
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:336
 msgid "Edit Profile"
 msgstr "編輯個人檔案"
 
@@ -4478,7 +4594,7 @@ msgstr "喺你「Discover」動態源度啓用時興影片"
 msgid "Enabled"
 msgstr "啓用"
 
-#: src/screens/Profile/Sections/Feed.tsx:131
+#: src/screens/Profile/Sections/Feed.tsx:148
 msgid "End of feed"
 msgstr "睇晒冇嘢喇"
 
@@ -4493,6 +4609,11 @@ msgstr "輸入傳送到你電話號碼嘅 6 位數代碼"
 #: src/screens/Login/SetNewPasswordForm.tsx:136
 msgid "Enter a password"
 msgstr "輸入密碼"
+
+#: src/components/humming/CreatorHub.tsx:202
+#: src/components/humming/PaywallButton.tsx:90
+msgid "Enter a price between 0.01 and 100 HANEUL"
+msgstr ""
 
 #: src/components/dialogs/MutedWords.tsx:136
 #: src/components/dialogs/MutedWords.tsx:137
@@ -4551,7 +4672,7 @@ msgstr "進入全螢幕"
 msgid "Entertainment"
 msgstr "娛樂"
 
-#: src/view/com/composer/Composer.tsx:2691
+#: src/view/com/composer/Composer.tsx:2709
 #: src/view/com/util/error/ErrorScreen.tsx:40
 msgid "Error"
 msgstr "錯誤"
@@ -4581,9 +4702,13 @@ msgstr "儲存檔案嗰陣發生錯誤"
 msgid "Error receiving captcha response."
 msgstr "接收 CAPTCHA 回覆嗰陣發生錯誤。"
 
-#: src/screens/Search/SearchResults.tsx:188
+#: src/screens/Search/SearchResults.tsx:175
 msgid "Error: {error}"
 msgstr "錯誤：{error}"
+
+#: src/components/humming/CreatorHub.tsx:294
+msgid "Every line is aggregated from Haneul on-chain events (net of the 5% platform fee)"
+msgstr ""
 
 #: src/components/WhoCanReply.tsx:85
 msgid "Everybody can reply"
@@ -4660,7 +4785,7 @@ msgstr "展開帖文文字"
 msgid "Expands or collapses post text"
 msgstr "展開或摺疊帖文文字"
 
-#: src/lib/api/index.ts:491
+#: src/lib/api/index.ts:498
 msgid "Expected uri to resolve to a record"
 msgstr "URI 應解析爲記錄"
 
@@ -4679,8 +4804,8 @@ msgstr "過期時間 {0}"
 
 #. placeholder {0}: timeDiff(Date.now(), label.exp)
 #. placeholder {0}: timeDiff(Date.now(), modcause.label.exp)
-#: src/components/moderation/LabelsOnMeDialog.tsx:204
-#: src/components/moderation/ModerationDetailsDialog.tsx:224
+#: src/components/moderation/LabelsOnMeDialog.tsx:218
+#: src/components/moderation/ModerationDetailsDialog.tsx:294
 msgid "Expires in {0}"
 msgstr "將於 {0} 後過期"
 
@@ -4700,8 +4825,8 @@ msgid "Explicit sexual images."
 msgstr "打大赤肋嘅鹹溼相。"
 
 #: src/Navigation.tsx:751
-#: src/screens/Search/Shell.tsx:560
-#: src/view/shell/desktop/LeftNav.tsx:677
+#: src/screens/Search/Shell.tsx:552
+#: src/view/shell/desktop/LeftNav.tsx:678
 #: src/view/shell/Drawer.tsx:473
 msgid "Explore"
 msgstr "探索"
@@ -4783,7 +4908,7 @@ msgstr "改唔到帳號代碼，唔該試多次。"
 
 #: src/components/Lightbox/Lightbox.web.tsx:302
 #: src/features/inviteFriends/InviteFriendsDialogInner.tsx:130
-#: src/screens/Search/Shell.tsx:524
+#: src/screens/Search/Shell.tsx:516
 msgid "Failed to copy link"
 msgstr "複製唔到連結"
 
@@ -4992,7 +5117,7 @@ msgstr "撤回唔到你嘅申請，唔該試多次。"
 msgid "Failed to resolve location. Please try again."
 msgstr "取用唔到位置資訊，唔該試多次。"
 
-#: src/view/com/composer/Composer.tsx:725
+#: src/view/com/composer/Composer.tsx:728
 msgid "Failed to save draft"
 msgstr "存儲唔到草稿"
 
@@ -5024,7 +5149,7 @@ msgstr "傳送唔到郵件，唔該試多次。"
 msgid "Failed to send report"
 msgstr "提交唔到擧報"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:266
+#: src/components/moderation/AppealForm.tsx:77
 #: src/features/liveNow/components/GoLiveDisabledDialog.tsx:77
 #: src/screens/Messages/components/ChatDisabled.tsx:119
 msgid "Failed to submit appeal, please try again."
@@ -5135,11 +5260,11 @@ msgstr "已提交意見到動態源維護者"
 #: src/Navigation.tsx:527
 #: src/screens/SavedFeeds.tsx:112
 #: src/screens/SavedFeeds.tsx:303
-#: src/screens/Search/SearchResults.tsx:105
+#: src/screens/Search/SearchResults.tsx:100
 #: src/screens/StarterPack/StarterPackScreen.tsx:196
 #: src/view/screens/Feeds.tsx:504
 #: src/view/screens/Profile.tsx:239
-#: src/view/shell/desktop/LeftNav.tsx:712
+#: src/view/shell/desktop/LeftNav.tsx:713
 #: src/view/shell/Drawer.tsx:589
 msgid "Feeds"
 msgstr "動態源"
@@ -5189,11 +5314,11 @@ msgstr "按媒體篩選（目前：{currentLabel}）"
 msgid "Filter from feeds"
 msgstr "喺動態源度篩選"
 
-#: src/screens/Search/components/SearchLanguageDropdown.tsx:120
+#: src/screens/Search/components/SearchLanguageDropdown.tsx:92
 msgid "Filter search by language"
 msgstr "按語言篩選去搵"
 
-#: src/screens/Search/components/SearchLanguageDropdown.tsx:79
+#: src/screens/Search/components/SearchLanguageDropdown.tsx:70
 msgid "Filter search by language (currently: {currentLanguageLabel})"
 msgstr "按語言篩選去搵（目前：{currentLanguageLabel}）"
 
@@ -5270,7 +5395,7 @@ msgstr "睇吓跟啲乜人好"
 msgid "Find people you know"
 msgstr "搵返你識嘅人"
 
-#: src/screens/Search/Shell.tsx:791
+#: src/screens/Search/Shell.tsx:765
 msgid "Find posts, users, and feeds on Bluesky"
 msgstr "喺 Bluesky 度搵帖文、用戶同埋動態源"
 
@@ -5324,7 +5449,7 @@ msgstr "聚焦搵嘢欄位"
 #: src/components/ProfileHoverCard/index.web.tsx:506
 #: src/screens/Messages/ConversationSettings/Member.tsx:170
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:157
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:409
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:415
 #: src/screens/VideoFeed/index.tsx:866
 #: src/view/com/notifications/NotificationFeedItem.tsx:858
 #: src/view/com/notifications/NotificationFeedItem.tsx:865
@@ -5333,7 +5458,7 @@ msgstr "跟佢"
 
 #. placeholder {0}: profile.handle
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:144
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:397
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:403
 msgid "Follow {0}"
 msgstr "跟 {0}"
 
@@ -5381,7 +5506,7 @@ msgstr "跟晒所有帳號"
 #. User is not following this account, click to follow back
 #: src/components/ProfileCard.tsx:542
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:155
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:407
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:413
 #: src/view/com/notifications/NotificationFeedItem.tsx:858
 #: src/view/com/notifications/NotificationFeedItem.tsx:865
 msgid "Follow back"
@@ -5439,7 +5564,7 @@ msgstr "你識嘅擁躉"
 #: src/components/ProfileHoverCard/index.web.tsx:494
 #: src/components/ProfileHoverCard/index.web.tsx:505
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:160
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:405
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:411
 #: src/screens/VideoFeed/index.tsx:864
 #: src/view/com/notifications/NotificationFeedItem.tsx:836
 #: src/view/com/notifications/NotificationFeedItem.tsx:853
@@ -5456,7 +5581,7 @@ msgstr "跟緊"
 #. placeholder {0}: sanitizeDisplayName( profile.displayName || profile.handle, )
 #. placeholder {0}: sanitizeDisplayName( profile.displayName || profile.handle, moderation.ui('displayName'), )
 #: src/components/ProfileCard.tsx:498
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:247
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:251
 #: src/view/com/notifications/NotificationFeedItem.tsx:785
 msgid "Following {0}"
 msgstr "跟緊 {0}"
@@ -5479,7 +5604,7 @@ msgstr "「Following」動態源偏好設定"
 msgid "Following Feed Preferences"
 msgstr "「Following」動態源偏好設定"
 
-#: src/components/Pills.tsx:175
+#: src/components/Pills.tsx:212
 #: src/screens/Profile/Header/Handle.tsx:33
 msgid "Follows you"
 msgstr "跟緊你"
@@ -5552,11 +5677,11 @@ msgstr "光復 Timeline"
 msgid "From"
 msgstr "嚟自"
 
-#: src/screens/Hashtag.tsx:125
+#: src/screens/Hashtag.tsx:123
 msgid "From {sanitizedAuthor}"
 msgstr ""
 
-#: src/screens/Hashtag.tsx:126
+#: src/screens/Hashtag.tsx:124
 msgid "From @{sanitizedAuthor}"
 msgstr "嚟自 @{sanitizedAuthor}"
 
@@ -5569,6 +5694,10 @@ msgstr "嚟自 <0/>"
 #: src/screens/Search/components/AdvancedSearchDialog/hooks.tsx:30
 msgid "From these people"
 msgstr "嚟自呢啲人"
+
+#: src/components/humming/CreatorHub.tsx:41
+msgid "Full lock"
+msgstr ""
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:337
 msgid "Generate a starter pack"
@@ -5690,7 +5819,7 @@ msgstr "開始啦"
 msgid "GIF"
 msgstr "GIF"
 
-#: src/view/com/composer/Composer.tsx:2696
+#: src/view/com/composer/Composer.tsx:2714
 msgid "GIF uploaded"
 msgstr "GIF 已上載"
 
@@ -5793,12 +5922,12 @@ msgstr "去到下一步"
 #: src/components/dms/ConvoMenu.tsx:262
 #: src/screens/Messages/components/MessagesListInfoPanel.tsx:98
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:194
-#: src/view/shell/desktop/LeftNav.tsx:336
-#: src/view/shell/desktop/LeftNav.tsx:342
+#: src/view/shell/desktop/LeftNav.tsx:337
+#: src/view/shell/desktop/LeftNav.tsx:343
 msgid "Go to profile"
 msgstr "去到個人檔案"
 
-#: src/screens/Messages/components/ChatListItem.tsx:212
+#: src/screens/Messages/components/ChatListItem.tsx:211
 msgid "Go to the group chat named \"{chatName}\""
 msgstr "去到「{chatName}」嘅羣組傾偈"
 
@@ -5984,7 +6113,7 @@ msgstr "有咗代碼？<0>撳呢度。</0>"
 msgid "Have we got your location wrong? <0>Tap here to update your location with GPS.</0>"
 msgstr "係咪攪錯咗你嘅位置？<0>撳呢度用 GPS 更新你嘅位置。</0>"
 
-#: src/screens/Signup/index.tsx:248
+#: src/screens/Signup/index.tsx:227
 msgid "Having trouble?"
 msgstr "遇到問題？"
 
@@ -6182,7 +6311,7 @@ msgstr "幫緊你幫緊你！我哋而家逐步開放影片功能，而你仲喺
 #: src/Navigation.tsx:746
 #: src/Navigation.tsx:767
 #: src/view/shell/bottom-bar/BottomBar.tsx:196
-#: src/view/shell/desktop/LeftNav.tsx:667
+#: src/view/shell/desktop/LeftNav.tsx:668
 #: src/view/shell/Drawer.tsx:499
 msgid "Home"
 msgstr "首頁"
@@ -6250,6 +6379,10 @@ msgstr "我明"
 #: src/components/contacts/screens/ViewMatches.tsx:578
 msgid "I'm on Bluesky as {0} - come find me! https://bsky.app/download"
 msgstr "我喺 Bluesky 嘅帳號係 {0} - 快啲陪我一齊玩啦！https://bsky.app/download"
+
+#: src/components/humming/CreatorHub.tsx:171
+msgid "Identity verified (badge issued)"
+msgstr ""
 
 #: src/components/Lightbox/Lightbox.web.tsx:246
 msgid "If alt text is long, toggles alt text expanded state"
@@ -6569,11 +6702,11 @@ msgstr "邀請 {name} 加入 Bluesky"
 msgid "Invite code"
 msgstr "邀請碼"
 
-#: src/screens/Signup/state.ts:347
+#: src/screens/Signup/state.ts:332
 msgid "Invite code not accepted. Check that you input it correctly and try again."
 msgstr "邀請碼無效。請檢查你輸入嘅驗證碼啱定唔啱，跟住試多次。"
 
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:352
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:356
 #: src/view/shell/Drawer.tsx:121
 msgid "Invite friends"
 msgstr "邀請朋友"
@@ -6662,7 +6795,7 @@ msgid "It's just you right now! Add more people to your starter pack by searchin
 msgstr "而家淨係得你一個人！用上高搵嘢功能將更加多人擺到落你嘅新手包度。"
 
 #. placeholder {0}: videoState.jobId
-#: src/view/com/composer/Composer.tsx:2611
+#: src/view/com/composer/Composer.tsx:2629
 msgid "Job ID: {0}"
 msgstr "作業 ID：{0}"
 
@@ -6702,8 +6835,12 @@ msgstr "加入對話"
 msgid "Journalism"
 msgstr "記者"
 
-#: src/view/com/composer/Composer.tsx:1539
-#: src/view/com/composer/Composer.tsx:1549
+#: src/components/humming/CreatorHub.tsx:89
+msgid "Keep 95% of what you earn"
+msgstr ""
+
+#: src/view/com/composer/Composer.tsx:1548
+#: src/view/com/composer/Composer.tsx:1558
 #: src/view/com/composer/drafts/DraftsButton.tsx:135
 msgid "Keep editing"
 msgstr "繼續編輯"
@@ -6734,17 +6871,17 @@ msgstr "標記"
 msgid "Labels added"
 msgstr "已加入標記"
 
+#: src/components/moderation/LabelsOnMeDialog.tsx:78
+msgid "Labels applied to this post"
+msgstr ""
+
 #: src/screens/Profile/Sections/Labels.tsx:194
 msgid "Labels are annotations on users and content. They can be used to hide, warn, and categorize the network."
 msgstr "標記係用戶同內容嘅註解。佢哋可以用嚟隱藏、警告同管理你嘅社交網絡。"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:77
+#: src/components/moderation/LabelsOnMeDialog.tsx:76
 msgid "Labels on your account"
 msgstr "你帳號上嘅標記"
-
-#: src/components/moderation/LabelsOnMeDialog.tsx:79
-msgid "Labels on your content"
-msgstr "你內容上嘅標記"
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:357
 msgid "Language"
@@ -6774,9 +6911,9 @@ msgstr "最後一次請求喺 {timeAgo} 前"
 msgid "Last initiated just now"
 msgstr "最後一次請求喺冇幾耐前"
 
-#: src/screens/Hashtag.tsx:99
-#: src/screens/Search/SearchResults.tsx:86
-#: src/screens/Topic.tsx:65
+#: src/screens/Hashtag.tsx:97
+#: src/screens/Search/SearchResults.tsx:82
+#: src/screens/Topic.tsx:64
 msgid "Latest"
 msgstr "最新"
 
@@ -6794,15 +6931,10 @@ msgstr "想知多啲"
 msgid "Learn More"
 msgstr "想知多啲"
 
-#: src/screens/Search/SearchResults.tsx:261
+#: src/screens/Search/SearchResults.tsx:242
 msgctxt "english-only-resource"
 msgid "Learn more about <0>how to use advanced search</0>."
 msgstr "想知多啲<0>點用進階搵嘢</0>。"
-
-#: src/screens/Search/SearchResults.tsx:275
-msgctxt "english-only-resource"
-msgid "Learn more about <0>how to use search filters</0>."
-msgstr "想知多啲<0>點用搵嘢篩選器</0>。"
 
 #: src/components/ageAssurance/AgeAssuranceDismissibleFeedBanner.tsx:66
 msgid "Learn more about age assurance"
@@ -6963,7 +7095,7 @@ msgstr "讚佢"
 
 #. Accessibility label for the like button when the post has not been liked, verb form followed by number of likes and noun form
 #. placeholder {0}: post.likeCount || 0
-#: src/components/PostControls/index.tsx:284
+#: src/components/PostControls/index.tsx:285
 msgid "Like ({0, plural, one {# like} other {# likes}})"
 msgstr "讚佢（{0, plural, one {# 人讚佢} other {# 人讚佢}}）"
 
@@ -7022,7 +7154,7 @@ msgstr "讚好"
 msgid "Likes of your reposts"
 msgstr "讚好你轉發嘅帖文"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:488
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:491
 msgid "Likes on this post"
 msgstr "呢條帖文嘅讚數"
 
@@ -7125,7 +7257,7 @@ msgstr "已唔再靜音清單"
 #: src/view/screens/Lists.tsx:60
 #: src/view/screens/Profile.tsx:233
 #: src/view/screens/Profile.tsx:241
-#: src/view/shell/desktop/LeftNav.tsx:722
+#: src/view/shell/desktop/LeftNav.tsx:723
 #: src/view/shell/Drawer.tsx:604
 msgid "Lists"
 msgstr "清單"
@@ -7184,7 +7316,7 @@ msgid "Load new notifications"
 msgstr "撈吓新嘅通知"
 
 #: src/screens/Profile/ProfileFeed/index.tsx:206
-#: src/screens/Profile/Sections/Feed.tsx:117
+#: src/screens/Profile/Sections/Feed.tsx:134
 #: src/screens/ProfileList/FeedSection.tsx:113
 #: src/view/com/feeds/FeedPage.tsx:168
 msgid "Load new posts"
@@ -7226,6 +7358,10 @@ msgstr "鎖定此羣組傾偈"
 #: src/screens/Messages/ConversationSettings/index.tsx:571
 msgid "Locked"
 msgstr "已鎖定"
+
+#: src/components/humming/CreatorHub.tsx:37
+msgid "Locked posts show as teaser cards (drives conversion)"
+msgstr ""
 
 #: src/Navigation.tsx:326
 msgid "Log"
@@ -7277,6 +7413,11 @@ msgstr "愛情 GIF"
 #: src/components/dialogs/EmailDialog/index.tsx:39
 msgid "Make adjustments to email settings for your account"
 msgstr "調整你帳號綁定嘅電郵設定"
+
+#: src/components/humming/PaywallButton.tsx:97
+#: src/components/humming/PaywallButton.tsx:108
+msgid "Make it free"
+msgstr ""
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:311
 msgid "Make one for me"
@@ -7415,7 +7556,7 @@ msgstr "訊息 {0}"
 msgid "Message {displayName}"
 msgstr "傳送訊息畀 {displayName}"
 
-#: src/screens/Messages/components/ChatListItem.tsx:323
+#: src/screens/Messages/components/ChatListItem.tsx:322
 msgid "Message deleted"
 msgstr "已刪除訊息"
 
@@ -7424,7 +7565,7 @@ msgctxt "toast"
 msgid "Message deleted"
 msgstr "已刪除訊息"
 
-#: src/components/dms/MessageItem.tsx:617
+#: src/components/dms/MessageItem.tsx:636
 msgid "Message failed to send."
 msgstr "傳送唔到訊息。"
 
@@ -7455,11 +7596,11 @@ msgstr "訊息選項"
 msgid "Messages"
 msgstr "傾偈"
 
-#: src/components/dms/MessageItem.tsx:716
+#: src/components/dms/MessageItem.tsx:735
 msgid "Messages from this person are hidden while they are blocking you."
 msgstr "當對方封鎖咗你，佢嘅訊息將會隱藏。"
 
-#: src/components/dms/MessageItem.tsx:711
+#: src/components/dms/MessageItem.tsx:730
 msgid "Messages from this person are hidden while you are blocking them."
 msgstr "當你封鎖咗對方，佢嘅訊息將會隱藏。"
 
@@ -7490,7 +7631,7 @@ msgstr "內容審覈"
 msgid "Moderation and content filters"
 msgstr "內容過濾器"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:142
+#: src/components/moderation/ModerationDetailsDialog.tsx:175
 msgid "Moderation details"
 msgstr "內容審覈詳情"
 
@@ -7541,7 +7682,7 @@ msgstr "內容審覈狀態"
 msgid "Moderation tools"
 msgstr "內容審覈工具"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:56
+#: src/components/moderation/ModerationDetailsDialog.tsx:72
 #: src/lib/moderation/useModerationCauseDescription.ts:48
 msgid "Moderator has chosen to set a general warning on the content."
 msgstr "內容審覈服務提供者經已將呢個內容標記普通警告。"
@@ -7705,6 +7846,13 @@ msgstr "共同嘅羣組傾偈"
 msgid "My birthdate"
 msgstr "我嘅出世日期"
 
+#: src/components/humming/CreatorHub.tsx:70
+#: src/components/humming/CreatorHub.tsx:82
+#: src/components/humming/CreatorHub.tsx:286
+#: src/components/humming/CreatorHub.tsx:291
+msgid "My earnings"
+msgstr ""
+
 #: src/screens/StarterPack/Wizard/StepDetails.tsx:77
 msgid "My favorite feeds and people - join me!"
 msgstr "我至愛嘅人同動態源⸺快啲嚟加入啦！"
@@ -7716,6 +7864,12 @@ msgstr "我嘅動態源"
 #: src/screens/StarterPack/Wizard/StepDetails.tsx:49
 msgid "My starter pack"
 msgstr "我嘅新手包"
+
+#. placeholder {0}: formatHaneul(earnings.tier.priceGeunhwa)
+#. placeholder {1}: Math.round(earnings.tier.periodMs / 86_400_000)
+#: src/components/humming/CreatorHub.tsx:323
+msgid "My tier: {0} / {1} days"
+msgstr ""
 
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:416
 msgid "Name"
@@ -7880,7 +8034,7 @@ msgid "New post"
 msgstr "新帖文"
 
 #: src/view/com/feeds/FeedPage.tsx:179
-#: src/view/shell/desktop/LeftNav.tsx:598
+#: src/view/shell/desktop/LeftNav.tsx:599
 msgctxt "action"
 msgid "New post"
 msgstr "新帖文"
@@ -7974,6 +8128,10 @@ msgstr "冇 DNS 控制台"
 msgid "No drafts yet"
 msgstr "而家仲未有草稿"
 
+#: src/components/humming/CreatorHub.tsx:333
+msgid "No earnings yet — waiting for your first subscriber!"
+msgstr ""
+
 #: src/features/liveNow/components/EditLiveDialog.tsx:134
 msgid "No expiry set"
 msgstr "未有設定過期時間"
@@ -8014,7 +8172,7 @@ msgstr "仲未有清單"
 #. placeholder {0}: sanitizeDisplayName( profile.displayName || profile.handle, )
 #. placeholder {0}: sanitizeDisplayName( profile.displayName || profile.handle, moderation.ui('displayName'), )
 #: src/components/ProfileCard.tsx:521
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:273
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:277
 #: src/view/com/notifications/NotificationFeedItem.tsx:807
 msgid "No longer following {0}"
 msgstr "已唔再跟随 {0}"
@@ -8023,7 +8181,7 @@ msgstr "已唔再跟随 {0}"
 msgid "No media yet"
 msgstr "而家仲未有媒體內容"
 
-#: src/screens/Messages/components/ChatListItem.tsx:311
+#: src/screens/Messages/components/ChatListItem.tsx:310
 msgid "No messages yet"
 msgstr "而家仲未有訊息"
 
@@ -8068,7 +8226,7 @@ msgstr "冇人可以傳送訊息"
 msgid "No posts here"
 msgstr "呢度未有任何帖文"
 
-#: src/screens/Profile/Sections/Feed.tsx:81
+#: src/screens/Profile/Sections/Feed.tsx:91
 #: src/view/screens/Profile.tsx:430
 msgid "No posts yet"
 msgstr "而家仲未有帖文"
@@ -8120,15 +8278,15 @@ msgstr "搵唔到結果"
 msgid "No results found for \"{query}\""
 msgstr "搵唔到符合「{query}」嘅結果"
 
-#: src/screens/Search/SearchResults.tsx:220
+#: src/screens/Search/SearchResults.tsx:202
 msgid "No results found for “<0>{query}</0>” with advanced search filters applied."
 msgstr "用咗進階搵嘢篩選器後，搵唔到符合「<0>{query}</0>」嘅結果。"
 
-#: src/screens/Search/SearchResults.tsx:232
+#: src/screens/Search/SearchResults.tsx:214
 msgid "No results found for “<0>{query}</0>”."
 msgstr "搵唔到符合「<0>{query}</0>」嘅結果。"
 
-#: src/screens/Search/SearchResults.tsx:226
+#: src/screens/Search/SearchResults.tsx:208
 msgid "No results found for your query with advanced search filters applied."
 msgstr "用咗進階搵嘢篩選器後，搵唔到結果。"
 
@@ -8181,6 +8339,10 @@ msgstr "非自願嘅私密影像（NCII）"
 #: src/lib/moderation/useGlobalLabelStrings.ts:42
 msgid "Non-sexual Nudity"
 msgstr "非性裸體"
+
+#: src/components/humming/CreatorHub.tsx:42
+msgid "Non-subscribers only see your profile wall"
+msgstr ""
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:263
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:266
@@ -8246,7 +8408,7 @@ msgstr "通知音效"
 #: src/screens/Settings/Settings.tsx:200
 #: src/view/screens/Notifications.tsx:128
 #: src/view/shell/bottom-bar/BottomBar.tsx:279
-#: src/view/shell/desktop/LeftNav.tsx:687
+#: src/view/shell/desktop/LeftNav.tsx:688
 #: src/view/shell/Drawer.tsx:552
 msgid "Notifications"
 msgstr "通知"
@@ -8289,9 +8451,9 @@ msgstr "好嘅"
 #: src/components/BotAccountAlert.tsx:52
 #: src/components/BotAccountAlert.tsx:57
 #: src/components/dms/InitiateChatFlow.tsx:733
-#: src/components/dms/MessageItem.tsx:723
+#: src/components/dms/MessageItem.tsx:742
 #: src/screens/Login/PasswordUpdatedForm.tsx:35
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:663
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:666
 msgid "Okay"
 msgstr "好嘅"
 
@@ -8322,11 +8484,11 @@ msgstr "揀中嘅人入邊有個人唔接受羣組傾偈。"
 msgid "One of the selected recipients has blocked you and cannot be messaged."
 msgstr "揀中嘅人入邊有個人封鎖你，所以傳送唔到訊息。"
 
-#: src/view/com/composer/Composer.tsx:933
+#: src/view/com/composer/Composer.tsx:936
 msgid "One or more GIFs is missing alt text."
 msgstr "部分 GIF 圖片缺少替代文字。"
 
-#: src/view/com/composer/Composer.tsx:930
+#: src/view/com/composer/Composer.tsx:933
 msgid "One or more images is missing alt text."
 msgstr "部分圖片缺少替代文字。"
 
@@ -8338,11 +8500,11 @@ msgstr "你所揀選嘅部分檔案格式唔支援。"
 msgid "One or more of your selected files are too large. Maximum size is {VIDEO_MAX_SIZE_MB} MB."
 msgstr "你揀中嘅部分檔案太大，最大檔案大細係 {VIDEO_MAX_SIZE_MB} MB。"
 
-#: src/view/com/composer/Composer.tsx:736
+#: src/view/com/composer/Composer.tsx:739
 msgid "One or more posts are too long to save as a draft. {MAX_DRAFT_GRAPHEME_LENGTH, plural, one {The maximum number of characters is # character.} other {The maximum number of characters is # characters.}}"
 msgstr "部分帖文內容太長，儲存唔到做草稿。{MAX_DRAFT_GRAPHEME_LENGTH, plural, one {字數上限 # 個字元。} other {字數上限 # 個字元。}}"
 
-#: src/view/com/composer/Composer.tsx:940
+#: src/view/com/composer/Composer.tsx:943
 msgid "One or more videos is missing alt text."
 msgstr "部分影片缺少替代文字。"
 
@@ -8355,7 +8517,7 @@ msgstr "淨係得{0}可以回覆。"
 #. placeholder {0}: result.accepted.length
 #. placeholder {1}: next.length
 #. placeholder {2}: next.length
-#: src/view/com/composer/Composer.tsx:234
+#: src/view/com/composer/Composer.tsx:235
 msgid "Only {0} of {1} {2, plural, one {image} other {images}} added; limit is {MAX_GALLERY_IMAGES}"
 msgstr "只保留前 {0} {2, plural, other {張圖片}}（共 {1} 張）；最多加入 {MAX_GALLERY_IMAGES} 張圖片"
 
@@ -8424,6 +8586,10 @@ msgstr "弊，搵唔到呢份個人檔案，試吓掃第個。"
 msgid "Oops!"
 msgstr "大鑊！"
 
+#: src/components/humming/CreatorHub.tsx:31
+msgid "Open"
+msgstr ""
+
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:66
 msgid "Open advanced search options"
 msgstr "打開進階搵嘢選項"
@@ -8445,8 +8611,8 @@ msgstr "開啓傾偈"
 msgid "Open chat member options for {displayName}"
 msgstr "打開 {displayName} 嘅傾偈成員選項"
 
-#: src/screens/Messages/components/ChatListItem.tsx:491
-#: src/screens/Messages/components/ChatListItem.tsx:495
+#: src/screens/Messages/components/ChatListItem.tsx:490
+#: src/screens/Messages/components/ChatListItem.tsx:494
 msgid "Open conversation options"
 msgstr "打開對話選項"
 
@@ -8459,7 +8625,7 @@ msgid "Open drawer menu"
 msgstr "打開櫃桶選單"
 
 #: src/screens/Messages/components/MessageComposer.tsx:213
-#: src/view/com/composer/Composer.tsx:2244
+#: src/view/com/composer/Composer.tsx:2262
 msgid "Open emoji picker"
 msgstr "打開 Emoji 選擇器"
 
@@ -8770,6 +8936,10 @@ msgstr "擁有者必須喺離開前鎖定羣組。"
 msgid "Page not found"
 msgstr "搵唔到頁面"
 
+#: src/components/humming/PaywallButton.tsx:41
+msgid "Paid post ({valueHaneul} HANEUL)"
+msgstr ""
+
 #. Accessibility label for the icon-only pill that filters the GIF picker to celebration/party GIFs.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:85
 msgid "Party GIFs"
@@ -8784,9 +8954,17 @@ msgstr "派對 GIF"
 msgid "Password"
 msgstr "密碼"
 
+#: src/screens/Signup/StepHandle/index.tsx:300
+msgid "Password (8+ characters)"
+msgstr ""
+
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:70
 msgid "Password changed"
 msgstr "已變更密碼"
+
+#: src/screens/Signup/StepHandle/index.tsx:311
+msgid "Password must be at least 8 characters long"
+msgstr ""
 
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:125
 msgid "Password must be at least 8 characters long."
@@ -8813,8 +8991,28 @@ msgstr "暫停 GIF"
 msgid "Pause video"
 msgstr "暫停影片"
 
+#: src/components/humming/LockedPostCard.tsx:108
+#: src/components/humming/LockedPostCard.tsx:141
+#: src/components/humming/LockedWallPanel.tsx:89
+#: src/components/humming/ProfileSubscribeCard.tsx:96
+#: src/components/humming/SubscribeButton.tsx:82
+msgid "Pay on-chain"
+msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:95
+#: src/components/humming/LockedPostCard.tsx:128
+#: src/components/humming/LockedWallPanel.tsx:75
+#: src/components/humming/ProfileSubscribeCard.tsx:83
+#: src/components/humming/SubscribeButton.tsx:69
+msgid "Paying on-chain…"
+msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:349
+msgid "Payment"
+msgstr ""
+
 #: src/screens/ProfileList/index.tsx:167
-#: src/screens/Search/SearchResults.tsx:99
+#: src/screens/Search/SearchResults.tsx:94
 #: src/screens/StarterPack/StarterPackScreen.tsx:195
 msgid "People"
 msgstr "用戶"
@@ -8993,11 +9191,11 @@ msgstr "請喺你發布媒體內容度加入適當嘅內容警告標記。"
 msgid "Please check your email inbox for further instructions. It may take a minute or two to arrive."
 msgstr "請去到你嘅電郵信箱以取得後續指示。電郵可能需要一兩分鐘先會送達。"
 
-#: src/screens/Signup/state.ts:294
+#: src/screens/Signup/state.ts:271
 msgid "Please choose your handle."
 msgstr "請設定你嘅帳號代碼。"
 
-#: src/screens/Signup/state.ts:286
+#: src/screens/Signup/state.ts:278
 #: src/screens/Signup/StepInfo/index.tsx:149
 msgid "Please choose your password."
 msgstr "請設定你嘅密碼。"
@@ -9006,7 +9204,7 @@ msgstr "請設定你嘅密碼。"
 msgid "Please click on the link in the email we just sent you to verify your new email address. This is an important step to allow you to continue enjoying all the features of Bluesky."
 msgstr "請打開我哋正話送咗去你新電郵入邊嗰條連結嚟驗證新電郵。呢個步驟關乎你可以繼續享用所有 Bluesky 嘅功能。"
 
-#: src/screens/Signup/state.ts:309
+#: src/screens/Signup/state.ts:293
 msgid "Please complete the verification captcha."
 msgstr "請完成 Captcha 驗證（人機驗證）。"
 
@@ -9063,7 +9261,6 @@ msgstr "請輸入你收到嘅代碼同埋你想用嘅新密碼。"
 msgid "Please enter the security code we sent to your previous email address."
 msgstr "請輸入我哋正話送咗去你電郵地址嗰個保安編碼。"
 
-#: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:122
 msgid "Please enter your email."
 msgstr "請輸入你嘅電郵地址。"
@@ -9085,7 +9282,7 @@ msgid "Please enter your username"
 msgstr "請輸入你嘅用戶名稱"
 
 #. placeholder {0}: labeler ? sanitizeHandle(labeler.creator.handle, '@') : label.src
-#: src/components/moderation/LabelsOnMeDialog.tsx:309
+#: src/components/moderation/AppealForm.tsx:120
 msgid "Please explain why you think this label was incorrectly applied by {0}"
 msgstr "請解釋點解你覺得 {0} 唔應該套用呢個標籤"
 
@@ -9106,7 +9303,7 @@ msgstr "請返去，或觸發呢個元素去返到頭位。"
 msgid "Please provide any additional details you feel moderators may need in order to properly assess your Age Assurance status."
 msgstr "爲咗等支援團隊可以評估你嘅年齡驗證狀態，請提供任何你認爲係可以幫到評估嘅補充資訊。"
 
-#: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:303
+#: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:304
 msgid "Please select a language"
 msgstr "請揀選語言"
 
@@ -9153,7 +9350,7 @@ msgstr "政治"
 msgid "Porn"
 msgstr "色情"
 
-#: src/view/com/composer/Composer.tsx:1889
+#: src/view/com/composer/Composer.tsx:1898
 msgctxt "action"
 msgid "Post"
 msgstr "發布"
@@ -9162,6 +9359,11 @@ msgstr "發布"
 msgctxt "description"
 msgid "Post"
 msgstr "帖文"
+
+#. placeholder {0}: item.postId
+#: src/components/humming/CreatorHub.tsx:352
+msgid "post {0}"
+msgstr ""
 
 #: src/view/screens/Profile.tsx:475
 #: src/view/screens/Profile.tsx:476
@@ -9173,12 +9375,12 @@ msgstr "發布一張相片"
 msgid "Post a video"
 msgstr "發布一條影片"
 
-#: src/view/com/composer/Composer.tsx:1887
+#: src/view/com/composer/Composer.tsx:1896
 msgctxt "action"
 msgid "Post All"
 msgstr "發晒佢哋"
 
-#: src/view/com/composer/Composer.tsx:1548
+#: src/view/com/composer/Composer.tsx:1557
 msgid "Post anyway"
 msgstr "點都要發布"
 
@@ -9199,23 +9401,23 @@ msgctxt "toast"
 msgid "Post deleted"
 msgstr "已刪除帖文"
 
-#: src/lib/api/index.ts:190
+#: src/lib/api/index.ts:197
 msgid "Post failed to upload. Please check your Internet connection and try again."
 msgstr "帖文發布失敗。請檢查你嘅網絡連線狀態，跟住試多次。"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:132
-#: src/screens/PostThread/components/ThreadItemPost.tsx:117
-#: src/screens/PostThread/components/ThreadItemTreePost.tsx:110
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:133
+#: src/screens/PostThread/components/ThreadItemPost.tsx:118
+#: src/screens/PostThread/components/ThreadItemTreePost.tsx:109
 #: src/screens/VideoFeed/index.tsx:547
 msgid "Post has been deleted"
 msgstr "帖文經已刪除"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:111
+#: src/components/moderation/ModerationDetailsDialog.tsx:127
 #: src/lib/moderation/useModerationCauseDescription.ts:107
 msgid "Post Hidden by Muted Word"
 msgstr "帖文因設定嘅靜音字詞所隱藏"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:114
+#: src/components/moderation/ModerationDetailsDialog.tsx:130
 #: src/lib/moderation/useModerationCauseDescription.ts:116
 msgid "Post Hidden by You"
 msgstr "呢條帖文俾你隱藏咗"
@@ -9282,6 +9484,10 @@ msgstr "可以根據字詞、標籤，又或兩種一齊去靜音帖文。我哋
 msgid "Posts hidden"
 msgstr "帖文隱藏咗"
 
+#: src/components/humming/CreatorHub.tsx:32
+msgid "Posts stay public — put a price only on the ones you choose"
+msgstr ""
+
 #: src/components/dialogs/LinkWarning.tsx:89
 msgid "Potentially misleading link"
 msgstr "潛在誤導性連結"
@@ -9317,6 +9523,10 @@ msgstr "預覽"
 #: src/components/Lightbox/Lightbox.web.tsx:197
 msgid "Previous image"
 msgstr "上一張圖片"
+
+#: src/components/humming/PaywallButton.tsx:80
+msgid "Price per post (HANEUL)"
+msgstr ""
 
 #: src/screens/Settings/LanguageSettings.tsx:141
 #: src/screens/Settings/LanguageSettings.tsx:157
@@ -9359,15 +9569,15 @@ msgstr "私隱政策"
 msgid "Privacy violation of a minor"
 msgstr "侵犯未成年人私隱"
 
-#: src/view/com/composer/Composer.tsx:2685
+#: src/view/com/composer/Composer.tsx:2703
 msgid "Processing GIF..."
 msgstr "處理緊 GIF……"
 
-#: src/view/com/composer/Composer.tsx:2687
+#: src/view/com/composer/Composer.tsx:2705
 msgid "Processing video..."
 msgstr "處理緊條片……"
 
-#: src/lib/api/index.ts:63
+#: src/lib/api/index.ts:64
 msgid "Processing..."
 msgstr "幫緊你……"
 
@@ -9376,7 +9586,7 @@ msgid "profile"
 msgstr "個人檔案"
 
 #: src/view/shell/bottom-bar/BottomBar.tsx:322
-#: src/view/shell/desktop/LeftNav.tsx:745
+#: src/view/shell/desktop/LeftNav.tsx:746
 #: src/view/shell/Drawer.tsx:91
 #: src/view/shell/Drawer.tsx:655
 msgid "Profile"
@@ -9409,24 +9619,37 @@ msgid "Public, sharable lists of users to mute or block in bulk."
 msgstr "公開、可分享嘅清單，可以用嚟批量靜音或封鎖帳號。"
 
 #. Accessibility label for button to publish a single post
-#: src/view/com/composer/Composer.tsx:1873
+#: src/view/com/composer/Composer.tsx:1882
 msgid "Publish post"
 msgstr "發布帖文"
 
 #. Accessibility label for button to publish multiple posts in a thread
-#: src/view/com/composer/Composer.tsx:1868
+#: src/view/com/composer/Composer.tsx:1877
 msgid "Publish posts"
 msgstr "發布帖文"
 
 #. Accessibility label for button to publish multiple replies in a thread
-#: src/view/com/composer/Composer.tsx:1857
+#: src/view/com/composer/Composer.tsx:1866
 msgid "Publish replies"
 msgstr "發布回覆"
 
 #. Accessibility label for button to publish a single reply
-#: src/view/com/composer/Composer.tsx:1862
+#: src/view/com/composer/Composer.tsx:1871
 msgid "Publish reply"
 msgstr "發布回覆"
+
+#: src/components/humming/CreatorHub.tsx:269
+msgid "Purchase"
+msgstr ""
+
+#. placeholder {0}: String(e)
+#: src/components/humming/hooks.ts:74
+msgid "Purchase failed: {0}"
+msgstr ""
+
+#: src/components/humming/hooks.ts:67
+msgid "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
+msgstr ""
 
 #: src/screens/Settings/NotificationSettings/components/SettingPreview.tsx:31
 msgid "Push"
@@ -9487,7 +9710,7 @@ msgstr "已拒絕引用帖文"
 msgid "Quotes"
 msgstr "引用"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:469
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:472
 msgid "Quotes of this post"
 msgstr "引用呢條篇帖文"
 
@@ -9530,15 +9753,10 @@ msgstr "重新啓用你嘅帳號"
 msgid "Read {0, plural, one {# more reply} other {# more replies}}"
 msgstr "繼續閱讀 {0, plural, other {# 條回覆}}"
 
-#: src/screens/Search/SearchResults.tsx:264
+#: src/screens/Search/SearchResults.tsx:245
 msgctxt "english-only-resource"
 msgid "Read about how to use advanced search filters"
 msgstr "閱讀點用進階搵嘢篩選器"
-
-#: src/screens/Search/SearchResults.tsx:278
-msgctxt "english-only-resource"
-msgid "Read about how to use search filters"
-msgstr "閱讀點用搵嘢篩選器"
 
 #: src/components/dialogs/nuxs/InitialVerificationAnnouncement.tsx:162
 #: src/components/dialogs/nuxs/InitialVerificationAnnouncement.tsx:173
@@ -9891,15 +10109,15 @@ msgctxt "description"
 msgid "Replied to you"
 msgstr "覆你"
 
-#: src/components/dms/MessageItem.tsx:906
+#: src/components/dms/MessageItem.tsx:925
 msgid "Replied-to message from {senderName}, tap to scroll to it"
 msgstr "{senderName} 覆咗訊息，撳吓轆到嗰度"
 
-#: src/components/dms/MessageItem.tsx:904
+#: src/components/dms/MessageItem.tsx:923
 msgid "Replied-to message was sent before you joined"
 msgstr ""
 
-#: src/components/dms/MessageItem.tsx:907
+#: src/components/dms/MessageItem.tsx:926
 msgid "Replied-to message, tap to scroll to it"
 msgstr "有人覆咗訊息，撳吓轆到嗰度"
 
@@ -9925,23 +10143,23 @@ msgstr "呢條帖文嘅回覆經已關閉。"
 msgid "Reply"
 msgstr "回覆"
 
-#: src/view/com/composer/Composer.tsx:1885
+#: src/view/com/composer/Composer.tsx:1894
 msgctxt "action"
 msgid "Reply"
 msgstr "回覆"
 
 #. Accessibility label for the reply button, verb form followed by number of replies and noun form
 #. placeholder {0}: post.replyCount || 0
-#: src/components/PostControls/index.tsx:240
+#: src/components/PostControls/index.tsx:241
 msgid "Reply ({0, plural, one {# reply} other {# replies}})"
 msgstr "回覆（{0, plural, one {# 個回覆} other {# 個回覆}}）"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:120
+#: src/components/moderation/ModerationDetailsDialog.tsx:136
 #: src/lib/moderation/useModerationCauseDescription.ts:126
 msgid "Reply Hidden by Thread Author"
 msgstr "回覆俾呢個討論串嘅發布者隱藏"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:119
+#: src/components/moderation/ModerationDetailsDialog.tsx:135
 #: src/lib/moderation/useModerationCauseDescription.ts:125
 msgid "Reply Hidden by You"
 msgstr "呢個回覆俾你隱藏咗"
@@ -10100,7 +10318,7 @@ msgstr "你所轉發"
 msgid "Reposts"
 msgstr "轉發"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:448
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:451
 msgid "Reposts of this post"
 msgstr "轉發呢條帖文"
 
@@ -10334,22 +10552,22 @@ msgstr "儲存出世日期"
 #: src/screens/SavedFeeds.tsx:124
 #: src/screens/SavedFeeds.tsx:311
 #: src/screens/SavedFeeds.tsx:315
-#: src/view/com/composer/Composer.tsx:1529
+#: src/view/com/composer/Composer.tsx:1538
 #: src/view/com/composer/drafts/DraftsButton.tsx:125
 msgid "Save changes"
 msgstr "儲存變更"
 
-#: src/view/com/composer/Composer.tsx:1501
+#: src/view/com/composer/Composer.tsx:1510
 #: src/view/com/composer/drafts/DraftsButton.tsx:93
 msgid "Save changes?"
 msgstr "係咪要儲存變更？"
 
-#: src/view/com/composer/Composer.tsx:1529
+#: src/view/com/composer/Composer.tsx:1538
 #: src/view/com/composer/drafts/DraftsButton.tsx:125
 msgid "Save draft"
 msgstr "儲存草稿"
 
-#: src/view/com/composer/Composer.tsx:1503
+#: src/view/com/composer/Composer.tsx:1512
 #: src/view/com/composer/drafts/DraftsButton.tsx:95
 msgid "Save draft?"
 msgstr "係咪要儲存草稿？"
@@ -10380,7 +10598,7 @@ msgstr "儲存呢啲選項供下次使用"
 msgid "Save to my feeds"
 msgstr "儲存到我嘅動態源度"
 
-#: src/view/shell/desktop/LeftNav.tsx:732
+#: src/view/shell/desktop/LeftNav.tsx:733
 #: src/view/shell/Drawer.tsx:630
 msgctxt "link to bookmarks screen"
 msgid "Saved"
@@ -10439,7 +10657,7 @@ msgstr "向左捲動"
 msgid "Scroll right"
 msgstr "向右捲動"
 
-#: src/components/dms/MessageItem.tsx:800
+#: src/components/dms/MessageItem.tsx:819
 msgid "Scroll to the message this is replying to"
 msgstr "轆到回覆嘅訊息度"
 
@@ -10452,9 +10670,9 @@ msgstr "轆到去頂部"
 #: src/components/forms/SearchInput.tsx:53
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:218
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:224
-#: src/screens/Search/Shell.tsx:560
-#: src/screens/Search/Shell.tsx:629
-#: src/screens/Search/Shell.tsx:779
+#: src/screens/Search/Shell.tsx:552
+#: src/screens/Search/Shell.tsx:616
+#: src/screens/Search/Shell.tsx:753
 #: src/view/shell/bottom-bar/BottomBar.tsx:216
 msgid "Search"
 msgstr "搵嘢"
@@ -10517,8 +10735,8 @@ msgstr "搵用戶"
 msgid "Search GIFs"
 msgstr "搵 GIF"
 
-#: src/screens/Hashtag.tsx:224
-#: src/screens/Search/SearchResults.tsx:430
+#: src/screens/Hashtag.tsx:228
+#: src/screens/Search/SearchResults.tsx:379
 msgid "Search is currently unavailable when logged out"
 msgstr "未登入狀態用唔到搵嘢功能"
 
@@ -10723,8 +10941,8 @@ msgid "Select how long to mute this word for."
 msgstr "揀選靜音將呢個字詞要幾耐。"
 
 #: src/components/AppLanguageDropdown.tsx:71
-#: src/components/LanguageSelect.tsx:37
-#: src/components/LanguageSelect.tsx:38
+#: src/components/LanguageSelect.tsx:41
+#: src/components/LanguageSelect.tsx:42
 msgid "Select language"
 msgstr "揀選語言"
 
@@ -10802,6 +11020,16 @@ msgstr "唔支援揀選多種媒體類型。"
 msgid "Self-harm or dangerous behaviors"
 msgstr "自殘或其他危險行爲"
 
+#. placeholder {0}: post.author.handle
+#: src/components/humming/TipButton.tsx:68
+msgid "Send a {tipAmount} tip to @{0}"
+msgstr ""
+
+#. placeholder {0}: post.author.handle
+#: src/components/humming/TipButton.tsx:78
+msgid "Send a tip to @{0}"
+msgstr ""
+
 #: src/components/contacts/screens/PhoneInput.tsx:255
 #: src/components/contacts/screens/PhoneInput.tsx:260
 msgid "Send code"
@@ -10845,6 +11073,11 @@ msgstr "將擧報提交到 {title}"
 msgid "Send the message from your phone"
 msgstr "從你嘅電話傳送呢條訊息"
 
+#: src/components/humming/TipButton.tsx:72
+#: src/components/humming/TipButton.tsx:83
+msgid "Send tip"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:304
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:121
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:124
@@ -10876,6 +11109,14 @@ msgstr "伺服器位址"
 #: src/screens/Settings/AppIconSettings/index.tsx:176
 msgid "Set app icon to {0}"
 msgstr "將應用程式圖標改成 {0}"
+
+#: src/components/humming/PaywallButton.tsx:125
+msgid "Set as paid — {draft} HANEUL"
+msgstr ""
+
+#: src/components/humming/PaywallButton.tsx:113
+msgid "Set as paid post"
+msgstr ""
 
 #: src/screens/Login/SetNewPasswordForm.tsx:99
 msgid "Set new password"
@@ -10911,7 +11152,7 @@ msgstr "設定電郵嚟重設密碼"
 
 #: src/Navigation.tsx:213
 #: src/screens/Settings/Settings.tsx:98
-#: src/view/shell/desktop/LeftNav.tsx:755
+#: src/view/shell/desktop/LeftNav.tsx:758
 #: src/view/shell/Drawer.tsx:668
 msgid "Settings"
 msgstr "設定"
@@ -10987,11 +11228,11 @@ msgstr "性暗示"
 #: src/components/MediaPreview.tsx:237
 #: src/components/Post/Embed/ImageContextMenu.tsx:74
 #: src/components/StarterPack/QrCodeDialog.tsx:198
-#: src/screens/Hashtag.tsx:132
+#: src/screens/Hashtag.tsx:130
 #: src/screens/Messages/components/InviteLinkDialog.tsx:415
 #: src/screens/Messages/components/InviteLinkDialog.tsx:426
 #: src/screens/StarterPack/StarterPackScreen.tsx:447
-#: src/screens/Topic.tsx:90
+#: src/screens/Topic.tsx:89
 msgid "Share"
 msgstr "分享"
 
@@ -11054,8 +11295,8 @@ msgstr "分享 QR code"
 msgid "Share this feed"
 msgstr "分享呢個動態源"
 
-#: src/screens/Search/Shell.tsx:581
-#: src/screens/Search/Shell.tsx:651
+#: src/screens/Search/Shell.tsx:568
+#: src/screens/Search/Shell.tsx:638
 msgid "Share this search"
 msgstr "分享此搵嘢結果"
 
@@ -11210,7 +11451,7 @@ msgstr "顯示警告兼且喺動態源度篩選"
 msgid "Show when you’re live"
 msgstr "顯示直播狀態"
 
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:604
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:607
 msgid "Shows information about when this post was created"
 msgstr "顯示關於呢條帖文嘅建立時間資訊"
 
@@ -11227,7 +11468,7 @@ msgstr "顯示內容"
 #: src/components/dialogs/Signin.tsx:100
 #: src/components/WelcomeModal.tsx:197
 #: src/components/WelcomeModal.tsx:209
-#: src/screens/Hashtag.tsx:228
+#: src/screens/Hashtag.tsx:231
 #: src/screens/Login/index.tsx:143
 #: src/screens/Login/index.tsx:165
 #: src/screens/Login/LoginForm.tsx:274
@@ -11235,7 +11476,7 @@ msgstr "顯示內容"
 #: src/screens/Login/LoginForm.tsx:560
 #: src/screens/Messages/JoinRequest.tsx:290
 #: src/screens/Messages/JoinRequest.tsx:296
-#: src/screens/Search/SearchResults.tsx:433
+#: src/screens/Search/SearchResults.tsx:382
 #: src/view/com/auth/SplashScreen.tsx:116
 #: src/view/com/auth/SplashScreen.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:122
@@ -11294,9 +11535,9 @@ msgstr "登入以檢視帖文"
 #: src/screens/SignupQueued.tsx:94
 #: src/screens/SignupQueued.tsx:97
 #: src/screens/Takendown.tsx:88
-#: src/view/shell/desktop/LeftNav.tsx:227
-#: src/view/shell/desktop/LeftNav.tsx:282
-#: src/view/shell/desktop/LeftNav.tsx:285
+#: src/view/shell/desktop/LeftNav.tsx:228
+#: src/view/shell/desktop/LeftNav.tsx:283
+#: src/view/shell/desktop/LeftNav.tsx:286
 msgid "Sign out"
 msgstr "登出"
 
@@ -11305,7 +11546,7 @@ msgid "Sign Out"
 msgstr "登出"
 
 #: src/screens/Settings/Settings.tsx:296
-#: src/view/shell/desktop/LeftNav.tsx:224
+#: src/view/shell/desktop/LeftNav.tsx:225
 msgid "Sign out?"
 msgstr "係咪要登出？"
 
@@ -11346,7 +11587,7 @@ msgstr "跳過"
 msgid "Skip contact sharing and continue to the app"
 msgstr "跳過分享聯絡人兼繼續使用應用程式"
 
-#: src/view/com/composer/Composer.tsx:1546
+#: src/view/com/composer/Composer.tsx:1555
 msgid "Skip empty posts?"
 msgstr "跳過空白帖文？"
 
@@ -11417,7 +11658,7 @@ msgid "Someone left the group"
 msgstr "有人離開咗羣組"
 
 #. placeholder {0}: reaction.value
-#: src/components/dms/MessageItem.tsx:348
+#: src/components/dms/MessageItem.tsx:367
 msgid "Someone reacted {0}"
 msgstr "有人畀咗個 {0} 反應"
 
@@ -11426,7 +11667,7 @@ msgstr "有人畀咗個 {0} 反應"
 msgid "Someone reacted {0} to {target}"
 msgstr "有人向 {target} 畀咗個 {0} 反應"
 
-#: src/components/dms/MessageItem.tsx:793
+#: src/components/dms/MessageItem.tsx:812
 msgid "Someone replied"
 msgstr ""
 
@@ -11506,8 +11747,8 @@ msgstr "回覆排序"
 msgid "Sort replies to the same post by:"
 msgstr "對同一條帖文下嘅回覆排序："
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:183
-#: src/components/moderation/ModerationDetailsDialog.tsx:202
+#: src/components/moderation/LabelsOnMeDialog.tsx:197
+#: src/components/moderation/ModerationDetailsDialog.tsx:272
 msgid "Source: <0>{sourceName}</0>"
 msgstr "來源：<0>{sourceName}</0>"
 
@@ -11602,12 +11843,9 @@ msgstr "新手包可以幫你同朋友分享你至愛嘅動態源同人。"
 msgid "Status Page"
 msgstr "狀態頁面"
 
-#. placeholder {0}: state.activeStep + 1
 #. placeholder {0}: state.activeStepIndex + 1
-#. placeholder {1}: state.serviceDescription && !state.serviceDescription.phoneVerificationRequired ? '2' : '3'
 #. placeholder {1}: state.totalSteps
 #: src/screens/Onboarding/Layout.tsx:226
-#: src/screens/Signup/index.tsx:191
 msgid "Step {0} of {1}"
 msgstr "第 {0} 步（共 {1} 步）"
 
@@ -11630,8 +11868,8 @@ msgstr "喺 Twitch 開緊 Live？去 Bluesky 設定你嘅直播狀態，你頭�
 
 #: src/components/ageAssurance/AgeAssuranceAppealDialog.tsx:122
 #: src/components/ageAssurance/AgeAssuranceAppealDialog.tsx:128
-#: src/components/moderation/LabelsOnMeDialog.tsx:343
-#: src/components/moderation/LabelsOnMeDialog.tsx:344
+#: src/components/moderation/AppealForm.tsx:154
+#: src/components/moderation/AppealForm.tsx:155
 #: src/components/SendErrorReportDialog.tsx:90
 #: src/components/SendErrorReportDialog.tsx:95
 #: src/features/liveNow/components/GoLiveDisabledDialog.tsx:139
@@ -11659,6 +11897,16 @@ msgstr "提交擧報"
 msgid "Subscribe"
 msgstr "訂閱"
 
+#: src/components/humming/ProfileSubscribeCard.tsx:79
+#: src/components/humming/ProfileSubscribeCard.tsx:85
+#: src/components/humming/SubscribeButton.tsx:65
+msgid "Subscribe — {monthly}"
+msgstr ""
+
+#: src/components/humming/SubscribeButton.tsx:71
+msgid "Subscribe {monthly}"
+msgstr ""
+
 #. placeholder {0}: highlightedPublisher.name
 #: src/components/Post/Embed/StandardSiteEmbed/index.tsx:447
 #: src/components/Post/Embed/StandardSiteEmbed/index.tsx:476
@@ -11670,10 +11918,22 @@ msgstr "訂閱 {0}"
 msgid "Subscribe to {publicationTitle} on {0}"
 msgstr "喺 {0} 訂閱 {publicationTitle}"
 
+#. placeholder {0}: post.author.handle
+#. placeholder {0}: profile.handle
+#: src/components/humming/LockedPostCard.tsx:103
+#: src/components/humming/ProfileSubscribeCard.tsx:91
+#: src/components/humming/SubscribeButton.tsx:77
+msgid "Subscribe to @{0}"
+msgstr ""
+
 #. placeholder {0}: labelerInfo.creator.handle
 #: src/screens/Profile/Sections/Labels.tsx:231
 msgid "Subscribe to @{0} to use these labels:"
 msgstr "訂閱 @ {0} 去用呢啲標記："
+
+#: src/components/humming/LockedWallPanel.tsx:84
+msgid "Subscribe to @{handle}"
+msgstr ""
 
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:252
 msgid "Subscribe to account activity"
@@ -11683,6 +11943,11 @@ msgstr "訂閱帳號動態"
 msgid "Subscribe to Labeler"
 msgstr "訂閱標記服務"
 
+#: src/components/humming/LockedWallPanel.tsx:71
+#: src/components/humming/LockedWallPanel.tsx:77
+msgid "Subscribe to see their posts — {monthly}"
+msgstr ""
+
 #: src/screens/Profile/Header/ProfileHeaderLabeler.tsx:316
 msgid "Subscribe to this labeler"
 msgstr "訂閱呢個標記服務"
@@ -11690,6 +11955,61 @@ msgstr "訂閱呢個標記服務"
 #: src/screens/ProfileList/components/SubscribeMenu.tsx:63
 msgid "Subscribe to this list"
 msgstr "訂閱呢份清單"
+
+#: src/components/humming/LockedPostCard.tsx:87
+#: src/components/humming/LockedPostCard.tsx:97
+msgid "Subscribe to view — {tierLabel}"
+msgstr ""
+
+#: src/components/humming/SubscribeButton.tsx:52
+msgid "Subscribed"
+msgstr ""
+
+#: src/components/humming/ProfileSubscribeCard.tsx:62
+#: src/components/humming/SubscribeButton.tsx:41
+msgid "Subscribed — {monthly}"
+msgstr ""
+
+#: src/components/humming/ProfileSubscribeCard.tsx:67
+msgid "Subscribed ✓"
+msgstr ""
+
+#: src/components/humming/ProfileSubscribeCard.tsx:65
+msgid "Subscribed ✓ · until {untilDate}"
+msgstr ""
+
+#: src/components/humming/hooks.ts:40
+msgid "Subscribed! On-chain tx: {tx}… ({price})"
+msgstr ""
+
+#: src/components/humming/SubscribeButton.tsx:47
+msgid "Subscribed. Valid until {until} (verified on-chain)."
+msgstr ""
+
+#: src/components/humming/LockedPostCard.tsx:55
+msgid "Subscribers-only post"
+msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:267
+#: src/components/humming/ProfileSubscribeCard.tsx:53
+msgid "Subscription"
+msgstr ""
+
+#. placeholder {0}: String(e)
+#: src/components/humming/hooks.ts:47
+msgid "Subscription failed: {0}"
+msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:192
+msgid "Subscription price (HANEUL)"
+msgstr ""
+
+#. placeholder {0}: formatHaneul(earnings.totals.subscriptionGeunhwa)
+#. placeholder {1}: formatHaneul(earnings.totals.tipGeunhwa)
+#. placeholder {2}: formatHaneul(earnings.totals.purchaseGeunhwa)
+#: src/components/humming/CreatorHub.tsx:314
+msgid "Subscriptions {0} · Tips {1} · Purchases {2}"
+msgstr ""
 
 #: src/ageAssurance/components/RedirectOverlay.tsx:252
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:160
@@ -11766,16 +12086,16 @@ msgstr "已停權嘅帳號唔得參與傾偈。"
 #: src/screens/Settings/Settings.tsx:122
 #: src/screens/Settings/Settings.tsx:134
 #: src/screens/Settings/Settings.tsx:615
-#: src/view/shell/desktop/LeftNav.tsx:262
+#: src/view/shell/desktop/LeftNav.tsx:263
 msgid "Switch account"
 msgstr "切換帳號"
 
-#: src/view/shell/desktop/LeftNav.tsx:124
+#: src/view/shell/desktop/LeftNav.tsx:125
 msgid "Switch accounts"
 msgstr "切換帳號"
 
 #. placeholder {0}: sanitizeHandle( profile?.handle ?? account.handle, '@', )
-#: src/view/shell/desktop/LeftNav.tsx:364
+#: src/view/shell/desktop/LeftNav.tsx:365
 msgid "Switch to {0}"
 msgstr "切換去 {0}"
 
@@ -11805,7 +12125,7 @@ msgstr "轉做私密對話。"
 msgid "Tap below to allow Bluesky to access your GPS location. We will then use that data to more accurately determine the content and features available in your region."
 msgstr "撳下低「允許」掣允許 Bluesky 取用你嘅位置資訊，我哋會用佢去更準確噉確定你身處地區可用內容同功能。"
 
-#: src/components/dms/MessageItem.tsx:662
+#: src/components/dms/MessageItem.tsx:681
 msgid "Tap for details"
 msgstr "撳去睇詳細資訊"
 
@@ -11863,7 +12183,7 @@ msgstr "撳吓移除你嘅 {0} 反應"
 msgid "Tap to request access to join this group chat"
 msgstr "撳吓申請加入此羣組傾偈"
 
-#: src/components/dms/MessageItem.tsx:627
+#: src/components/dms/MessageItem.tsx:646
 msgid "Tap to retry"
 msgstr "撳吓試多次"
 
@@ -11876,7 +12196,7 @@ msgstr "撳吓顯示 {0} 反應"
 msgid "Tap to show all reactions"
 msgstr "撳吓顯示所有反應"
 
-#: src/components/dms/MessageItem.tsx:374
+#: src/components/dms/MessageItem.tsx:393
 msgid "Tap to view reactions"
 msgstr "撳吓顯示反應"
 
@@ -11895,6 +12215,10 @@ msgstr "攪掂晒 - 讚夠 10 條帖文！"
 #: src/components/ProgressGuide/List.tsx:111
 msgid "Teach our algorithm what you like"
 msgstr "敎識我哋嘅演算法知你鍾意啲乜"
+
+#: src/components/humming/CreatorHub.tsx:36
+msgid "Tease"
+msgstr ""
 
 #: src/lib/interests.ts:73
 msgid "Tech"
@@ -11933,7 +12257,7 @@ msgstr "服務條款"
 msgid "Text & tags"
 msgstr "字詞同標籤"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:307
+#: src/components/moderation/AppealForm.tsx:118
 #: src/features/liveNow/components/GoLiveDisabledDialog.tsx:122
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 msgid "Text input field"
@@ -11965,7 +12289,7 @@ msgstr "當中包含以下內容："
 msgid "That starter pack could not be found."
 msgstr "搵唔到嗰個新手包。"
 
-#: src/screens/Signup/StepHandle/index.tsx:90
+#: src/screens/Signup/StepHandle/index.tsx:96
 msgid "That username is already taken"
 msgstr "呢個用戶名稱俾人用咗"
 
@@ -11978,8 +12302,8 @@ msgid "That's everything!"
 msgstr "就係咁多喇！"
 
 #: src/components/moderation/BlockDialog.tsx:153
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:184
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:422
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:188
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:428
 msgid "The account will be able to interact with you after unblocking."
 msgstr "解除封鎖之後，呢個帳號就可以同你互動。"
 
@@ -11988,7 +12312,7 @@ msgstr "解除封鎖之後，呢個帳號就可以同你互動。"
 msgid "The app will be restarted"
 msgstr "應用程式將會重啓"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:123
+#: src/components/moderation/ModerationDetailsDialog.tsx:139
 #: src/lib/moderation/useModerationCauseDescription.ts:129
 msgid "The author of this thread has hidden this reply."
 msgstr "呢個討論串嘅作者隱藏咗呢個回覆。"
@@ -12026,12 +12350,12 @@ msgid "The feed has been replaced with Discover."
 msgstr "呢個動態源俾「Discover」取代。"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:64
+msgid "The following labels were applied to this post."
+msgstr ""
+
+#: src/components/moderation/LabelsOnMeDialog.tsx:63
 msgid "The following labels were applied to your account."
 msgstr "以下標記經已套用到你嘅帳號度。"
-
-#: src/components/moderation/LabelsOnMeDialog.tsx:65
-msgid "The following labels were applied to your content."
-msgstr "以下標記經已套用到你嘅內容度。"
 
 #: src/features/liveNow/components/GoLiveDialog.tsx:168
 msgid "The following services are enabled for your account: {allowedServices}"
@@ -12180,10 +12504,10 @@ msgstr "更新你嘅動態源嗰陣出咗問題，請檢查你嘅網絡連線狀
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:127
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:117
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:130
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:92
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:257
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:284
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:300
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:94
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:261
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:288
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:304
 #: src/view/com/profile/ProfileMenu.tsx:144
 #: src/view/com/profile/ProfileMenu.tsx:157
 #: src/view/com/profile/ProfileMenu.tsx:174
@@ -12276,7 +12600,7 @@ msgstr "呢個帳號經已俾你一個或多個內容審覈清單封鎖。若要
 msgid "This action can be undone at any time."
 msgstr "呢個動作可以隨時撤回。"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:285
+#: src/components/moderation/AppealForm.tsx:96
 msgid "This appeal will be sent to <0>{sourceName}</0>."
 msgstr "呢份上訴會提交到 <0>{sourceName}</0> 度。"
 
@@ -12303,7 +12627,7 @@ msgstr "此傾偈已經傾完"
 msgid "This chat is full"
 msgstr "此傾偈已經滿人"
 
-#: src/screens/Messages/components/ChatListItem.tsx:377
+#: src/screens/Messages/components/ChatListItem.tsx:376
 #: src/screens/Messages/components/ChatLocked.tsx:69
 msgid "This chat is locked"
 msgstr "此傾偈已鎖定"
@@ -12338,7 +12662,7 @@ msgstr "呢個內容俾內容審覈服務提供者標記成普通警告。"
 msgid "This content is hosted by {0}. Do you want to enable external media?"
 msgstr "呢個內容係 {0} 所託管。你有冇諗過去啓用外部媒體嚟睇佢？"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:88
+#: src/components/moderation/ModerationDetailsDialog.tsx:104
 #: src/lib/moderation/useModerationCauseDescription.ts:85
 msgid "This content is not available because one of the users involved has blocked the other."
 msgstr "由於佢哋其中一人封鎖咗對方，導致睇唔到呢個內容。"
@@ -12439,13 +12763,18 @@ msgstr "呢條連結無效"
 msgid "This label lets the world know that this account is automated. If turned on, this label appears next to the account's name on their profile and posts. It can be turned on or off at any time."
 msgstr "呢個標記話畀人知呢個係自動化帳號。開咗之後，個標記就會出現喺帳號名同帖文隔籬。你可以隨時加上抑或移除此標記。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:184
+#: src/components/moderation/ModerationDetailsDialog.tsx:254
 msgid "This label was applied by the author."
 msgstr "呢個標記係發布者所加。"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:170
+#: src/components/moderation/LabelsOnMeDialog.tsx:184
 msgid "This label was applied by you."
 msgstr "呢個標記係你所加。"
+
+#: src/components/moderation/LabelsOnMeDialog.tsx:156
+#: src/components/moderation/ModerationDetailsDialog.tsx:231
+msgid "This label was applied to the entire user account and will appear on all posts."
+msgstr ""
 
 #: src/screens/Profile/Sections/Labels.tsx:218
 msgid "This labeler hasn't declared what labels it publishes, and may not be active."
@@ -12468,17 +12797,17 @@ msgstr "呢份清單係你所建立，佢嘅名或描述度可能違反咗 Blues
 msgid "This list is empty."
 msgstr "呢份清單度得個吉。"
 
-#: src/screens/Messages/components/ChatListItem.tsx:336
+#: src/screens/Messages/components/ChatListItem.tsx:335
 msgid "This message is hidden"
 msgstr "此訊息已隱藏"
 
-#: src/components/dms/MessageItem.tsx:660
-#: src/components/dms/MessageItem.tsx:689
+#: src/components/dms/MessageItem.tsx:679
+#: src/components/dms/MessageItem.tsx:708
 msgid "This message is hidden because this user is blocking you."
 msgstr "事緣此用戶封鎖咗你，此訊息已隱藏。"
 
-#: src/components/dms/MessageItem.tsx:659
-#: src/components/dms/MessageItem.tsx:685
+#: src/components/dms/MessageItem.tsx:678
+#: src/components/dms/MessageItem.tsx:704
 msgid "This message is hidden because you are blocking this user."
 msgstr "事緣你封鎖咗此用戶，此訊息已隱藏。"
 
@@ -12486,17 +12815,17 @@ msgstr "事緣你封鎖咗此用戶，此訊息已隱藏。"
 msgid "This moderation service is unavailable. See below for more details. If this issue persists, contact us."
 msgstr "呢個內容審覈服務用唔到，留意下低瞭解更多資訊。若然呢個問題仲係持續發生，請聯絡我哋。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:161
-msgid "This moderation was applied to the entire user account and will appear on all posts."
-msgstr "此內容審覈規則已套用於成個用戶帳號，並會顯示於所有帖文度。"
-
 #: src/components/dms/MessagesListBlockedFooter.tsx:84
 msgid "This person is blocking you"
 msgstr "呢個人封鎖咗你"
 
+#: src/components/humming/hooks.ts:59
+msgid "This post cannot be purchased"
+msgstr ""
+
 #. placeholder {0}: niceDate(i18n, createdAt)
 #. placeholder {1}: niceDate(i18n, indexedAt)
-#: src/screens/PostThread/components/ThreadItemAnchor.tsx:644
+#: src/screens/PostThread/components/ThreadItemAnchor.tsx:647
 msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Bluesky on <1>{1}</1>."
 msgstr "呢條帖文話係話喺 <0>{0}</0> 發布嘅，但係最先出現喺 Bluesky 嘅時間係喺 <1>{1}</1>。"
 
@@ -12516,7 +12845,7 @@ msgstr "呢條帖文經已俾發布者刪除"
 msgid "This post will be hidden from feeds and threads. This cannot be undone."
 msgstr "呢條帖文將會喺討論串同動態源度隱藏，呢個操作冇得取消。"
 
-#: src/view/com/composer/Composer.tsx:1121
+#: src/view/com/composer/Composer.tsx:1127
 msgid "This post's author has disabled quote posts."
 msgstr "呢條帖文嘅發布者唔俾人引用。"
 
@@ -12561,7 +12890,7 @@ msgstr "呢個用戶仲未有人跟佢。"
 msgid "This user has blocked you and cannot be messaged."
 msgstr "呢個用戶封鎖咗你，唔得傳送訊息。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:83
+#: src/components/moderation/ModerationDetailsDialog.tsx:99
 #: src/lib/moderation/useModerationCauseDescription.ts:76
 msgid "This user has blocked you. You cannot view their content."
 msgstr "呢個用戶封鎖咗你，你冇得睇佢發嘅內容。"
@@ -12575,12 +12904,12 @@ msgid "This user has requested that their content only be shown to signed-in use
 msgstr "呢個用戶淨係畀登入咗嘅用戶睇佢發嘅內容。"
 
 #. placeholder {0}: list.name
-#: src/components/moderation/ModerationDetailsDialog.tsx:63
+#: src/components/moderation/ModerationDetailsDialog.tsx:79
 msgid "This user is included in the <0>{0}</0> list which you have blocked."
 msgstr "呢個用戶喺你封鎖咗嘅 <0>{0}</0> 清單度。"
 
 #. placeholder {0}: list.name
-#: src/components/moderation/ModerationDetailsDialog.tsx:95
+#: src/components/moderation/ModerationDetailsDialog.tsx:111
 msgid "This user is included in the <0>{0}</0> list which you have muted."
 msgstr "呢個用戶喺你靜音咗嘅 <0>{0}</0> 清單度。"
 
@@ -12654,6 +12983,19 @@ msgstr "威脅或煽動暴力"
 msgid "Time remaining: {0, plural, one {# second} other {# seconds}}"
 msgstr "剩餘時間：{0, plural, one {# 秒} other {# 秒}}"
 
+#: src/components/humming/CreatorHub.tsx:268
+msgid "Tip"
+msgstr ""
+
+#. placeholder {0}: String(e)
+#: src/components/humming/TipButton.tsx:53
+msgid "Tip failed: {0}"
+msgstr ""
+
+#: src/components/humming/TipButton.tsx:48
+msgid "Tip sent! {amount} → @{handle} (tx: {tx}…)"
+msgstr ""
+
 #: src/components/SendErrorReportDialog.tsx:68
 msgid "Title"
 msgstr "標題"
@@ -12700,9 +13042,9 @@ msgstr "傳送代碼次數過多，唔該等幾分鐘後試多次。"
 msgid "Too many contacts - you've exceeded the number of contacts you can import to find your friends"
 msgstr "聯絡人過多 - 你匯入嘅聯絡人數量經已超過尋找朋友上限"
 
-#: src/screens/Hashtag.tsx:88
-#: src/screens/Search/SearchResults.tsx:73
-#: src/screens/Topic.tsx:59
+#: src/screens/Hashtag.tsx:86
+#: src/screens/Search/SearchResults.tsx:70
+#: src/screens/Topic.tsx:58
 msgid "Top"
 msgstr "至 Hit"
 
@@ -12716,6 +13058,10 @@ msgstr "熱門回覆行先"
 #: src/Navigation.tsx:485
 msgid "Topic"
 msgstr "話題"
+
+#: src/components/humming/CreatorHub.tsx:308
+msgid "Total net earnings"
+msgstr ""
 
 #: src/components/dms/MessageContextMenu.tsx:191
 #: src/components/dms/MessageContextMenu.tsx:194
@@ -12773,11 +13119,11 @@ msgstr "引戰"
 msgid "Trust emerges from relationships, communities, and shared context, so we’re also enabling <0>trusted verifiers</0>: organizations that can directly issue verification."
 msgstr "信任源於人際關係、社羣同共享嘅背景，所以我哋亦都引入咗<0>受信任嘅驗證者</0>：可以直接授予驗證其他帳號嘅組織。"
 
-#: src/screens/Search/SearchResults.tsx:247
+#: src/screens/Search/SearchResults.tsx:229
 msgid "Try a different search term or remove some filters."
 msgstr "試吓搵第啲關鍵字，或移除部分篩選條件。"
 
-#: src/screens/Search/SearchResults.tsx:249
+#: src/screens/Search/SearchResults.tsx:231
 msgid "Try a different search term."
 msgstr "試吓搵第啲關鍵字。"
 
@@ -12839,7 +13185,7 @@ msgstr "連唔到線到你嘅服務。請檢查你嘅網絡連線狀態，跟住
 #: src/screens/Login/index.tsx:100
 #: src/screens/Login/LoginForm.tsx:169
 #: src/screens/Login/SetNewPasswordForm.tsx:77
-#: src/screens/Signup/index.tsx:89
+#: src/screens/Signup/index.tsx:84
 msgid "Unable to contact your service. Please check your Internet connection."
 msgstr "連唔到線到服務，請檢查你嘅網絡連線狀態。"
 
@@ -12879,22 +13225,22 @@ msgstr "目前用唔到"
 msgid "Unavailable feed information"
 msgstr "取用唔到動態源資訊"
 
-#: src/components/dms/MessageItem.tsx:727
+#: src/components/dms/MessageItem.tsx:746
 #: src/components/dms/MessagesListBlockedFooter.tsx:97
 #: src/components/dms/MessagesListBlockedFooter.tsx:104
 #: src/components/moderation/BlockDialog.tsx:186
 #: src/components/moderation/BlockDialog.tsx:190
 #: src/components/moderation/BlockDialog.tsx:211
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:227
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:190
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:365
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:427
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:194
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:369
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:433
 #: src/screens/ProfileList/components/Header.tsx:166
 #: src/screens/ProfileList/components/Header.tsx:173
 msgid "Unblock"
 msgstr "解除封鎖"
 
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:369
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:373
 msgctxt "action"
 msgid "Unblock"
 msgstr "解除封鎖"
@@ -12914,8 +13260,8 @@ msgstr "解除封鎖帳號"
 msgid "Unblock account?"
 msgstr "解除封鎖帳號？"
 
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:182
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:420
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:186
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:426
 msgid "Unblock Account?"
 msgstr "係咪要解除封鎖帳號？"
 
@@ -12950,7 +13296,7 @@ msgid "Undo repost ({0, plural, one {# repost} other {# reposts}})"
 msgstr "唔再轉發（{0, plural, one {# 次轉發} other {# 次轉發}}）"
 
 #. placeholder {0}: profile.handle
-#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:396
+#: src/screens/Profile/Header/ProfileHeaderStandard.tsx:402
 msgid "Unfollow {0}"
 msgstr "唔再跟 {0}"
 
@@ -12993,7 +13339,7 @@ msgstr "唔再讚佢"
 
 #. Accessibility label for the like button when the post has been liked, verb followed by number of likes and noun
 #. placeholder {0}: post.likeCount || 0
-#: src/components/PostControls/index.tsx:276
+#: src/components/PostControls/index.tsx:277
 msgid "Unlike ({0, plural, one {# like} other {# likes}})"
 msgstr "唔再讚佢（{0, plural, one {# 人讚佢} other {# 人讚佢}}）"
 
@@ -13117,7 +13463,7 @@ msgstr "經已喺清單度唔再訂閱"
 msgid "Unsupported clipboard content"
 msgstr "唔支援呢種剪貼簿內容"
 
-#: src/view/com/composer/Composer.tsx:1638
+#: src/view/com/composer/Composer.tsx:1647
 msgid "Unsupported video type: {mimeType}"
 msgstr "唔支援嘅影片類型：{mimeType}"
 
@@ -13210,21 +13556,21 @@ msgstr "喺檔案度上載"
 msgid "Upload from Library"
 msgstr "喺相片圖庫度上載"
 
-#: src/view/com/composer/Composer.tsx:2678
+#: src/view/com/composer/Composer.tsx:2696
 msgid "Uploading GIF..."
 msgstr "上載緊 GIF……"
 
-#: src/lib/api/index.ts:328
-#: src/lib/api/index.ts:355
+#: src/lib/api/index.ts:335
+#: src/lib/api/index.ts:362
 msgid "Uploading images..."
 msgstr "上載緊圖片……"
 
-#: src/lib/api/index.ts:427
-#: src/lib/api/index.ts:451
+#: src/lib/api/index.ts:434
+#: src/lib/api/index.ts:458
 msgid "Uploading link thumbnail..."
 msgstr "上載緊連結縮圖……"
 
-#: src/view/com/composer/Composer.tsx:2680
+#: src/view/com/composer/Composer.tsx:2698
 msgid "Uploading video..."
 msgstr "上載緊條片……"
 
@@ -13273,7 +13619,7 @@ msgctxt "toast"
 msgid "User blocked"
 msgstr "已封鎖用戶"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:75
+#: src/components/moderation/ModerationDetailsDialog.tsx:91
 #: src/lib/moderation/useModerationCauseDescription.ts:64
 msgid "User Blocked"
 msgstr "已封鎖用戶"
@@ -13287,7 +13633,7 @@ msgstr "用戶已被「{0}」封鎖"
 msgid "User blocked by list"
 msgstr "用戶已被清單封鎖"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:61
+#: src/components/moderation/ModerationDetailsDialog.tsx:77
 msgid "User Blocked by List"
 msgstr "用戶已被清單封鎖"
 
@@ -13295,7 +13641,7 @@ msgstr "用戶已被清單封鎖"
 msgid "User Blocking You"
 msgstr "用戶封鎖咗你"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:81
+#: src/components/moderation/ModerationDetailsDialog.tsx:97
 msgid "User Blocks You"
 msgstr "用戶封鎖咗你"
 
@@ -13323,15 +13669,15 @@ msgctxt "toast"
 msgid "User list updated"
 msgstr "用戶清單經已更新"
 
-#: src/screens/Signup/StepHandle/index.tsx:257
+#: src/screens/Signup/StepHandle/index.tsx:275
 msgid "Username cannot be longer than {MAX_SERVICE_HANDLE_LENGTH, plural, other {# characters}}"
 msgstr "用戶名稱唔得超過 {MAX_SERVICE_HANDLE_LENGTH, plural, other {# 個字元}}"
 
-#: src/screens/Signup/StepHandle/index.tsx:241
+#: src/screens/Signup/StepHandle/index.tsx:259
 msgid "Username cannot begin or end with a hyphen"
 msgstr "用戶名稱唔得以連字號（-）開頭或結尾"
 
-#: src/screens/Signup/StepHandle/index.tsx:245
+#: src/screens/Signup/StepHandle/index.tsx:263
 msgid "Username must only contain letters (a-z), numbers, and hyphens"
 msgstr "用戶名稱只能包含字母（a-z）、數字及連字號（-）。"
 
@@ -13444,6 +13790,14 @@ msgstr "驗證你嘅年齡"
 msgid "Verify your email"
 msgstr "驗證你嘅電郵"
 
+#: src/components/humming/CreatorHub.tsx:162
+msgid "Verify your identity"
+msgstr ""
+
+#: src/components/humming/CreatorHub.tsx:173
+msgid "Verify your identity (KYC)"
+msgstr ""
+
 #: src/ageAssurance/components/RedirectOverlay.tsx:297
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:209
 msgid "Verifying"
@@ -13508,7 +13862,7 @@ msgstr "搵唔到條片。"
 msgid "Video settings"
 msgstr "影片設定"
 
-#: src/view/com/composer/Composer.tsx:2698
+#: src/view/com/composer/Composer.tsx:2716
 msgid "Video uploaded"
 msgstr "影片上載成功"
 
@@ -13521,13 +13875,13 @@ msgstr "影片：{0}"
 msgid "Videos"
 msgstr "影片"
 
-#: src/view/com/composer/Composer.tsx:445
-#: src/view/com/composer/Composer.tsx:577
+#: src/view/com/composer/Composer.tsx:448
+#: src/view/com/composer/Composer.tsx:580
 #: src/view/com/composer/SelectMediaButton.tsx:440
 msgid "Videos must be less than 3 minutes long."
 msgstr "影片長度唔得超過 3 分鐘。"
 
-#: src/view/com/composer/Composer.tsx:1228
+#: src/view/com/composer/Composer.tsx:1234
 msgctxt "Action to view the post the user just created"
 msgid "View"
 msgstr "睇吓"
@@ -13539,7 +13893,7 @@ msgid "View {0}"
 msgstr "睇吓 {0}"
 
 #. placeholder {0}: profile.handle
-#: src/screens/Profile/Header/Shell.tsx:257
+#: src/screens/Profile/Header/Shell.tsx:256
 msgid "View {0}'s avatar"
 msgstr "睇吓 {0} 嘅頭像"
 
@@ -13601,7 +13955,7 @@ msgstr "睇吓收到嘅加入申請"
 msgid "View incoming requests to join this group chat"
 msgstr "睇吓此羣組傾偈嘅收到嘅加入申請"
 
-#: src/components/moderation/LabelsOnMe.tsx:56
+#: src/components/moderation/LabelsOnMe.tsx:51
 msgid "View information about these labels"
 msgstr "睇吓同呢啲標記有挐掕嘅詳細資訊"
 
@@ -13616,7 +13970,7 @@ msgstr "睇晒佢哋"
 msgid "View more trending videos"
 msgstr "睇多啲時興影片"
 
-#: src/view/com/composer/Composer.tsx:1223
+#: src/view/com/composer/Composer.tsx:1229
 msgid "View post"
 msgstr "睇吓帖文"
 
@@ -13690,6 +14044,12 @@ msgstr "睇吓你靜音咗嘅帳號"
 msgid "View your verifications"
 msgstr "睇吓你嘅認證"
 
+#: src/components/humming/PaywallButton.tsx:42
+#: src/components/humming/PaywallButton.tsx:61
+#: src/components/humming/PaywallButton.tsx:66
+msgid "Viewing access"
+msgstr ""
+
 #: src/components/images/AutoSizedImage.tsx:222
 #: src/components/images/AutoSizedImage.tsx:254
 msgid "Views full image"
@@ -13755,11 +14115,11 @@ msgstr "我哋搵唔到呢份清單，可能已經刪咗。"
 msgid "We couldn't find an account with that username. Please check that you've typed it correctly, or <0>set your hosting provider manually</0>."
 msgstr ""
 
-#: src/screens/Hashtag.tsx:259
+#: src/screens/Hashtag.tsx:260
 msgid "We couldn't find any results for that tag."
 msgstr "我哋搵唔到同呢個標籤有挐掕嘅結果。"
 
-#: src/screens/Topic.tsx:167
+#: src/screens/Topic.tsx:166
 msgid "We couldn't find any results for that topic."
 msgstr "我哋搵唔到同呢個話題有挐掕嘅結果。"
 
@@ -13894,7 +14254,7 @@ msgstr "我哋遇到網絡問題，唔該試多次"
 msgid "We’re introducing a new layer of verification on Bluesky — an easy-to-see checkmark."
 msgstr "同你介紹 Bluesky 嘅全新驗證機制 —— 驗證標記。"
 
-#: src/screens/Signup/index.tsx:142
+#: src/screens/Signup/index.tsx:137
 msgid "We’re so excited to have you join us!"
 msgstr "我哋非常之高興你加入我哋！"
 
@@ -13915,8 +14275,8 @@ msgstr "對唔住，但係我哋解析唔到呢份清單。若然呢個問題仲
 msgid "We're sorry, but we weren't able to load your muted words at this time. Please try again."
 msgstr "對唔住，我哋而家撈唔到你啲靜音字詞。唔該試多次。"
 
-#: src/screens/Search/SearchResults.tsx:456
-#: src/screens/Search/SearchResults.tsx:593
+#: src/screens/Search/SearchResults.tsx:405
+#: src/screens/Search/SearchResults.tsx:542
 msgid "We’re sorry, but your search could not be completed. Please try again in a few minutes."
 msgstr "對唔住，無法完成你嘅搵嘢要求。唔該等多幾分鐘試吓。"
 
@@ -13924,7 +14284,7 @@ msgstr "對唔住，無法完成你嘅搵嘢要求。唔該等多幾分鐘試吓
 msgid "We're sorry, you cannot access this screen at this time."
 msgstr "唔好意思，你目前進入唔到呢個頁面。"
 
-#: src/view/com/composer/Composer.tsx:1119
+#: src/view/com/composer/Composer.tsx:1125
 msgid "We're sorry! The post you are replying to has been deleted."
 msgstr "對唔住！你覆緊嘅帖文經已俾人刪咗。"
 
@@ -13980,7 +14340,7 @@ msgid "what’s up"
 msgstr "近排點"
 
 #: src/view/com/auth/SplashScreen.web.tsx:98
-#: src/view/com/composer/Composer.tsx:1602
+#: src/view/com/composer/Composer.tsx:1611
 #: src/view/com/feeds/ComposerPrompt.tsx:192
 msgid "What's up?"
 msgstr "有咩大件事？"
@@ -14066,7 +14426,7 @@ msgstr "需要封鎖呢個用戶或離開呢個對話，定一齊執行？"
 msgid "Would you like to save this as a draft before viewing your drafts?"
 msgstr "睇其他草稿之前，你使唔使儲存現有內容先？"
 
-#: src/view/com/composer/Composer.tsx:1517
+#: src/view/com/composer/Composer.tsx:1526
 msgid "Would you like to save this as a draft to edit later?"
 msgstr "你使唔使儲存現有內容做草稿，留返遲啲再編輯？"
 
@@ -14075,12 +14435,12 @@ msgstr "你使唔使儲存現有內容做草稿，留返遲啲再編輯？"
 msgid "Write a post"
 msgstr "撰寫一條帖文"
 
-#: src/view/com/composer/Composer.tsx:1698
+#: src/view/com/composer/Composer.tsx:1707
 msgid "Write post"
 msgstr "撰寫帖文"
 
 #: src/screens/PostThread/components/ThreadComposePrompt.tsx:91
-#: src/view/com/composer/Composer.tsx:1600
+#: src/view/com/composer/Composer.tsx:1609
 msgid "Write your reply"
 msgstr "寫低你嘅回覆"
 
@@ -14137,6 +14497,10 @@ msgstr "係，重新啓用我嘅帳號"
 msgid "Yesterday"
 msgstr "尋日"
 
+#: src/components/humming/hooks.ts:104
+msgid "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
+msgstr ""
+
 #: src/components/verification/VerifierDialog.tsx:61
 msgid "You are a trusted verifier"
 msgstr "你係受信任嘅認證者"
@@ -14146,7 +14510,7 @@ msgid "You are accessing Bluesky from a region that legally requires us to verif
 msgstr "你身處嘅地區法例要求我哋允許你使用 Bluesky 之前需要驗證你嘅年齡。"
 
 #. placeholder {0}: sanitizeHandle(profile.handle, '@')
-#: src/components/dms/MessageItem.tsx:700
+#: src/components/dms/MessageItem.tsx:719
 msgid "You are blocking {0}"
 msgstr "你封鎖咗 {0}"
 
@@ -14252,11 +14616,11 @@ msgid "You can now sign in with your new password."
 msgstr "你而家可以用你嘅新密碼登入。"
 
 #. Toast shown when the user tries to add more images but the post gallery is already at the cap
-#: src/view/com/composer/Composer.tsx:221
+#: src/view/com/composer/Composer.tsx:222
 msgid "You can only add up to {MAX_GALLERY_IMAGES, plural, other {# images}} per post"
 msgstr "帖文唔得超過 {MAX_GALLERY_IMAGES, plural, other {# 張圖片}}"
 
-#: src/view/com/composer/Composer.tsx:1522
+#: src/view/com/composer/Composer.tsx:1531
 msgid "You can only save drafts up to 1000 characters."
 msgstr "你淨係可以儲存 1000 字元嘅草稿。"
 
@@ -14331,7 +14695,7 @@ msgstr "你係第一個抵達呢度嘅人"
 msgid "You have been previously removed from this group and can’t join it using this link."
 msgstr "事緣你之前俾人移出咗羣組，唔得再用此邀請連結加入。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:77
+#: src/components/moderation/ModerationDetailsDialog.tsx:93
 #: src/lib/moderation/useModerationCauseDescription.ts:58
 #: src/lib/moderation/useModerationCauseDescription.ts:66
 msgid "You have blocked this user. You cannot view their content."
@@ -14355,7 +14719,7 @@ msgstr "你輸入嘅驗證碼唔啱。格式應該係 XXXXX-XXXXX。"
 msgid "You have hidden this post"
 msgstr "你經已隱藏咗呢條帖文"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:115
+#: src/components/moderation/ModerationDetailsDialog.tsx:131
 msgid "You have hidden this post."
 msgstr "你經已隱藏咗呢條帖文。"
 
@@ -14363,7 +14727,7 @@ msgstr "你經已隱藏咗呢條帖文。"
 msgid "You have marked this account as automated. You can remove it at any time from your account settings."
 msgstr "你經已標記呢個帳號係自動化帳號，你可以隨時喺帳號設定移除標記。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:108
+#: src/components/moderation/ModerationDetailsDialog.tsx:124
 #: src/lib/moderation/useModerationCauseDescription.ts:100
 msgid "You have muted this account."
 msgstr "你經已靜音咗呢個帳號。"
@@ -14401,7 +14765,7 @@ msgstr "你經已成功驗證電郵地址。你而家可以閂咗呢個對話框
 msgid "You have temporarily reached the limit for video uploads. Please try again later."
 msgstr "你暫時經已達到上載影片嘅上限，唔該遲啲試多次。"
 
-#: src/view/com/composer/Composer.tsx:1512
+#: src/view/com/composer/Composer.tsx:1521
 msgid "You have unsaved changes to this draft, would you like to save them?"
 msgstr "你呢份草稿有未儲存嘅變更，使唔使儲存咗先？"
 
@@ -14425,7 +14789,7 @@ msgstr "你而家仲未建立自訂動態源。"
 msgid "You haven't muted any words or tags yet"
 msgstr "你而家仲未靜音過任何字詞或標籤"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:122
+#: src/components/moderation/ModerationDetailsDialog.tsx:138
 #: src/lib/moderation/useModerationCauseDescription.ts:128
 msgid "You hid this reply."
 msgstr "你隱藏咗呢個回覆。"
@@ -14443,11 +14807,12 @@ msgstr "你喺 {timeAgoString}前加入咗 Bluesky"
 msgid "You joined Bluesky using a starter pack {timeAgoString} ago"
 msgstr "你喺 {timeAgoString}前使用新手包加入咗 Bluesky"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:84
+#: src/components/moderation/LabelsOnMeDialog.tsx:83
 msgid "You may appeal non-self labels if you feel they were placed in error."
 msgstr "若然你覺得其他人標記內容唔啱，可以提出申訴。"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:89
+#: src/components/moderation/LabelsOnMeDialog.tsx:88
+#: src/components/moderation/ModerationDetailsDialog.tsx:210
 msgid "You may appeal these labels if you feel they were placed in error."
 msgstr "若然你覺得呢啲標記內容唔啱，可以提出申訴。"
 
@@ -14498,7 +14863,7 @@ msgid "You probably want to restart the app now."
 msgstr "你家陣可能要重新啓用個應用程式。"
 
 #. placeholder {0}: reaction.value
-#: src/components/dms/MessageItem.tsx:341
+#: src/components/dms/MessageItem.tsx:360
 msgid "You reacted {0}"
 msgstr "你畀咗個 {0} 反應"
 
@@ -14512,15 +14877,15 @@ msgstr "你向 {target} 畀咗個 {0} 反應"
 msgid "You recently changed your birthdate"
 msgstr "你近排變更咗出世日期"
 
-#: src/components/dms/MessageItem.tsx:786
+#: src/components/dms/MessageItem.tsx:805
 msgid "You replied"
 msgstr "你覆咗"
 
-#: src/components/dms/MessageItem.tsx:785
+#: src/components/dms/MessageItem.tsx:804
 msgid "You replied to {originalName}"
 msgstr "你覆咗 {originalName}"
 
-#: src/components/dms/MessageItem.tsx:783
+#: src/components/dms/MessageItem.tsx:802
 msgid "You replied to yourself"
 msgstr "你覆咗自己"
 
@@ -14530,7 +14895,7 @@ msgid "You requested to join"
 msgstr "你已申請加入"
 
 #: src/screens/Settings/Settings.tsx:297
-#: src/view/shell/desktop/LeftNav.tsx:225
+#: src/view/shell/desktop/LeftNav.tsx:226
 msgid "You will be signed out of all your accounts."
 msgstr "你將會登出所有帳號。"
 
@@ -14560,11 +14925,11 @@ msgstr "除非獲得邀請，否則無法重新加入。"
 msgid "You: {message}"
 msgstr "你：{message}"
 
-#: src/screens/Signup/index.tsx:160
+#: src/screens/Signup/index.tsx:155
 msgid "You'll follow the suggested users and feeds once you finish creating your account!"
 msgstr "建立完帳號之後，你就會自動跟啲建議嘅用戶同動態源！"
 
-#: src/screens/Signup/index.tsx:165
+#: src/screens/Signup/index.tsx:160
 msgid "You'll follow the suggested users once you finish creating your account!"
 msgstr "建立完帳號之後，你就會自動跟啲建議嘅用戶！"
 
@@ -14611,11 +14976,11 @@ msgstr "輪到你喇"
 msgid "You're signed in with an App Password. Please sign in with your main password to continue deactivating your account."
 msgstr "你而家用緊應用程式專用密碼去登入，請用返你嘅主要密碼登入去繼續停用你嘅帳號。"
 
-#: src/components/moderation/LabelsOnMeDialog.tsx:262
+#: src/components/moderation/AppealForm.tsx:73
 msgid "You've already appealed this label and it's being reviewed by our moderation team."
 msgstr "你經已對呢個標記提出過申訴，而家我哋嘅內容審覈團隊審查緊。"
 
-#: src/components/moderation/ModerationDetailsDialog.tsx:112
+#: src/components/moderation/ModerationDetailsDialog.tsx:128
 #: src/lib/moderation/useModerationCauseDescription.ts:109
 msgid "You've chosen to hide a word or tag within this post."
 msgstr "你揀咗喺呢條帖文度隱藏字詞或標籤。"
@@ -14636,7 +15001,7 @@ msgstr "你經已轆到最㞘。"
 msgid "You've reached the end of your feed! Find some more accounts to follow."
 msgstr "你經已睇晒你嘅動態源喇！去搵更多人嚟跟佢哋啦。"
 
-#: src/view/com/composer/Composer.tsx:723
+#: src/view/com/composer/Composer.tsx:726
 msgid "You've reached the maximum number of drafts"
 msgstr "你經已達到儲存草稿數量上限"
 
@@ -14663,10 +15028,6 @@ msgstr "你經已達到每日上載影片嘅上限（影片數量過多）"
 #: src/screens/VideoFeed/index.tsx:1150
 msgid "You've run out of videos to watch. Maybe it's a good time to take a break?"
 msgstr "你睇晒所有嘢喇。可能係時候要唞陣先？"
-
-#: src/screens/Signup/index.tsx:201
-msgid "Your account"
-msgstr "你嘅帳號"
 
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:128
 msgid "Your account has been deleted, see ya! ✌️"
@@ -14741,7 +15102,6 @@ msgstr "你嘅電郵"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:51
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:82
-#: src/screens/Signup/state.ts:278
 #: src/screens/Signup/StepInfo/index.tsx:129
 msgid "Your email appears to be invalid."
 msgstr "你嘅電郵似乎無效。"
@@ -14804,6 +15164,10 @@ msgstr "你設定咗嘅靜音字"
 msgid "Your name, avatar, the name of the group chat, and the number of members will be visible to everyone."
 msgstr "你嘅名稱、頭像、羣組傾偈嘅名稱同埋成員數目所有人都可以睇到。"
 
+#: src/screens/Signup/index.tsx:190
+msgid "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
+msgstr ""
+
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:72
 msgid "Your password has been changed successfully! Please use your new password when you sign in to Bluesky from now on."
 msgstr "你嘅密碼經已變更成功！由而家開始請使用你新嘅密碼登入 Bluesky。"
@@ -14812,11 +15176,11 @@ msgstr "你嘅密碼經已變更成功！由而家開始請使用你新嘅密碼
 msgid "Your password must be at least 8 characters long."
 msgstr "你輸入嘅密碼必須至少要 8 個字元。"
 
-#: src/view/com/composer/Composer.tsx:1219
+#: src/view/com/composer/Composer.tsx:1225
 msgid "Your post was sent"
 msgstr "已發布你嘅帖文"
 
-#: src/view/com/composer/Composer.tsx:1216
+#: src/view/com/composer/Composer.tsx:1222
 msgid "Your posts were sent"
 msgstr "已發布你嘅帖文"
 
@@ -14837,7 +15201,7 @@ msgstr "你嘅頭像俾其他用戶嘅頭像一圈圈噉圍住"
 msgid "Your profile, posts, feeds, and lists will no longer be visible to other Bluesky users. You can reactivate your account at any time by logging in."
 msgstr "你嘅個人檔案、帖文、動態源同埋清單唔會再畀其他 Bluesky 用戶睇到。你幾時都可以登入重新啓用你嘅帳號。"
 
-#: src/view/com/composer/Composer.tsx:1218
+#: src/view/com/composer/Composer.tsx:1224
 msgid "Your reply was sent"
 msgstr "已發布你嘅回覆"
 
@@ -14850,7 +15214,7 @@ msgstr "你嘅擧報會提交去 <0>{0}</0>。"
 msgid "Your selected interests help us serve you content you care about."
 msgstr "你揀選嘅心水主題可以幫我哋提供更多你所關注嘅內容。"
 
-#: src/view/com/composer/Composer.tsx:1547
+#: src/view/com/composer/Composer.tsx:1556
 msgid "Your thread has empty posts that will be skipped. The remaining posts will be published as a thread."
 msgstr "你嘅帖文串包含空白帖文，空白帖文將會跳過，剩低嗰啲帖文會重新整理成帖文串發布。"
 

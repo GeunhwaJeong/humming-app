@@ -1,20 +1,23 @@
 // Humming: compact on-chain subscription button for the profile header
 // action row. The full card below the bio is ProfileSubscribeCard.
 import {type AppBskyActorDefs} from '@atproto/api'
+import {msg} from '@lingui/core/macro'
+import {useLingui} from '@lingui/react'
+import {Trans} from '@lingui/react/macro'
 
 import {useSession} from '#/state/session'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {CircleCheck_Stroke2_Corner0_Rounded as CircleCheck} from '#/components/icons/CircleCheck'
 import * as Prompt from '#/components/Prompt'
 import * as Toast from '#/components/Toast'
-import {formatHaneul} from './api'
-import {useCreatorInfo, useSubscribeMutation} from './hooks'
+import {formatTier, useCreatorInfo, useSubscribeMutation} from './hooks'
 
 export function HummingSubscribeButton({
   profile,
 }: {
   profile: AppBskyActorDefs.ProfileViewDetailed
 }) {
+  const {_, i18n} = useLingui()
   const {currentAccount} = useSession()
   const promptControl = Prompt.usePromptControl()
   const {data} = useCreatorInfo(profile.did)
@@ -24,7 +27,10 @@ export function HummingSubscribeButton({
   if (!data?.tier || isMe) return null
 
   const {tier, viewer} = data
-  const monthly = `${formatHaneul(tier.price)} / ${Math.round(tier.periodMs / 86_400_000)}일`
+  const monthly = formatTier(i18n, {
+    priceGeunhwa: tier.price,
+    periodMs: tier.periodMs,
+  })
 
   if (viewer.subscribed) {
     return (
@@ -32,15 +38,19 @@ export function HummingSubscribeButton({
         testID="hummingSubscribedBtn"
         size="small"
         color="secondary"
-        label={`구독 중 — ${monthly}`}
+        label={_(msg`Subscribed — ${monthly}`)}
         onPress={() => {
           const until = viewer.expiresMs
-            ? new Date(viewer.expiresMs).toLocaleDateString('ko-KR')
+            ? new Date(viewer.expiresMs).toLocaleDateString(i18n.locale)
             : '?'
-          Toast.show(`구독 중이에요. ${until}까지 유효 (온체인 판정)`)
+          Toast.show(
+            _(msg`Subscribed. Valid until ${until} (verified on-chain).`),
+          )
         }}>
         <ButtonIcon icon={CircleCheck} />
-        <ButtonText>구독 중</ButtonText>
+        <ButtonText>
+          <Trans>Subscribed</Trans>
+        </ButtonText>
       </Button>
     )
   }
@@ -52,16 +62,24 @@ export function HummingSubscribeButton({
         size="small"
         color="primary"
         disabled={isPending}
-        label={`구독 — ${monthly}`}
+        label={_(msg`Subscribe — ${monthly}`)}
         onPress={() => promptControl.open()}>
-        <ButtonText>{isPending ? '결제 중…' : `구독 ${monthly}`}</ButtonText>
+        <ButtonText>
+          {isPending ? (
+            <Trans>Paying on-chain…</Trans>
+          ) : (
+            <Trans>Subscribe {monthly}</Trans>
+          )}
+        </ButtonText>
       </Button>
       <Prompt.Basic
         control={promptControl}
-        title={`@${profile.handle} 구독`}
-        description={`${monthly} 요금이 내 Haneul 지갑에서 결제됩니다. 플랫폼 수수료를 제외한 전액이 크리에이터에게 온체인으로 즉시 정산되고, 구독 기간 판정도 체인이 합니다.`}
+        title={_(msg`Subscribe to @${profile.handle}`)}
+        description={_(
+          msg`${monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period.`,
+        )}
         onConfirm={() => subscribe()}
-        confirmButtonCta="온체인 결제"
+        confirmButtonCta={_(msg`Pay on-chain`)}
       />
     </>
   )

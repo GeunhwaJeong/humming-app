@@ -188,8 +188,8 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
                       {state.activeStep !== SignupStep.CAPTCHA && (
                         <Text style={[a.text_md, t.atoms.text_contrast_medium]}>
                           <Trans>
-                            닉네임이 곧 지갑입니다 — 계정을 만들면 온체인 이름과
-                            지갑이 함께 발급됩니다.
+                            Your nickname is your wallet — creating an account
+                            issues an on-chain name and a wallet together.
                           </Trans>
                         </Text>
                       )}

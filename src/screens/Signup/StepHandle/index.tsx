@@ -297,7 +297,7 @@ export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
               }
               setDraftPassword(val)
             }}
-            label="비밀번호 (8자 이상)"
+            label={_(msg`Password (8+ characters)`)}
             value={draftPassword}
             secureTextEntry
             autoCapitalize="none"
@@ -308,7 +308,7 @@ export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
         <View style={{minHeight: 21}}>
           {isPasswordTooShort && (
             <RequirementText>
-              <Trans>비밀번호는 8자 이상이어야 합니다</Trans>
+              <Trans>Password must be at least 8 characters long</Trans>
             </RequirementText>
           )}
         </View>
@@ -319,7 +319,7 @@ export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
           isNextDisabled={isNextDisabled}
           onBackPress={onBackPress}
           onNextPress={() => void onNextPress()}
-          overrideNextText="계정 생성"
+          overrideNextText={_(msg`Create account`)}
         />
       </Animated.View>
     </>
