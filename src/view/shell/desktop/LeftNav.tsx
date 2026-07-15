@@ -38,6 +38,7 @@ import {
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {type DialogControlProps} from '#/components/Dialog'
 import {CreatorNavItem} from '#/components/humming/CreatorHub'
+import {WalletNavItem} from '#/components/humming/Wallet'
 import {ArrowBoxLeft_Stroke2_Corner0_Rounded as LeaveIcon} from '#/components/icons/ArrowBoxLeft'
 import {
   Bell_Filled_Corner0_Rounded as BellFilledIcon,
@@ -754,6 +755,8 @@ export function DesktopLeftNav({routeName}: {routeName: string}) {
           />
           {/* Humming: 팬→크리에이터 전환 퍼널 — 프로필과 설정 사이 (OnlyFans 배치 관습) */}
           <CreatorNavItem minimal={leftNavMinimal} />
+          {/* Humming: 지갑(주소·잔고·받기) — 가입=지갑 구조를 UI에 드러내는 진입점 */}
+          <WalletNavItem minimal={leftNavMinimal} />
           <NavItem
             label={l`Settings`}
             href="/settings"

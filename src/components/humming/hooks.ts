@@ -13,6 +13,7 @@ import {
   formatHaneul,
   getCreatorInfo,
   getEarnings,
+  getWalletInfo,
   type LockMode,
   purchasePost,
   subscribeToCreator,
@@ -73,6 +74,19 @@ export function usePurchaseMutation(postUri: string) {
     onError: e => {
       Toast.show(_(msg`Purchase failed: ${String(e)}`), {type: 'error'})
     },
+  })
+}
+
+// 내 지갑(주소·잔고·최근 활동) — 사이드바 지갑 패널이 사용, 열려 있는 동안만 조회
+export function useWalletInfo(enabled: boolean) {
+  const agent = useAgent()
+  const {hasSession, currentAccount} = useSession()
+  return useQuery({
+    queryKey: ['humming-wallet', currentAccount?.did],
+    queryFn: () => getWalletInfo(agent),
+    enabled: hasSession && enabled,
+    // 잔고는 외부 입금(거래소 송금 등)으로도 변하므로 패널이 열려 있으면 주기 갱신
+    refetchInterval: 10_000,
   })
 }
 

@@ -150,7 +150,7 @@ msgstr "{0, plural, other {사진 #장}}"
 
 #. placeholder {0}: stats?.posts ?? 0
 #: src/components/humming/LockedWallPanel.tsx:58
-#: src/components/humming/ProfileSubscribeCard.tsx:106
+#: src/components/humming/ProfileSubscribeCard.tsx:105
 msgid "{0, plural, one {# post} other {# posts}}"
 msgstr "{0, plural, other {게시물 #개}}"
 
@@ -473,7 +473,7 @@ msgstr "{count, plural, other {새 참여 요청 #개}}"
 msgid "{count, plural, one {# request} other {# requests}}"
 msgstr "{count, plural, other {#개 요청}}"
 
-#: src/view/shell/desktop/LeftNav.tsx:485
+#: src/view/shell/desktop/LeftNav.tsx:486
 msgid "{count, plural, one {# unread item} other {# unread items}}"
 msgstr "읽지 않은 항목 {count, plural, other {#개}}"
 
@@ -755,7 +755,7 @@ msgstr "읽지 않은 항목 {notificationCount, plural, other {#개}}"
 msgid "{numMatches, plural, one {# contact found} other {# contacts found}}"
 msgstr "{numMatches, plural, other {연락처 #개를}} 찾았습니다"
 
-#: src/components/humming/hooks.ts:138
+#: src/components/humming/hooks.ts:152
 msgid "{price} / {days} days"
 msgstr "{price} / {days}일"
 
@@ -976,6 +976,10 @@ msgstr "구독료의 95%가 내 Haneul 지갑으로 즉시 정산됩니다. 정�
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
 msgstr "News, Booksky, Game Dev, Blacksky, Fountain Pens 등 Bluesky에서 찾을 수 있는 인기 피드 모음"
+
+#: src/components/humming/Wallet.tsx:253
+msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
+msgstr "가입하는 순간 Haneul 지갑이 함께 만들어졌어요. 거래소나 다른 지갑에서 내 주소로 HANEUL을 보내면 구독·팁·게시물 잠금 해제를 시작할 수 있어요."
 
 #. If last message does not contain text, fall back to "{user} reacted to {a message}"
 #: src/components/dms/getReactionInfo.ts:53
@@ -1228,8 +1232,8 @@ msgstr "대체 텍스트 추가 (선택 사항)"
 
 #: src/screens/Settings/Settings.tsx:575
 #: src/screens/Settings/Settings.tsx:578
-#: src/view/shell/desktop/LeftNav.tsx:277
-#: src/view/shell/desktop/LeftNav.tsx:280
+#: src/view/shell/desktop/LeftNav.tsx:278
+#: src/view/shell/desktop/LeftNav.tsx:281
 msgid "Add another account"
 msgstr "다른 계정 추가"
 
@@ -1397,6 +1401,10 @@ msgstr "추가 세부 정보 (1000자 이내)"
 msgid "Additional details (limit 300 characters)"
 msgstr "추가 세부 정보 (300자 이내)"
 
+#: src/components/humming/Wallet.tsx:109
+msgid "Address copied to clipboard"
+msgstr "주소가 클립보드에 복사되었어요"
+
 #: src/screens/Messages/ConversationSettings/Member.tsx:94
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:155
 msgid "Admin"
@@ -1506,7 +1514,7 @@ msgstr "다음 단어 모두 포함"
 msgid "All posts"
 msgstr "모든 게시물"
 
-#: src/components/humming/ProfileSubscribeCard.tsx:111
+#: src/components/humming/ProfileSubscribeCard.tsx:109
 msgid "All posts are for subscribers only"
 msgstr "전부 구독자에게만 공개됩니다"
 
@@ -2099,6 +2107,14 @@ msgstr "뒤로"
 msgid "Back to Chats"
 msgstr "대화로 돌아가기"
 
+#: src/components/humming/Wallet.tsx:352
+msgid "Back to wallet"
+msgstr "지갑으로 돌아가기"
+
+#: src/components/humming/Wallet.tsx:212
+msgid "Balance"
+msgstr "잔고"
+
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:216
 msgid "Banned activities or security violations"
 msgstr "금지된 활동 또는 보안 위반"
@@ -2581,7 +2597,7 @@ msgstr "카메라 접근 권한이 필요합니다"
 #: src/view/com/composer/Composer.tsx:1834
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:44
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:53
-#: src/view/shell/desktop/LeftNav.tsx:229
+#: src/view/shell/desktop/LeftNav.tsx:230
 msgid "Cancel"
 msgstr "취소"
 
@@ -2712,7 +2728,7 @@ msgstr "리스트를 만든 후에는 스타터 팩의 변경 사항이 리스�
 #: src/lib/hooks/useNotificationHandler.ts:133
 #: src/Navigation.tsx:491
 #: src/view/shell/bottom-bar/BottomBar.tsx:242
-#: src/view/shell/desktop/LeftNav.tsx:699
+#: src/view/shell/desktop/LeftNav.tsx:700
 #: src/view/shell/Drawer.tsx:525
 msgid "Chat"
 msgstr "대화"
@@ -3155,7 +3171,7 @@ msgstr "챌린지 완료하기"
 
 #: src/lib/hotkeys/index.tsx:66
 #: src/view/com/feeds/ComposerPrompt.tsx:147
-#: src/view/shell/desktop/LeftNav.tsx:588
+#: src/view/shell/desktop/LeftNav.tsx:589
 msgid "Compose new post"
 msgstr "새 게시물 작성하기"
 
@@ -3377,7 +3393,7 @@ msgid "Conversation not found."
 msgstr "대화를 찾을 수 없습니다."
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:111
+#: src/components/humming/hooks.ts:125
 msgid "Conversion failed: {0}"
 msgstr "전환 실패: {0}"
 
@@ -3508,6 +3524,11 @@ msgstr "QR 코드 복사"
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:457
 msgid "Copy TXT record value"
 msgstr "TXT 레코드 값 복사"
+
+#: src/components/humming/Wallet.tsx:176
+#: src/components/humming/Wallet.tsx:419
+msgid "Copy wallet address"
+msgstr "지갑 주소 복사"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:41
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:108
@@ -4826,7 +4847,7 @@ msgstr "노골적인 성적 이미지."
 
 #: src/Navigation.tsx:751
 #: src/screens/Search/Shell.tsx:552
-#: src/view/shell/desktop/LeftNav.tsx:678
+#: src/view/shell/desktop/LeftNav.tsx:679
 #: src/view/shell/Drawer.tsx:473
 msgid "Explore"
 msgstr "탐색"
@@ -5264,7 +5285,7 @@ msgstr "피드 운영자에게 피드백을 전송했습니다"
 #: src/screens/StarterPack/StarterPackScreen.tsx:196
 #: src/view/screens/Feeds.tsx:504
 #: src/view/screens/Profile.tsx:239
-#: src/view/shell/desktop/LeftNav.tsx:713
+#: src/view/shell/desktop/LeftNav.tsx:714
 #: src/view/shell/Drawer.tsx:589
 msgid "Feeds"
 msgstr "피드"
@@ -5922,8 +5943,8 @@ msgstr "다음"
 #: src/components/dms/ConvoMenu.tsx:262
 #: src/screens/Messages/components/MessagesListInfoPanel.tsx:98
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:194
-#: src/view/shell/desktop/LeftNav.tsx:337
-#: src/view/shell/desktop/LeftNav.tsx:343
+#: src/view/shell/desktop/LeftNav.tsx:338
+#: src/view/shell/desktop/LeftNav.tsx:344
 msgid "Go to profile"
 msgstr "프로필로 이동"
 
@@ -6311,7 +6332,7 @@ msgstr "잠깐! 동영상에 대한 접근 권한이 점차적으로 제공되�
 #: src/Navigation.tsx:746
 #: src/Navigation.tsx:767
 #: src/view/shell/bottom-bar/BottomBar.tsx:196
-#: src/view/shell/desktop/LeftNav.tsx:668
+#: src/view/shell/desktop/LeftNav.tsx:669
 #: src/view/shell/Drawer.tsx:499
 msgid "Home"
 msgstr "홈"
@@ -7257,7 +7278,7 @@ msgstr "리스트를 언뮤트했습니다"
 #: src/view/screens/Lists.tsx:60
 #: src/view/screens/Profile.tsx:233
 #: src/view/screens/Profile.tsx:241
-#: src/view/shell/desktop/LeftNav.tsx:723
+#: src/view/shell/desktop/LeftNav.tsx:724
 #: src/view/shell/Drawer.tsx:604
 msgid "Lists"
 msgstr "리스트"
@@ -8034,7 +8055,7 @@ msgid "New post"
 msgstr "새 게시물"
 
 #: src/view/com/feeds/FeedPage.tsx:179
-#: src/view/shell/desktop/LeftNav.tsx:599
+#: src/view/shell/desktop/LeftNav.tsx:600
 msgctxt "action"
 msgid "New post"
 msgstr "새 게시물"
@@ -8408,7 +8429,7 @@ msgstr "알림음"
 #: src/screens/Settings/Settings.tsx:200
 #: src/view/screens/Notifications.tsx:128
 #: src/view/shell/bottom-bar/BottomBar.tsx:279
-#: src/view/shell/desktop/LeftNav.tsx:688
+#: src/view/shell/desktop/LeftNav.tsx:689
 #: src/view/shell/Drawer.tsx:552
 msgid "Notifications"
 msgstr "알림"
@@ -8840,6 +8861,10 @@ msgstr "작성기에서 이 임시 저장을 엽니다"
 msgid "Opens this profile"
 msgstr "이 프로필을 엽니다"
 
+#: src/components/humming/Wallet.tsx:63
+msgid "Opens your Haneul wallet"
+msgstr "내 Haneul 지갑을 엽니다"
+
 #: src/components/dialogs/MutedWords.tsx:308
 msgid "Options:"
 msgstr "옵션:"
@@ -9008,6 +9033,7 @@ msgid "Paying on-chain…"
 msgstr "온체인 결제 중…"
 
 #: src/components/humming/CreatorHub.tsx:349
+#: src/components/humming/Wallet.tsx:309
 msgid "Payment"
 msgstr "결제"
 
@@ -9361,7 +9387,7 @@ msgid "Post"
 msgstr "게시물"
 
 #. placeholder {0}: item.postId
-#: src/components/humming/CreatorHub.tsx:352
+#: src/components/humming/CreatorHub.tsx:351
 msgid "post {0}"
 msgstr "글 {0}"
 
@@ -9586,7 +9612,7 @@ msgid "profile"
 msgstr "프로필"
 
 #: src/view/shell/bottom-bar/BottomBar.tsx:322
-#: src/view/shell/desktop/LeftNav.tsx:746
+#: src/view/shell/desktop/LeftNav.tsx:747
 #: src/view/shell/Drawer.tsx:91
 #: src/view/shell/Drawer.tsx:655
 msgid "Profile"
@@ -9639,15 +9665,16 @@ msgid "Publish reply"
 msgstr "답글 등록하기"
 
 #: src/components/humming/CreatorHub.tsx:269
+#: src/components/humming/Wallet.tsx:38
 msgid "Purchase"
 msgstr "단건구매"
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:74
+#: src/components/humming/hooks.ts:75
 msgid "Purchase failed: {0}"
 msgstr "구매 실패: {0}"
 
-#: src/components/humming/hooks.ts:67
+#: src/components/humming/hooks.ts:68
 msgid "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
 msgstr "구매 완료! 이 게시물을 영구 열람합니다 (tx: {tx}…, {price})"
 
@@ -9806,6 +9833,15 @@ msgstr "진짜 사람들."
 msgid "Reason for appeal"
 msgstr "이의신청 이유"
 
+#: src/components/humming/Wallet.tsx:235
+msgid "Receive"
+msgstr "받기"
+
+#: src/components/humming/Wallet.tsx:227
+#: src/components/humming/Wallet.tsx:362
+msgid "Receive HANEUL"
+msgstr "HANEUL 받기"
+
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:137
 msgid "Receive in-app notifications"
 msgstr "인앱 알림 받기"
@@ -9813,6 +9849,10 @@ msgstr "인앱 알림 받기"
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:120
 msgid "Receive push notifications"
 msgstr "푸시 알림 받기"
+
+#: src/components/humming/Wallet.tsx:270
+msgid "Recent activity"
+msgstr "최근 활동"
 
 #. Accessibility label for the icon-only pill that shows previously selected GIFs in the GIF picker.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:35
@@ -10598,7 +10638,7 @@ msgstr "다음에도 이 옵션 저장하기"
 msgid "Save to my feeds"
 msgstr "내 피드에 저장"
 
-#: src/view/shell/desktop/LeftNav.tsx:733
+#: src/view/shell/desktop/LeftNav.tsx:734
 #: src/view/shell/Drawer.tsx:630
 msgctxt "link to bookmarks screen"
 msgid "Saved"
@@ -11152,7 +11192,7 @@ msgstr "비밀번호 재설정을 위한 이메일을 설정합니다"
 
 #: src/Navigation.tsx:213
 #: src/screens/Settings/Settings.tsx:98
-#: src/view/shell/desktop/LeftNav.tsx:758
+#: src/view/shell/desktop/LeftNav.tsx:761
 #: src/view/shell/Drawer.tsx:668
 msgid "Settings"
 msgstr "설정"
@@ -11535,9 +11575,9 @@ msgstr "로그인하여 게시물 보기"
 #: src/screens/SignupQueued.tsx:94
 #: src/screens/SignupQueued.tsx:97
 #: src/screens/Takendown.tsx:88
-#: src/view/shell/desktop/LeftNav.tsx:228
-#: src/view/shell/desktop/LeftNav.tsx:283
-#: src/view/shell/desktop/LeftNav.tsx:286
+#: src/view/shell/desktop/LeftNav.tsx:229
+#: src/view/shell/desktop/LeftNav.tsx:284
+#: src/view/shell/desktop/LeftNav.tsx:287
 msgid "Sign out"
 msgstr "로그아웃"
 
@@ -11546,7 +11586,7 @@ msgid "Sign Out"
 msgstr "로그아웃"
 
 #: src/screens/Settings/Settings.tsx:296
-#: src/view/shell/desktop/LeftNav.tsx:225
+#: src/view/shell/desktop/LeftNav.tsx:226
 msgid "Sign out?"
 msgstr "로그아웃하시겠습니까?"
 
@@ -11978,7 +12018,7 @@ msgstr "구독 중 ✓"
 msgid "Subscribed ✓ · until {untilDate}"
 msgstr "구독 중 ✓ · {untilDate}까지"
 
-#: src/components/humming/hooks.ts:40
+#: src/components/humming/hooks.ts:41
 msgid "Subscribed! On-chain tx: {tx}… ({price})"
 msgstr "구독 완료! 온체인 tx: {tx}… ({price})"
 
@@ -11992,11 +12032,12 @@ msgstr "구독자 전용 게시물입니다"
 
 #: src/components/humming/CreatorHub.tsx:267
 #: src/components/humming/ProfileSubscribeCard.tsx:53
+#: src/components/humming/Wallet.tsx:36
 msgid "Subscription"
 msgstr "구독"
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:47
+#: src/components/humming/hooks.ts:48
 msgid "Subscription failed: {0}"
 msgstr "구독 실패: {0}"
 
@@ -12086,16 +12127,16 @@ msgstr "정지된 계정은 대화에 참여할 수 없습니다."
 #: src/screens/Settings/Settings.tsx:122
 #: src/screens/Settings/Settings.tsx:134
 #: src/screens/Settings/Settings.tsx:615
-#: src/view/shell/desktop/LeftNav.tsx:263
+#: src/view/shell/desktop/LeftNav.tsx:264
 msgid "Switch account"
 msgstr "계정 전환"
 
-#: src/view/shell/desktop/LeftNav.tsx:125
+#: src/view/shell/desktop/LeftNav.tsx:126
 msgid "Switch accounts"
 msgstr "계정 전환"
 
 #. placeholder {0}: sanitizeHandle( profile?.handle ?? account.handle, '@', )
-#: src/view/shell/desktop/LeftNav.tsx:365
+#: src/view/shell/desktop/LeftNav.tsx:366
 msgid "Switch to {0}"
 msgstr "{0}(으)로 전환"
 
@@ -12819,7 +12860,7 @@ msgstr "이 검토 서비스는 사용할 수 없습니다. 자세한 내용은 
 msgid "This person is blocking you"
 msgstr "이 사용자는 나를 차단했습니다"
 
-#: src/components/humming/hooks.ts:59
+#: src/components/humming/hooks.ts:60
 msgid "This post cannot be purchased"
 msgstr "구매 가능한 게시물이 아닙니다"
 
@@ -12984,6 +13025,7 @@ msgid "Time remaining: {0, plural, one {# second} other {# seconds}}"
 msgstr "남은 시간: {0, plural, other {#초}}"
 
 #: src/components/humming/CreatorHub.tsx:268
+#: src/components/humming/Wallet.tsx:37
 msgid "Tip"
 msgstr "팁"
 
@@ -13162,6 +13204,11 @@ msgstr "박명"
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:65
 msgid "Two-factor authentication (2FA)"
 msgstr "2단계 인증"
+
+#. placeholder {0}: item.tx.slice(0, 8)
+#: src/components/humming/Wallet.tsx:314
+msgid "tx {0}…"
+msgstr "tx {0}…"
 
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:445
 msgid "Type:"
@@ -13600,6 +13647,10 @@ msgstr "내 기본 브라우저 사용"
 #: src/screens/Feeds/NoSavedFeedsOfAnyType.tsx:57
 msgid "Use recommended"
 msgstr "추천 사용"
+
+#: src/components/humming/Wallet.tsx:444
+msgid "Use this address to receive HANEUL on the Haneul network — from an exchange or any other wallet."
+msgstr "이 주소로 Haneul 네트워크의 HANEUL을 받을 수 있어요 — 거래소든 다른 지갑이든 어디서든요."
 
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:190
 msgid "Use this to sign in to the other app along with your handle."
@@ -14080,6 +14131,12 @@ msgstr "알림 설정으로 이동"
 msgid "Volume"
 msgstr "음량"
 
+#: src/components/humming/Wallet.tsx:62
+#: src/components/humming/Wallet.tsx:71
+#: src/components/humming/Wallet.tsx:86
+msgid "Wallet"
+msgstr "지갑"
+
 #: src/components/moderation/LabelPreference.tsx:142
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
@@ -14497,7 +14554,7 @@ msgstr "내 계정 재활성화"
 msgid "Yesterday"
 msgstr "어제"
 
-#: src/components/humming/hooks.ts:104
+#: src/components/humming/hooks.ts:118
 msgid "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
 msgstr "크리에이터 전환 완료! 티어가 온체인에 생성되었습니다 (tx: {tx}…)"
 
@@ -14895,7 +14952,7 @@ msgid "You requested to join"
 msgstr "참여 요청을 보냈습니다"
 
 #: src/screens/Settings/Settings.tsx:297
-#: src/view/shell/desktop/LeftNav.tsx:226
+#: src/view/shell/desktop/LeftNav.tsx:227
 msgid "You will be signed out of all your accounts."
 msgstr "모든 계정에서 로그아웃됩니다."
 
@@ -15225,3 +15282,7 @@ msgstr "사용자 이름과 비밀번호가 <0>{host}</0>에 공유됩니다. �
 #: src/components/verification/VerificationsDialog.tsx:67
 msgid "Your verifications"
 msgstr "내 인증"
+
+#: src/components/humming/Wallet.tsx:250
+msgid "Your wallet is ready"
+msgstr "지갑이 준비되어 있어요"

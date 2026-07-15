@@ -128,3 +128,29 @@ export function becomeCreator(
 export function getEarnings(agent: AtpAgent): Promise<Earnings> {
   return callFacade<Earnings>(agent, 'app.humming.creator.getEarnings')
 }
+
+export interface WalletActivityItem {
+  kind: 'subscription' | 'tip' | 'purchase'
+  direction: 'in' | 'out'
+  counterparty: string
+  amountGeunhwa: number
+  atMs: number
+  tx: string
+}
+
+export interface WalletInfo {
+  address: string
+  handle: string
+  balanceGeunhwa: number
+  activity: WalletActivityItem[]
+}
+
+// 지갑 패널(읽기 전용): 주소·잔고·최근 온체인 활동 — 가입=지갑을 UI에 드러낸다
+export function getWalletInfo(agent: AtpAgent): Promise<WalletInfo> {
+  return callFacade<WalletInfo>(agent, 'app.humming.wallet.getInfo')
+}
+
+/** 0x1234…5678 — 지갑 UI 관례(앞 4 + 뒤 4)의 축약 표기 */
+export function shortenAddress(address: string): string {
+  return `${address.slice(0, 6)}…${address.slice(-4)}`
+}
