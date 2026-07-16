@@ -145,7 +145,7 @@ msgstr "{0, plural, one {# photo} other {# photos}}"
 
 #. placeholder {0}: stats?.posts ?? 0
 #: src/components/humming/LockedWallPanel.tsx:58
-#: src/components/humming/ProfileSubscribeCard.tsx:106
+#: src/components/humming/ProfileSubscribeCard.tsx:105
 msgid "{0, plural, one {# post} other {# posts}}"
 msgstr "{0, plural, one {# post} other {# posts}}"
 
@@ -468,7 +468,7 @@ msgstr "{count, plural, one {# new join request} other {# new join requests}}"
 msgid "{count, plural, one {# request} other {# requests}}"
 msgstr "{count, plural, one {# request} other {# requests}}"
 
-#: src/view/shell/desktop/LeftNav.tsx:485
+#: src/view/shell/desktop/LeftNav.tsx:486
 msgid "{count, plural, one {# unread item} other {# unread items}}"
 msgstr ""
 
@@ -750,7 +750,7 @@ msgstr ""
 msgid "{numMatches, plural, one {# contact found} other {# contacts found}}"
 msgstr ""
 
-#: src/components/humming/hooks.ts:138
+#: src/components/humming/hooks.ts:152
 msgid "{price} / {days} days"
 msgstr "{price} / {days} days"
 
@@ -971,6 +971,10 @@ msgstr "95% of every subscription settles straight to your Haneul wallet. No pay
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
 msgstr ""
+
+#: src/components/humming/Wallet.tsx:246
+msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
+msgstr "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
 
 #. If last message does not contain text, fall back to "{user} reacted to {a message}"
 #: src/components/dms/getReactionInfo.ts:53
@@ -1223,8 +1227,8 @@ msgstr ""
 
 #: src/screens/Settings/Settings.tsx:575
 #: src/screens/Settings/Settings.tsx:578
-#: src/view/shell/desktop/LeftNav.tsx:277
-#: src/view/shell/desktop/LeftNav.tsx:280
+#: src/view/shell/desktop/LeftNav.tsx:278
+#: src/view/shell/desktop/LeftNav.tsx:281
 msgid "Add another account"
 msgstr ""
 
@@ -1392,6 +1396,10 @@ msgstr ""
 msgid "Additional details (limit 300 characters)"
 msgstr ""
 
+#: src/components/humming/Wallet.tsx:109
+msgid "Address copied to clipboard"
+msgstr "Address copied to clipboard"
+
 #: src/screens/Messages/ConversationSettings/Member.tsx:94
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:155
 msgid "Admin"
@@ -1501,7 +1509,7 @@ msgstr "All of these words"
 msgid "All posts"
 msgstr "All posts"
 
-#: src/components/humming/ProfileSubscribeCard.tsx:111
+#: src/components/humming/ProfileSubscribeCard.tsx:109
 msgid "All posts are for subscribers only"
 msgstr "All posts are for subscribers only"
 
@@ -2094,6 +2102,14 @@ msgstr ""
 msgid "Back to Chats"
 msgstr ""
 
+#: src/components/humming/Wallet.tsx:344
+msgid "Back to wallet"
+msgstr "Back to wallet"
+
+#: src/components/humming/Wallet.tsx:212
+msgid "Balance"
+msgstr "Balance"
+
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:216
 msgid "Banned activities or security violations"
 msgstr ""
@@ -2576,7 +2592,7 @@ msgstr "Camera access needed"
 #: src/view/com/composer/Composer.tsx:1834
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:44
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:53
-#: src/view/shell/desktop/LeftNav.tsx:229
+#: src/view/shell/desktop/LeftNav.tsx:230
 msgid "Cancel"
 msgstr ""
 
@@ -2707,7 +2723,7 @@ msgstr ""
 #: src/lib/hooks/useNotificationHandler.ts:133
 #: src/Navigation.tsx:491
 #: src/view/shell/bottom-bar/BottomBar.tsx:242
-#: src/view/shell/desktop/LeftNav.tsx:699
+#: src/view/shell/desktop/LeftNav.tsx:700
 #: src/view/shell/Drawer.tsx:525
 msgid "Chat"
 msgstr ""
@@ -3150,7 +3166,7 @@ msgstr ""
 
 #: src/lib/hotkeys/index.tsx:66
 #: src/view/com/feeds/ComposerPrompt.tsx:147
-#: src/view/shell/desktop/LeftNav.tsx:588
+#: src/view/shell/desktop/LeftNav.tsx:589
 msgid "Compose new post"
 msgstr ""
 
@@ -3372,7 +3388,7 @@ msgid "Conversation not found."
 msgstr "Conversation not found."
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:111
+#: src/components/humming/hooks.ts:125
 msgid "Conversion failed: {0}"
 msgstr "Conversion failed: {0}"
 
@@ -3503,6 +3519,11 @@ msgstr ""
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:457
 msgid "Copy TXT record value"
 msgstr ""
+
+#: src/components/humming/Wallet.tsx:176
+#: src/components/humming/Wallet.tsx:411
+msgid "Copy wallet address"
+msgstr "Copy wallet address"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:41
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:108
@@ -4821,7 +4842,7 @@ msgstr ""
 
 #: src/Navigation.tsx:751
 #: src/screens/Search/Shell.tsx:552
-#: src/view/shell/desktop/LeftNav.tsx:678
+#: src/view/shell/desktop/LeftNav.tsx:679
 #: src/view/shell/Drawer.tsx:473
 msgid "Explore"
 msgstr ""
@@ -5259,7 +5280,7 @@ msgstr ""
 #: src/screens/StarterPack/StarterPackScreen.tsx:196
 #: src/view/screens/Feeds.tsx:504
 #: src/view/screens/Profile.tsx:239
-#: src/view/shell/desktop/LeftNav.tsx:713
+#: src/view/shell/desktop/LeftNav.tsx:714
 #: src/view/shell/Drawer.tsx:589
 msgid "Feeds"
 msgstr ""
@@ -5917,8 +5938,8 @@ msgstr ""
 #: src/components/dms/ConvoMenu.tsx:262
 #: src/screens/Messages/components/MessagesListInfoPanel.tsx:98
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:194
-#: src/view/shell/desktop/LeftNav.tsx:337
-#: src/view/shell/desktop/LeftNav.tsx:343
+#: src/view/shell/desktop/LeftNav.tsx:338
+#: src/view/shell/desktop/LeftNav.tsx:344
 msgid "Go to profile"
 msgstr ""
 
@@ -6306,7 +6327,7 @@ msgstr ""
 #: src/Navigation.tsx:746
 #: src/Navigation.tsx:767
 #: src/view/shell/bottom-bar/BottomBar.tsx:196
-#: src/view/shell/desktop/LeftNav.tsx:668
+#: src/view/shell/desktop/LeftNav.tsx:669
 #: src/view/shell/Drawer.tsx:499
 msgid "Home"
 msgstr ""
@@ -7252,7 +7273,7 @@ msgstr ""
 #: src/view/screens/Lists.tsx:60
 #: src/view/screens/Profile.tsx:233
 #: src/view/screens/Profile.tsx:241
-#: src/view/shell/desktop/LeftNav.tsx:723
+#: src/view/shell/desktop/LeftNav.tsx:724
 #: src/view/shell/Drawer.tsx:604
 msgid "Lists"
 msgstr ""
@@ -8029,7 +8050,7 @@ msgid "New post"
 msgstr ""
 
 #: src/view/com/feeds/FeedPage.tsx:179
-#: src/view/shell/desktop/LeftNav.tsx:599
+#: src/view/shell/desktop/LeftNav.tsx:600
 msgctxt "action"
 msgid "New post"
 msgstr ""
@@ -8403,7 +8424,7 @@ msgstr ""
 #: src/screens/Settings/Settings.tsx:200
 #: src/view/screens/Notifications.tsx:128
 #: src/view/shell/bottom-bar/BottomBar.tsx:279
-#: src/view/shell/desktop/LeftNav.tsx:688
+#: src/view/shell/desktop/LeftNav.tsx:689
 #: src/view/shell/Drawer.tsx:552
 msgid "Notifications"
 msgstr ""
@@ -8835,6 +8856,10 @@ msgstr ""
 msgid "Opens this profile"
 msgstr ""
 
+#: src/components/humming/Wallet.tsx:63
+msgid "Opens your Haneul wallet"
+msgstr "Opens your Haneul wallet"
+
 #: src/components/dialogs/MutedWords.tsx:308
 msgid "Options:"
 msgstr ""
@@ -9003,6 +9028,7 @@ msgid "Paying on-chain…"
 msgstr "Paying on-chain…"
 
 #: src/components/humming/CreatorHub.tsx:349
+#: src/components/humming/Wallet.tsx:302
 msgid "Payment"
 msgstr "Payment"
 
@@ -9356,7 +9382,7 @@ msgid "Post"
 msgstr ""
 
 #. placeholder {0}: item.postId
-#: src/components/humming/CreatorHub.tsx:352
+#: src/components/humming/CreatorHub.tsx:351
 msgid "post {0}"
 msgstr "post {0}"
 
@@ -9581,7 +9607,7 @@ msgid "profile"
 msgstr ""
 
 #: src/view/shell/bottom-bar/BottomBar.tsx:322
-#: src/view/shell/desktop/LeftNav.tsx:746
+#: src/view/shell/desktop/LeftNav.tsx:747
 #: src/view/shell/Drawer.tsx:91
 #: src/view/shell/Drawer.tsx:655
 msgid "Profile"
@@ -9634,15 +9660,16 @@ msgid "Publish reply"
 msgstr ""
 
 #: src/components/humming/CreatorHub.tsx:269
+#: src/components/humming/Wallet.tsx:38
 msgid "Purchase"
 msgstr "Purchase"
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:74
+#: src/components/humming/hooks.ts:75
 msgid "Purchase failed: {0}"
 msgstr "Purchase failed: {0}"
 
-#: src/components/humming/hooks.ts:67
+#: src/components/humming/hooks.ts:68
 msgid "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
 msgstr "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
 
@@ -9801,6 +9828,15 @@ msgstr ""
 msgid "Reason for appeal"
 msgstr ""
 
+#: src/components/humming/Wallet.tsx:233
+msgid "Receive"
+msgstr "Receive"
+
+#: src/components/humming/Wallet.tsx:225
+#: src/components/humming/Wallet.tsx:354
+msgid "Receive HANEUL"
+msgstr "Receive HANEUL"
+
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:137
 msgid "Receive in-app notifications"
 msgstr ""
@@ -9808,6 +9844,10 @@ msgstr ""
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:120
 msgid "Receive push notifications"
 msgstr ""
+
+#: src/components/humming/Wallet.tsx:263
+msgid "Recent activity"
+msgstr "Recent activity"
 
 #. Accessibility label for the icon-only pill that shows previously selected GIFs in the GIF picker.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:35
@@ -10593,7 +10633,7 @@ msgstr ""
 msgid "Save to my feeds"
 msgstr ""
 
-#: src/view/shell/desktop/LeftNav.tsx:733
+#: src/view/shell/desktop/LeftNav.tsx:734
 #: src/view/shell/Drawer.tsx:630
 msgctxt "link to bookmarks screen"
 msgid "Saved"
@@ -11147,7 +11187,7 @@ msgstr ""
 
 #: src/Navigation.tsx:213
 #: src/screens/Settings/Settings.tsx:98
-#: src/view/shell/desktop/LeftNav.tsx:758
+#: src/view/shell/desktop/LeftNav.tsx:761
 #: src/view/shell/Drawer.tsx:668
 msgid "Settings"
 msgstr ""
@@ -11530,9 +11570,9 @@ msgstr ""
 #: src/screens/SignupQueued.tsx:94
 #: src/screens/SignupQueued.tsx:97
 #: src/screens/Takendown.tsx:88
-#: src/view/shell/desktop/LeftNav.tsx:228
-#: src/view/shell/desktop/LeftNav.tsx:283
-#: src/view/shell/desktop/LeftNav.tsx:286
+#: src/view/shell/desktop/LeftNav.tsx:229
+#: src/view/shell/desktop/LeftNav.tsx:284
+#: src/view/shell/desktop/LeftNav.tsx:287
 msgid "Sign out"
 msgstr ""
 
@@ -11541,7 +11581,7 @@ msgid "Sign Out"
 msgstr ""
 
 #: src/screens/Settings/Settings.tsx:296
-#: src/view/shell/desktop/LeftNav.tsx:225
+#: src/view/shell/desktop/LeftNav.tsx:226
 msgid "Sign out?"
 msgstr ""
 
@@ -11973,7 +12013,7 @@ msgstr "Subscribed ✓"
 msgid "Subscribed ✓ · until {untilDate}"
 msgstr "Subscribed ✓ · until {untilDate}"
 
-#: src/components/humming/hooks.ts:40
+#: src/components/humming/hooks.ts:41
 msgid "Subscribed! On-chain tx: {tx}… ({price})"
 msgstr "Subscribed! On-chain tx: {tx}… ({price})"
 
@@ -11987,11 +12027,12 @@ msgstr "Subscribers-only post"
 
 #: src/components/humming/CreatorHub.tsx:267
 #: src/components/humming/ProfileSubscribeCard.tsx:53
+#: src/components/humming/Wallet.tsx:36
 msgid "Subscription"
 msgstr "Subscription"
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:47
+#: src/components/humming/hooks.ts:48
 msgid "Subscription failed: {0}"
 msgstr "Subscription failed: {0}"
 
@@ -12081,16 +12122,16 @@ msgstr "Suspended accounts cannot participate in chat."
 #: src/screens/Settings/Settings.tsx:122
 #: src/screens/Settings/Settings.tsx:134
 #: src/screens/Settings/Settings.tsx:615
-#: src/view/shell/desktop/LeftNav.tsx:263
+#: src/view/shell/desktop/LeftNav.tsx:264
 msgid "Switch account"
 msgstr ""
 
-#: src/view/shell/desktop/LeftNav.tsx:125
+#: src/view/shell/desktop/LeftNav.tsx:126
 msgid "Switch accounts"
 msgstr ""
 
 #. placeholder {0}: sanitizeHandle( profile?.handle ?? account.handle, '@', )
-#: src/view/shell/desktop/LeftNav.tsx:365
+#: src/view/shell/desktop/LeftNav.tsx:366
 msgid "Switch to {0}"
 msgstr ""
 
@@ -12814,7 +12855,7 @@ msgstr ""
 msgid "This person is blocking you"
 msgstr "This person is blocking you"
 
-#: src/components/humming/hooks.ts:59
+#: src/components/humming/hooks.ts:60
 msgid "This post cannot be purchased"
 msgstr "This post cannot be purchased"
 
@@ -12979,6 +13020,7 @@ msgid "Time remaining: {0, plural, one {# second} other {# seconds}}"
 msgstr ""
 
 #: src/components/humming/CreatorHub.tsx:268
+#: src/components/humming/Wallet.tsx:37
 msgid "Tip"
 msgstr "Tip"
 
@@ -13157,6 +13199,11 @@ msgstr "Twilight"
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:65
 msgid "Two-factor authentication (2FA)"
 msgstr ""
+
+#. placeholder {0}: item.tx.slice(0, 8)
+#: src/components/humming/Wallet.tsx:306
+msgid "tx {0}…"
+msgstr "tx {0}…"
 
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:445
 msgid "Type:"
@@ -13595,6 +13642,10 @@ msgstr ""
 #: src/screens/Feeds/NoSavedFeedsOfAnyType.tsx:57
 msgid "Use recommended"
 msgstr ""
+
+#: src/components/humming/Wallet.tsx:445
+msgid "Use this address to receive HANEUL on the Haneul network — from an exchange or any other wallet."
+msgstr "Use this address to receive HANEUL on the Haneul network — from an exchange or any other wallet."
 
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:190
 msgid "Use this to sign in to the other app along with your handle."
@@ -14075,6 +14126,12 @@ msgstr ""
 msgid "Volume"
 msgstr ""
 
+#: src/components/humming/Wallet.tsx:62
+#: src/components/humming/Wallet.tsx:71
+#: src/components/humming/Wallet.tsx:86
+msgid "Wallet"
+msgstr "Wallet"
+
 #: src/components/moderation/LabelPreference.tsx:142
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
@@ -14492,7 +14549,7 @@ msgstr ""
 msgid "Yesterday"
 msgstr ""
 
-#: src/components/humming/hooks.ts:104
+#: src/components/humming/hooks.ts:118
 msgid "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
 msgstr "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
 
@@ -14890,7 +14947,7 @@ msgid "You requested to join"
 msgstr "You requested to join"
 
 #: src/screens/Settings/Settings.tsx:297
-#: src/view/shell/desktop/LeftNav.tsx:226
+#: src/view/shell/desktop/LeftNav.tsx:227
 msgid "You will be signed out of all your accounts."
 msgstr ""
 
@@ -15220,3 +15277,7 @@ msgstr "Your username and password will be shared with <0>{host}</0>. If you don
 #: src/components/verification/VerificationsDialog.tsx:67
 msgid "Your verifications"
 msgstr ""
+
+#: src/components/humming/Wallet.tsx:243
+msgid "Your wallet is ready"
+msgstr "Your wallet is ready"
