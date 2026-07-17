@@ -105,12 +105,12 @@ msgstr "{0, plural, other {#時間}}"
 #. placeholder {0}: labels.length
 #: src/components/moderation/PostAlerts.tsx:149
 msgid "{0, plural, one {# label applied to your post} other {# labels applied to your post}}"
-msgstr ""
+msgstr "{0, plural, other {あなたの投稿に # 件のラベルが適用されています}}"
 
 #. placeholder {0}: labels.length
 #: src/components/moderation/PostAlerts.tsx:156
 msgid "{0, plural, one {# label applied} other {# labels applied}}"
-msgstr ""
+msgstr "{0, plural, other {# 件のラベルが適用されています}}"
 
 #. placeholder {0}: likeCount ?? 0
 #: src/screens/Post/PostLikedBy.tsx:34
@@ -146,13 +146,13 @@ msgstr "{0, plural, other {#人}}がリアクションしました – {1}"
 #. placeholder {0}: lock.media.images
 #: src/components/humming/LockedPostCard.tsx:63
 msgid "{0, plural, one {# photo} other {# photos}}"
-msgstr ""
+msgstr "{0, plural, other {写真 # 枚}}"
 
 #. placeholder {0}: stats?.posts ?? 0
 #: src/components/humming/LockedWallPanel.tsx:58
 #: src/components/humming/ProfileSubscribeCard.tsx:105
 msgid "{0, plural, one {# post} other {# posts}}"
-msgstr ""
+msgstr "{0, plural, other {投稿 # 件}}"
 
 #. placeholder {0}: quoteCount ?? 0
 #: src/screens/Post/PostQuotes.tsx:34
@@ -180,7 +180,7 @@ msgstr "{0, plural, other {#件の未読}}"
 #. placeholder {0}: lock.media.videos
 #: src/components/humming/LockedPostCard.tsx:66
 msgid "{0, plural, one {# video} other {# videos}}"
-msgstr ""
+msgstr "{0, plural, other {動画 # 本}}"
 
 #. How long it takes to read an article, in minutes. Displayed in a short form, e.g. "5m" for 5 minutes.
 #. placeholder {0}: view.readingTime
@@ -723,11 +723,11 @@ msgstr "{minutes, plural, other {#分}}"
 #: src/components/humming/ProfileSubscribeCard.tsx:93
 #: src/components/humming/SubscribeButton.tsx:79
 msgid "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period."
-msgstr ""
+msgstr "{monthly} がお使いのHaneulウォレットから支払われます。プラットフォーム手数料を除く全額がオンチェーンで即時にクリエイターへ送られ、購読期間はチェーン自体が保証します。"
 
 #: src/components/humming/LockedWallPanel.tsx:86
 msgid "{monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
-msgstr ""
+msgstr "{monthly} がお使いのHaneulウォレットから支払われます。プラットフォーム手数料を除く全額がオンチェーンで即時にクリエイターへ送られます。"
 
 #. placeholder {0}: reaction.value
 #: src/components/dms/getReactionInfo.ts:65
@@ -757,11 +757,11 @@ msgstr "{numMatches, plural, other {連絡先が#個見つかりました}}"
 
 #: src/components/humming/hooks.ts:152
 msgid "{price} / {days} days"
-msgstr ""
+msgstr "{price} / {days}日"
 
 #: src/components/humming/LockedPostCard.tsx:138
 msgid "{price} will be charged from your Haneul wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain."
-msgstr ""
+msgstr "{price} がお使いのHaneulウォレットから支払われ、この投稿は購読なしで永久にアンロックされます。購入はオンチェーンに記録されます。"
 
 #: src/components/NewskieDialog.tsx:115
 msgid "{profileName} joined Bluesky {timeAgoString} ago"
@@ -800,11 +800,11 @@ msgstr "{requestCount}件以上のリクエスト"
 
 #: src/components/humming/LockedPostCard.tsx:105
 msgid "{tierLabel} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain."
-msgstr ""
+msgstr "{tierLabel} がお使いのHaneulウォレットから支払われます。プラットフォーム手数料を除く全額がオンチェーンで即時にクリエイターへ送られます。"
 
 #: src/components/humming/TipButton.tsx:80
 msgid "{tipAmount} will be sent on-chain from your Haneul wallet straight to the creator's wallet (platform fee deducted automatically)."
-msgstr ""
+msgstr "{tipAmount} がお使いのHaneulウォレットからクリエイターのウォレットへオンチェーンで直接送られます（プラットフォーム手数料は自動で差し引かれます）。"
 
 #. trending topic time spent trending. should be as short as possible to fit in a pill
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:191
@@ -937,27 +937,27 @@ msgstr "⚠無効なハンドル"
 
 #: src/view/screens/TermsOfService.tsx:40
 msgid "1. About Humming"
-msgstr ""
+msgstr "1. Hummingについて"
 
 #: src/components/humming/CreatorHub.tsx:159
 msgid "1. Identity verification"
-msgstr ""
+msgstr "1. 本人確認"
 
 #: src/view/screens/PrivacyPolicy.tsx:40
 msgid "1. What we collect"
-msgstr ""
+msgstr "1. 収集する情報"
 
 #: src/view/screens/TermsOfService.tsx:49
 msgid "2. Age requirement"
-msgstr ""
+msgstr "2. 年齢要件"
 
 #: src/components/humming/CreatorHub.tsx:187
 msgid "2. Monthly subscription price (30 days, HANEUL)"
-msgstr ""
+msgstr "2. 月額購読価格（30日、HANEUL）"
 
 #: src/view/screens/PrivacyPolicy.tsx:52
 msgid "2. What lives on the blockchain"
-msgstr ""
+msgstr "2. ブロックチェーンに記録されるもの"
 
 #: src/components/dialogs/MutedWords.tsx:202
 #: src/components/dialogs/MutedWords.tsx:551
@@ -971,15 +971,15 @@ msgstr "2要素認証の確認"
 
 #: src/view/screens/PrivacyPolicy.tsx:62
 msgid "3. How we use data"
-msgstr ""
+msgstr "3. データの利用方法"
 
 #: src/components/humming/CreatorHub.tsx:215
 msgid "3. How your posts are shown"
-msgstr ""
+msgstr "3. 投稿の表示方法"
 
 #: src/view/screens/TermsOfService.tsx:57
 msgid "3. On-chain payments are final"
-msgstr ""
+msgstr "3. オンチェーン決済は最終的なものです"
 
 #: src/components/dialogs/MutedWords.tsx:241
 #: src/components/dialogs/MutedWords.tsx:565
@@ -989,23 +989,23 @@ msgstr "30日"
 
 #: src/view/screens/PrivacyPolicy.tsx:72
 msgid "4. Deletion"
-msgstr ""
+msgstr "4. 削除"
 
 #: src/view/screens/TermsOfService.tsx:69
 msgid "4. Your wallet"
-msgstr ""
+msgstr "4. ウォレット"
 
 #: src/view/screens/PrivacyPolicy.tsx:82
 msgid "5. Contact"
-msgstr ""
+msgstr "5. お問い合わせ"
 
 #: src/view/screens/TermsOfService.tsx:80
 msgid "5. Creator content"
-msgstr ""
+msgstr "5. クリエイターのコンテンツ"
 
 #: src/view/screens/TermsOfService.tsx:91
 msgid "6. Prohibited conduct"
-msgstr ""
+msgstr "6. 禁止行為"
 
 #: src/components/dialogs/MutedWords.tsx:226
 #: src/components/dialogs/MutedWords.tsx:558
@@ -1015,19 +1015,19 @@ msgstr "7日"
 
 #: src/view/screens/TermsOfService.tsx:99
 msgid "7. Service availability"
-msgstr ""
+msgstr "7. サービスの提供"
 
 #: src/view/screens/TermsOfService.tsx:109
 msgid "8. Termination"
-msgstr ""
+msgstr "8. 利用終了"
 
 #: src/view/screens/TermsOfService.tsx:118
 msgid "9. Changes"
-msgstr ""
+msgstr "9. 規約の変更"
 
 #: src/components/humming/CreatorHub.tsx:143
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
-msgstr ""
+msgstr "購読料の95%がそのままあなたのHaneulウォレットに入ります。振込待ちも出金申請もなし — ファンが支払った瞬間、お金はオンチェーンで届きます。"
 
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
@@ -1035,7 +1035,7 @@ msgstr "News、Booksky、Game Dev、Blacksky、そしてFountain Pensといっ�
 
 #: src/components/humming/Wallet.tsx:246
 msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
-msgstr ""
+msgstr "登録した瞬間にHaneulウォレットが作成されています。取引所や他のウォレットからこのアドレスにHANEULを送ると、購読・チップ・投稿のアンロックができます。"
 
 #. If last message does not contain text, fall back to "{user} reacted to {a message}"
 #: src/components/dms/getReactionInfo.ts:53
@@ -1134,7 +1134,7 @@ msgstr "この言語の提案を受け入れる"
 
 #: src/components/humming/LockedPostCard.tsx:74
 msgid "Access is verified by your on-chain subscription and purchase state on Haneul"
-msgstr ""
+msgstr "閲覧資格はHaneul上のオンチェーン購読・購入状態で検証されます"
 
 #: src/components/intents/GroupChatJoinDialog.tsx:119
 msgid "Access requested! The group owner will review your request."
@@ -1256,7 +1256,7 @@ msgstr "コンテンツの警告を追加"
 
 #: src/components/humming/PaywallButton.tsx:69
 msgid "Add a price and subscribers read for free while everyone else pays per post. The price is fixed on-chain together with the post."
-msgstr ""
+msgstr "価格を設定すると、購読者は無料で読め、それ以外の人は投稿ごとに支払います。価格は投稿と一緒にオンチェーンで固定されます。"
 
 #: src/features/liveNow/components/GoLiveDialog.tsx:114
 msgid "Add a temporary live status to your profile. When someone clicks on your avatar, they’ll see information about your live event."
@@ -1459,7 +1459,7 @@ msgstr "追加の詳細（300文字まで）"
 
 #: src/components/humming/Wallet.tsx:109
 msgid "Address copied to clipboard"
-msgstr ""
+msgstr "アドレスをクリップボードにコピーしました"
 
 #: src/screens/Messages/ConversationSettings/Member.tsx:94
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:155
@@ -1572,7 +1572,7 @@ msgstr "すべての投稿"
 
 #: src/components/humming/ProfileSubscribeCard.tsx:109
 msgid "All posts are for subscribers only"
-msgstr ""
+msgstr "すべての投稿は購読者限定です"
 
 #: src/view/screens/Feeds.tsx:700
 msgid "All the feeds you've saved, right in one place."
@@ -1936,7 +1936,7 @@ msgstr "「{0}」のラベルに異議を申し立てる"
 
 #: src/components/moderation/ModerationDetailsDialog.tsx:159
 msgid "Appeal label"
-msgstr ""
+msgstr "ラベルに異議を申し立てる"
 
 #: src/features/liveNow/components/GoLiveDisabledDialog.tsx:93
 msgid "Appeal livestream suspension"
@@ -1967,7 +1967,7 @@ msgstr "この決定に異議を申し立てる"
 
 #: src/components/moderation/ModerationDetailsDialog.tsx:219
 msgid "Appeal this label"
-msgstr ""
+msgstr "このラベルに異議を申し立てる"
 
 #: src/Navigation.tsx:396
 #: src/screens/Settings/AppearanceSettings.tsx:73
@@ -2165,11 +2165,11 @@ msgstr "チャットへ戻る"
 
 #: src/components/humming/Wallet.tsx:344
 msgid "Back to wallet"
-msgstr ""
+msgstr "ウォレットに戻る"
 
 #: src/components/humming/Wallet.tsx:212
 msgid "Balance"
-msgstr ""
+msgstr "残高"
 
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:216
 msgid "Banned activities or security violations"
@@ -2201,7 +2201,7 @@ msgstr "あなたのネットワーク情報によれば、あなたは<0>{regio
 #: src/components/humming/CreatorHub.tsx:140
 #: src/components/humming/CreatorHub.tsx:243
 msgid "Become a creator"
-msgstr ""
+msgstr "クリエイターになる"
 
 #: src/view/screens/Lists.tsx:35
 #: src/view/screens/ModerationModlists.tsx:35
@@ -2533,12 +2533,12 @@ msgstr "ホームタイムラインに戻るボタン"
 
 #: src/components/humming/LockedPostCard.tsx:136
 msgid "Buy this post"
-msgstr ""
+msgstr "この投稿を購入"
 
 #: src/components/humming/LockedPostCard.tsx:120
 #: src/components/humming/LockedPostCard.tsx:130
 msgid "Buy this post only — {price}"
-msgstr ""
+msgstr "この投稿のみ購入 — {price}"
 
 #. The owner (creator) of a group chat.
 #. placeholder {0}: createSanitizedDisplayName( joinLinkPreview.owner, true, moderateProfile( joinLinkPreview.owner, moderationOpts, ).ui('displayName'), )
@@ -3275,7 +3275,7 @@ msgstr "確認コード"
 
 #: src/components/humming/CreatorHub.tsx:253
 msgid "Confirming on-chain…"
-msgstr ""
+msgstr "オンチェーンで確認中…"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:132
 msgid "Connecting to service..."
@@ -3451,11 +3451,11 @@ msgstr "会話が見つかりません。"
 #. placeholder {0}: String(e)
 #: src/components/humming/hooks.ts:125
 msgid "Conversion failed: {0}"
-msgstr ""
+msgstr "クリエイター転換に失敗しました: {0}"
 
 #: src/components/humming/CreatorHub.tsx:255
 msgid "Convert — {priceLabel} / 30 days"
-msgstr ""
+msgstr "転換する — {priceLabel} / 30日"
 
 #: src/screens/Settings/AboutSettings.tsx:169
 msgid "Copied build version to clipboard"
@@ -3584,7 +3584,7 @@ msgstr "TXTレコードの値をコピー"
 #: src/components/humming/Wallet.tsx:176
 #: src/components/humming/Wallet.tsx:411
 msgid "Copy wallet address"
-msgstr ""
+msgstr "ウォレットアドレスをコピー"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:41
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:108
@@ -3836,7 +3836,7 @@ msgstr "作者はブロック中です"
 
 #: src/view/screens/TermsOfService.tsx:81
 msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
-msgstr ""
+msgstr "クリエイターは、自ら公開するコンテンツと、有料コンテンツとして宣伝した内容を守ることについて全責任を負います。違法なコンテンツ、著作権を侵害するコンテンツ、未成年者がいかなる形でも関わるコンテンツ、非同意の行為を描写するコンテンツは禁止されており、削除のうえアカウントは終了されます。Hummingは本規約に違反するコンテンツの削除やアカウントの制限を行うことがあります。"
 
 #: src/lib/interests.ts:57
 msgid "Culture"
@@ -4387,7 +4387,7 @@ msgstr "期間："
 
 #: src/view/screens/TermsOfService.tsx:70
 msgid "During the current early-access period, Humming creates and holds a Haneul wallet on your behalf (a custodial wallet). Your password protects access to this wallet — use a strong, unique password. Keep balances small: this is an early-stage service and self-custody support is on the roadmap. Humming is not responsible for losses caused by sharing or losing your password."
-msgstr ""
+msgstr "現在のアーリーアクセス期間中、Hummingがお客様に代わってHaneulウォレットを作成・保管します（カストディアルウォレット）。このウォレットを守るのはパスワードです — 強力で固有のパスワードを使用してください。残高は少額に保ってください。まだ初期段階のサービスであり、セルフカストディ対応はロードマップにあります。パスワードの共有・紛失による損失についてHummingは責任を負いません。"
 
 #: src/features/inviteFriends/components/ThemePicker.tsx:31
 msgid "Dusk"
@@ -4698,7 +4698,7 @@ msgstr "パスワードを入力"
 #: src/components/humming/CreatorHub.tsx:202
 #: src/components/humming/PaywallButton.tsx:90
 msgid "Enter a price between 0.01 and 100 HANEUL"
-msgstr ""
+msgstr "0.01〜100 HANEULの価格を入力してください"
 
 #: src/components/dialogs/MutedWords.tsx:136
 #: src/components/dialogs/MutedWords.tsx:137
@@ -4793,7 +4793,7 @@ msgstr "エラー：{error}"
 
 #: src/components/humming/CreatorHub.tsx:294
 msgid "Every line is aggregated from Haneul on-chain events (net of the 5% platform fee)"
-msgstr ""
+msgstr "各行はHaneulのオンチェーンイベントから集計されています（5%のプラットフォーム手数料控除後）"
 
 #: src/components/WhoCanReply.tsx:85
 msgid "Everybody can reply"
@@ -5712,7 +5712,7 @@ msgstr "組織のアカウントの場合は、アカウントの責任者の生
 
 #: src/view/screens/PrivacyPolicy.tsx:83
 msgid "For privacy requests, contact the Humming team via the links on humming.social."
-msgstr ""
+msgstr "プライバシーに関するご要望は、humming.socialのリンクからHummingチームにお問い合わせください。"
 
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:186
 msgid "For security reasons, we’ll need to send a confirmation code to your email address <0>{currentEmail}</0>."
@@ -5786,7 +5786,7 @@ msgstr "これらの人から"
 
 #: src/components/humming/CreatorHub.tsx:41
 msgid "Full lock"
-msgstr ""
+msgstr "全面ロック"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:337
 msgid "Generate a starter pack"
@@ -6448,19 +6448,19 @@ msgstr "人身売買"
 
 #: src/view/screens/TermsOfService.tsx:41
 msgid "Humming is a social platform where creators publish content and receive payments directly through the Haneul blockchain. By creating an account or using Humming, you agree to these terms. If you do not agree, do not use the service."
-msgstr ""
+msgstr "Hummingは、クリエイターがコンテンツを公開し、Haneulブロックチェーンを通じて直接支払いを受け取るソーシャルプラットフォームです。アカウントを作成またはHummingを利用することで、本規約に同意したものとみなされます。同意しない場合は、サービスを利用しないでください。"
 
 #: src/view/screens/TermsOfService.tsx:100
 msgid "Humming is provided \"as is\" during early access. We do not guarantee uninterrupted availability. Content is stored off-chain and may be removed for legal or policy reasons; on-chain records (payments, subscriptions, name registrations) persist on the Haneul blockchain independently of Humming."
-msgstr ""
+msgstr "アーリーアクセス期間中、Hummingは「現状のまま」提供されます。中断のないサービス提供は保証しません。コンテンツはオフチェーンに保存され、法的・ポリシー上の理由で削除されることがあります。オンチェーンの記録（決済、購読、名前登録）は、Hummingとは独立してHaneulブロックチェーン上に残ります。"
 
 #: src/screens/Signup/StepHandle/index.tsx:331
 msgid "I agree to the <0>Terms of Service</0> and <1>Privacy Policy</1>."
-msgstr ""
+msgstr "<0>利用規約</0>と<1>プライバシーポリシー</1>に同意します。"
 
 #: src/screens/Signup/StepHandle/index.tsx:325
 msgid "I agree to the Terms of Service and Privacy Policy"
-msgstr ""
+msgstr "利用規約とプライバシーポリシーに同意します"
 
 #: src/components/contacts/screens/GetContacts.tsx:267
 msgid "I consent to Bluesky using my contacts for mutual friend discovery and to retain hashed data for matching until I opt out."
@@ -6487,7 +6487,7 @@ msgstr "私は {0} としてBlueskyにいます。私を見つけて！ https://
 
 #: src/components/humming/CreatorHub.tsx:171
 msgid "Identity verified (badge issued)"
-msgstr ""
+msgstr "本人確認済み（バッジ発行済み）"
 
 #: src/components/Lightbox/Lightbox.web.tsx:246
 msgid "If alt text is long, toggles alt text expanded state"
@@ -6942,7 +6942,7 @@ msgstr "報道"
 
 #: src/components/humming/CreatorHub.tsx:89
 msgid "Keep 95% of what you earn"
-msgstr ""
+msgstr "収益の95%があなたのものに"
 
 #: src/view/com/composer/Composer.tsx:1548
 #: src/view/com/composer/Composer.tsx:1558
@@ -6978,7 +6978,7 @@ msgstr "ラベルが追加されました"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:78
 msgid "Labels applied to this post"
-msgstr ""
+msgstr "この投稿に適用されたラベル"
 
 #: src/screens/Profile/Sections/Labels.tsx:194
 msgid "Labels are annotations on users and content. They can be used to hide, warn, and categorize the network."
@@ -7019,7 +7019,7 @@ msgstr "最後の開始：たった今"
 #: src/view/screens/PrivacyPolicy.tsx:37
 #: src/view/screens/TermsOfService.tsx:37
 msgid "Last updated: July 17, 2026"
-msgstr ""
+msgstr "最終更新日: 2026年7月17日"
 
 #: src/screens/Hashtag.tsx:97
 #: src/screens/Search/SearchResults.tsx:82
@@ -7471,7 +7471,7 @@ msgstr "ロック中"
 
 #: src/components/humming/CreatorHub.tsx:37
 msgid "Locked posts show as teaser cards (drives conversion)"
-msgstr ""
+msgstr "ロックされた投稿はティザーカードとして表示されます（購読への転換を促進）"
 
 #: src/Navigation.tsx:326
 msgid "Log"
@@ -7527,7 +7527,7 @@ msgstr "アカウントのメール設定を調整する"
 #: src/components/humming/PaywallButton.tsx:97
 #: src/components/humming/PaywallButton.tsx:108
 msgid "Make it free"
-msgstr ""
+msgstr "無料にする"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:311
 msgid "Make one for me"
@@ -7961,7 +7961,7 @@ msgstr "自分の生年月日"
 #: src/components/humming/CreatorHub.tsx:286
 #: src/components/humming/CreatorHub.tsx:291
 msgid "My earnings"
-msgstr ""
+msgstr "収益"
 
 #: src/screens/StarterPack/Wizard/StepDetails.tsx:77
 msgid "My favorite feeds and people - join me!"
@@ -7979,7 +7979,7 @@ msgstr "私のスターターパック"
 #. placeholder {1}: Math.round(earnings.tier.periodMs / 86_400_000)
 #: src/components/humming/CreatorHub.tsx:323
 msgid "My tier: {0} / {1} days"
-msgstr ""
+msgstr "マイティア: {0} / {1}日"
 
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:416
 msgid "Name"
@@ -8240,7 +8240,7 @@ msgstr "下書きはありません"
 
 #: src/components/humming/CreatorHub.tsx:333
 msgid "No earnings yet — waiting for your first subscriber!"
-msgstr ""
+msgstr "まだ収益はありません — 最初の購読者を待ちましょう！"
 
 #: src/features/liveNow/components/EditLiveDialog.tsx:134
 msgid "No expiry set"
@@ -8452,7 +8452,7 @@ msgstr "性的ではないヌード"
 
 #: src/components/humming/CreatorHub.tsx:42
 msgid "Non-subscribers only see your profile wall"
-msgstr ""
+msgstr "購読者以外にはプロフィールウォールのみ表示されます"
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:263
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:266
@@ -8698,7 +8698,7 @@ msgstr "おっと！"
 
 #: src/components/humming/CreatorHub.tsx:31
 msgid "Open"
-msgstr ""
+msgstr "公開"
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:66
 msgid "Open advanced search options"
@@ -8952,7 +8952,7 @@ msgstr "プロフィールを開く"
 
 #: src/components/humming/Wallet.tsx:63
 msgid "Opens your Haneul wallet"
-msgstr ""
+msgstr "Haneulウォレットを開きます"
 
 #: src/components/dialogs/MutedWords.tsx:308
 msgid "Options:"
@@ -9052,7 +9052,7 @@ msgstr "ページが見つかりません"
 
 #: src/components/humming/PaywallButton.tsx:41
 msgid "Paid post ({valueHaneul} HANEUL)"
-msgstr ""
+msgstr "有料投稿（{valueHaneul} HANEUL）"
 
 #. Accessibility label for the icon-only pill that filters the GIF picker to celebration/party GIFs.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:85
@@ -9070,7 +9070,7 @@ msgstr "パスワード"
 
 #: src/screens/Signup/StepHandle/index.tsx:306
 msgid "Password (8+ characters)"
-msgstr ""
+msgstr "パスワード（8文字以上）"
 
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:70
 msgid "Password changed"
@@ -9078,7 +9078,7 @@ msgstr "パスワードが変更されました"
 
 #: src/screens/Signup/StepHandle/index.tsx:317
 msgid "Password must be at least 8 characters long"
-msgstr ""
+msgstr "パスワードは8文字以上である必要があります"
 
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:125
 msgid "Password must be at least 8 characters long."
@@ -9111,7 +9111,7 @@ msgstr "ビデオを一時停止"
 #: src/components/humming/ProfileSubscribeCard.tsx:96
 #: src/components/humming/SubscribeButton.tsx:82
 msgid "Pay on-chain"
-msgstr ""
+msgstr "オンチェーンで支払う"
 
 #: src/components/humming/LockedPostCard.tsx:95
 #: src/components/humming/LockedPostCard.tsx:128
@@ -9119,12 +9119,12 @@ msgstr ""
 #: src/components/humming/ProfileSubscribeCard.tsx:83
 #: src/components/humming/SubscribeButton.tsx:69
 msgid "Paying on-chain…"
-msgstr ""
+msgstr "オンチェーンで支払い中…"
 
 #: src/components/humming/CreatorHub.tsx:349
 #: src/components/humming/Wallet.tsx:302
 msgid "Payment"
-msgstr ""
+msgstr "支払い"
 
 #: src/screens/ProfileList/index.tsx:167
 #: src/screens/Search/SearchResults.tsx:94
@@ -9478,7 +9478,7 @@ msgstr "投稿"
 #. placeholder {0}: item.postId
 #: src/components/humming/CreatorHub.tsx:351
 msgid "post {0}"
-msgstr ""
+msgstr "投稿 {0}"
 
 #: src/view/screens/Profile.tsx:475
 #: src/view/screens/Profile.tsx:476
@@ -9601,7 +9601,7 @@ msgstr "非表示の投稿"
 
 #: src/components/humming/CreatorHub.tsx:32
 msgid "Posts stay public — put a price only on the ones you choose"
-msgstr ""
+msgstr "投稿は公開のまま — 選んだ投稿にだけ価格を設定できます"
 
 #: src/components/dialogs/LinkWarning.tsx:89
 msgid "Potentially misleading link"
@@ -9641,7 +9641,7 @@ msgstr "前の画像"
 
 #: src/components/humming/PaywallButton.tsx:80
 msgid "Price per post (HANEUL)"
-msgstr ""
+msgstr "投稿ごとの価格（HANEUL）"
 
 #: src/screens/Settings/LanguageSettings.tsx:141
 #: src/screens/Settings/LanguageSettings.tsx:157
@@ -9756,16 +9756,16 @@ msgstr "返信を公開"
 #: src/components/humming/CreatorHub.tsx:269
 #: src/components/humming/Wallet.tsx:38
 msgid "Purchase"
-msgstr ""
+msgstr "購入"
 
 #. placeholder {0}: String(e)
 #: src/components/humming/hooks.ts:75
 msgid "Purchase failed: {0}"
-msgstr ""
+msgstr "購入に失敗しました: {0}"
 
 #: src/components/humming/hooks.ts:68
 msgid "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
-msgstr ""
+msgstr "購入しました！この投稿は永久にアンロックされます（tx: {tx}…、{price}）"
 
 #: src/screens/Settings/NotificationSettings/components/SettingPreview.tsx:31
 msgid "Push"
@@ -9911,11 +9911,11 @@ msgstr "Blueskyの利用規約を読む"
 
 #: src/screens/Signup/StepHandle/index.tsx:340
 msgid "Read the Humming Privacy Policy"
-msgstr ""
+msgstr "Hummingのプライバシーポリシーを読む"
 
 #: src/screens/Signup/StepHandle/index.tsx:334
 msgid "Read the Humming Terms of Service"
-msgstr ""
+msgstr "Hummingの利用規約を読む"
 
 #: src/components/WelcomeModal.tsx:149
 msgid "Real conversations."
@@ -9932,12 +9932,12 @@ msgstr "異議申し立ての理由"
 
 #: src/components/humming/Wallet.tsx:233
 msgid "Receive"
-msgstr ""
+msgstr "受け取る"
 
 #: src/components/humming/Wallet.tsx:225
 #: src/components/humming/Wallet.tsx:354
 msgid "Receive HANEUL"
-msgstr ""
+msgstr "HANEULを受け取る"
 
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:137
 msgid "Receive in-app notifications"
@@ -9949,7 +9949,7 @@ msgstr "プッシュ通知を受け取る"
 
 #: src/components/humming/Wallet.tsx:263
 msgid "Recent activity"
-msgstr ""
+msgstr "最近のアクティビティ"
 
 #. Accessibility label for the icon-only pill that shows previously selected GIFs in the GIF picker.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:35
@@ -10849,7 +10849,7 @@ msgstr "「{searchText}」を検索"
 
 #: src/screens/Search/components/SearchHistory.tsx:136
 msgid "Search for {q}"
-msgstr ""
+msgstr "「{q}」を検索"
 
 #: src/screens/StarterPack/Wizard/index.tsx:541
 msgid "Search for feeds that you want to suggest to others."
@@ -11160,12 +11160,12 @@ msgstr "自傷または危険行為"
 #. placeholder {0}: post.author.handle
 #: src/components/humming/TipButton.tsx:68
 msgid "Send a {tipAmount} tip to @{0}"
-msgstr ""
+msgstr "@{0} に {tipAmount} のチップを送る"
 
 #. placeholder {0}: post.author.handle
 #: src/components/humming/TipButton.tsx:78
 msgid "Send a tip to @{0}"
-msgstr ""
+msgstr "@{0} にチップを送る"
 
 #: src/components/contacts/screens/PhoneInput.tsx:255
 #: src/components/contacts/screens/PhoneInput.tsx:260
@@ -11213,7 +11213,7 @@ msgstr "携帯電話からメッセージを送信する"
 #: src/components/humming/TipButton.tsx:72
 #: src/components/humming/TipButton.tsx:83
 msgid "Send tip"
-msgstr ""
+msgstr "チップを送る"
 
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:304
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:121
@@ -11249,11 +11249,11 @@ msgstr "アプリアイコンを{0}に設定"
 
 #: src/components/humming/PaywallButton.tsx:125
 msgid "Set as paid — {draft} HANEUL"
-msgstr ""
+msgstr "有料に設定 — {draft} HANEUL"
 
 #: src/components/humming/PaywallButton.tsx:113
 msgid "Set as paid post"
-msgstr ""
+msgstr "有料投稿に設定"
 
 #: src/screens/Login/SetNewPasswordForm.tsx:99
 msgid "Set new password"
@@ -12038,11 +12038,11 @@ msgstr "登録"
 #: src/components/humming/ProfileSubscribeCard.tsx:85
 #: src/components/humming/SubscribeButton.tsx:65
 msgid "Subscribe — {monthly}"
-msgstr ""
+msgstr "購読する — {monthly}"
 
 #: src/components/humming/SubscribeButton.tsx:71
 msgid "Subscribe {monthly}"
-msgstr ""
+msgstr "購読 {monthly}"
 
 #. placeholder {0}: highlightedPublisher.name
 #: src/components/Post/Embed/StandardSiteEmbed/index.tsx:447
@@ -12061,7 +12061,7 @@ msgstr "{0}の{publicationTitle}を購読"
 #: src/components/humming/ProfileSubscribeCard.tsx:91
 #: src/components/humming/SubscribeButton.tsx:77
 msgid "Subscribe to @{0}"
-msgstr ""
+msgstr "@{0} を購読する"
 
 #. placeholder {0}: labelerInfo.creator.handle
 #: src/screens/Profile/Sections/Labels.tsx:231
@@ -12070,7 +12070,7 @@ msgstr "これらのラベルを使用するには@{0}を登録してくださ�
 
 #: src/components/humming/LockedWallPanel.tsx:84
 msgid "Subscribe to @{handle}"
-msgstr ""
+msgstr "@{handle} を購読する"
 
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:252
 msgid "Subscribe to account activity"
@@ -12083,7 +12083,7 @@ msgstr "ラベラーを登録する"
 #: src/components/humming/LockedWallPanel.tsx:71
 #: src/components/humming/LockedWallPanel.tsx:77
 msgid "Subscribe to see their posts — {monthly}"
-msgstr ""
+msgstr "購読して投稿を見る — {monthly}"
 
 #: src/screens/Profile/Header/ProfileHeaderLabeler.tsx:316
 msgid "Subscribe to this labeler"
@@ -12096,62 +12096,62 @@ msgstr "このリストに登録"
 #: src/components/humming/LockedPostCard.tsx:87
 #: src/components/humming/LockedPostCard.tsx:97
 msgid "Subscribe to view — {tierLabel}"
-msgstr ""
+msgstr "購読して閲覧 — {tierLabel}"
 
 #: src/components/humming/SubscribeButton.tsx:52
 msgid "Subscribed"
-msgstr ""
+msgstr "購読中"
 
 #: src/components/humming/ProfileSubscribeCard.tsx:62
 #: src/components/humming/SubscribeButton.tsx:41
 msgid "Subscribed — {monthly}"
-msgstr ""
+msgstr "購読中 — {monthly}"
 
 #: src/components/humming/ProfileSubscribeCard.tsx:67
 msgid "Subscribed ✓"
-msgstr ""
+msgstr "購読中 ✓"
 
 #: src/components/humming/ProfileSubscribeCard.tsx:65
 msgid "Subscribed ✓ · until {untilDate}"
-msgstr ""
+msgstr "購読中 ✓ · {untilDate}まで"
 
 #: src/components/humming/hooks.ts:41
 msgid "Subscribed! On-chain tx: {tx}… ({price})"
-msgstr ""
+msgstr "購読しました！オンチェーンtx: {tx}…（{price}）"
 
 #: src/components/humming/SubscribeButton.tsx:47
 msgid "Subscribed. Valid until {until} (verified on-chain)."
-msgstr ""
+msgstr "購読しました。{until}まで有効です（オンチェーンで検証済み）。"
 
 #: src/components/humming/LockedPostCard.tsx:55
 msgid "Subscribers-only post"
-msgstr ""
+msgstr "購読者限定の投稿"
 
 #: src/components/humming/CreatorHub.tsx:267
 #: src/components/humming/ProfileSubscribeCard.tsx:53
 #: src/components/humming/Wallet.tsx:36
 msgid "Subscription"
-msgstr ""
+msgstr "購読"
 
 #. placeholder {0}: String(e)
 #: src/components/humming/hooks.ts:48
 msgid "Subscription failed: {0}"
-msgstr ""
+msgstr "購読に失敗しました: {0}"
 
 #: src/components/humming/CreatorHub.tsx:192
 msgid "Subscription price (HANEUL)"
-msgstr ""
+msgstr "購読価格（HANEUL）"
 
 #. placeholder {0}: formatHaneul(earnings.totals.subscriptionGeunhwa)
 #. placeholder {1}: formatHaneul(earnings.totals.tipGeunhwa)
 #. placeholder {2}: formatHaneul(earnings.totals.purchaseGeunhwa)
 #: src/components/humming/CreatorHub.tsx:314
 msgid "Subscriptions {0} · Tips {1} · Purchases {2}"
-msgstr ""
+msgstr "購読 {0} · チップ {1} · 購入 {2}"
 
 #: src/view/screens/TermsOfService.tsx:58
 msgid "Subscriptions, post purchases, and tips are executed as transactions on the Haneul blockchain and settle directly to the creator. Once confirmed on-chain, a payment cannot be reversed by Humming. Purchase records are permanently stored on-chain, including a pointer to the content as it existed at the moment of purchase. Creators may voluntarily refund a payment, but Humming cannot force them to do so."
-msgstr ""
+msgstr "購読、投稿の購入、チップはHaneulブロックチェーン上のトランザクションとして実行され、クリエイターに直接決済されます。オンチェーンで確定した支払いをHummingが取り消すことはできません。購入記録は、購入時点のコンテンツを指すポインタとともにオンチェーンに永久に保存されます。クリエイターが自発的に返金することはできますが、Hummingがそれを強制することはできません。"
 
 #: src/ageAssurance/components/RedirectOverlay.tsx:252
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:160
@@ -12360,7 +12360,7 @@ msgstr "アルゴリズムを鍛える"
 
 #: src/components/humming/CreatorHub.tsx:36
 msgid "Tease"
-msgstr ""
+msgstr "ティザー"
 
 #: src/lib/interests.ts:73
 msgid "Tech"
@@ -12493,7 +12493,7 @@ msgstr "フィードはDiscoverと置き換えられました。"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:64
 msgid "The following labels were applied to this post."
-msgstr ""
+msgstr "この投稿には以下のラベルが適用されました。"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:63
 msgid "The following labels were applied to your account."
@@ -12908,7 +12908,7 @@ msgstr "あなたによって適用されたラベルです。"
 #: src/components/moderation/LabelsOnMeDialog.tsx:156
 #: src/components/moderation/ModerationDetailsDialog.tsx:231
 msgid "This label was applied to the entire user account and will appear on all posts."
-msgstr ""
+msgstr "このラベルはアカウント全体に適用されており、すべての投稿に表示されます。"
 
 #: src/screens/Profile/Sections/Labels.tsx:218
 msgid "This labeler hasn't declared what labels it publishes, and may not be active."
@@ -12955,7 +12955,7 @@ msgstr "このユーザーはあなたをブロックしています"
 
 #: src/components/humming/hooks.ts:60
 msgid "This post cannot be purchased"
-msgstr ""
+msgstr "この投稿は購入できません"
 
 #. placeholder {0}: niceDate(i18n, createdAt)
 #. placeholder {1}: niceDate(i18n, indexedAt)
@@ -13120,16 +13120,16 @@ msgstr "残り時間：{0, plural, other {#秒}}"
 #: src/components/humming/CreatorHub.tsx:268
 #: src/components/humming/Wallet.tsx:37
 msgid "Tip"
-msgstr ""
+msgstr "チップ"
 
 #. placeholder {0}: String(e)
 #: src/components/humming/TipButton.tsx:53
 msgid "Tip failed: {0}"
-msgstr ""
+msgstr "チップの送信に失敗しました: {0}"
 
 #: src/components/humming/TipButton.tsx:48
 msgid "Tip sent! {amount} → @{handle} (tx: {tx}…)"
-msgstr ""
+msgstr "チップを送りました！{amount} → @{handle}（tx: {tx}…）"
 
 #: src/components/SendErrorReportDialog.tsx:68
 msgid "Title"
@@ -13196,7 +13196,7 @@ msgstr "トピック"
 
 #: src/components/humming/CreatorHub.tsx:308
 msgid "Total net earnings"
-msgstr ""
+msgstr "純収益合計"
 
 #: src/components/dms/MessageContextMenu.tsx:191
 #: src/components/dms/MessageContextMenu.tsx:194
@@ -13301,7 +13301,7 @@ msgstr "2要素認証（2FA）"
 #. placeholder {0}: item.tx.slice(0, 8)
 #: src/components/humming/Wallet.tsx:306
 msgid "tx {0}…"
-msgstr ""
+msgstr "tx {0}…"
 
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:445
 msgid "Type:"
@@ -13743,7 +13743,7 @@ msgstr "おすすめを使う"
 
 #: src/components/humming/Wallet.tsx:445
 msgid "Use this address to receive HANEUL on the Haneul network — from an exchange or any other wallet."
-msgstr ""
+msgstr "このアドレスでHaneulネットワーク上のHANEULを受け取れます — 取引所や他のウォレットから送金してください。"
 
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:190
 msgid "Use this to sign in to the other app along with your handle."
@@ -13936,11 +13936,11 @@ msgstr "メールアドレスを確認"
 
 #: src/components/humming/CreatorHub.tsx:162
 msgid "Verify your identity"
-msgstr ""
+msgstr "本人確認をする"
 
 #: src/components/humming/CreatorHub.tsx:173
 msgid "Verify your identity (KYC)"
-msgstr ""
+msgstr "本人確認（KYC）"
 
 #: src/ageAssurance/components/RedirectOverlay.tsx:297
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:209
@@ -14192,7 +14192,7 @@ msgstr "あなたの認証情報を表示"
 #: src/components/humming/PaywallButton.tsx:61
 #: src/components/humming/PaywallButton.tsx:66
 msgid "Viewing access"
-msgstr ""
+msgstr "閲覧アクセス"
 
 #: src/components/images/AutoSizedImage.tsx:222
 #: src/components/images/AutoSizedImage.tsx:254
@@ -14228,7 +14228,7 @@ msgstr "音量"
 #: src/components/humming/Wallet.tsx:71
 #: src/components/humming/Wallet.tsx:86
 msgid "Wallet"
-msgstr ""
+msgstr "ウォレット"
 
 #: src/components/moderation/LabelPreference.tsx:142
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
@@ -14312,7 +14312,7 @@ msgstr "別の確認コードを<0>{0}</0>へ送りました。"
 
 #: src/view/screens/TermsOfService.tsx:119
 msgid "We may update these terms as the service evolves. Material changes will be announced in the app. Continued use after a change means you accept the updated terms."
-msgstr ""
+msgstr "サービスの発展に伴い、本規約は更新されることがあります。重要な変更はアプリ内でお知らせします。変更後も利用を継続した場合、更新された規約に同意したものとみなされます。"
 
 #: src/components/contacts/screens/PhoneInput.tsx:184
 msgid "We need to verify your number before we can look for your friends. A verification code will be sent to this number."
@@ -14341,7 +14341,7 @@ msgstr "<0>{0}</0>にリンクが含まれているメールを送信しまし�
 
 #: src/view/screens/PrivacyPolicy.tsx:63
 msgid "We use your data only to operate the service: authenticating you, signing the transactions you request, serving content you are entitled to view, and protecting the service from abuse (such as rate limiting by network address). We do not sell or share your data with advertisers."
-msgstr ""
+msgstr "データはサービスの運営のみに使用します: ログイン認証、お客様が依頼したトランザクションの署名、閲覧資格のあるコンテンツの提供、不正利用からのサービス保護（ネットワークアドレスによるレート制限など）。データを広告主に販売・共有することはありません。"
 
 #: src/view/com/composer/state/video.ts:451
 msgid "We were unable to determine if you are allowed to upload videos. Please try again."
@@ -14505,7 +14505,7 @@ msgstr "最近どう？"
 
 #: src/view/screens/PrivacyPolicy.tsx:41
 msgid "When you sign up, Humming stores your chosen nickname and a salted hash of your password — never the password itself. During the current early-access period we also generate and hold the private key of your Haneul wallet (custodial). Media you upload is stored on our servers. We do not collect your email address, phone number, or real name, and we do not use third-party trackers or advertising identifiers."
-msgstr ""
+msgstr "登録時、Hummingはお客様が選んだニックネームとパスワードのソルト付きハッシュを保存します — パスワードそのものは決して保存しません。現在のアーリーアクセス期間中は、Haneulウォレットの秘密鍵も生成・保管します（カストディアル）。アップロードされたメディアは当社のサーバーに保存されます。メールアドレス、電話番号、実名は収集せず、サードパーティのトラッカーや広告識別子も使用しません。"
 
 #: src/components/dialogs/nuxs/InitialVerificationAnnouncement.tsx:150
 msgid "When you tap on a check, you’ll see which organizations have granted verification."
@@ -14661,7 +14661,7 @@ msgstr "昨日"
 
 #: src/components/humming/hooks.ts:118
 msgid "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
-msgstr ""
+msgstr "クリエイターになりました！ティアがオンチェーンで作成されました（tx: {tx}…）"
 
 #: src/components/verification/VerifierDialog.tsx:61
 msgid "You are a trusted verifier"
@@ -14766,7 +14766,7 @@ msgstr "どの設定を選択しても進行中の会話は続けることがで
 
 #: src/view/screens/PrivacyPolicy.tsx:73
 msgid "You can delete your uploaded media and off-chain content by contacting us or using in-app deletion where available. Records already committed to the Haneul blockchain cannot be erased by anyone — this is a property of public blockchains, so post and pay with that in mind."
-msgstr ""
+msgstr "アップロードしたメディアとオフチェーンのコンテンツは、お問い合わせまたはアプリ内の削除機能（利用可能な場合）で削除できます。すでにHaneulブロックチェーンに記録された内容は誰にも消せません — これはパブリックブロックチェーンの性質ですので、その点を踏まえて投稿・支払いを行ってください。"
 
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:150
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
@@ -14984,7 +14984,7 @@ msgstr "これらのラベルが誤って適用されたと思った場合は、
 
 #: src/view/screens/TermsOfService.tsx:92
 msgid "You may not: attempt to access another person's account or wallet; abuse, spam, or defraud other users; interfere with the operation of the service; or use the service to violate any applicable law."
-msgstr ""
+msgstr "以下の行為は禁止されています: 他人のアカウントやウォレットへのアクセスを試みること、他のユーザーへの嫌がらせ・スパム・詐欺行為、サービスの運営を妨害すること、サービスを利用して適用される法律に違反すること。"
 
 #: src/screens/StarterPack/Wizard/State.tsx:80
 msgid "You may only add up to {STARTER_PACK_MAX_SIZE, plural, other {{STARTER_PACK_MAX_SIZE} profiles}}"
@@ -14996,7 +14996,7 @@ msgstr "3つまでフィードを追加できます"
 
 #: src/view/screens/TermsOfService.tsx:110
 msgid "You may stop using Humming at any time. We may suspend or terminate accounts that violate these terms. Because wallets and payment records live on the Haneul blockchain, on-chain assets and records are unaffected by account termination."
-msgstr ""
+msgstr "Hummingの利用はいつでもやめられます。本規約に違反したアカウントは停止または終了されることがあります。ウォレットと決済記録はHaneulブロックチェーン上にあるため、アカウントが終了してもオンチェーンの資産と記録は影響を受けません。"
 
 #: src/components/moderation/BlockDialog.tsx:321
 msgid "You must be a chat owner to remove a member."
@@ -15008,7 +15008,7 @@ msgstr "Blueskyを使用するには、13歳以上である必要があります
 
 #: src/view/screens/TermsOfService.tsx:50
 msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
-msgstr ""
+msgstr "Hummingは14歳以上の方がご利用いただけます。有料コンテンツなど一部の機能では、お客様に適用される法律に基づき、さらに成年であることが求められる場合があります。"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:365
 msgid "You must be following at least seven other people to generate a starter pack."
@@ -15344,11 +15344,11 @@ msgstr "あなたの名前、アバター、グループチャットの名前、
 
 #: src/screens/Signup/index.tsx:190
 msgid "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
-msgstr ""
+msgstr "ニックネームがウォレットです — アカウント作成と同時に、オンチェーンの名前とウォレットが一緒に発行されます。"
 
 #: src/view/screens/PrivacyPolicy.tsx:53
 msgid "Your nickname registration, posts, subscriptions, purchases, and tips are recorded on the Haneul blockchain, which is public and permanent. Anyone can see the payment flows of a wallet address. Post content itself is stored off-chain on our servers; the chain holds only a content pointer."
-msgstr ""
+msgstr "ニックネームの登録、投稿、購読、購入、チップは、公開かつ永続的なHaneulブロックチェーンに記録されます。ウォレットアドレスの支払いの流れは誰でも見ることができます。投稿の内容そのものは当社のサーバー（オフチェーン）に保存され、チェーン上にはコンテンツポインタのみが記録されます。"
 
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:72
 msgid "Your password has been changed successfully! Please use your new password when you sign in to Bluesky from now on."
@@ -15410,4 +15410,4 @@ msgstr "あなたの認証情報"
 
 #: src/components/humming/Wallet.tsx:243
 msgid "Your wallet is ready"
-msgstr ""
+msgstr "ウォレットの準備ができました"
