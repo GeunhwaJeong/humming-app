@@ -24,10 +24,12 @@ import {
 import {useSignupContext} from '#/screens/Signup/state'
 import {atoms as a, native, useTheme} from '#/alf'
 import * as TextField from '#/components/forms/TextField'
+import * as Toggle from '#/components/forms/Toggle'
 import {useThrottledValue} from '#/components/hooks/useThrottledValue'
 import {At_Stroke2_Corner0_Rounded as AtIcon} from '#/components/icons/At'
 import {Check_Stroke2_Corner0_Rounded as CheckIcon} from '#/components/icons/Check'
 import {Lock_Stroke2_Corner0_Rounded as Lock} from '#/components/icons/Lock'
+import {InlineLinkText} from '#/components/Link'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 import {IS_WEB} from '#/env'
@@ -41,6 +43,9 @@ export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
   const {state, dispatch} = useSignupContext()
   const [draftValue, setDraftValue] = useState(state.handle)
   const [draftPassword, setDraftPassword] = useState(state.password)
+  // Real money moves through accounts, so signup requires an explicit
+  // terms agreement (the StepInfo policies screen was removed).
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
   const isNextLoading = useThrottledValue(state.isLoading, 500)
 
   /*
@@ -153,7 +158,8 @@ export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
     !validCheck.overall ||
     !!state.error ||
     isNotReady ||
-    draftPassword.length < 8
+    draftPassword.length < 8 ||
+    !agreedToTerms
       ? true
       : isHandleTaken
 
@@ -312,6 +318,33 @@ export function StepHandle({onPressBack}: {onPressBack?: () => void}) {
             </RequirementText>
           )}
         </View>
+      </View>
+      <View style={[a.pt_sm]}>
+        <Toggle.Item
+          name="agree_terms"
+          label={_(msg`I agree to the Terms of Service and Privacy Policy`)}
+          value={agreedToTerms}
+          onChange={setAgreedToTerms}
+          style={[a.w_full, a.align_start]}>
+          <Toggle.Checkbox />
+          <Toggle.LabelText style={[a.flex_1, a.leading_snug]}>
+            <Trans>
+              I agree to the{' '}
+              <InlineLinkText
+                label={_(msg`Read the Humming Terms of Service`)}
+                to="/support/tos">
+                Terms of Service
+              </InlineLinkText>{' '}
+              and{' '}
+              <InlineLinkText
+                label={_(msg`Read the Humming Privacy Policy`)}
+                to="/support/privacy">
+                Privacy Policy
+              </InlineLinkText>
+              .
+            </Trans>
+          </Toggle.LabelText>
+        </Toggle.Item>
       </View>
       <Animated.View layout={native(LinearTransition)}>
         <BackNextButtons

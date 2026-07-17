@@ -283,7 +283,7 @@ msgid "{0} is live"
 msgstr "{0} 님은 라이브 중"
 
 #. placeholder {0}: createFullHandle(draftValue, state.userDomain)
-#: src/screens/Signup/StepHandle/index.tsx:229
+#: src/screens/Signup/StepHandle/index.tsx:235
 msgid "{0} is not available"
 msgstr "{0}(은)는 사용할 수 없습니다"
 
@@ -935,13 +935,29 @@ msgstr "<0>나</0>와<1> </1><2>{0} </2>님이 스타터 팩에 포함됩니다"
 msgid "⚠Invalid Handle"
 msgstr "⚠잘못된 핸들"
 
+#: src/view/screens/TermsOfService.tsx:40
+msgid "1. About Humming"
+msgstr "1. Humming 소개"
+
 #: src/components/humming/CreatorHub.tsx:159
 msgid "1. Identity verification"
 msgstr "1. 본인 인증"
 
+#: src/view/screens/PrivacyPolicy.tsx:40
+msgid "1. What we collect"
+msgstr "1. 수집하는 정보"
+
+#: src/view/screens/TermsOfService.tsx:49
+msgid "2. Age requirement"
+msgstr "2. 연령 요건"
+
 #: src/components/humming/CreatorHub.tsx:187
 msgid "2. Monthly subscription price (30 days, HANEUL)"
 msgstr "2. 월 구독료 (30일, HANEUL)"
+
+#: src/view/screens/PrivacyPolicy.tsx:52
+msgid "2. What lives on the blockchain"
+msgstr "2. 블록체인에 기록되는 것"
 
 #: src/components/dialogs/MutedWords.tsx:202
 #: src/components/dialogs/MutedWords.tsx:551
@@ -953,9 +969,17 @@ msgstr "24시간"
 msgid "2FA Confirmation"
 msgstr "2단계 인증"
 
+#: src/view/screens/PrivacyPolicy.tsx:62
+msgid "3. How we use data"
+msgstr "3. 데이터 이용 방식"
+
 #: src/components/humming/CreatorHub.tsx:215
 msgid "3. How your posts are shown"
 msgstr "3. 내 글 공개 방식"
+
+#: src/view/screens/TermsOfService.tsx:57
+msgid "3. On-chain payments are final"
+msgstr "3. 온체인 결제는 최종적입니다"
 
 #: src/components/dialogs/MutedWords.tsx:241
 #: src/components/dialogs/MutedWords.tsx:565
@@ -963,11 +987,43 @@ msgstr "3. 내 글 공개 방식"
 msgid "30 days"
 msgstr "30일"
 
+#: src/view/screens/PrivacyPolicy.tsx:72
+msgid "4. Deletion"
+msgstr "4. 삭제"
+
+#: src/view/screens/TermsOfService.tsx:69
+msgid "4. Your wallet"
+msgstr "4. 지갑"
+
+#: src/view/screens/PrivacyPolicy.tsx:82
+msgid "5. Contact"
+msgstr "5. 문의"
+
+#: src/view/screens/TermsOfService.tsx:80
+msgid "5. Creator content"
+msgstr "5. 크리에이터 콘텐츠"
+
+#: src/view/screens/TermsOfService.tsx:91
+msgid "6. Prohibited conduct"
+msgstr "6. 금지 행위"
+
 #: src/components/dialogs/MutedWords.tsx:226
 #: src/components/dialogs/MutedWords.tsx:558
 #: src/components/dialogs/MutedWords.tsx:561
 msgid "7 days"
 msgstr "7일"
+
+#: src/view/screens/TermsOfService.tsx:99
+msgid "7. Service availability"
+msgstr "7. 서비스 제공"
+
+#: src/view/screens/TermsOfService.tsx:109
+msgid "8. Termination"
+msgstr "8. 이용 종료"
+
+#: src/view/screens/TermsOfService.tsx:118
+msgid "9. Changes"
+msgstr "9. 약관 변경"
 
 #: src/components/humming/CreatorHub.tsx:143
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
@@ -977,7 +1033,7 @@ msgstr "구독료의 95%가 내 Haneul 지갑으로 즉시 정산됩니다. 정�
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
 msgstr "News, Booksky, Game Dev, Blacksky, Fountain Pens 등 Bluesky에서 찾을 수 있는 인기 피드 모음"
 
-#: src/components/humming/Wallet.tsx:253
+#: src/components/humming/Wallet.tsx:246
 msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
 msgstr "가입하는 순간 Haneul 지갑이 함께 만들어졌어요. 거래소나 다른 지갑에서 내 주소로 HANEUL을 보내면 구독·팁·게시물 잠금 해제를 시작할 수 있어요."
 
@@ -2107,7 +2163,7 @@ msgstr "뒤로"
 msgid "Back to Chats"
 msgstr "대화로 돌아가기"
 
-#: src/components/humming/Wallet.tsx:352
+#: src/components/humming/Wallet.tsx:344
 msgid "Back to wallet"
 msgstr "지갑으로 돌아가기"
 
@@ -2324,8 +2380,8 @@ msgstr "블로그"
 msgid "bloomscrolling booksky"
 msgstr "블룸스크롤링 북스카이"
 
-#: src/components/dialogs/ServerInput.tsx:144
-#: src/components/dialogs/ServerInput.tsx:146
+#: src/components/dialogs/ServerInput.tsx:145
+#: src/components/dialogs/ServerInput.tsx:147
 msgid "Bluesky"
 msgstr "Bluesky"
 
@@ -2342,12 +2398,12 @@ msgstr "Bluesky Classic™"
 msgid "Bluesky helps friends find each other by creating an encoded digital fingerprint, called a \"hash\", and then looking for matching hashes."
 msgstr "Bluesky는 ‘해시’라고 불리는 인코딩된 디지털 지문을 생성하고 일치하는 해시를 찾아 친구들을 찾도록 도와줍니다."
 
-#: src/components/dialogs/ServerInput.tsx:214
+#: src/components/dialogs/ServerInput.tsx:215
 #: src/screens/Login/components/HostingProviderDialog.tsx:236
 msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
 msgstr "Bluesky는 호스팅 제공자를 선택할 수 있는 개방형 네트워크입니다. 개발자라면 직접 서버를 호스팅할 수 있습니다."
 
-#: src/components/dialogs/ServerInput.tsx:162
+#: src/components/dialogs/ServerInput.tsx:163
 msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
 msgstr "Bluesky는 직접 제공자를 선택할 수 있는 개방형 네트워크입니다. 처음 사용하는 경우 기본으로 Bluesky Social을 선택하는 것이 좋습니다."
 
@@ -2890,7 +2946,7 @@ msgstr "이 그룹 대화에 참여할 수 있는 사람과 참여 방식을 선
 msgid "Choose who to invite"
 msgstr "초대할 사람 선택하기"
 
-#: src/components/dialogs/ServerInput.tsx:134
+#: src/components/dialogs/ServerInput.tsx:135
 #: src/screens/Login/components/HostingProviderDialog.tsx:155
 msgid "Choose your hosting provider"
 msgstr "호스팅 제공자를 선택하세요"
@@ -3526,7 +3582,7 @@ msgid "Copy TXT record value"
 msgstr "TXT 레코드 값 복사"
 
 #: src/components/humming/Wallet.tsx:176
-#: src/components/humming/Wallet.tsx:419
+#: src/components/humming/Wallet.tsx:411
 msgid "Copy wallet address"
 msgstr "지갑 주소 복사"
 
@@ -3685,7 +3741,7 @@ msgstr "나를 위한 스타터 팩 만들기"
 #: src/components/WelcomeModal.tsx:166
 #: src/screens/Messages/JoinRequest.tsx:310
 #: src/screens/Signup/index.tsx:136
-#: src/screens/Signup/StepHandle/index.tsx:322
+#: src/screens/Signup/StepHandle/index.tsx:355
 #: src/view/com/auth/SplashScreen.tsx:106
 #: src/view/com/auth/SplashScreen.web.tsx:116
 #: src/view/shell/bottom-bar/BottomBar.tsx:351
@@ -3778,6 +3834,10 @@ msgstr "{0}에 생성됨"
 msgid "Creator has been blocked"
 msgstr "작성자 차단됨"
 
+#: src/view/screens/TermsOfService.tsx:81
+msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr "크리에이터는 자신이 게시하는 콘텐츠와 유료 콘텐츠로 홍보한 내용을 지킬 책임을 전적으로 집니다. 불법이거나 저작권을 침해하는 콘텐츠, 미성년자가 어떤 형태로든 관련된 콘텐츠, 비동의 행위를 담은 콘텐츠는 금지되며, 삭제와 함께 해당 계정은 종료됩니다. Humming은 본 약관을 위반하는 콘텐츠를 삭제하거나 계정을 제한할 수 있습니다."
+
 #: src/lib/interests.ts:57
 msgid "Culture"
 msgstr "문화"
@@ -3786,8 +3846,8 @@ msgstr "문화"
 msgid "Current chat"
 msgstr "현재 대화"
 
-#: src/components/dialogs/ServerInput.tsx:152
-#: src/components/dialogs/ServerInput.tsx:154
+#: src/components/dialogs/ServerInput.tsx:153
+#: src/components/dialogs/ServerInput.tsx:155
 msgid "Custom"
 msgstr "사용자 지정"
 
@@ -4233,8 +4293,8 @@ msgstr "걱정 마세요! 모든 기존 메시지와 설정은 저장되며 성�
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
 #: src/components/dialogs/NotificationSettingsDialog.tsx:106
-#: src/components/dialogs/ServerInput.tsx:237
-#: src/components/dialogs/ServerInput.tsx:239
+#: src/components/dialogs/ServerInput.tsx:238
+#: src/components/dialogs/ServerInput.tsx:240
 #: src/components/dms/AfterReportConversationDialog.tsx:164
 #: src/components/dms/AfterReportDialog.tsx:145
 #: src/components/forms/DateField/index.tsx:128
@@ -4324,6 +4384,10 @@ msgstr "해당 지역의 법률에 따라 성인 인증이 완료될 때까지 B
 #: src/components/dialogs/MutedWords.tsx:162
 msgid "Duration:"
 msgstr "기간:"
+
+#: src/view/screens/TermsOfService.tsx:70
+msgid "During the current early-access period, Humming creates and holds a Haneul wallet on your behalf (a custodial wallet). Your password protects access to this wallet — use a strong, unique password. Keep balances small: this is an early-stage service and self-custody support is on the roadmap. Humming is not responsible for losses caused by sharing or losing your password."
+msgstr "현재 얼리 액세스 기간에는 Humming이 회원님을 대신해 Haneul 지갑을 생성하고 보관합니다(수탁 지갑). 이 지갑을 지키는 것은 비밀번호입니다 — 강력하고 고유한 비밀번호를 사용하세요. 잔액은 소액으로 유지하세요. 아직 초기 단계 서비스이며 셀프 커스터디 지원이 로드맵에 있습니다. 비밀번호 공유·분실로 인한 손실에 대해 Humming은 책임지지 않습니다."
 
 #: src/features/inviteFriends/components/ThemePicker.tsx:31
 msgid "Dusk"
@@ -5646,6 +5710,10 @@ msgstr "음식"
 msgid "For organizational accounts, use the birthdate of the person who is responsible for the account."
 msgstr "단체 계정의 경우 계정 담당자의 생년월일을 사용하세요."
 
+#: src/view/screens/PrivacyPolicy.tsx:83
+msgid "For privacy requests, contact the Humming team via the links on humming.social."
+msgstr "개인정보 관련 요청은 humming.social의 링크를 통해 Humming 팀에 문의해 주세요."
+
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:186
 msgid "For security reasons, we’ll need to send a confirmation code to your email address <0>{currentEmail}</0>."
 msgstr "보안상의 이유로 내 이메일 주소 <0>{currentEmail}</0>(으)로 인증 코드를 전송해야 합니다."
@@ -6341,7 +6409,7 @@ msgstr "홈"
 msgid "Host:"
 msgstr "호스트:"
 
-#: src/components/dialogs/ServerInput.tsx:138
+#: src/components/dialogs/ServerInput.tsx:139
 #: src/screens/Login/components/HostingProviderDialog.tsx:159
 #: src/screens/Login/ForgotPasswordForm.tsx:80
 #: src/screens/Login/LoginForm.tsx:659
@@ -6377,6 +6445,22 @@ msgstr "Bluesky가 전화번호를 사용하는 방식:"
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:150
 msgid "Human trafficking"
 msgstr "인신매매"
+
+#: src/view/screens/TermsOfService.tsx:41
+msgid "Humming is a social platform where creators publish content and receive payments directly through the Haneul blockchain. By creating an account or using Humming, you agree to these terms. If you do not agree, do not use the service."
+msgstr "Humming은 크리에이터가 콘텐츠를 게시하고 Haneul 블록체인을 통해 직접 결제를 받는 소셜 플랫폼입니다. 계정을 만들거나 Humming을 이용하면 본 약관에 동의하는 것입니다. 동의하지 않는다면 서비스를 이용하지 마세요."
+
+#: src/view/screens/TermsOfService.tsx:100
+msgid "Humming is provided \"as is\" during early access. We do not guarantee uninterrupted availability. Content is stored off-chain and may be removed for legal or policy reasons; on-chain records (payments, subscriptions, name registrations) persist on the Haneul blockchain independently of Humming."
+msgstr "얼리 액세스 기간 동안 Humming은 \"있는 그대로\" 제공됩니다. 중단 없는 서비스를 보장하지 않습니다. 콘텐츠는 오프체인에 저장되며 법적·정책적 사유로 삭제될 수 있습니다. 온체인 기록(결제, 구독, 이름 등록)은 Humming과 무관하게 Haneul 블록체인에 남습니다."
+
+#: src/screens/Signup/StepHandle/index.tsx:331
+msgid "I agree to the <0>Terms of Service</0> and <1>Privacy Policy</1>."
+msgstr "<0>서비스 약관</0>과 <1>개인정보 처리방침</1>에 동의합니다."
+
+#: src/screens/Signup/StepHandle/index.tsx:325
+msgid "I agree to the Terms of Service and Privacy Policy"
+msgstr "서비스 약관과 개인정보 처리방침에 동의합니다"
 
 #: src/components/contacts/screens/GetContacts.tsx:267
 msgid "I consent to Bluesky using my contacts for mutual friend discovery and to retain hashed data for matching until I opt out."
@@ -6453,7 +6537,7 @@ msgstr "비밀번호를 변경하려면 본인 계정 확인을 위해 인증 �
 msgid "If you want to restrict who can receive notifications for your account's activity, you can change this in <0>Settings → Privacy and Security</0>."
 msgstr "내 계정의 활동에 대한 알림을 받을 수 있는 사용자를 제한하려면 <0>설정 → 개인정보 및 보안</0>에서 변경할 수 있습니다."
 
-#: src/components/dialogs/ServerInput.tsx:210
+#: src/components/dialogs/ServerInput.tsx:211
 msgid "If you're a developer, you can host your own server."
 msgstr "개발자라면 직접 서버를 호스팅할 수 있습니다."
 
@@ -6932,6 +7016,11 @@ msgstr "{timeAgo} 전 시작함"
 msgid "Last initiated just now"
 msgstr "방금 시작함"
 
+#: src/view/screens/PrivacyPolicy.tsx:37
+#: src/view/screens/TermsOfService.tsx:37
+msgid "Last updated: July 17, 2026"
+msgstr "최종 업데이트: 2026년 7월 17일"
+
 #: src/screens/Hashtag.tsx:97
 #: src/screens/Search/SearchResults.tsx:82
 #: src/screens/Topic.tsx:64
@@ -6976,7 +7065,7 @@ msgctxt "english-only-resource"
 msgid "Learn more about importing contacts"
 msgstr "연락처 가져오기에 대해 자세히 알아보기 (영어)"
 
-#: src/components/dialogs/ServerInput.tsx:220
+#: src/components/dialogs/ServerInput.tsx:221
 #: src/screens/Login/components/HostingProviderDialog.tsx:241
 msgid "Learn more about self hosting your PDS."
 msgstr "PDS 셀프 호스팅에 대해 자세히 알아보세요."
@@ -7018,7 +7107,7 @@ msgstr "Germ DM 링크에 대해 자세히 알아보기"
 msgid "Learn more in your <0>account settings.</0>"
 msgstr "<0>계정 설정</0>에서 자세히 알아보세요."
 
-#: src/components/dialogs/ServerInput.tsx:222
+#: src/components/dialogs/ServerInput.tsx:223
 #: src/components/moderation/ContentHider.tsx:259
 #: src/screens/Login/components/HostingProviderDialog.tsx:243
 msgid "Learn more."
@@ -8979,7 +9068,7 @@ msgstr "파티 GIF"
 msgid "Password"
 msgstr "비밀번호"
 
-#: src/screens/Signup/StepHandle/index.tsx:300
+#: src/screens/Signup/StepHandle/index.tsx:306
 msgid "Password (8+ characters)"
 msgstr "비밀번호 (8자 이상)"
 
@@ -8987,7 +9076,7 @@ msgstr "비밀번호 (8자 이상)"
 msgid "Password changed"
 msgstr "비밀번호 변경됨"
 
-#: src/screens/Signup/StepHandle/index.tsx:311
+#: src/screens/Signup/StepHandle/index.tsx:317
 msgid "Password must be at least 8 characters long"
 msgstr "비밀번호는 8자 이상이어야 합니다"
 
@@ -9033,7 +9122,7 @@ msgid "Paying on-chain…"
 msgstr "온체인 결제 중…"
 
 #: src/components/humming/CreatorHub.tsx:349
-#: src/components/humming/Wallet.tsx:309
+#: src/components/humming/Wallet.tsx:302
 msgid "Payment"
 msgstr "결제"
 
@@ -9585,7 +9674,7 @@ msgstr "개인정보 및 보안 설정"
 #: src/Navigation.tsx:336
 #: src/screens/Settings/AboutSettings.tsx:102
 #: src/screens/Settings/AboutSettings.tsx:105
-#: src/view/screens/PrivacyPolicy.tsx:25
+#: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:763
 #: src/view/shell/Drawer.tsx:764
 msgid "Privacy Policy"
@@ -9820,6 +9909,14 @@ msgstr "Bluesky 개인정보 처리방침 읽기"
 msgid "Read the Bluesky Terms of Service"
 msgstr "Bluesky 서비스 이용약관 읽기"
 
+#: src/screens/Signup/StepHandle/index.tsx:340
+msgid "Read the Humming Privacy Policy"
+msgstr "Humming 개인정보 처리방침 읽기"
+
+#: src/screens/Signup/StepHandle/index.tsx:334
+msgid "Read the Humming Terms of Service"
+msgstr "Humming 서비스 약관 읽기"
+
 #: src/components/WelcomeModal.tsx:149
 msgid "Real conversations."
 msgstr "진솔한 대화."
@@ -9833,12 +9930,12 @@ msgstr "진짜 사람들."
 msgid "Reason for appeal"
 msgstr "이의신청 이유"
 
-#: src/components/humming/Wallet.tsx:235
+#: src/components/humming/Wallet.tsx:233
 msgid "Receive"
 msgstr "받기"
 
-#: src/components/humming/Wallet.tsx:227
-#: src/components/humming/Wallet.tsx:362
+#: src/components/humming/Wallet.tsx:225
+#: src/components/humming/Wallet.tsx:354
 msgid "Receive HANEUL"
 msgstr "HANEUL 받기"
 
@@ -9850,7 +9947,7 @@ msgstr "인앱 알림 받기"
 msgid "Receive push notifications"
 msgstr "푸시 알림 받기"
 
-#: src/components/humming/Wallet.tsx:270
+#: src/components/humming/Wallet.tsx:263
 msgid "Recent activity"
 msgstr "최근 활동"
 
@@ -11140,7 +11237,7 @@ msgstr "{0}에 전송됨"
 msgid "Sent to our phone number verification provider Plivo"
 msgstr "전화번호 인증 서비스 제공업체인 Plivo로 전송합니다"
 
-#: src/components/dialogs/ServerInput.tsx:174
+#: src/components/dialogs/ServerInput.tsx:175
 #: src/screens/Login/components/HostingProviderDialog.tsx:200
 msgid "Server address"
 msgstr "서버 주소"
@@ -12052,6 +12149,10 @@ msgstr "구독료 (HANEUL)"
 msgid "Subscriptions {0} · Tips {1} · Purchases {2}"
 msgstr "구독 {0} · 팁 {1} · 단건 {2}"
 
+#: src/view/screens/TermsOfService.tsx:58
+msgid "Subscriptions, post purchases, and tips are executed as transactions on the Haneul blockchain and settle directly to the creator. Once confirmed on-chain, a payment cannot be reversed by Humming. Purchase records are permanently stored on-chain, including a pointer to the content as it existed at the moment of purchase. Creators may voluntarily refund a payment, but Humming cannot force them to do so."
+msgstr "구독, 게시물 구매, 팁은 Haneul 블록체인의 트랜잭션으로 실행되어 크리에이터에게 직접 정산됩니다. 온체인에서 확정된 결제는 Humming이 되돌릴 수 없습니다. 구매 기록은 구매 시점의 콘텐츠를 가리키는 포인터와 함께 온체인에 영구히 저장됩니다. 크리에이터가 자발적으로 환불할 수는 있지만, Humming이 이를 강제할 수는 없습니다."
+
 #: src/ageAssurance/components/RedirectOverlay.tsx:252
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:160
 msgid "Success"
@@ -12288,7 +12389,7 @@ msgstr "이용약관"
 #: src/Navigation.tsx:341
 #: src/screens/Settings/AboutSettings.tsx:94
 #: src/screens/Settings/AboutSettings.tsx:97
-#: src/view/screens/TermsOfService.tsx:25
+#: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:756
 #: src/view/shell/Drawer.tsx:758
 msgid "Terms of Service"
@@ -12330,7 +12431,7 @@ msgstr "텍스트 파일 내용:"
 msgid "That starter pack could not be found."
 msgstr "스타터 팩을 찾을 수 없습니다."
 
-#: src/screens/Signup/StepHandle/index.tsx:96
+#: src/screens/Signup/StepHandle/index.tsx:101
 msgid "That username is already taken"
 msgstr "이 사용자 이름은 이미 사용 중입니다"
 
@@ -12419,10 +12520,6 @@ msgstr "그룹 대화의 최대 인원 제한에 도달했습니다."
 msgid "The post you’re replying to was marked as being written in {suggestedLanguageName} by its author. Would you like to reply in <0>{suggestedLanguageName}</0>?"
 msgstr "답글을 보내려는 게시물은 작성자가 언어를 {suggestedLanguageName}로 표시했습니다. <0>{suggestedLanguageName}</0>로 답글을 작성하시겠습니까?"
 
-#: src/view/screens/PrivacyPolicy.tsx:29
-msgid "The Privacy Policy has been moved to <0/>"
-msgstr "개인정보 처리방침을 <0/>(으)로 이동했습니다"
-
 #: src/view/com/composer/state/video.ts:429
 #: src/view/com/composer/state/video.ts:468
 msgid "The selected video is larger than {VIDEO_MAX_SIZE_MB} MB. Please try again with a smaller file."
@@ -12444,10 +12541,6 @@ msgstr "컨텍스트 메뉴 제목"
 #: src/view/screens/Support.tsx:31
 msgid "The support form has been moved. If you need help, please <0/> or visit {HELP_DESK_URL} to get in touch with us."
 msgstr "지원 양식을 이동했습니다. 도움이 필요하다면 <0/>하거나 {HELP_DESK_URL}에 방문하여 문의해 주세요."
-
-#: src/view/screens/TermsOfService.tsx:29
-msgid "The Terms of Service have been moved to"
-msgstr "서비스 이용약관을 다음으로 이동했습니다:"
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:89
 msgid "The verification code you have provided is invalid. Please make sure that you have used the correct verification link or request a new one."
@@ -13206,7 +13299,7 @@ msgid "Two-factor authentication (2FA)"
 msgstr "2단계 인증"
 
 #. placeholder {0}: item.tx.slice(0, 8)
-#: src/components/humming/Wallet.tsx:314
+#: src/components/humming/Wallet.tsx:306
 msgid "tx {0}…"
 msgstr "tx {0}…"
 
@@ -13648,7 +13741,7 @@ msgstr "내 기본 브라우저 사용"
 msgid "Use recommended"
 msgstr "추천 사용"
 
-#: src/components/humming/Wallet.tsx:444
+#: src/components/humming/Wallet.tsx:445
 msgid "Use this address to receive HANEUL on the Haneul network — from an exchange or any other wallet."
 msgstr "이 주소로 Haneul 네트워크의 HANEUL을 받을 수 있어요 — 거래소든 다른 지갑이든 어디서든요."
 
@@ -13720,15 +13813,15 @@ msgctxt "toast"
 msgid "User list updated"
 msgstr "사용자 리스트를 업데이트했습니다"
 
-#: src/screens/Signup/StepHandle/index.tsx:275
+#: src/screens/Signup/StepHandle/index.tsx:281
 msgid "Username cannot be longer than {MAX_SERVICE_HANDLE_LENGTH, plural, other {# characters}}"
 msgstr "사용자 이름은 {MAX_SERVICE_HANDLE_LENGTH, plural, other {#자}}를 초과할 수 없습니다"
 
-#: src/screens/Signup/StepHandle/index.tsx:259
+#: src/screens/Signup/StepHandle/index.tsx:265
 msgid "Username cannot begin or end with a hyphen"
 msgstr "사용자 이름은 하이픈으로 시작하거나 끝날 수 없습니다"
 
-#: src/screens/Signup/StepHandle/index.tsx:263
+#: src/screens/Signup/StepHandle/index.tsx:269
 msgid "Username must only contain letters (a-z), numbers, and hyphens"
 msgstr "사용자 이름에는 영문자(a-z), 숫자, 하이픈만 사용할 수 있습니다"
 
@@ -14217,6 +14310,10 @@ msgstr "Bluesky는 연령 확인을 위해 <0>KWS</0>와 제휴했습니다. 아
 msgid "We have sent another verification email to <0>{0}</0>."
 msgstr "<0>{0}</0>(으)로 또 다른 인증 이메일을 보냈습니다."
 
+#: src/view/screens/TermsOfService.tsx:119
+msgid "We may update these terms as the service evolves. Material changes will be announced in the app. Continued use after a change means you accept the updated terms."
+msgstr "서비스가 발전하면서 본 약관은 갱신될 수 있습니다. 중요한 변경은 앱에서 공지합니다. 변경 후에도 계속 이용하면 갱신된 약관에 동의하는 것입니다."
+
 #: src/components/contacts/screens/PhoneInput.tsx:184
 msgid "We need to verify your number before we can look for your friends. A verification code will be sent to this number."
 msgstr "친구를 찾기 전에 먼저 회원님의 전화번호를 인증해야 합니다. 이 번호로 인증 코드가 전송됩니다."
@@ -14241,6 +14338,10 @@ msgstr "관심 주제를 2개 이상 선택하는 것을 권장합니다."
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:250
 msgid "We sent an email to <0>{0}</0> containing a link. Please click on it to complete the email verification process."
 msgstr "링크가 포함된 이메일을 <0>{0}</0>(으)로 보냈습니다. 이메일 인증 절차를 완료하려면 해당 링크를 클릭하세요."
+
+#: src/view/screens/PrivacyPolicy.tsx:63
+msgid "We use your data only to operate the service: authenticating you, signing the transactions you request, serving content you are entitled to view, and protecting the service from abuse (such as rate limiting by network address). We do not sell or share your data with advertisers."
+msgstr "데이터는 서비스 운영에만 사용합니다: 로그인 인증, 회원님이 요청한 트랜잭션 서명, 열람 자격이 있는 콘텐츠 제공, 남용으로부터의 서비스 보호(네트워크 주소 기반 요청 제한 등). 데이터를 광고주에게 판매하거나 공유하지 않습니다."
 
 #: src/view/com/composer/state/video.ts:451
 msgid "We were unable to determine if you are allowed to upload videos. Please try again."
@@ -14401,6 +14502,10 @@ msgstr "요즘 어때?"
 #: src/view/com/feeds/ComposerPrompt.tsx:192
 msgid "What's up?"
 msgstr "무슨 일이 일어나고 있나요?"
+
+#: src/view/screens/PrivacyPolicy.tsx:41
+msgid "When you sign up, Humming stores your chosen nickname and a salted hash of your password — never the password itself. During the current early-access period we also generate and hold the private key of your Haneul wallet (custodial). Media you upload is stored on our servers. We do not collect your email address, phone number, or real name, and we do not use third-party trackers or advertising identifiers."
+msgstr "가입 시 Humming은 회원님이 정한 닉네임과 비밀번호의 솔트 해시를 저장합니다 — 비밀번호 원문은 절대 저장하지 않습니다. 현재 얼리 액세스 기간에는 Haneul 지갑의 비밀키도 생성해 보관합니다(수탁). 업로드한 미디어는 저희 서버에 저장됩니다. 이메일 주소, 전화번호, 실명은 수집하지 않으며, 서드파티 트래커나 광고 식별자도 사용하지 않습니다."
 
 #: src/components/dialogs/nuxs/InitialVerificationAnnouncement.tsx:150
 msgid "When you tap on a check, you’ll see which organizations have granted verification."
@@ -14659,6 +14764,10 @@ msgstr "앱 내 대화 설정에서 대화 알림 소리 여부를 선택할 수
 msgid "You can continue ongoing conversations regardless of which setting you choose."
 msgstr "어떤 설정을 선택하든 진행 중인 대화를 계속할 수 있습니다."
 
+#: src/view/screens/PrivacyPolicy.tsx:73
+msgid "You can delete your uploaded media and off-chain content by contacting us or using in-app deletion where available. Records already committed to the Haneul blockchain cannot be erased by anyone — this is a property of public blockchains, so post and pay with that in mind."
+msgstr "업로드한 미디어와 오프체인 콘텐츠는 문의를 통해, 또는 앱 내 삭제 기능이 있는 경우 직접 삭제할 수 있습니다. 이미 Haneul 블록체인에 기록된 내용은 누구도 지울 수 없습니다 — 퍼블릭 블록체인의 속성이니, 이를 염두에 두고 게시하고 결제하세요."
+
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:150
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr "이제 특정 사용자가 게시물을 올릴 때 알림을 받도록 선택할 수 있습니다. 실시간 업데이트를 받고 싶은 사용자가 있다면 해당 사용자의 프로필로 이동하여 팔로우 버튼 근처에 있는 새로운 종 모양 아이콘을 찾아보세요."
@@ -14873,6 +14982,10 @@ msgstr "비셀프 라벨이 잘못 지정되었다고 생각되면 이의신청�
 msgid "You may appeal these labels if you feel they were placed in error."
 msgstr "이 라벨이 잘못 지정되었다고 생각되면 이의신청할 수 있습니다."
 
+#: src/view/screens/TermsOfService.tsx:92
+msgid "You may not: attempt to access another person's account or wallet; abuse, spam, or defraud other users; interfere with the operation of the service; or use the service to violate any applicable law."
+msgstr "다음 행위는 금지됩니다: 타인의 계정이나 지갑에 접근을 시도하는 행위, 다른 이용자를 괴롭히거나 스팸·사기 행위를 하는 것, 서비스 운영을 방해하는 행위, 서비스를 이용해 관련 법령을 위반하는 행위."
+
 #: src/screens/StarterPack/Wizard/State.tsx:80
 msgid "You may only add up to {STARTER_PACK_MAX_SIZE, plural, other {{STARTER_PACK_MAX_SIZE} profiles}}"
 msgstr "프로필은 최대 {STARTER_PACK_MAX_SIZE, plural, other {{STARTER_PACK_MAX_SIZE}개}}까지 추가할 수 있습니다"
@@ -14881,6 +14994,10 @@ msgstr "프로필은 최대 {STARTER_PACK_MAX_SIZE, plural, other {{STARTER_PACK
 msgid "You may only add up to 3 feeds"
 msgstr "피드는 최대 3개까지 추가할 수 있습니다"
 
+#: src/view/screens/TermsOfService.tsx:110
+msgid "You may stop using Humming at any time. We may suspend or terminate accounts that violate these terms. Because wallets and payment records live on the Haneul blockchain, on-chain assets and records are unaffected by account termination."
+msgstr "언제든 Humming 이용을 중단할 수 있습니다. 본 약관을 위반한 계정은 정지되거나 종료될 수 있습니다. 지갑과 결제 기록은 Haneul 블록체인에 있으므로, 계정이 종료되어도 온체인 자산과 기록은 영향을 받지 않습니다."
+
 #: src/components/moderation/BlockDialog.tsx:321
 msgid "You must be a chat owner to remove a member."
 msgstr "멤버를 내보내려면 대화 소유자여야 합니다."
@@ -14888,6 +15005,10 @@ msgstr "멤버를 내보내려면 대화 소유자여야 합니다."
 #: src/components/dialogs/BirthDateSettings.tsx:177
 msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
 msgstr "Bluesky를 이용하려면 만 13세 이상이어야 합니다. 자세한 내용은 <0>서비스 이용약관</0>을 참조하세요."
+
+#: src/view/screens/TermsOfService.tsx:50
+msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
+msgstr "Humming은 만 14세 이상부터 이용할 수 있습니다. 유료 콘텐츠 등 일부 기능은 회원님에게 적용되는 법률에 따라 추가로 성년일 것을 요구할 수 있습니다."
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:365
 msgid "You must be following at least seven other people to generate a starter pack."
@@ -15225,6 +15346,10 @@ msgstr "이름, 프로필 사진, 그룹 대화 이름, 멤버 수가 모든 사
 msgid "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
 msgstr "닉네임이 곧 지갑입니다 — 계정을 만들면 온체인 이름과 지갑이 함께 발급됩니다."
 
+#: src/view/screens/PrivacyPolicy.tsx:53
+msgid "Your nickname registration, posts, subscriptions, purchases, and tips are recorded on the Haneul blockchain, which is public and permanent. Anyone can see the payment flows of a wallet address. Post content itself is stored off-chain on our servers; the chain holds only a content pointer."
+msgstr "닉네임 등록, 게시물, 구독, 구매, 팁은 공개적이고 영구적인 Haneul 블록체인에 기록됩니다. 지갑 주소의 결제 흐름은 누구나 볼 수 있습니다. 게시물 내용 자체는 저희 서버(오프체인)에 저장되며, 체인에는 콘텐츠 포인터만 남습니다."
+
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:72
 msgid "Your password has been changed successfully! Please use your new password when you sign in to Bluesky from now on."
 msgstr "비밀번호를 성공적으로 변경했습니다! 앞으로 Bluesky에 로그인할 때 새 비밀번호를 사용해 주세요."
@@ -15283,6 +15408,6 @@ msgstr "사용자 이름과 비밀번호가 <0>{host}</0>에 공유됩니다. �
 msgid "Your verifications"
 msgstr "내 인증"
 
-#: src/components/humming/Wallet.tsx:250
+#: src/components/humming/Wallet.tsx:243
 msgid "Your wallet is ready"
 msgstr "지갑이 준비되어 있어요"

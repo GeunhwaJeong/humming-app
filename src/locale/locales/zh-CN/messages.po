@@ -150,7 +150,7 @@ msgstr ""
 
 #. placeholder {0}: stats?.posts ?? 0
 #: src/components/humming/LockedWallPanel.tsx:58
-#: src/components/humming/ProfileSubscribeCard.tsx:106
+#: src/components/humming/ProfileSubscribeCard.tsx:105
 msgid "{0, plural, one {# post} other {# posts}}"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgid "{0} is live"
 msgstr "{0} 正在直播"
 
 #. placeholder {0}: createFullHandle(draftValue, state.userDomain)
-#: src/screens/Signup/StepHandle/index.tsx:229
+#: src/screens/Signup/StepHandle/index.tsx:235
 msgid "{0} is not available"
 msgstr "{0} 已被占用"
 
@@ -473,7 +473,7 @@ msgstr "{count, plural,one {# 条新的加入申请}other {# 条新的加入申�
 msgid "{count, plural, one {# request} other {# requests}}"
 msgstr "{count, plural, one {# 条邀请} other {# 条邀请}}"
 
-#: src/view/shell/desktop/LeftNav.tsx:485
+#: src/view/shell/desktop/LeftNav.tsx:486
 msgid "{count, plural, one {# unread item} other {# unread items}}"
 msgstr "{count, plural, one {# 条未读} other {# 条未读}}"
 
@@ -755,7 +755,7 @@ msgstr "{notificationCount, plural, one {# 条未读通知} other {# 条未读�
 msgid "{numMatches, plural, one {# contact found} other {# contacts found}}"
 msgstr "{numMatches, plural, one {找到了 # 位联系人} other {找到了 # 位联系人}}"
 
-#: src/components/humming/hooks.ts:138
+#: src/components/humming/hooks.ts:152
 msgid "{price} / {days} days"
 msgstr ""
 
@@ -935,12 +935,28 @@ msgstr "<0>你</0> 及<1> </1><2>{0} </2>已包含在你的新手包中"
 msgid "⚠Invalid Handle"
 msgstr "⚠无效的账户代码"
 
+#: src/view/screens/TermsOfService.tsx:40
+msgid "1. About Humming"
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:159
 msgid "1. Identity verification"
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:40
+msgid "1. What we collect"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:49
+msgid "2. Age requirement"
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:187
 msgid "2. Monthly subscription price (30 days, HANEUL)"
+msgstr ""
+
+#: src/view/screens/PrivacyPolicy.tsx:52
+msgid "2. What lives on the blockchain"
 msgstr ""
 
 #: src/components/dialogs/MutedWords.tsx:202
@@ -953,8 +969,16 @@ msgstr "24 小时"
 msgid "2FA Confirmation"
 msgstr "两步验证"
 
+#: src/view/screens/PrivacyPolicy.tsx:62
+msgid "3. How we use data"
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:215
 msgid "3. How your posts are shown"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:57
+msgid "3. On-chain payments are final"
 msgstr ""
 
 #: src/components/dialogs/MutedWords.tsx:241
@@ -963,11 +987,43 @@ msgstr ""
 msgid "30 days"
 msgstr "30 天"
 
+#: src/view/screens/PrivacyPolicy.tsx:72
+msgid "4. Deletion"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:69
+msgid "4. Your wallet"
+msgstr ""
+
+#: src/view/screens/PrivacyPolicy.tsx:82
+msgid "5. Contact"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:80
+msgid "5. Creator content"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:91
+msgid "6. Prohibited conduct"
+msgstr ""
+
 #: src/components/dialogs/MutedWords.tsx:226
 #: src/components/dialogs/MutedWords.tsx:558
 #: src/components/dialogs/MutedWords.tsx:561
 msgid "7 days"
 msgstr "7 天"
+
+#: src/view/screens/TermsOfService.tsx:99
+msgid "7. Service availability"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:109
+msgid "8. Termination"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:118
+msgid "9. Changes"
+msgstr ""
 
 #: src/components/humming/CreatorHub.tsx:143
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
@@ -976,6 +1032,10 @@ msgstr ""
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
 msgstr "你可以在 Bluesky 上找到一系列热门动态源，包括 News、Booksky、Game Dev、Blacksky 以及 Fountain Pens"
+
+#: src/components/humming/Wallet.tsx:246
+msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
+msgstr ""
 
 #. If last message does not contain text, fall back to "{user} reacted to {a message}"
 #: src/components/dms/getReactionInfo.ts:53
@@ -1228,8 +1288,8 @@ msgstr "添加替代文本（可选）"
 
 #: src/screens/Settings/Settings.tsx:575
 #: src/screens/Settings/Settings.tsx:578
-#: src/view/shell/desktop/LeftNav.tsx:277
-#: src/view/shell/desktop/LeftNav.tsx:280
+#: src/view/shell/desktop/LeftNav.tsx:278
+#: src/view/shell/desktop/LeftNav.tsx:281
 msgid "Add another account"
 msgstr "添加其他账户"
 
@@ -1397,6 +1457,10 @@ msgstr "补充说明（一千个字以内）"
 msgid "Additional details (limit 300 characters)"
 msgstr "补充说明（300 个字以内）"
 
+#: src/components/humming/Wallet.tsx:109
+msgid "Address copied to clipboard"
+msgstr ""
+
 #: src/screens/Messages/ConversationSettings/Member.tsx:94
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:155
 msgid "Admin"
@@ -1506,7 +1570,7 @@ msgstr ""
 msgid "All posts"
 msgstr ""
 
-#: src/components/humming/ProfileSubscribeCard.tsx:111
+#: src/components/humming/ProfileSubscribeCard.tsx:109
 msgid "All posts are for subscribers only"
 msgstr ""
 
@@ -2099,6 +2163,14 @@ msgstr "返回"
 msgid "Back to Chats"
 msgstr "返回对话"
 
+#: src/components/humming/Wallet.tsx:344
+msgid "Back to wallet"
+msgstr ""
+
+#: src/components/humming/Wallet.tsx:212
+msgid "Balance"
+msgstr ""
+
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:216
 msgid "Banned activities or security violations"
 msgstr "违法活动或违反安全规定的行为"
@@ -2308,8 +2380,8 @@ msgstr "博客"
 msgid "bloomscrolling booksky"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:144
-#: src/components/dialogs/ServerInput.tsx:146
+#: src/components/dialogs/ServerInput.tsx:145
+#: src/components/dialogs/ServerInput.tsx:147
 msgid "Bluesky"
 msgstr "Bluesky"
 
@@ -2326,12 +2398,12 @@ msgstr "Bluesky 经典™"
 msgid "Bluesky helps friends find each other by creating an encoded digital fingerprint, called a \"hash\", and then looking for matching hashes."
 msgstr "Bluesky 通过产生并比对称为“哈希值”的数字指纹，来帮助朋友之间相互找到彼此。"
 
-#: src/components/dialogs/ServerInput.tsx:214
+#: src/components/dialogs/ServerInput.tsx:215
 #: src/screens/Login/components/HostingProviderDialog.tsx:236
 msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
 msgstr "Bluesky 是一个开放的社交网络，你可以自行选择托管服务提供商。如果你是开发者，你还可以托管自己的服务器。"
 
-#: src/components/dialogs/ServerInput.tsx:162
+#: src/components/dialogs/ServerInput.tsx:163
 msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
 msgstr "Bluesky 是一个开放的社交网络，你可以自行选择托管服务提供商。但如果你是新用户，我们建议你选择默认的 Bluesky Social 选项。"
 
@@ -2581,7 +2653,7 @@ msgstr "需要相机权限"
 #: src/view/com/composer/Composer.tsx:1834
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:44
 #: src/view/com/composer/photos/EditImageDialog.web.tsx:53
-#: src/view/shell/desktop/LeftNav.tsx:229
+#: src/view/shell/desktop/LeftNav.tsx:230
 msgid "Cancel"
 msgstr "取消"
 
@@ -2712,7 +2784,7 @@ msgstr "列表在创建后将是一个独立副本，任何对新手包的更改
 #: src/lib/hooks/useNotificationHandler.ts:133
 #: src/Navigation.tsx:491
 #: src/view/shell/bottom-bar/BottomBar.tsx:242
-#: src/view/shell/desktop/LeftNav.tsx:699
+#: src/view/shell/desktop/LeftNav.tsx:700
 #: src/view/shell/Drawer.tsx:525
 msgid "Chat"
 msgstr "对话"
@@ -2874,7 +2946,7 @@ msgstr "选择哪些人可以加入此群组及加入策略。"
 msgid "Choose who to invite"
 msgstr "选择要邀请的人"
 
-#: src/components/dialogs/ServerInput.tsx:134
+#: src/components/dialogs/ServerInput.tsx:135
 #: src/screens/Login/components/HostingProviderDialog.tsx:155
 msgid "Choose your hosting provider"
 msgstr ""
@@ -3155,7 +3227,7 @@ msgstr "完成验证"
 
 #: src/lib/hotkeys/index.tsx:66
 #: src/view/com/feeds/ComposerPrompt.tsx:147
-#: src/view/shell/desktop/LeftNav.tsx:588
+#: src/view/shell/desktop/LeftNav.tsx:589
 msgid "Compose new post"
 msgstr "撰写新帖文"
 
@@ -3377,7 +3449,7 @@ msgid "Conversation not found."
 msgstr "找不到对话。"
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:111
+#: src/components/humming/hooks.ts:125
 msgid "Conversion failed: {0}"
 msgstr ""
 
@@ -3508,6 +3580,11 @@ msgstr "复制二维码"
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:457
 msgid "Copy TXT record value"
 msgstr "复制 TXT 记录值"
+
+#: src/components/humming/Wallet.tsx:176
+#: src/components/humming/Wallet.tsx:411
+msgid "Copy wallet address"
+msgstr ""
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:41
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:108
@@ -3664,7 +3741,7 @@ msgstr "为我创建新手包"
 #: src/components/WelcomeModal.tsx:166
 #: src/screens/Messages/JoinRequest.tsx:310
 #: src/screens/Signup/index.tsx:136
-#: src/screens/Signup/StepHandle/index.tsx:322
+#: src/screens/Signup/StepHandle/index.tsx:355
 #: src/view/com/auth/SplashScreen.tsx:106
 #: src/view/com/auth/SplashScreen.web.tsx:116
 #: src/view/shell/bottom-bar/BottomBar.tsx:351
@@ -3757,6 +3834,10 @@ msgstr "创建于 {0}"
 msgid "Creator has been blocked"
 msgstr "已屏蔽此列表的创建者"
 
+#: src/view/screens/TermsOfService.tsx:81
+msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr ""
+
 #: src/lib/interests.ts:57
 msgid "Culture"
 msgstr "文化"
@@ -3765,8 +3846,8 @@ msgstr "文化"
 msgid "Current chat"
 msgstr "当前对话"
 
-#: src/components/dialogs/ServerInput.tsx:152
-#: src/components/dialogs/ServerInput.tsx:154
+#: src/components/dialogs/ServerInput.tsx:153
+#: src/components/dialogs/ServerInput.tsx:155
 msgid "Custom"
 msgstr "自定义"
 
@@ -4212,8 +4293,8 @@ msgstr "别担心！你现有的对话及设置都已保存，只需验证你已
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
 #: src/components/dialogs/NotificationSettingsDialog.tsx:106
-#: src/components/dialogs/ServerInput.tsx:237
-#: src/components/dialogs/ServerInput.tsx:239
+#: src/components/dialogs/ServerInput.tsx:238
+#: src/components/dialogs/ServerInput.tsx:240
 #: src/components/dms/AfterReportConversationDialog.tsx:164
 #: src/components/dms/AfterReportDialog.tsx:145
 #: src/components/forms/DateField/index.tsx:128
@@ -4303,6 +4384,10 @@ msgstr "由于你所在地区的法律规定，Bluesky 的某些功能目前受�
 #: src/components/dialogs/MutedWords.tsx:162
 msgid "Duration:"
 msgstr "持续时间："
+
+#: src/view/screens/TermsOfService.tsx:70
+msgid "During the current early-access period, Humming creates and holds a Haneul wallet on your behalf (a custodial wallet). Your password protects access to this wallet — use a strong, unique password. Keep balances small: this is an early-stage service and self-custody support is on the roadmap. Humming is not responsible for losses caused by sharing or losing your password."
+msgstr ""
 
 #: src/features/inviteFriends/components/ThemePicker.tsx:31
 msgid "Dusk"
@@ -4826,7 +4911,7 @@ msgstr "露骨的色情图片。"
 
 #: src/Navigation.tsx:751
 #: src/screens/Search/Shell.tsx:552
-#: src/view/shell/desktop/LeftNav.tsx:678
+#: src/view/shell/desktop/LeftNav.tsx:679
 #: src/view/shell/Drawer.tsx:473
 msgid "Explore"
 msgstr "探索"
@@ -5264,7 +5349,7 @@ msgstr "已提交反馈给动态源维护者"
 #: src/screens/StarterPack/StarterPackScreen.tsx:196
 #: src/view/screens/Feeds.tsx:504
 #: src/view/screens/Profile.tsx:239
-#: src/view/shell/desktop/LeftNav.tsx:713
+#: src/view/shell/desktop/LeftNav.tsx:714
 #: src/view/shell/Drawer.tsx:589
 msgid "Feeds"
 msgstr "动态源"
@@ -5625,6 +5710,10 @@ msgstr "食物"
 msgid "For organizational accounts, use the birthdate of the person who is responsible for the account."
 msgstr "对于组织账户，请使用账户负责人的出生日期。"
 
+#: src/view/screens/PrivacyPolicy.tsx:83
+msgid "For privacy requests, contact the Humming team via the links on humming.social."
+msgstr ""
+
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:186
 msgid "For security reasons, we’ll need to send a confirmation code to your email address <0>{currentEmail}</0>."
 msgstr "出于安全原因，我们将发送验证码到你的电子邮箱地址 <0>{currentEmail}</0>。"
@@ -5922,8 +6011,8 @@ msgstr "前往下一步"
 #: src/components/dms/ConvoMenu.tsx:262
 #: src/screens/Messages/components/MessagesListInfoPanel.tsx:98
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:194
-#: src/view/shell/desktop/LeftNav.tsx:337
-#: src/view/shell/desktop/LeftNav.tsx:343
+#: src/view/shell/desktop/LeftNav.tsx:338
+#: src/view/shell/desktop/LeftNav.tsx:344
 msgid "Go to profile"
 msgstr "转到个人资料"
 
@@ -6311,7 +6400,7 @@ msgstr "请稍等！我们正在逐步开放上传视频的权限。你目前仍
 #: src/Navigation.tsx:746
 #: src/Navigation.tsx:767
 #: src/view/shell/bottom-bar/BottomBar.tsx:196
-#: src/view/shell/desktop/LeftNav.tsx:668
+#: src/view/shell/desktop/LeftNav.tsx:669
 #: src/view/shell/Drawer.tsx:499
 msgid "Home"
 msgstr "主页"
@@ -6320,7 +6409,7 @@ msgstr "主页"
 msgid "Host:"
 msgstr "主机："
 
-#: src/components/dialogs/ServerInput.tsx:138
+#: src/components/dialogs/ServerInput.tsx:139
 #: src/screens/Login/components/HostingProviderDialog.tsx:159
 #: src/screens/Login/ForgotPasswordForm.tsx:80
 #: src/screens/Login/LoginForm.tsx:659
@@ -6356,6 +6445,22 @@ msgstr "我们会如何利用你的电话号码："
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:150
 msgid "Human trafficking"
 msgstr "人口贩卖"
+
+#: src/view/screens/TermsOfService.tsx:41
+msgid "Humming is a social platform where creators publish content and receive payments directly through the Haneul blockchain. By creating an account or using Humming, you agree to these terms. If you do not agree, do not use the service."
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:100
+msgid "Humming is provided \"as is\" during early access. We do not guarantee uninterrupted availability. Content is stored off-chain and may be removed for legal or policy reasons; on-chain records (payments, subscriptions, name registrations) persist on the Haneul blockchain independently of Humming."
+msgstr ""
+
+#: src/screens/Signup/StepHandle/index.tsx:331
+msgid "I agree to the <0>Terms of Service</0> and <1>Privacy Policy</1>."
+msgstr ""
+
+#: src/screens/Signup/StepHandle/index.tsx:325
+msgid "I agree to the Terms of Service and Privacy Policy"
+msgstr ""
 
 #: src/components/contacts/screens/GetContacts.tsx:267
 msgid "I consent to Bluesky using my contacts for mutual friend discovery and to retain hashed data for matching until I opt out."
@@ -6432,7 +6537,7 @@ msgstr "如果你想要更改密码，我们将发送验证码到你的电子邮
 msgid "If you want to restrict who can receive notifications for your account's activity, you can change this in <0>Settings → Privacy and Security</0>."
 msgstr "如果你想限制其他人接收你账户的动态提醒，可以转到<0>设置 → 隐私与安全</0>更改允许范围。"
 
-#: src/components/dialogs/ServerInput.tsx:210
+#: src/components/dialogs/ServerInput.tsx:211
 msgid "If you're a developer, you can host your own server."
 msgstr "如果你是开发者，你可以自行托管服务器。"
 
@@ -6911,6 +7016,11 @@ msgstr "最后一次请求于 {timeAgo} 前"
 msgid "Last initiated just now"
 msgstr "最后一次请求于不久前"
 
+#: src/view/screens/PrivacyPolicy.tsx:37
+#: src/view/screens/TermsOfService.tsx:37
+msgid "Last updated: July 17, 2026"
+msgstr ""
+
 #: src/screens/Hashtag.tsx:97
 #: src/screens/Search/SearchResults.tsx:82
 #: src/screens/Topic.tsx:64
@@ -6955,7 +7065,7 @@ msgctxt "english-only-resource"
 msgid "Learn more about importing contacts"
 msgstr "了解更多导入通讯录功能"
 
-#: src/components/dialogs/ServerInput.tsx:220
+#: src/components/dialogs/ServerInput.tsx:221
 #: src/screens/Login/components/HostingProviderDialog.tsx:241
 msgid "Learn more about self hosting your PDS."
 msgstr "深入了解有关自行托管 PDS 的信息。"
@@ -6997,7 +7107,7 @@ msgstr "了解更多关于你的 Germ DM 链接"
 msgid "Learn more in your <0>account settings.</0>"
 msgstr "在你的<0>账户设置</0>了解详情"
 
-#: src/components/dialogs/ServerInput.tsx:222
+#: src/components/dialogs/ServerInput.tsx:223
 #: src/components/moderation/ContentHider.tsx:259
 #: src/screens/Login/components/HostingProviderDialog.tsx:243
 msgid "Learn more."
@@ -7257,7 +7367,7 @@ msgstr "已取消隐藏该列表"
 #: src/view/screens/Lists.tsx:60
 #: src/view/screens/Profile.tsx:233
 #: src/view/screens/Profile.tsx:241
-#: src/view/shell/desktop/LeftNav.tsx:723
+#: src/view/shell/desktop/LeftNav.tsx:724
 #: src/view/shell/Drawer.tsx:604
 msgid "Lists"
 msgstr "列表"
@@ -8034,7 +8144,7 @@ msgid "New post"
 msgstr "新帖文"
 
 #: src/view/com/feeds/FeedPage.tsx:179
-#: src/view/shell/desktop/LeftNav.tsx:599
+#: src/view/shell/desktop/LeftNav.tsx:600
 msgctxt "action"
 msgid "New post"
 msgstr "新帖文"
@@ -8408,7 +8518,7 @@ msgstr "通知提示音"
 #: src/screens/Settings/Settings.tsx:200
 #: src/view/screens/Notifications.tsx:128
 #: src/view/shell/bottom-bar/BottomBar.tsx:279
-#: src/view/shell/desktop/LeftNav.tsx:688
+#: src/view/shell/desktop/LeftNav.tsx:689
 #: src/view/shell/Drawer.tsx:552
 msgid "Notifications"
 msgstr "通知"
@@ -8840,6 +8950,10 @@ msgstr "在编辑器中开启这份草稿"
 msgid "Opens this profile"
 msgstr "开启该个人资料"
 
+#: src/components/humming/Wallet.tsx:63
+msgid "Opens your Haneul wallet"
+msgstr ""
+
 #: src/components/dialogs/MutedWords.tsx:308
 msgid "Options:"
 msgstr "选项："
@@ -8954,7 +9068,7 @@ msgstr "派对 GIFs"
 msgid "Password"
 msgstr "密码"
 
-#: src/screens/Signup/StepHandle/index.tsx:300
+#: src/screens/Signup/StepHandle/index.tsx:306
 msgid "Password (8+ characters)"
 msgstr ""
 
@@ -8962,7 +9076,7 @@ msgstr ""
 msgid "Password changed"
 msgstr "已更改密码"
 
-#: src/screens/Signup/StepHandle/index.tsx:311
+#: src/screens/Signup/StepHandle/index.tsx:317
 msgid "Password must be at least 8 characters long"
 msgstr ""
 
@@ -9008,6 +9122,7 @@ msgid "Paying on-chain…"
 msgstr ""
 
 #: src/components/humming/CreatorHub.tsx:349
+#: src/components/humming/Wallet.tsx:302
 msgid "Payment"
 msgstr ""
 
@@ -9361,7 +9476,7 @@ msgid "Post"
 msgstr "帖文"
 
 #. placeholder {0}: item.postId
-#: src/components/humming/CreatorHub.tsx:352
+#: src/components/humming/CreatorHub.tsx:351
 msgid "post {0}"
 msgstr ""
 
@@ -9559,7 +9674,7 @@ msgstr "隐私与安全设置"
 #: src/Navigation.tsx:336
 #: src/screens/Settings/AboutSettings.tsx:102
 #: src/screens/Settings/AboutSettings.tsx:105
-#: src/view/screens/PrivacyPolicy.tsx:25
+#: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:763
 #: src/view/shell/Drawer.tsx:764
 msgid "Privacy Policy"
@@ -9586,7 +9701,7 @@ msgid "profile"
 msgstr "个人资料"
 
 #: src/view/shell/bottom-bar/BottomBar.tsx:322
-#: src/view/shell/desktop/LeftNav.tsx:746
+#: src/view/shell/desktop/LeftNav.tsx:747
 #: src/view/shell/Drawer.tsx:91
 #: src/view/shell/Drawer.tsx:655
 msgid "Profile"
@@ -9639,15 +9754,16 @@ msgid "Publish reply"
 msgstr "发布回复"
 
 #: src/components/humming/CreatorHub.tsx:269
+#: src/components/humming/Wallet.tsx:38
 msgid "Purchase"
 msgstr ""
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:74
+#: src/components/humming/hooks.ts:75
 msgid "Purchase failed: {0}"
 msgstr ""
 
-#: src/components/humming/hooks.ts:67
+#: src/components/humming/hooks.ts:68
 msgid "Purchased! This post is unlocked for you permanently (tx: {tx}…, {price})"
 msgstr ""
 
@@ -9793,6 +9909,14 @@ msgstr "浏览 Bluesky 隐私设置"
 msgid "Read the Bluesky Terms of Service"
 msgstr "浏览 Bluesky 服务条款"
 
+#: src/screens/Signup/StepHandle/index.tsx:340
+msgid "Read the Humming Privacy Policy"
+msgstr ""
+
+#: src/screens/Signup/StepHandle/index.tsx:334
+msgid "Read the Humming Terms of Service"
+msgstr ""
+
 #: src/components/WelcomeModal.tsx:149
 msgid "Real conversations."
 msgstr "真实的对话。"
@@ -9806,6 +9930,15 @@ msgstr "真实的用户。"
 msgid "Reason for appeal"
 msgstr "申诉原因"
 
+#: src/components/humming/Wallet.tsx:233
+msgid "Receive"
+msgstr ""
+
+#: src/components/humming/Wallet.tsx:225
+#: src/components/humming/Wallet.tsx:354
+msgid "Receive HANEUL"
+msgstr ""
+
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:137
 msgid "Receive in-app notifications"
 msgstr "接收应用内通知"
@@ -9813,6 +9946,10 @@ msgstr "接收应用内通知"
 #: src/screens/Settings/NotificationSettings/components/PreferenceControls.tsx:120
 msgid "Receive push notifications"
 msgstr "接收推送通知"
+
+#: src/components/humming/Wallet.tsx:263
+msgid "Recent activity"
+msgstr ""
 
 #. Accessibility label for the icon-only pill that shows previously selected GIFs in the GIF picker.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:35
@@ -10598,7 +10735,7 @@ msgstr "保存这些选项以供下次使用"
 msgid "Save to my feeds"
 msgstr "保存到我的动态源"
 
-#: src/view/shell/desktop/LeftNav.tsx:733
+#: src/view/shell/desktop/LeftNav.tsx:734
 #: src/view/shell/Drawer.tsx:630
 msgctxt "link to bookmarks screen"
 msgid "Saved"
@@ -11100,7 +11237,7 @@ msgstr "发送于 {0}"
 msgid "Sent to our phone number verification provider Plivo"
 msgstr "发送到我们的电话号码验证提供商 Plivo"
 
-#: src/components/dialogs/ServerInput.tsx:174
+#: src/components/dialogs/ServerInput.tsx:175
 #: src/screens/Login/components/HostingProviderDialog.tsx:200
 msgid "Server address"
 msgstr "服务器地址"
@@ -11152,7 +11289,7 @@ msgstr "设置用于重置密码的电子邮箱"
 
 #: src/Navigation.tsx:213
 #: src/screens/Settings/Settings.tsx:98
-#: src/view/shell/desktop/LeftNav.tsx:758
+#: src/view/shell/desktop/LeftNav.tsx:761
 #: src/view/shell/Drawer.tsx:668
 msgid "Settings"
 msgstr "设置"
@@ -11535,9 +11672,9 @@ msgstr "登录以查看帖文"
 #: src/screens/SignupQueued.tsx:94
 #: src/screens/SignupQueued.tsx:97
 #: src/screens/Takendown.tsx:88
-#: src/view/shell/desktop/LeftNav.tsx:228
-#: src/view/shell/desktop/LeftNav.tsx:283
-#: src/view/shell/desktop/LeftNav.tsx:286
+#: src/view/shell/desktop/LeftNav.tsx:229
+#: src/view/shell/desktop/LeftNav.tsx:284
+#: src/view/shell/desktop/LeftNav.tsx:287
 msgid "Sign out"
 msgstr "登出"
 
@@ -11546,7 +11683,7 @@ msgid "Sign Out"
 msgstr "登出"
 
 #: src/screens/Settings/Settings.tsx:296
-#: src/view/shell/desktop/LeftNav.tsx:225
+#: src/view/shell/desktop/LeftNav.tsx:226
 msgid "Sign out?"
 msgstr "确定要登出吗？"
 
@@ -11978,7 +12115,7 @@ msgstr ""
 msgid "Subscribed ✓ · until {untilDate}"
 msgstr ""
 
-#: src/components/humming/hooks.ts:40
+#: src/components/humming/hooks.ts:41
 msgid "Subscribed! On-chain tx: {tx}… ({price})"
 msgstr ""
 
@@ -11992,11 +12129,12 @@ msgstr ""
 
 #: src/components/humming/CreatorHub.tsx:267
 #: src/components/humming/ProfileSubscribeCard.tsx:53
+#: src/components/humming/Wallet.tsx:36
 msgid "Subscription"
 msgstr ""
 
 #. placeholder {0}: String(e)
-#: src/components/humming/hooks.ts:47
+#: src/components/humming/hooks.ts:48
 msgid "Subscription failed: {0}"
 msgstr ""
 
@@ -12009,6 +12147,10 @@ msgstr ""
 #. placeholder {2}: formatHaneul(earnings.totals.purchaseGeunhwa)
 #: src/components/humming/CreatorHub.tsx:314
 msgid "Subscriptions {0} · Tips {1} · Purchases {2}"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:58
+msgid "Subscriptions, post purchases, and tips are executed as transactions on the Haneul blockchain and settle directly to the creator. Once confirmed on-chain, a payment cannot be reversed by Humming. Purchase records are permanently stored on-chain, including a pointer to the content as it existed at the moment of purchase. Creators may voluntarily refund a payment, but Humming cannot force them to do so."
 msgstr ""
 
 #: src/ageAssurance/components/RedirectOverlay.tsx:252
@@ -12086,16 +12228,16 @@ msgstr "已冻结的用户无法参与聊天。"
 #: src/screens/Settings/Settings.tsx:122
 #: src/screens/Settings/Settings.tsx:134
 #: src/screens/Settings/Settings.tsx:615
-#: src/view/shell/desktop/LeftNav.tsx:263
+#: src/view/shell/desktop/LeftNav.tsx:264
 msgid "Switch account"
 msgstr "切换账户"
 
-#: src/view/shell/desktop/LeftNav.tsx:125
+#: src/view/shell/desktop/LeftNav.tsx:126
 msgid "Switch accounts"
 msgstr "切换账户"
 
 #. placeholder {0}: sanitizeHandle( profile?.handle ?? account.handle, '@', )
-#: src/view/shell/desktop/LeftNav.tsx:365
+#: src/view/shell/desktop/LeftNav.tsx:366
 msgid "Switch to {0}"
 msgstr "切换到 {0}"
 
@@ -12247,7 +12389,7 @@ msgstr "条款"
 #: src/Navigation.tsx:341
 #: src/screens/Settings/AboutSettings.tsx:94
 #: src/screens/Settings/AboutSettings.tsx:97
-#: src/view/screens/TermsOfService.tsx:25
+#: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:756
 #: src/view/shell/Drawer.tsx:758
 msgid "Terms of Service"
@@ -12289,7 +12431,7 @@ msgstr "其中包含以下内容："
 msgid "That starter pack could not be found."
 msgstr "找不到那个新手包。"
 
-#: src/screens/Signup/StepHandle/index.tsx:96
+#: src/screens/Signup/StepHandle/index.tsx:101
 msgid "That username is already taken"
 msgstr "该用户名已被占用"
 
@@ -12378,10 +12520,6 @@ msgstr "已达到群组成员上限。"
 msgid "The post you’re replying to was marked as being written in {suggestedLanguageName} by its author. Would you like to reply in <0>{suggestedLanguageName}</0>?"
 msgstr "你正在回复的帖文已被发布者标记为使用 {suggestedLanguageName} 撰写，要把回复语言更改为使用 <0>{suggestedLanguageName}</0> 撰写吗？"
 
-#: src/view/screens/PrivacyPolicy.tsx:29
-msgid "The Privacy Policy has been moved to <0/>"
-msgstr "隐私政策已移动到 <0/>"
-
 #: src/view/com/composer/state/video.ts:429
 #: src/view/com/composer/state/video.ts:468
 msgid "The selected video is larger than {VIDEO_MAX_SIZE_MB} MB. Please try again with a smaller file."
@@ -12403,10 +12541,6 @@ msgstr "上下文菜单对应的主题"
 #: src/view/screens/Support.tsx:31
 msgid "The support form has been moved. If you need help, please <0/> or visit {HELP_DESK_URL} to get in touch with us."
 msgstr "支持表单已移动到别处。如果你需要更多帮助，请<0/>或访问{HELP_DESK_URL}与我们联系。"
-
-#: src/view/screens/TermsOfService.tsx:29
-msgid "The Terms of Service have been moved to"
-msgstr "服务条款已移动到"
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:89
 msgid "The verification code you have provided is invalid. Please make sure that you have used the correct verification link or request a new one."
@@ -12819,7 +12953,7 @@ msgstr "该内容审核提供服务不可用，请查看下方获取更多详情
 msgid "This person is blocking you"
 msgstr "这个人屏蔽了你"
 
-#: src/components/humming/hooks.ts:59
+#: src/components/humming/hooks.ts:60
 msgid "This post cannot be purchased"
 msgstr ""
 
@@ -12984,6 +13118,7 @@ msgid "Time remaining: {0, plural, one {# second} other {# seconds}}"
 msgstr "剩余时间：{0, plural, one {# 秒} other {# 秒}}"
 
 #: src/components/humming/CreatorHub.tsx:268
+#: src/components/humming/Wallet.tsx:37
 msgid "Tip"
 msgstr ""
 
@@ -13162,6 +13297,11 @@ msgstr "暮光"
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:65
 msgid "Two-factor authentication (2FA)"
 msgstr "两步验证（2FA）"
+
+#. placeholder {0}: item.tx.slice(0, 8)
+#: src/components/humming/Wallet.tsx:306
+msgid "tx {0}…"
+msgstr ""
 
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:445
 msgid "Type:"
@@ -13601,6 +13741,10 @@ msgstr "使用系统默认浏览器"
 msgid "Use recommended"
 msgstr "使用推荐"
 
+#: src/components/humming/Wallet.tsx:445
+msgid "Use this address to receive HANEUL on the Haneul network — from an exchange or any other wallet."
+msgstr ""
+
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:190
 msgid "Use this to sign in to the other app along with your handle."
 msgstr "使用这个和你的账户代码一起登录其他应用。"
@@ -13669,15 +13813,15 @@ msgctxt "toast"
 msgid "User list updated"
 msgstr "已更新用户列表"
 
-#: src/screens/Signup/StepHandle/index.tsx:275
+#: src/screens/Signup/StepHandle/index.tsx:281
 msgid "Username cannot be longer than {MAX_SERVICE_HANDLE_LENGTH, plural, other {# characters}}"
 msgstr "用户名不能超过 {MAX_SERVICE_HANDLE_LENGTH, plural, other {# 个字符}}"
 
-#: src/screens/Signup/StepHandle/index.tsx:259
+#: src/screens/Signup/StepHandle/index.tsx:265
 msgid "Username cannot begin or end with a hyphen"
 msgstr "用户名不能使用连字符（-）开头或结尾"
 
-#: src/screens/Signup/StepHandle/index.tsx:263
+#: src/screens/Signup/StepHandle/index.tsx:269
 msgid "Username must only contain letters (a-z), numbers, and hyphens"
 msgstr "用户名只能包含字母（a-z）、数字及连字符（-）"
 
@@ -14080,6 +14224,12 @@ msgstr "访问你的通知设置"
 msgid "Volume"
 msgstr "音量"
 
+#: src/components/humming/Wallet.tsx:62
+#: src/components/humming/Wallet.tsx:71
+#: src/components/humming/Wallet.tsx:86
+msgid "Wallet"
+msgstr ""
+
 #: src/components/moderation/LabelPreference.tsx:142
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
@@ -14160,6 +14310,10 @@ msgstr "我们正在与 <0>KWS</0> 合作处理年龄验证流程。当你点击
 msgid "We have sent another verification email to <0>{0}</0>."
 msgstr "我们将发送另一封验证邮件至 <0>{0}</0>。"
 
+#: src/view/screens/TermsOfService.tsx:119
+msgid "We may update these terms as the service evolves. Material changes will be announced in the app. Continued use after a change means you accept the updated terms."
+msgstr ""
+
 #: src/components/contacts/screens/PhoneInput.tsx:184
 msgid "We need to verify your number before we can look for your friends. A verification code will be sent to this number."
 msgstr "在开始寻找你的朋友之前，我们需要先验证你的号码。验证代码将发送到这个号码。"
@@ -14184,6 +14338,10 @@ msgstr "我们建议至少选择两个感兴趣的主题。"
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:250
 msgid "We sent an email to <0>{0}</0> containing a link. Please click on it to complete the email verification process."
 msgstr "我们将向 <0>{0}</0> 发送一封含有链接的电子邮件，请点击邮件内容来完成电子邮箱的验证流程。"
+
+#: src/view/screens/PrivacyPolicy.tsx:63
+msgid "We use your data only to operate the service: authenticating you, signing the transactions you request, serving content you are entitled to view, and protecting the service from abuse (such as rate limiting by network address). We do not sell or share your data with advertisers."
+msgstr ""
 
 #: src/view/com/composer/state/video.ts:451
 msgid "We were unable to determine if you are allowed to upload videos. Please try again."
@@ -14345,6 +14503,10 @@ msgstr ""
 msgid "What's up?"
 msgstr "发生了什么新鲜事？"
 
+#: src/view/screens/PrivacyPolicy.tsx:41
+msgid "When you sign up, Humming stores your chosen nickname and a salted hash of your password — never the password itself. During the current early-access period we also generate and hold the private key of your Haneul wallet (custodial). Media you upload is stored on our servers. We do not collect your email address, phone number, or real name, and we do not use third-party trackers or advertising identifiers."
+msgstr ""
+
 #: src/components/dialogs/nuxs/InitialVerificationAnnouncement.tsx:150
 msgid "When you tap on a check, you’ll see which organizations have granted verification."
 msgstr "当你点按验证徽章时，你会看到哪些组织已为其授予认证。"
@@ -14497,7 +14659,7 @@ msgstr "确定重新启用我的账户"
 msgid "Yesterday"
 msgstr "昨天"
 
-#: src/components/humming/hooks.ts:104
+#: src/components/humming/hooks.ts:118
 msgid "You are a creator now! Your tier has been created on-chain (tx: {tx}…)"
 msgstr ""
 
@@ -14601,6 +14763,10 @@ msgstr "你可以自定义应用内的对话通知是否播放提示音"
 #: src/screens/Messages/Settings.tsx:216
 msgid "You can continue ongoing conversations regardless of which setting you choose."
 msgstr "无论使用哪种设置，都不会影响已发起的对话。"
+
+#: src/view/screens/PrivacyPolicy.tsx:73
+msgid "You can delete your uploaded media and off-chain content by contacting us or using in-app deletion where available. Records already committed to the Haneul blockchain cannot be erased by anyone — this is a property of public blockchains, so post and pay with that in mind."
+msgstr ""
 
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:150
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
@@ -14816,6 +14982,10 @@ msgstr "如果你认为任何由他人标记的信息有误，你可以随时提
 msgid "You may appeal these labels if you feel they were placed in error."
 msgstr "如果你认为标记信息有误，你可以随时提出申诉。"
 
+#: src/view/screens/TermsOfService.tsx:92
+msgid "You may not: attempt to access another person's account or wallet; abuse, spam, or defraud other users; interfere with the operation of the service; or use the service to violate any applicable law."
+msgstr ""
+
 #: src/screens/StarterPack/Wizard/State.tsx:80
 msgid "You may only add up to {STARTER_PACK_MAX_SIZE, plural, other {{STARTER_PACK_MAX_SIZE} profiles}}"
 msgstr "你最多只能添加 {STARTER_PACK_MAX_SIZE, plural,other {{STARTER_PACK_MAX_SIZE} 个用户}}"
@@ -14824,6 +14994,10 @@ msgstr "你最多只能添加 {STARTER_PACK_MAX_SIZE, plural,other {{STARTER_PAC
 msgid "You may only add up to 3 feeds"
 msgstr "你最多只能添加 3 个动态源"
 
+#: src/view/screens/TermsOfService.tsx:110
+msgid "You may stop using Humming at any time. We may suspend or terminate accounts that violate these terms. Because wallets and payment records live on the Haneul blockchain, on-chain assets and records are unaffected by account termination."
+msgstr ""
+
 #: src/components/moderation/BlockDialog.tsx:321
 msgid "You must be a chat owner to remove a member."
 msgstr "你必须是对话所有人才能移除成员。"
@@ -14831,6 +15005,10 @@ msgstr "你必须是对话所有人才能移除成员。"
 #: src/components/dialogs/BirthDateSettings.tsx:177
 msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
 msgstr "你必须年满13周岁才能使用 Bluesky，阅读我们的<0>服务条款</0>以获取更多资讯。"
+
+#: src/view/screens/TermsOfService.tsx:50
+msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
+msgstr ""
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:365
 msgid "You must be following at least seven other people to generate a starter pack."
@@ -14895,7 +15073,7 @@ msgid "You requested to join"
 msgstr "你已申请加入"
 
 #: src/screens/Settings/Settings.tsx:297
-#: src/view/shell/desktop/LeftNav.tsx:226
+#: src/view/shell/desktop/LeftNav.tsx:227
 msgid "You will be signed out of all your accounts."
 msgstr "你将登出所有账户。"
 
@@ -15168,6 +15346,10 @@ msgstr "你的名称、头像以及群组名称、成员数都会公开显示在
 msgid "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:53
+msgid "Your nickname registration, posts, subscriptions, purchases, and tips are recorded on the Haneul blockchain, which is public and permanent. Anyone can see the payment flows of a wallet address. Post content itself is stored off-chain on our servers; the chain holds only a content pointer."
+msgstr ""
+
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:72
 msgid "Your password has been changed successfully! Please use your new password when you sign in to Bluesky from now on."
 msgstr "已成功更改你的密码！请你今后使用你的新密码登录 Bluesky。"
@@ -15225,3 +15407,7 @@ msgstr ""
 #: src/components/verification/VerificationsDialog.tsx:67
 msgid "Your verifications"
 msgstr "你的认证"
+
+#: src/components/humming/Wallet.tsx:243
+msgid "Your wallet is ready"
+msgstr ""

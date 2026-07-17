@@ -18,7 +18,8 @@ import {InlineLinkText} from '#/components/Link'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 
-type SegmentedControlOptions = typeof BSKY_SERVICE | 'custom'
+// BSKY_SERVICE (now env-driven, so just `string`) or the 'custom' sentinel
+type SegmentedControlOptions = string
 
 export function ServerInputDialog({
   control,

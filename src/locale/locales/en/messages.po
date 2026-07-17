@@ -278,7 +278,7 @@ msgid "{0} is live"
 msgstr ""
 
 #. placeholder {0}: createFullHandle(draftValue, state.userDomain)
-#: src/screens/Signup/StepHandle/index.tsx:229
+#: src/screens/Signup/StepHandle/index.tsx:235
 msgid "{0} is not available"
 msgstr ""
 
@@ -930,13 +930,29 @@ msgstr ""
 msgid "⚠Invalid Handle"
 msgstr ""
 
+#: src/view/screens/TermsOfService.tsx:40
+msgid "1. About Humming"
+msgstr "1. About Humming"
+
 #: src/components/humming/CreatorHub.tsx:159
 msgid "1. Identity verification"
 msgstr "1. Identity verification"
 
+#: src/view/screens/PrivacyPolicy.tsx:40
+msgid "1. What we collect"
+msgstr "1. What we collect"
+
+#: src/view/screens/TermsOfService.tsx:49
+msgid "2. Age requirement"
+msgstr "2. Age requirement"
+
 #: src/components/humming/CreatorHub.tsx:187
 msgid "2. Monthly subscription price (30 days, HANEUL)"
 msgstr "2. Monthly subscription price (30 days, HANEUL)"
+
+#: src/view/screens/PrivacyPolicy.tsx:52
+msgid "2. What lives on the blockchain"
+msgstr "2. What lives on the blockchain"
 
 #: src/components/dialogs/MutedWords.tsx:202
 #: src/components/dialogs/MutedWords.tsx:551
@@ -948,9 +964,17 @@ msgstr ""
 msgid "2FA Confirmation"
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:62
+msgid "3. How we use data"
+msgstr "3. How we use data"
+
 #: src/components/humming/CreatorHub.tsx:215
 msgid "3. How your posts are shown"
 msgstr "3. How your posts are shown"
+
+#: src/view/screens/TermsOfService.tsx:57
+msgid "3. On-chain payments are final"
+msgstr "3. On-chain payments are final"
 
 #: src/components/dialogs/MutedWords.tsx:241
 #: src/components/dialogs/MutedWords.tsx:565
@@ -958,11 +982,43 @@ msgstr "3. How your posts are shown"
 msgid "30 days"
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:72
+msgid "4. Deletion"
+msgstr "4. Deletion"
+
+#: src/view/screens/TermsOfService.tsx:69
+msgid "4. Your wallet"
+msgstr "4. Your wallet"
+
+#: src/view/screens/PrivacyPolicy.tsx:82
+msgid "5. Contact"
+msgstr "5. Contact"
+
+#: src/view/screens/TermsOfService.tsx:80
+msgid "5. Creator content"
+msgstr "5. Creator content"
+
+#: src/view/screens/TermsOfService.tsx:91
+msgid "6. Prohibited conduct"
+msgstr "6. Prohibited conduct"
+
 #: src/components/dialogs/MutedWords.tsx:226
 #: src/components/dialogs/MutedWords.tsx:558
 #: src/components/dialogs/MutedWords.tsx:561
 msgid "7 days"
 msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:99
+msgid "7. Service availability"
+msgstr "7. Service availability"
+
+#: src/view/screens/TermsOfService.tsx:109
+msgid "8. Termination"
+msgstr "8. Termination"
+
+#: src/view/screens/TermsOfService.tsx:118
+msgid "9. Changes"
+msgstr "9. Changes"
 
 #: src/components/humming/CreatorHub.tsx:143
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
@@ -2319,8 +2375,8 @@ msgstr ""
 msgid "bloomscrolling booksky"
 msgstr "bloomscrolling booksky"
 
-#: src/components/dialogs/ServerInput.tsx:144
-#: src/components/dialogs/ServerInput.tsx:146
+#: src/components/dialogs/ServerInput.tsx:145
+#: src/components/dialogs/ServerInput.tsx:147
 msgid "Bluesky"
 msgstr ""
 
@@ -2337,12 +2393,12 @@ msgstr ""
 msgid "Bluesky helps friends find each other by creating an encoded digital fingerprint, called a \"hash\", and then looking for matching hashes."
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:214
+#: src/components/dialogs/ServerInput.tsx:215
 #: src/screens/Login/components/HostingProviderDialog.tsx:236
 msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:162
+#: src/components/dialogs/ServerInput.tsx:163
 msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
 msgstr ""
 
@@ -2885,7 +2941,7 @@ msgstr "Choose who can join this group chat and how."
 msgid "Choose who to invite"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:134
+#: src/components/dialogs/ServerInput.tsx:135
 #: src/screens/Login/components/HostingProviderDialog.tsx:155
 msgid "Choose your hosting provider"
 msgstr "Choose your hosting provider"
@@ -3680,7 +3736,7 @@ msgstr ""
 #: src/components/WelcomeModal.tsx:166
 #: src/screens/Messages/JoinRequest.tsx:310
 #: src/screens/Signup/index.tsx:136
-#: src/screens/Signup/StepHandle/index.tsx:322
+#: src/screens/Signup/StepHandle/index.tsx:355
 #: src/view/com/auth/SplashScreen.tsx:106
 #: src/view/com/auth/SplashScreen.web.tsx:116
 #: src/view/shell/bottom-bar/BottomBar.tsx:351
@@ -3773,6 +3829,10 @@ msgstr ""
 msgid "Creator has been blocked"
 msgstr ""
 
+#: src/view/screens/TermsOfService.tsx:81
+msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+
 #: src/lib/interests.ts:57
 msgid "Culture"
 msgstr ""
@@ -3781,8 +3841,8 @@ msgstr ""
 msgid "Current chat"
 msgstr "Current chat"
 
-#: src/components/dialogs/ServerInput.tsx:152
-#: src/components/dialogs/ServerInput.tsx:154
+#: src/components/dialogs/ServerInput.tsx:153
+#: src/components/dialogs/ServerInput.tsx:155
 msgid "Custom"
 msgstr ""
 
@@ -4228,8 +4288,8 @@ msgstr ""
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
 #: src/components/dialogs/NotificationSettingsDialog.tsx:106
-#: src/components/dialogs/ServerInput.tsx:237
-#: src/components/dialogs/ServerInput.tsx:239
+#: src/components/dialogs/ServerInput.tsx:238
+#: src/components/dialogs/ServerInput.tsx:240
 #: src/components/dms/AfterReportConversationDialog.tsx:164
 #: src/components/dms/AfterReportDialog.tsx:145
 #: src/components/forms/DateField/index.tsx:128
@@ -4319,6 +4379,10 @@ msgstr ""
 #: src/components/dialogs/MutedWords.tsx:162
 msgid "Duration:"
 msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:70
+msgid "During the current early-access period, Humming creates and holds a Haneul wallet on your behalf (a custodial wallet). Your password protects access to this wallet — use a strong, unique password. Keep balances small: this is an early-stage service and self-custody support is on the roadmap. Humming is not responsible for losses caused by sharing or losing your password."
+msgstr "During the current early-access period, Humming creates and holds a Haneul wallet on your behalf (a custodial wallet). Your password protects access to this wallet — use a strong, unique password. Keep balances small: this is an early-stage service and self-custody support is on the roadmap. Humming is not responsible for losses caused by sharing or losing your password."
 
 #: src/features/inviteFriends/components/ThemePicker.tsx:31
 msgid "Dusk"
@@ -5641,6 +5705,10 @@ msgstr ""
 msgid "For organizational accounts, use the birthdate of the person who is responsible for the account."
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:83
+msgid "For privacy requests, contact the Humming team via the links on humming.social."
+msgstr "For privacy requests, contact the Humming team via the links on humming.social."
+
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:186
 msgid "For security reasons, we’ll need to send a confirmation code to your email address <0>{currentEmail}</0>."
 msgstr ""
@@ -6336,7 +6404,7 @@ msgstr ""
 msgid "Host:"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:138
+#: src/components/dialogs/ServerInput.tsx:139
 #: src/screens/Login/components/HostingProviderDialog.tsx:159
 #: src/screens/Login/ForgotPasswordForm.tsx:80
 #: src/screens/Login/LoginForm.tsx:659
@@ -6372,6 +6440,22 @@ msgstr ""
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:150
 msgid "Human trafficking"
 msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:41
+msgid "Humming is a social platform where creators publish content and receive payments directly through the Haneul blockchain. By creating an account or using Humming, you agree to these terms. If you do not agree, do not use the service."
+msgstr "Humming is a social platform where creators publish content and receive payments directly through the Haneul blockchain. By creating an account or using Humming, you agree to these terms. If you do not agree, do not use the service."
+
+#: src/view/screens/TermsOfService.tsx:100
+msgid "Humming is provided \"as is\" during early access. We do not guarantee uninterrupted availability. Content is stored off-chain and may be removed for legal or policy reasons; on-chain records (payments, subscriptions, name registrations) persist on the Haneul blockchain independently of Humming."
+msgstr "Humming is provided \"as is\" during early access. We do not guarantee uninterrupted availability. Content is stored off-chain and may be removed for legal or policy reasons; on-chain records (payments, subscriptions, name registrations) persist on the Haneul blockchain independently of Humming."
+
+#: src/screens/Signup/StepHandle/index.tsx:331
+msgid "I agree to the <0>Terms of Service</0> and <1>Privacy Policy</1>."
+msgstr "I agree to the <0>Terms of Service</0> and <1>Privacy Policy</1>."
+
+#: src/screens/Signup/StepHandle/index.tsx:325
+msgid "I agree to the Terms of Service and Privacy Policy"
+msgstr "I agree to the Terms of Service and Privacy Policy"
 
 #: src/components/contacts/screens/GetContacts.tsx:267
 msgid "I consent to Bluesky using my contacts for mutual friend discovery and to retain hashed data for matching until I opt out."
@@ -6448,7 +6532,7 @@ msgstr ""
 msgid "If you want to restrict who can receive notifications for your account's activity, you can change this in <0>Settings → Privacy and Security</0>."
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:210
+#: src/components/dialogs/ServerInput.tsx:211
 msgid "If you're a developer, you can host your own server."
 msgstr ""
 
@@ -6927,6 +7011,11 @@ msgstr ""
 msgid "Last initiated just now"
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:37
+#: src/view/screens/TermsOfService.tsx:37
+msgid "Last updated: July 17, 2026"
+msgstr "Last updated: July 17, 2026"
+
 #: src/screens/Hashtag.tsx:97
 #: src/screens/Search/SearchResults.tsx:82
 #: src/screens/Topic.tsx:64
@@ -6971,7 +7060,7 @@ msgctxt "english-only-resource"
 msgid "Learn more about importing contacts"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:220
+#: src/components/dialogs/ServerInput.tsx:221
 #: src/screens/Login/components/HostingProviderDialog.tsx:241
 msgid "Learn more about self hosting your PDS."
 msgstr ""
@@ -7013,7 +7102,7 @@ msgstr ""
 msgid "Learn more in your <0>account settings.</0>"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:222
+#: src/components/dialogs/ServerInput.tsx:223
 #: src/components/moderation/ContentHider.tsx:259
 #: src/screens/Login/components/HostingProviderDialog.tsx:243
 msgid "Learn more."
@@ -8974,7 +9063,7 @@ msgstr "Party GIFs"
 msgid "Password"
 msgstr ""
 
-#: src/screens/Signup/StepHandle/index.tsx:300
+#: src/screens/Signup/StepHandle/index.tsx:306
 msgid "Password (8+ characters)"
 msgstr "Password (8+ characters)"
 
@@ -8982,7 +9071,7 @@ msgstr "Password (8+ characters)"
 msgid "Password changed"
 msgstr ""
 
-#: src/screens/Signup/StepHandle/index.tsx:311
+#: src/screens/Signup/StepHandle/index.tsx:317
 msgid "Password must be at least 8 characters long"
 msgstr "Password must be at least 8 characters long"
 
@@ -9580,7 +9669,7 @@ msgstr ""
 #: src/Navigation.tsx:336
 #: src/screens/Settings/AboutSettings.tsx:102
 #: src/screens/Settings/AboutSettings.tsx:105
-#: src/view/screens/PrivacyPolicy.tsx:25
+#: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:763
 #: src/view/shell/Drawer.tsx:764
 msgid "Privacy Policy"
@@ -9814,6 +9903,14 @@ msgstr ""
 #: src/screens/Signup/StepInfo/Policies.tsx:66
 msgid "Read the Bluesky Terms of Service"
 msgstr ""
+
+#: src/screens/Signup/StepHandle/index.tsx:340
+msgid "Read the Humming Privacy Policy"
+msgstr "Read the Humming Privacy Policy"
+
+#: src/screens/Signup/StepHandle/index.tsx:334
+msgid "Read the Humming Terms of Service"
+msgstr "Read the Humming Terms of Service"
 
 #: src/components/WelcomeModal.tsx:149
 msgid "Real conversations."
@@ -11135,7 +11232,7 @@ msgstr "Sent at {0}"
 msgid "Sent to our phone number verification provider Plivo"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:174
+#: src/components/dialogs/ServerInput.tsx:175
 #: src/screens/Login/components/HostingProviderDialog.tsx:200
 msgid "Server address"
 msgstr ""
@@ -12047,6 +12144,10 @@ msgstr "Subscription price (HANEUL)"
 msgid "Subscriptions {0} · Tips {1} · Purchases {2}"
 msgstr "Subscriptions {0} · Tips {1} · Purchases {2}"
 
+#: src/view/screens/TermsOfService.tsx:58
+msgid "Subscriptions, post purchases, and tips are executed as transactions on the Haneul blockchain and settle directly to the creator. Once confirmed on-chain, a payment cannot be reversed by Humming. Purchase records are permanently stored on-chain, including a pointer to the content as it existed at the moment of purchase. Creators may voluntarily refund a payment, but Humming cannot force them to do so."
+msgstr "Subscriptions, post purchases, and tips are executed as transactions on the Haneul blockchain and settle directly to the creator. Once confirmed on-chain, a payment cannot be reversed by Humming. Purchase records are permanently stored on-chain, including a pointer to the content as it existed at the moment of purchase. Creators may voluntarily refund a payment, but Humming cannot force them to do so."
+
 #: src/ageAssurance/components/RedirectOverlay.tsx:252
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:160
 msgid "Success"
@@ -12283,7 +12384,7 @@ msgstr ""
 #: src/Navigation.tsx:341
 #: src/screens/Settings/AboutSettings.tsx:94
 #: src/screens/Settings/AboutSettings.tsx:97
-#: src/view/screens/TermsOfService.tsx:25
+#: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:756
 #: src/view/shell/Drawer.tsx:758
 msgid "Terms of Service"
@@ -12325,7 +12426,7 @@ msgstr ""
 msgid "That starter pack could not be found."
 msgstr ""
 
-#: src/screens/Signup/StepHandle/index.tsx:96
+#: src/screens/Signup/StepHandle/index.tsx:101
 msgid "That username is already taken"
 msgstr ""
 
@@ -12414,10 +12515,6 @@ msgstr "The member limit has been reached."
 msgid "The post you’re replying to was marked as being written in {suggestedLanguageName} by its author. Would you like to reply in <0>{suggestedLanguageName}</0>?"
 msgstr "The post you’re replying to was marked as being written in {suggestedLanguageName} by its author. Would you like to reply in <0>{suggestedLanguageName}</0>?"
 
-#: src/view/screens/PrivacyPolicy.tsx:29
-msgid "The Privacy Policy has been moved to <0/>"
-msgstr ""
-
 #: src/view/com/composer/state/video.ts:429
 #: src/view/com/composer/state/video.ts:468
 msgid "The selected video is larger than {VIDEO_MAX_SIZE_MB} MB. Please try again with a smaller file."
@@ -12438,10 +12535,6 @@ msgstr ""
 
 #: src/view/screens/Support.tsx:31
 msgid "The support form has been moved. If you need help, please <0/> or visit {HELP_DESK_URL} to get in touch with us."
-msgstr ""
-
-#: src/view/screens/TermsOfService.tsx:29
-msgid "The Terms of Service have been moved to"
 msgstr ""
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:89
@@ -13715,15 +13808,15 @@ msgctxt "toast"
 msgid "User list updated"
 msgstr ""
 
-#: src/screens/Signup/StepHandle/index.tsx:275
+#: src/screens/Signup/StepHandle/index.tsx:281
 msgid "Username cannot be longer than {MAX_SERVICE_HANDLE_LENGTH, plural, other {# characters}}"
 msgstr ""
 
-#: src/screens/Signup/StepHandle/index.tsx:259
+#: src/screens/Signup/StepHandle/index.tsx:265
 msgid "Username cannot begin or end with a hyphen"
 msgstr ""
 
-#: src/screens/Signup/StepHandle/index.tsx:263
+#: src/screens/Signup/StepHandle/index.tsx:269
 msgid "Username must only contain letters (a-z), numbers, and hyphens"
 msgstr ""
 
@@ -14212,6 +14305,10 @@ msgstr ""
 msgid "We have sent another verification email to <0>{0}</0>."
 msgstr ""
 
+#: src/view/screens/TermsOfService.tsx:119
+msgid "We may update these terms as the service evolves. Material changes will be announced in the app. Continued use after a change means you accept the updated terms."
+msgstr "We may update these terms as the service evolves. Material changes will be announced in the app. Continued use after a change means you accept the updated terms."
+
 #: src/components/contacts/screens/PhoneInput.tsx:184
 msgid "We need to verify your number before we can look for your friends. A verification code will be sent to this number."
 msgstr ""
@@ -14236,6 +14333,10 @@ msgstr ""
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:250
 msgid "We sent an email to <0>{0}</0> containing a link. Please click on it to complete the email verification process."
 msgstr ""
+
+#: src/view/screens/PrivacyPolicy.tsx:63
+msgid "We use your data only to operate the service: authenticating you, signing the transactions you request, serving content you are entitled to view, and protecting the service from abuse (such as rate limiting by network address). We do not sell or share your data with advertisers."
+msgstr "We use your data only to operate the service: authenticating you, signing the transactions you request, serving content you are entitled to view, and protecting the service from abuse (such as rate limiting by network address). We do not sell or share your data with advertisers."
 
 #: src/view/com/composer/state/video.ts:451
 msgid "We were unable to determine if you are allowed to upload videos. Please try again."
@@ -14396,6 +14497,10 @@ msgstr "what’s up"
 #: src/view/com/feeds/ComposerPrompt.tsx:192
 msgid "What's up?"
 msgstr ""
+
+#: src/view/screens/PrivacyPolicy.tsx:41
+msgid "When you sign up, Humming stores your chosen nickname and a salted hash of your password — never the password itself. During the current early-access period we also generate and hold the private key of your Haneul wallet (custodial). Media you upload is stored on our servers. We do not collect your email address, phone number, or real name, and we do not use third-party trackers or advertising identifiers."
+msgstr "When you sign up, Humming stores your chosen nickname and a salted hash of your password — never the password itself. During the current early-access period we also generate and hold the private key of your Haneul wallet (custodial). Media you upload is stored on our servers. We do not collect your email address, phone number, or real name, and we do not use third-party trackers or advertising identifiers."
 
 #: src/components/dialogs/nuxs/InitialVerificationAnnouncement.tsx:150
 msgid "When you tap on a check, you’ll see which organizations have granted verification."
@@ -14654,6 +14759,10 @@ msgstr ""
 msgid "You can continue ongoing conversations regardless of which setting you choose."
 msgstr ""
 
+#: src/view/screens/PrivacyPolicy.tsx:73
+msgid "You can delete your uploaded media and off-chain content by contacting us or using in-app deletion where available. Records already committed to the Haneul blockchain cannot be erased by anyone — this is a property of public blockchains, so post and pay with that in mind."
+msgstr "You can delete your uploaded media and off-chain content by contacting us or using in-app deletion where available. Records already committed to the Haneul blockchain cannot be erased by anyone — this is a property of public blockchains, so post and pay with that in mind."
+
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:150
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
@@ -14868,6 +14977,10 @@ msgstr ""
 msgid "You may appeal these labels if you feel they were placed in error."
 msgstr ""
 
+#: src/view/screens/TermsOfService.tsx:92
+msgid "You may not: attempt to access another person's account or wallet; abuse, spam, or defraud other users; interfere with the operation of the service; or use the service to violate any applicable law."
+msgstr "You may not: attempt to access another person's account or wallet; abuse, spam, or defraud other users; interfere with the operation of the service; or use the service to violate any applicable law."
+
 #: src/screens/StarterPack/Wizard/State.tsx:80
 msgid "You may only add up to {STARTER_PACK_MAX_SIZE, plural, other {{STARTER_PACK_MAX_SIZE} profiles}}"
 msgstr ""
@@ -14876,6 +14989,10 @@ msgstr ""
 msgid "You may only add up to 3 feeds"
 msgstr ""
 
+#: src/view/screens/TermsOfService.tsx:110
+msgid "You may stop using Humming at any time. We may suspend or terminate accounts that violate these terms. Because wallets and payment records live on the Haneul blockchain, on-chain assets and records are unaffected by account termination."
+msgstr "You may stop using Humming at any time. We may suspend or terminate accounts that violate these terms. Because wallets and payment records live on the Haneul blockchain, on-chain assets and records are unaffected by account termination."
+
 #: src/components/moderation/BlockDialog.tsx:321
 msgid "You must be a chat owner to remove a member."
 msgstr "You must be a chat owner to remove a member."
@@ -14883,6 +15000,10 @@ msgstr "You must be a chat owner to remove a member."
 #: src/components/dialogs/BirthDateSettings.tsx:177
 msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
 msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:50
+msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
+msgstr "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:365
 msgid "You must be following at least seven other people to generate a starter pack."
@@ -15219,6 +15340,10 @@ msgstr "Your name, avatar, the name of the group chat, and the number of members
 #: src/screens/Signup/index.tsx:190
 msgid "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
 msgstr "Your nickname is your wallet — creating an account issues an on-chain name and a wallet together."
+
+#: src/view/screens/PrivacyPolicy.tsx:53
+msgid "Your nickname registration, posts, subscriptions, purchases, and tips are recorded on the Haneul blockchain, which is public and permanent. Anyone can see the payment flows of a wallet address. Post content itself is stored off-chain on our servers; the chain holds only a content pointer."
+msgstr "Your nickname registration, posts, subscriptions, purchases, and tips are recorded on the Haneul blockchain, which is public and permanent. Anyone can see the payment flows of a wallet address. Post content itself is stored off-chain on our servers; the chain holds only a content pointer."
 
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:72
 msgid "Your password has been changed successfully! Please use your new password when you sign in to Bluesky from now on."

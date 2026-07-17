@@ -2,11 +2,11 @@
 
 {% block head_title %}
 {%- if postView -%}
-  @{{ postView.Author.Handle }} on Bluesky
+  @{{ postView.Author.Handle }} on Humming
 {%- elif requiresAuth and profileHandle -%}
-  @{{ profileHandle }} on Bluesky
+  @{{ profileHandle }} on Humming
 {%- else -%}
-  Bluesky
+  Humming
 {%- endif -%}
 {% endblock %}
 

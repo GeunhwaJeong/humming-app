@@ -8,7 +8,10 @@ export const LOCAL_DEV_SERVICE =
   Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'
 export const STAGING_SERVICE = 'https://staging.bsky.dev'
 // Humming: the XRPC facade in front of the Haneul chain is the home server.
-export const HUMMING_SERVICE = 'http://localhost:3025'
+// Deploys override via EXPO_PUBLIC_HUMMING_SERVICE (the Dockerfile already
+// plumbs EXPO_PUBLIC_* build args); localhost is the localnet dev default.
+export const HUMMING_SERVICE: string =
+  process.env.EXPO_PUBLIC_HUMMING_SERVICE || 'http://localhost:3025'
 export const BSKY_SERVICE = HUMMING_SERVICE
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
 export const PUBLIC_BSKY_SERVICE = HUMMING_SERVICE

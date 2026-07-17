@@ -9,35 +9,103 @@ import {
   type NativeStackScreenProps,
 } from '#/lib/routes/types'
 import {s} from '#/lib/styles'
-import {TextLink} from '#/view/com/util/Link'
 import {Text} from '#/view/com/util/text/Text'
 import {ScrollView} from '#/view/com/util/Views'
+import {atoms as a} from '#/alf'
 import * as Layout from '#/components/Layout'
 import {ViewHeader} from '../com/util/ViewHeader'
 
 type Props = NativeStackScreenProps<CommonNavigatorParams, 'PrivacyPolicy'>
 export const PrivacyPolicyScreen = (_props: Props) => {
-  const pal = usePalette('default')
   const {_} = useLingui()
 
   return (
     <Layout.Screen>
       <ViewHeader title={_(msg`Privacy Policy`)} />
-      <ScrollView style={[s.hContentRegion, pal.view]}>
-        <View style={[s.p20]}>
-          <Text style={pal.text}>
-            <Trans>
-              The Privacy Policy has been moved to{' '}
-              <TextLink
-                style={pal.link}
-                href="https://bsky.social/about/support/privacy-policy"
-                text="bsky.social/about/support/privacy-policy"
-              />
-            </Trans>
-          </Text>
-        </View>
-        <View style={s.footerSpacer} />
-      </ScrollView>
+      <PrivacyBody />
     </Layout.Screen>
+  )
+}
+
+function PrivacyBody() {
+  const pal = usePalette('default')
+  const {_} = useLingui()
+  return (
+    <ScrollView style={[s.hContentRegion, pal.view]}>
+      <View style={[s.p20, a.gap_md]}>
+        <Text type="sm" style={pal.textLight}>
+          <Trans>Last updated: July 17, 2026</Trans>
+        </Text>
+
+        <SectionText title={_(msg`1. What we collect`)}>
+          <Trans>
+            When you sign up, Humming stores your chosen nickname and a salted
+            hash of your password — never the password itself. During the
+            current early-access period we also generate and hold the private
+            key of your Haneul wallet (custodial). Media you upload is stored on
+            our servers. We do not collect your email address, phone number, or
+            real name, and we do not use third-party trackers or advertising
+            identifiers.
+          </Trans>
+        </SectionText>
+
+        <SectionText title={_(msg`2. What lives on the blockchain`)}>
+          <Trans>
+            Your nickname registration, posts, subscriptions, purchases, and
+            tips are recorded on the Haneul blockchain, which is public and
+            permanent. Anyone can see the payment flows of a wallet address.
+            Post content itself is stored off-chain on our servers; the chain
+            holds only a content pointer.
+          </Trans>
+        </SectionText>
+
+        <SectionText title={_(msg`3. How we use data`)}>
+          <Trans>
+            We use your data only to operate the service: authenticating you,
+            signing the transactions you request, serving content you are
+            entitled to view, and protecting the service from abuse (such as
+            rate limiting by network address). We do not sell or share your data
+            with advertisers.
+          </Trans>
+        </SectionText>
+
+        <SectionText title={_(msg`4. Deletion`)}>
+          <Trans>
+            You can delete your uploaded media and off-chain content by
+            contacting us or using in-app deletion where available. Records
+            already committed to the Haneul blockchain cannot be erased by
+            anyone — this is a property of public blockchains, so post and pay
+            with that in mind.
+          </Trans>
+        </SectionText>
+
+        <SectionText title={_(msg`5. Contact`)}>
+          <Trans>
+            For privacy requests, contact the Humming team via the links on
+            humming.social.
+          </Trans>
+        </SectionText>
+      </View>
+      <View style={s.footerSpacer} />
+    </ScrollView>
+  )
+}
+
+function SectionText({
+  title,
+  children,
+}: {
+  title: string
+  children: React.ReactNode
+}) {
+  const pal = usePalette('default')
+  return (
+    <Text style={[pal.text, a.leading_snug]}>
+      <Text type="lg-bold" style={pal.text}>
+        {title}
+        {'\n'}
+      </Text>
+      {children}
+    </Text>
   )
 }

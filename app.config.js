@@ -45,7 +45,9 @@ module.exports = function (_config) {
   return {
     expo: {
       version: VERSION,
-      name: 'Bluesky',
+      // Web branding only — slug/scheme/owner stay untouched until an
+      // app-store build forces the native identity migration.
+      name: 'Humming',
       slug: 'bluesky',
       scheme: 'bluesky',
       owner: 'blueskysocial',
