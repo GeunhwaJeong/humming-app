@@ -5,6 +5,7 @@ import {
   jsonStringToLex,
 } from '@atproto/api'
 
+import {HUMMING_SERVICE} from '#/lib/constants'
 import {
   getAppLanguageAsContentLanguage,
   getContentLanguages,
@@ -119,8 +120,10 @@ async function loggedOutFetch({
   }
 
   // manually construct fetch call so we can add the `lang` cache-busting param
+  // Humming: 업스트림은 여기서 api.bsky.app(본사 공개 API)을 직접 호출했다 —
+  // 비로그인 랜딩이 Bluesky 콘텐츠를 보여주는 유일한 우회 경로였으므로 파사드로 교체.
   let res = await fetch(
-    `https://api.bsky.app/xrpc/app.bsky.feed.getFeed?feed=${feed}${
+    `${HUMMING_SERVICE}/xrpc/app.bsky.feed.getFeed?feed=${feed}${
       cursor ? `&cursor=${cursor}` : ''
     }&limit=${limit}&lang=${contentLangs}`,
     {
@@ -140,7 +143,7 @@ async function loggedOutFetch({
 
   // no data, try again with language headers removed
   res = await fetch(
-    `https://api.bsky.app/xrpc/app.bsky.feed.getFeed?feed=${feed}${
+    `${HUMMING_SERVICE}/xrpc/app.bsky.feed.getFeed?feed=${feed}${
       cursor ? `&cursor=${cursor}` : ''
     }&limit=${limit}`,
     {method: 'GET', headers: {'Accept-Language': '', ...labelersHeader}},
