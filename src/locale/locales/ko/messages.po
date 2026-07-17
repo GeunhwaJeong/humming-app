@@ -917,9 +917,12 @@ msgid "<0>{displayName}</0><1/><2> added you</2>"
 msgstr "<0>{displayName}</0><1/><2> 님이 나를 추가함</2>"
 
 #: src/screens/Hashtag.tsx:230
-#: src/screens/Search/SearchResults.tsx:381
 msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Bluesky.</4>"
 msgstr "<0>로그인</0><1>하거나 </1><2>계정을 만들고</2><3> </3><4>뉴스, 스포츠, 정치 등 Bluesky의 다양한 소식을 검색하세요.</4>"
+
+#: src/screens/Search/SearchResults.tsx:381
+msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Humming.</4>"
+msgstr "<0>로그인</0><1> 또는 </1><2>계정 만들기</2><3>로 </3><4>뉴스, 스포츠, 정치 등 Humming에서 일어나는 모든 것을 검색해 보세요.</4>"
 
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:250
 msgid "<0>Tap here to update your location with GPS.</0>"
@@ -1029,9 +1032,9 @@ msgstr "9. 약관 변경"
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
 msgstr "구독료의 95%가 내 Haneul 지갑으로 즉시 정산됩니다. 정산 대기도, 출금 신청도 없습니다 — 결제와 동시에 온체인으로 도착합니다."
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
-msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
-msgstr "News, Booksky, Game Dev, Blacksky, Fountain Pens 등 Bluesky에서 찾을 수 있는 인기 피드 모음"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:16
+msgid "A collection of popular feeds you can find on Humming"
+msgstr "Humming에서 만날 수 있는 인기 피드 모음"
 
 #: src/components/humming/Wallet.tsx:246
 msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
@@ -1762,9 +1765,9 @@ msgstr "오류가 발생했습니다. {0}"
 msgid "An illustration depicting user avatars flowing from a contact book into the Bluesky app"
 msgstr "연락처에서 Bluesky 앱으로 사용자 프로필 사진이 흘러들어 가는 모습을 묘사한 삽화"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:35
-msgid "An illustration of several Bluesky posts alongside repost, like, and comment icons"
-msgstr "재게시, 좋아요, 댓글 아이콘과 함께 여러 Bluesky 게시물이 나열된 삽화"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:33
+msgid "An illustration of several Humming posts alongside repost, like, and comment icons"
+msgstr "리포스트, 좋아요, 댓글 아이콘과 함께 있는 여러 Humming 게시물 일러스트"
 
 #: src/components/dialogs/nuxs/InviteFriendsAnnouncement.tsx:111
 msgid "An illustration of the Bluesky app with a paper airplane flying out of it, representing inviting friends"
@@ -2254,7 +2257,7 @@ msgstr "아래 항목을 작성하여 연령 확인 절차를 시작하세요."
 msgid "Beta Feature"
 msgstr "베타 기능"
 
-#: src/components/dialogs/BirthDateSettings.tsx:163
+#: src/components/dialogs/BirthDateSettings.tsx:165
 msgid "Birthdate"
 msgstr "생년월일"
 
@@ -4241,7 +4244,7 @@ msgstr "더 큰 대체 텍스트 배지 표시"
 msgid "Display name"
 msgstr "표시 이름"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:23
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
 msgid "Ditch the trolls and clickbait. Find real people and conversations that matter to you."
 msgstr "어그로와 섬네일 낚시는 이제 그만. 당신에게 의미 있는 진짜 사람들과 대화를 찾으세요."
 
@@ -4287,8 +4290,8 @@ msgstr "걱정 마세요! 모든 기존 메시지와 설정은 저장되며 성�
 #: src/components/contacts/components/InviteInfo.tsx:79
 #: src/components/contacts/screens/ViewMatches.tsx:395
 #: src/components/contacts/screens/ViewMatches.tsx:412
-#: src/components/dialogs/BirthDateSettings.tsx:193
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:195
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:195
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
@@ -4731,7 +4734,7 @@ msgstr "계정을 만들 때 사용한 이메일을 입력하세요. 새 비밀�
 msgid "Enter the username or email address you used when you created your account"
 msgstr "계정을 만들 때 사용한 사용자 이름 또는 이메일 주소를 입력하세요"
 
-#: src/components/dialogs/BirthDateSettings.tsx:164
+#: src/components/dialogs/BirthDateSettings.tsx:166
 msgid "Enter your birthdate"
 msgstr "생년월일을 입력하세요"
 
@@ -5481,8 +5484,8 @@ msgid "Find people you know"
 msgstr "아는 사람 찾아보기"
 
 #: src/screens/Search/Shell.tsx:765
-msgid "Find posts, users, and feeds on Bluesky"
-msgstr "Bluesky에서 게시물, 사용자, 피드 찾기"
+msgid "Find posts, users, and feeds on Humming"
+msgstr "Humming에서 게시물, 사용자, 피드를 찾아보세요"
 
 #: src/components/dialogs/nuxs/FindContactsAnnouncement.tsx:98
 msgid "Find your friends"
@@ -5493,7 +5496,7 @@ msgstr "친구들을 찾아보세요"
 msgid "Find your friends on Bluesky by verifying your phone number and matching with your contacts. We protect your information and you control what happens next. <0>Learn more</0>"
 msgstr "Bluesky에서 전화번호를 인증하고 연락처를 매칭하여 친구들을 찾아보세요. Bluesky는 사용자의 정보를 안전하게 보호하며, 이후 과정은 사용자가 직접 제어할 수 있습니다. <0>자세히 알아보기 (영어)</0>"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:19
 msgid "Find your people"
 msgstr "마음 맞는 사람 찾기"
 
@@ -5738,7 +5741,7 @@ msgstr "추천"
 msgid "Forever"
 msgstr "무기한"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:28
 msgid "Forget the noise"
 msgstr "잡음은 잊어라"
 
@@ -8209,9 +8212,9 @@ msgstr "다음 이미지"
 msgid "Night"
 msgstr "밤"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:32
-msgid "No ads, no invasive tracking, no engagement traps. Bluesky respects your time and attention."
-msgstr "광고, 사생활 침해 트래킹, 참여 유도 함정이 없습니다. Bluesky는 내 시간과 관심을 소중히 생각합니다."
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+msgid "No ads, no invasive tracking, no engagement traps. Humming respects your time and attention."
+msgstr "광고도, 침입적인 추적도, 중독을 유도하는 장치도 없습니다. Humming은 당신의 시간과 주의를 존중합니다."
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -10656,7 +10659,7 @@ msgstr "비밀번호 표시하기"
 msgid "Sad GIFs"
 msgstr "슬픈 GIF"
 
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:309
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:324
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:668
@@ -10679,7 +10682,7 @@ msgstr "슬픈 GIF"
 msgid "Save"
 msgstr "저장"
 
-#: src/components/dialogs/BirthDateSettings.tsx:193
+#: src/components/dialogs/BirthDateSettings.tsx:195
 msgid "Save birthdate"
 msgstr "생년월일 저장"
 
@@ -12383,7 +12386,7 @@ msgstr "내 계정을 일시적으로 비활성화하기"
 msgid "Terms"
 msgstr "이용약관"
 
-#: src/components/dialogs/BirthDateSettings.tsx:181
+#: src/components/dialogs/BirthDateSettings.tsx:183
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:31
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:98
 #: src/Navigation.tsx:341
@@ -12459,7 +12462,7 @@ msgstr "앱을 다시 시작합니다"
 msgid "The author of this thread has hidden this reply."
 msgstr "이 스레드의 작성자가 이 답글을 숨겼습니다."
 
-#: src/components/dialogs/BirthDateSettings.tsx:169
+#: src/components/dialogs/BirthDateSettings.tsx:171
 msgid "The birthdate you've entered means you are under 18 years old. Certain content and features may be unavailable to you."
 msgstr "입력하신 생년월일에 따르면 회원님은 만 18세 미만입니다. 이에 따라 일부 콘텐츠 및 기능의 이용이 제한될 수 있습니다."
 
@@ -15002,9 +15005,9 @@ msgstr "언제든 Humming 이용을 중단할 수 있습니다. 본 약관을 �
 msgid "You must be a chat owner to remove a member."
 msgstr "멤버를 내보내려면 대화 소유자여야 합니다."
 
-#: src/components/dialogs/BirthDateSettings.tsx:177
-msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
-msgstr "Bluesky를 이용하려면 만 13세 이상이어야 합니다. 자세한 내용은 <0>서비스 이용약관</0>을 참조하세요."
+#: src/components/dialogs/BirthDateSettings.tsx:179
+msgid "You must be at least 14 years old to use Humming. Read our <0>Terms of Service</0> for more information."
+msgstr "Humming은 만 14세 이상부터 이용할 수 있습니다. 자세한 내용은 <0>서비스 약관</0>을 확인해 주세요."
 
 #: src/view/screens/TermsOfService.tsx:50
 msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
@@ -15375,7 +15378,7 @@ msgstr "선호하는 언어"
 msgid "Your profile picture"
 msgstr "내 프로필 사진"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:26
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:24
 msgid "Your profile picture surrounded by concentric circles of other users' profile pictures"
 msgstr "여러 사용자들의 프로필 사진이 동심원 형태로 내 프로필 사진을 둘러싸고 있는 모습"
 

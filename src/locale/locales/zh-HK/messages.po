@@ -917,9 +917,12 @@ msgid "<0>{displayName}</0><1/><2> added you</2>"
 msgstr "<0>{displayName}</0><1/><2> 已將你加入</2>"
 
 #: src/screens/Hashtag.tsx:230
-#: src/screens/Search/SearchResults.tsx:381
 msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Bluesky.</4>"
 msgstr "<0>登入</0><1>或</1><2>建立帳號</2><3></3><4>就可以搵到新聞、體育、政治，同埋 Bluesky 上面嘅大小事。</4>"
+
+#: src/screens/Search/SearchResults.tsx:381
+msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Humming.</4>"
+msgstr ""
 
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:250
 msgid "<0>Tap here to update your location with GPS.</0>"
@@ -1029,9 +1032,9 @@ msgstr ""
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
 msgstr ""
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
-msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
-msgstr "喺 Bluesky 上你可以搵到一系列嘅熱門動態源，包括 News、Booksky、Game Dev、Blacksky，同 Fountain Pens"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:16
+msgid "A collection of popular feeds you can find on Humming"
+msgstr ""
 
 #: src/components/humming/Wallet.tsx:246
 msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
@@ -1762,9 +1765,9 @@ msgstr "發生錯誤。{0}"
 msgid "An illustration depicting user avatars flowing from a contact book into the Bluesky app"
 msgstr "一張插圖，展示用戶頭像從聯絡人湧入去 Bluesky 應用程式"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:35
-msgid "An illustration of several Bluesky posts alongside repost, like, and comment icons"
-msgstr "Bluesky 嘅幾條帖文嘅插圖，旁邊仲有轉發、讚好同留言嘅圖標"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:33
+msgid "An illustration of several Humming posts alongside repost, like, and comment icons"
+msgstr ""
 
 #: src/components/dialogs/nuxs/InviteFriendsAnnouncement.tsx:111
 msgid "An illustration of the Bluesky app with a paper airplane flying out of it, representing inviting friends"
@@ -2254,7 +2257,7 @@ msgstr "請填寫下低欄位，以開始年齡驗證流程。"
 msgid "Beta Feature"
 msgstr "測試功能"
 
-#: src/components/dialogs/BirthDateSettings.tsx:163
+#: src/components/dialogs/BirthDateSettings.tsx:165
 msgid "Birthdate"
 msgstr "出世日期"
 
@@ -4241,7 +4244,7 @@ msgstr "顯示大啲嘅替代文字標誌"
 msgid "Display name"
 msgstr "名稱"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:23
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
 msgid "Ditch the trolls and clickbait. Find real people and conversations that matter to you."
 msgstr "遠離撩交嗌者同標題黨。搵眞正在乎嘅人，傾眞正關心啲事。"
 
@@ -4287,8 +4290,8 @@ msgstr "唔使驚！你所有現存嘅訊息同設定經已儲存，只要驗證
 #: src/components/contacts/components/InviteInfo.tsx:79
 #: src/components/contacts/screens/ViewMatches.tsx:395
 #: src/components/contacts/screens/ViewMatches.tsx:412
-#: src/components/dialogs/BirthDateSettings.tsx:193
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:195
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:195
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
@@ -4731,7 +4734,7 @@ msgstr "輸入你用嚟建立帳號嘅電郵地址。我哋會傳送個驗證碼
 msgid "Enter the username or email address you used when you created your account"
 msgstr "請輸入你建立帳號嗰陣用嘅用戶名稱或電郵地址"
 
-#: src/components/dialogs/BirthDateSettings.tsx:164
+#: src/components/dialogs/BirthDateSettings.tsx:166
 msgid "Enter your birthdate"
 msgstr "輸入你嘅出世日期"
 
@@ -5481,8 +5484,8 @@ msgid "Find people you know"
 msgstr "搵返你識嘅人"
 
 #: src/screens/Search/Shell.tsx:765
-msgid "Find posts, users, and feeds on Bluesky"
-msgstr "喺 Bluesky 度搵帖文、用戶同埋動態源"
+msgid "Find posts, users, and feeds on Humming"
+msgstr ""
 
 #: src/components/dialogs/nuxs/FindContactsAnnouncement.tsx:98
 msgid "Find your friends"
@@ -5493,7 +5496,7 @@ msgstr "尋找你嘅朋友"
 msgid "Find your friends on Bluesky by verifying your phone number and matching with your contacts. We protect your information and you control what happens next. <0>Learn more</0>"
 msgstr "透過驗證你嘅電話號碼兼匹配聯絡人，即可尋找你 Bluesky 上嘅朋友。我哋保護你嘅資料，後續操作你話事。<0>想知多啲</0>"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:19
 msgid "Find your people"
 msgstr "搵到同聲同氣嘅人"
 
@@ -5738,7 +5741,7 @@ msgstr "估你心水"
 msgid "Forever"
 msgstr "永遠"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:28
 msgid "Forget the noise"
 msgstr "忘記無盡嘅騷擾"
 
@@ -8209,9 +8212,9 @@ msgstr "下一張圖片"
 msgid "Night"
 msgstr "晚黑"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:32
-msgid "No ads, no invasive tracking, no engagement traps. Bluesky respects your time and attention."
-msgstr "冇廣告，冇侵入式追踪，當然亦冇成癮性設計。 Bluesky 尊重你嘅時間同注意力。"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+msgid "No ads, no invasive tracking, no engagement traps. Humming respects your time and attention."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -10656,7 +10659,7 @@ msgstr ""
 msgid "Sad GIFs"
 msgstr "傷心 GIF"
 
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:309
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:324
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:668
@@ -10679,7 +10682,7 @@ msgstr "傷心 GIF"
 msgid "Save"
 msgstr "儲存"
 
-#: src/components/dialogs/BirthDateSettings.tsx:193
+#: src/components/dialogs/BirthDateSettings.tsx:195
 msgid "Save birthdate"
 msgstr "儲存出世日期"
 
@@ -12383,7 +12386,7 @@ msgstr "暫時停用你嘅帳號"
 msgid "Terms"
 msgstr "條款"
 
-#: src/components/dialogs/BirthDateSettings.tsx:181
+#: src/components/dialogs/BirthDateSettings.tsx:183
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:31
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:98
 #: src/Navigation.tsx:341
@@ -12459,7 +12462,7 @@ msgstr "應用程式將會重啓"
 msgid "The author of this thread has hidden this reply."
 msgstr "呢個討論串嘅作者隱藏咗呢個回覆。"
 
-#: src/components/dialogs/BirthDateSettings.tsx:169
+#: src/components/dialogs/BirthDateSettings.tsx:171
 msgid "The birthdate you've entered means you are under 18 years old. Certain content and features may be unavailable to you."
 msgstr "你輸入嘅出世日期表示你未夠 18 歲。你可能用唔到部分內容同使用部分功能。"
 
@@ -15002,9 +15005,9 @@ msgstr ""
 msgid "You must be a chat owner to remove a member."
 msgstr "你必須係傾偈擁有者先可以移除成員。"
 
-#: src/components/dialogs/BirthDateSettings.tsx:177
-msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
-msgstr "您必須年滿 13 歲先可以使用 Bluesky。閱讀我哋嘅<0>服務條款</0>知多啲。"
+#: src/components/dialogs/BirthDateSettings.tsx:179
+msgid "You must be at least 14 years old to use Humming. Read our <0>Terms of Service</0> for more information."
+msgstr ""
 
 #: src/view/screens/TermsOfService.tsx:50
 msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
@@ -15375,7 +15378,7 @@ msgstr "你嘅偏好語言"
 msgid "Your profile picture"
 msgstr "你嘅頭像"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:26
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:24
 msgid "Your profile picture surrounded by concentric circles of other users' profile pictures"
 msgstr "你嘅頭像俾其他用戶嘅頭像一圈圈噉圍住"
 

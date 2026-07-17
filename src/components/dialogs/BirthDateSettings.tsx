@@ -136,9 +136,11 @@ function BirthdayInner({
     }
   }, [error, cleanError])
 
+  // Humming ToS sets the minimum age at 14 (Korean privacy law), not the
+  // upstream 13 — keep the gate and the admonition copy in agreement.
   const age = getAge(new Date(date))
-  const isUnder13 = age < 13
-  const isUnder18 = age >= 13 && age < 18
+  const isUnder14 = age < 14
+  const isUnder18 = age >= 14 && age < 18
 
   const onSave = useCallback(async () => {
     try {
@@ -172,13 +174,11 @@ function BirthdayInner({
           </Trans>
         </Admonition>
       )}
-      {isUnder13 && (
+      {isUnder14 && (
         <Admonition type="error">
           <Trans>
-            You must be at least 13 years old to use Bluesky. Read our{' '}
-            <SimpleInlineLinkText
-              to="https://bsky.social/about/support/tos"
-              label={l`Terms of Service`}>
+            You must be at least 14 years old to use Humming. Read our{' '}
+            <SimpleInlineLinkText to="/support/tos" label={l`Terms of Service`}>
               Terms of Service
             </SimpleInlineLinkText>{' '}
             for more information.
@@ -195,7 +195,7 @@ function BirthdayInner({
           onPress={() => void onSave()}
           variant="solid"
           color="primary"
-          disabled={isUnder13}>
+          disabled={isUnder14}>
           <ButtonText>
             {hasChanged ? <Trans>Save</Trans> : <Trans>Done</Trans>}
           </ButtonText>

@@ -917,9 +917,12 @@ msgid "<0>{displayName}</0><1/><2> added you</2>"
 msgstr "<0>{displayName}</0><1/><2> sizi ekledi</2>"
 
 #: src/screens/Hashtag.tsx:230
-#: src/screens/Search/SearchResults.tsx:381
 msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Bluesky.</4>"
 msgstr "<4>Bluesky'da haber, spor, siyaset ve diğer olan biteni aramak için</4><3> </3><0>giriş yapın</0><1> veya </1><2>bir hesap oluşturun.</2>"
+
+#: src/screens/Search/SearchResults.tsx:381
+msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Humming.</4>"
+msgstr ""
 
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:250
 msgid "<0>Tap here to update your location with GPS.</0>"
@@ -1029,9 +1032,9 @@ msgstr ""
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
 msgstr ""
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
-msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
-msgstr "Bluesky'da bulabileceğiniz bazı popüler akışların derlenmiş hali"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:16
+msgid "A collection of popular feeds you can find on Humming"
+msgstr ""
 
 #: src/components/humming/Wallet.tsx:246
 msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
@@ -1762,9 +1765,9 @@ msgstr "Bir hata oluştu. {0}"
 msgid "An illustration depicting user avatars flowing from a contact book into the Bluesky app"
 msgstr "Bir telefon rehberinden Bluesky uygulamasına akan kullanıcı avatarlarını gösteren bir illüstrasyon"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:35
-msgid "An illustration of several Bluesky posts alongside repost, like, and comment icons"
-msgstr "Birkaç Bluesky gönderisinin yeniden gönderi, beğeni ve yorum yapma simgeleriyle beraber çizimi"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:33
+msgid "An illustration of several Humming posts alongside repost, like, and comment icons"
+msgstr ""
 
 #: src/components/dialogs/nuxs/InviteFriendsAnnouncement.tsx:111
 msgid "An illustration of the Bluesky app with a paper airplane flying out of it, representing inviting friends"
@@ -2254,7 +2257,7 @@ msgstr "Aşağıdaki alanları doldurarak yaş güvencesi işlemine başlayın."
 msgid "Beta Feature"
 msgstr "Beta Özellik"
 
-#: src/components/dialogs/BirthDateSettings.tsx:163
+#: src/components/dialogs/BirthDateSettings.tsx:165
 msgid "Birthdate"
 msgstr "Doğum tarihi"
 
@@ -4241,7 +4244,7 @@ msgstr "Alternatif metin rozetlerini daha büyük görüntüle"
 msgid "Display name"
 msgstr "Görünen ad"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:23
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
 msgid "Ditch the trolls and clickbait. Find real people and conversations that matter to you."
 msgstr "Trolleri ve tık tuzaklarını geride bırakın. Gerçek insanları ve anlamlı sohbetleri bulun."
 
@@ -4287,8 +4290,8 @@ msgstr "Merak etmeyin! Tüm mesajlarınız ve ayarlarınız saklandı ve bir yet
 #: src/components/contacts/components/InviteInfo.tsx:79
 #: src/components/contacts/screens/ViewMatches.tsx:395
 #: src/components/contacts/screens/ViewMatches.tsx:412
-#: src/components/dialogs/BirthDateSettings.tsx:193
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:195
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:195
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
@@ -4731,7 +4734,7 @@ msgstr "Hesabınızı oluşturmak için kullandığınız e-postayı girin. Size
 msgid "Enter the username or email address you used when you created your account"
 msgstr "Hesabınızı oluştururken kullandığınız kullanıcı adını veya e-posta adresini girin"
 
-#: src/components/dialogs/BirthDateSettings.tsx:164
+#: src/components/dialogs/BirthDateSettings.tsx:166
 msgid "Enter your birthdate"
 msgstr "Doğum tarihinizi girin"
 
@@ -5481,8 +5484,8 @@ msgid "Find people you know"
 msgstr "Tanıdıklarınızı bulun"
 
 #: src/screens/Search/Shell.tsx:765
-msgid "Find posts, users, and feeds on Bluesky"
-msgstr "Bluesky'da gönderileri, kullanıcıları ve akışları bulun"
+msgid "Find posts, users, and feeds on Humming"
+msgstr ""
 
 #: src/components/dialogs/nuxs/FindContactsAnnouncement.tsx:98
 msgid "Find your friends"
@@ -5493,7 +5496,7 @@ msgstr "Arkadaşlarınızı bulun"
 msgid "Find your friends on Bluesky by verifying your phone number and matching with your contacts. We protect your information and you control what happens next. <0>Learn more</0>"
 msgstr "Telefon numaranızı doğrulayarak ve rehberinizdeki kişilerle eşleştirerek arkadaşlarınızı bulun. Biz verilerinizi koruyoruz ve siz ne olacağını belirliyorsunuz. <0>Daha fazla bilgi edinin</0>"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:19
 msgid "Find your people"
 msgstr "Kafa dengi insanlar bulun"
 
@@ -5738,7 +5741,7 @@ msgstr "Sizin İçin"
 msgid "Forever"
 msgstr "Sonsuza kadar"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:28
 msgid "Forget the noise"
 msgstr "Gürültüyü unutun"
 
@@ -8209,9 +8212,9 @@ msgstr "Sonraki görsel"
 msgid "Night"
 msgstr "Gece"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:32
-msgid "No ads, no invasive tracking, no engagement traps. Bluesky respects your time and attention."
-msgstr "Reklam yok, gizliliği ihlal eden kullanıcı izleme mekanizmaları yok, etkileşim tuzakları yok. Bluesky vaktinize ve ilginize saygı duyar."
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+msgid "No ads, no invasive tracking, no engagement traps. Humming respects your time and attention."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -10656,7 +10659,7 @@ msgstr "Şifreyi göster"
 msgid "Sad GIFs"
 msgstr "Üzgün GIFler"
 
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:309
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:324
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:668
@@ -10679,7 +10682,7 @@ msgstr "Üzgün GIFler"
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/components/dialogs/BirthDateSettings.tsx:193
+#: src/components/dialogs/BirthDateSettings.tsx:195
 msgid "Save birthdate"
 msgstr "Doğum tarihini kaydet"
 
@@ -12383,7 +12386,7 @@ msgstr "Geçici olarak hesabınızı devre dışı bırakın"
 msgid "Terms"
 msgstr "Şartlar"
 
-#: src/components/dialogs/BirthDateSettings.tsx:181
+#: src/components/dialogs/BirthDateSettings.tsx:183
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:31
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:98
 #: src/Navigation.tsx:341
@@ -12459,7 +12462,7 @@ msgstr "Uygulama yeniden başlatılacaktır"
 msgid "The author of this thread has hidden this reply."
 msgstr "Bu konunun yazarı bu yanıtı gizlemiş."
 
-#: src/components/dialogs/BirthDateSettings.tsx:169
+#: src/components/dialogs/BirthDateSettings.tsx:171
 msgid "The birthdate you've entered means you are under 18 years old. Certain content and features may be unavailable to you."
 msgstr "Girdiğiniz doğum tarihi 18 yaşından küçük olduğunuz anlamına geliyor. Belli içerik ve özellikler size sunulmayabilir."
 
@@ -15002,9 +15005,9 @@ msgstr ""
 msgid "You must be a chat owner to remove a member."
 msgstr "Bir üye çıkarmak için sohbet sahibi olmanız gerekmektedir."
 
-#: src/components/dialogs/BirthDateSettings.tsx:177
-msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
-msgstr "Bluesky'ı kullanmak için en az 13 yaşında olmanız gerekmektedir. Daha fazla ilgi için <0>Hizmet Şartları</0>'nı okuyun."
+#: src/components/dialogs/BirthDateSettings.tsx:179
+msgid "You must be at least 14 years old to use Humming. Read our <0>Terms of Service</0> for more information."
+msgstr ""
 
 #: src/view/screens/TermsOfService.tsx:50
 msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
@@ -15375,7 +15378,7 @@ msgstr "Tercih ettiğiniz dil"
 msgid "Your profile picture"
 msgstr "Profil resminiz"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:26
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:24
 msgid "Your profile picture surrounded by concentric circles of other users' profile pictures"
 msgstr "Başka kullanıcıların profil resimleri tarafından çerçevelenmiş profil resminiz"
 

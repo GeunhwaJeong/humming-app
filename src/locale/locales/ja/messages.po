@@ -917,9 +917,12 @@ msgid "<0>{displayName}</0><1/><2> added you</2>"
 msgstr "<0>{displayName}</0><1/><2>があなたを追加しました</2>"
 
 #: src/screens/Hashtag.tsx:230
-#: src/screens/Search/SearchResults.tsx:381
 msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Bluesky.</4>"
 msgstr "<4>ニュース、スポーツ、政治、ほか、Bluesky上で起こっているその他すべてのことを検索するためには</4><0>サインイン</0><1>するか</1><2>アカウントを作成</2><3>してください。</3>"
+
+#: src/screens/Search/SearchResults.tsx:381
+msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Humming.</4>"
+msgstr "<0>ログイン</0><1>するか、</1><2>アカウントを作成</2><3>して</3><4>ニュース、スポーツ、政治など、Hummingで起きているあらゆることを検索しましょう。</4>"
 
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:250
 msgid "<0>Tap here to update your location with GPS.</0>"
@@ -1029,9 +1032,9 @@ msgstr "9. 規約の変更"
 msgid "95% of every subscription settles straight to your Haneul wallet. No payout queue, no withdrawal request — the money arrives on-chain the moment a fan pays."
 msgstr "購読料の95%がそのままあなたのHaneulウォレットに入ります。振込待ちも出金申請もなし — ファンが支払った瞬間、お金はオンチェーンで届きます。"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
-msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
-msgstr "News、Booksky、Game Dev、Blacksky、そしてFountain PensといったBlueskyで見つけることのできる人気のフィードのコレクション"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:16
+msgid "A collection of popular feeds you can find on Humming"
+msgstr "Hummingで見つかる人気フィードのコレクション"
 
 #: src/components/humming/Wallet.tsx:246
 msgid "A Haneul wallet was created for you the moment you signed up. Send HANEUL to your address from an exchange or another wallet to subscribe, tip, and unlock posts."
@@ -1762,9 +1765,9 @@ msgstr "エラーが発生しました。{0}"
 msgid "An illustration depicting user avatars flowing from a contact book into the Bluesky app"
 msgstr "連絡帳からBlueskyアプリに流れるユーザーのアバターを描いたイラスト"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:35
-msgid "An illustration of several Bluesky posts alongside repost, like, and comment icons"
-msgstr "リポスト、いいね、そしてコメントのアイコンと一緒に並んだいくつかのBlueskyの投稿のイラスト"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:33
+msgid "An illustration of several Humming posts alongside repost, like, and comment icons"
+msgstr "リポスト・いいね・コメントのアイコンと並ぶ複数のHumming投稿のイラスト"
 
 #: src/components/dialogs/nuxs/InviteFriendsAnnouncement.tsx:111
 msgid "An illustration of the Bluesky app with a paper airplane flying out of it, representing inviting friends"
@@ -2254,7 +2257,7 @@ msgstr "年齢保証プロセスを開始するには、以下のフィールド
 msgid "Beta Feature"
 msgstr "ベータ機能"
 
-#: src/components/dialogs/BirthDateSettings.tsx:163
+#: src/components/dialogs/BirthDateSettings.tsx:165
 msgid "Birthdate"
 msgstr "生年月日"
 
@@ -4241,7 +4244,7 @@ msgstr "大きなALTテキストのバッジを表示"
 msgid "Display name"
 msgstr "表示名"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:23
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
 msgid "Ditch the trolls and clickbait. Find real people and conversations that matter to you."
 msgstr "荒らしやクリック稼ぎの釣り見出しは捨ててしまおう。あなたにとって大切な、リアルな人々や会話を見つけよう。"
 
@@ -4287,8 +4290,8 @@ msgstr "心配しないでください！すべての既存のメッセージと
 #: src/components/contacts/components/InviteInfo.tsx:79
 #: src/components/contacts/screens/ViewMatches.tsx:395
 #: src/components/contacts/screens/ViewMatches.tsx:412
-#: src/components/dialogs/BirthDateSettings.tsx:193
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:195
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:195
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
@@ -4731,7 +4734,7 @@ msgstr "アカウントの作成に使用したメールアドレスを入力し
 msgid "Enter the username or email address you used when you created your account"
 msgstr "アカウント作成時に使用したユーザー名またはメールアドレスを入力してください"
 
-#: src/components/dialogs/BirthDateSettings.tsx:164
+#: src/components/dialogs/BirthDateSettings.tsx:166
 msgid "Enter your birthdate"
 msgstr "生年月日を入力してください"
 
@@ -5481,8 +5484,8 @@ msgid "Find people you know"
 msgstr "知り合いを探す"
 
 #: src/screens/Search/Shell.tsx:765
-msgid "Find posts, users, and feeds on Bluesky"
-msgstr "Blueskyの投稿、ユーザー、フィードを検索"
+msgid "Find posts, users, and feeds on Humming"
+msgstr "Hummingで投稿・ユーザー・フィードを探そう"
 
 #: src/components/dialogs/nuxs/FindContactsAnnouncement.tsx:98
 msgid "Find your friends"
@@ -5493,7 +5496,7 @@ msgstr "友達を見つける"
 msgid "Find your friends on Bluesky by verifying your phone number and matching with your contacts. We protect your information and you control what happens next. <0>Learn more</0>"
 msgstr "電話番号を照合し、連絡先とマッチングすることであなたの友達を見つけます。私達はあなたの情報を保護し、あなたは次に何が起こるのかをコントロールできます。<0>詳細はこちら</0>"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:21
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:19
 msgid "Find your people"
 msgstr "仲間を探そう"
 
@@ -5738,7 +5741,7 @@ msgstr "あなたへ"
 msgid "Forever"
 msgstr "永久"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:28
 msgid "Forget the noise"
 msgstr "ノイズを忘れよう"
 
@@ -8209,9 +8212,9 @@ msgstr "次の画像"
 msgid "Night"
 msgstr "夜"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:32
-msgid "No ads, no invasive tracking, no engagement traps. Bluesky respects your time and attention."
-msgstr "広告ゼロ。しつこい追跡なし。使い続けさせるために手放せなくする罠、エンゲージメントトラップもなし。Blueskyは、あなたの時間と集中を大切にします。"
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:30
+msgid "No ads, no invasive tracking, no engagement traps. Humming respects your time and attention."
+msgstr "広告も、過剰なトラッキングも、エンゲージメントの罠もありません。Hummingはあなたの時間と関心を尊重します。"
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -10656,7 +10659,7 @@ msgstr "パスワードを表示"
 msgid "Sad GIFs"
 msgstr "悲しいGIF"
 
-#: src/components/dialogs/BirthDateSettings.tsx:200
+#: src/components/dialogs/BirthDateSettings.tsx:202
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:309
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:324
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:668
@@ -10679,7 +10682,7 @@ msgstr "悲しいGIF"
 msgid "Save"
 msgstr "保存"
 
-#: src/components/dialogs/BirthDateSettings.tsx:193
+#: src/components/dialogs/BirthDateSettings.tsx:195
 msgid "Save birthdate"
 msgstr "生年月日を保存"
 
@@ -12383,7 +12386,7 @@ msgstr "一時的にアカウントを無効にする"
 msgid "Terms"
 msgstr "規約"
 
-#: src/components/dialogs/BirthDateSettings.tsx:181
+#: src/components/dialogs/BirthDateSettings.tsx:183
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:31
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:98
 #: src/Navigation.tsx:341
@@ -12459,7 +12462,7 @@ msgstr "アプリを再起動します"
 msgid "The author of this thread has hidden this reply."
 msgstr "このスレッドの投稿者がこの返信を非表示にしました"
 
-#: src/components/dialogs/BirthDateSettings.tsx:169
+#: src/components/dialogs/BirthDateSettings.tsx:171
 msgid "The birthdate you've entered means you are under 18 years old. Certain content and features may be unavailable to you."
 msgstr "入力した生年月日は、あなたが18歳未満であることを意味します。特定のコンテンツや機能が利用できない場合があります。"
 
@@ -15002,9 +15005,9 @@ msgstr "Hummingの利用はいつでもやめられます。本規約に違反�
 msgid "You must be a chat owner to remove a member."
 msgstr "メンバーを外すには、チャットのオーナーでなければなりません。"
 
-#: src/components/dialogs/BirthDateSettings.tsx:177
-msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
-msgstr "Blueskyを使用するには、13歳以上である必要があります。詳細については、<0>利用規約</0>をご覧ください。"
+#: src/components/dialogs/BirthDateSettings.tsx:179
+msgid "You must be at least 14 years old to use Humming. Read our <0>Terms of Service</0> for more information."
+msgstr "Hummingは14歳以上の方がご利用いただけます。詳しくは<0>利用規約</0>をご覧ください。"
 
 #: src/view/screens/TermsOfService.tsx:50
 msgid "You must be at least 14 years old to use Humming. Some features, such as paid content, may additionally require you to be of legal age under the laws that apply to you."
@@ -15375,7 +15378,7 @@ msgstr "あなたの主要言語"
 msgid "Your profile picture"
 msgstr "あなたのプロフィール画像"
 
-#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:26
+#: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:24
 msgid "Your profile picture surrounded by concentric circles of other users' profile pictures"
 msgstr "あなたのプロフィール写真のまわりを、他のユーザーのプロフィール写真が同心円状に取り囲んでいる"
 

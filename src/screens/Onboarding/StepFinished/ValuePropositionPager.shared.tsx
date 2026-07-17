@@ -13,9 +13,7 @@ export function useValuePropText(step: 0 | 1 | 2) {
       description: _(
         msg`No more doomscrolling junk-filled algorithms. Find feeds that work for you, not against you.`,
       ),
-      alt: _(
-        msg`A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens`,
-      ),
+      alt: _(msg`A collection of popular feeds you can find on Humming`),
     },
     {
       title: _(msg`Find your people`),
@@ -29,10 +27,10 @@ export function useValuePropText(step: 0 | 1 | 2) {
     {
       title: _(msg`Forget the noise`),
       description: _(
-        msg`No ads, no invasive tracking, no engagement traps. Bluesky respects your time and attention.`,
+        msg`No ads, no invasive tracking, no engagement traps. Humming respects your time and attention.`,
       ),
       alt: _(
-        msg`An illustration of several Bluesky posts alongside repost, like, and comment icons`,
+        msg`An illustration of several Humming posts alongside repost, like, and comment icons`,
       ),
     },
   ][step]
