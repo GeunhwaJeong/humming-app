@@ -1954,5 +1954,13 @@
     "typescript/no-unsafe-member-access": {
       "count": 3
     }
+  },
+  "webpack.config.js": {
+    "typescript/no-unsafe-call": {
+      "count": 11
+    },
+    "typescript/no-unsafe-member-access": {
+      "count": 27
+    }
   }
 }

@@ -71,8 +71,12 @@ module.exports = async function (env, argv) {
       })
     }
   } else {
-    // Support static CDN for chunks
-    config.output.publicPath = 'auto'
+    // Root-absolute asset URLs. Upstream used 'auto' (relative script tags)
+    // because bskyweb templated the HTML server-side; we serve the exported
+    // index.html statically with an SPA fallback, so relative paths break on
+    // nested routes like /profile/:handle (the fallback returns HTML for
+    // static/js/* and the app never boots).
+    config.output.publicPath = '/'
   }
 
   if (GENERATE_STATS || OPEN_ANALYZER) {
