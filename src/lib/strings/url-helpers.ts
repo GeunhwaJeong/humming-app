@@ -2,18 +2,16 @@ import {AtUri} from '@atproto/api'
 import {parse} from 'psl'
 import TLDs from 'tlds'
 
-import {BSKY_SERVICE} from '#/lib/constants'
+import {BSKY_SERVICE, HUMMING_APP_HOST} from '#/lib/constants'
 import {isInvalidHandle} from '#/lib/strings/handles'
 import {startUriToStarterPackUri} from '#/lib/strings/starter-pack'
 import {logger} from '#/logger'
 
-export const BSKY_APP_HOST = 'https://bsky.app'
+// Humming: the app's own web origin — upstream this was a literal bsky.app.
+export const BSKY_APP_HOST = HUMMING_APP_HOST
 export const BSKY_HOSTING_ENDSWITH = '.host.bsky.network'
 const BSKY_TRUSTED_HOSTS = [
-  'bsky\\.app',
-  'bsky\\.social',
-  'blueskyweb\\.xyz',
-  'blueskyweb\\.zendesk\\.com',
+  'humming\\.social',
   ...(__DEV__ ? ['localhost:19006', 'localhost:8100'] : []),
 ]
 
@@ -81,7 +79,7 @@ export function toShortUrl(url: string): string {
 
 export function toShareUrl(url: string): string {
   if (!url.startsWith('https')) {
-    const urlp = new URL('https://bsky.app')
+    const urlp = new URL(BSKY_APP_HOST)
     urlp.pathname = url
     url = urlp.toString()
   }
@@ -122,7 +120,7 @@ export function isBlueskyHostedUrl(url: string): boolean {
 }
 
 export function isBskyAppUrl(url: string): boolean {
-  return url.startsWith('https://bsky.app/')
+  return url.startsWith(`${BSKY_APP_HOST}/`)
 }
 
 export function isRelativeUrl(url: string): boolean {
@@ -131,7 +129,7 @@ export function isRelativeUrl(url: string): boolean {
 
 export function isBskyRSSUrl(url: string): boolean {
   return (
-    (url.startsWith('https://bsky.app/') || isRelativeUrl(url)) &&
+    (url.startsWith(`${BSKY_APP_HOST}/`) || isRelativeUrl(url)) &&
     /\/rss\/?$/.test(url)
   )
 }
@@ -374,19 +372,11 @@ export function createBskyAppAbsoluteUrl(path: string): string {
   return `${BSKY_APP_HOST.replace(/\/$/, '')}/${sanitizedPath}`
 }
 
+// Humming: upstream routes outbound clicks through Bluesky's go.bsky.app
+// redirector. We have no first-party redirect service yet, and third-party
+// traffic must not flow through Bluesky infra — pass the URL through untouched.
 export function createProxiedUrl(url: string): string {
-  let u
-  try {
-    u = new URL(url)
-  } catch {
-    return url
-  }
-
-  if (u?.protocol !== 'http:' && u?.protocol !== 'https:') {
-    return url
-  }
-
-  return `https://go.bsky.app/redirect?u=${encodeURIComponent(url)}`
+  return url
 }
 
 export function isShortLink(url: string): boolean {

@@ -1,23 +1,9 @@
-import {logger} from '#/logger'
-
+// Humming: upstream POSTs to Bluesky's go.bsky.app shortener. We run no
+// shortlink service, and starter-pack paths must not leak to Bluesky infra —
+// hand back the canonical URL unchanged (callers already treat this shape as
+// the fallback).
 export function useShortenLink() {
-  return async (inputUrl: string): Promise<{url: string}> => {
-    const url = new URL(inputUrl)
-    const res = await fetch('https://go.bsky.app/link', {
-      method: 'POST',
-      body: JSON.stringify({
-        path: url.pathname,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-
-    if (!res.ok) {
-      logger.error('Failed to shorten link', {safeMessage: res.status})
-      return {url: inputUrl}
-    }
-
-    return res.json()
+  return (inputUrl: string): Promise<{url: string}> => {
+    return Promise.resolve({url: inputUrl})
   }
 }

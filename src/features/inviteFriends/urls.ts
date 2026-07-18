@@ -2,13 +2,18 @@
  * URL helpers for the Invite Friends share sheet (APP-2142).
  *
  * Every action (QR payload, share sheet, clipboard) and the displayed label
- * all derive from the same canonical `https://bsky.app/profile/{handle}` URL,
+ * all derive from the same canonical `{app host}/profile/{handle}` URL,
  * so what the user reads matches exactly what they copy/share. The displayed
  * label simply drops the `https://` scheme for readability.
  *
- * Kept as a dependency-free leaf module (no #/lib/strings/url-helpers import)
- * so its unit tests stay fast and isolated from the heavy @atproto/api graph.
+ * Kept as a dependency-free leaf module (no #/lib imports) so its unit tests
+ * stay fast and isolated from the heavy @atproto/api graph — which is why the
+ * app-host expression from #/lib/constants (HUMMING_APP_HOST) is repeated here
+ * instead of imported.
  */
+const RAW_APP_HOST: string =
+  process.env.EXPO_PUBLIC_HUMMING_APP_URL || 'https://humming.social'
+const APP_HOST = RAW_APP_HOST.replace(/\/+$/, '')
 
 function stripLeadingAt(handle: string): string {
   return handle.startsWith('@') ? handle.slice(1) : handle
@@ -18,7 +23,7 @@ function stripLeadingAt(handle: string): string {
 export function getInviteShareUrl(handle: string): string {
   const bare = stripLeadingAt(handle)
   if (!bare) return ''
-  return `https://bsky.app/profile/${bare}`
+  return `${APP_HOST}/profile/${bare}`
 }
 
 /**

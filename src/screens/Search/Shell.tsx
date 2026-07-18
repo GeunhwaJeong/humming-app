@@ -23,7 +23,7 @@ import {Trans, useLingui} from '@lingui/react/macro'
 import {useFocusEffect, useNavigation, useRoute} from '@react-navigation/native'
 import {useQueryClient} from '@tanstack/react-query'
 
-import {HITSLOP_10, HITSLOP_20} from '#/lib/constants'
+import {HITSLOP_10, HITSLOP_20, HUMMING_APP_HOST} from '#/lib/constants'
 import {useNonReactiveCallback} from '#/lib/hooks/useNonReactiveCallback'
 import {MagnifyingGlassIcon} from '#/lib/icons'
 import {type NavigationProp, type SearchParams} from '#/lib/routes/types'
@@ -502,7 +502,7 @@ export function SearchScreenShell({
   )
 
   const onShareSearch = useCallback(() => {
-    const url = new URL('https://bsky.app')
+    const url = new URL(HUMMING_APP_HOST)
     url.pathname = '/search'
     if (query) url.searchParams.set('q', query)
     for (const [key, value] of Object.entries(definedFilterParams(filters))) {

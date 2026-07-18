@@ -12,6 +12,12 @@ export const STAGING_SERVICE = 'https://staging.bsky.dev'
 // Dockerfile ARG into .env); localhost is the localnet dev default.
 export const HUMMING_SERVICE: string =
   process.env.EXPO_PUBLIC_HUMMING_SERVICE || 'http://localhost:3025'
+// Public web origin of the Humming app itself — share links, deep-link
+// prefixes, and internal-link detection all key off this host. Overridable at
+// build time for staging deploys; no trailing slash.
+const RAW_HUMMING_APP_HOST: string =
+  process.env.EXPO_PUBLIC_HUMMING_APP_URL || 'https://humming.social'
+export const HUMMING_APP_HOST: string = RAW_HUMMING_APP_HOST.replace(/\/+$/, '')
 export const BSKY_SERVICE = HUMMING_SERVICE
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
 export const PUBLIC_BSKY_SERVICE = HUMMING_SERVICE

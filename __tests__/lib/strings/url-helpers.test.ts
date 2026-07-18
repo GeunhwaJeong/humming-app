@@ -32,42 +32,50 @@ describe('linkRequiresWarning', () => {
     ['http://site.pages', 'http://site.pages.dev', true],
     ['http://site.pages.dev', 'site.pages', true],
     ['http://site.pages', 'site.pages.dev', true],
-    ['http://bsky.app/profile/bob.test/post/3kbeuduu7m22v', 'my post', false],
-    ['https://bsky.app/profile/bob.test/post/3kbeuduu7m22v', 'my post', false],
-    ['http://bsky.app/', 'bluesky', false],
-    ['https://bsky.app/', 'bluesky', false],
     [
-      'http://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
-      'http://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
+      'my post',
       false,
     ],
     [
-      'https://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
-      'http://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
+      'https://humming.social/profile/bob.test/post/3kbeuduu7m22v',
+      'my post',
+      false,
+    ],
+    ['http://humming.social/', 'humming', false],
+    ['https://humming.social/', 'humming', false],
+    [
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
       false,
     ],
     [
-      'http://bsky.app/',
-      'http://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
+      'https://humming.social/profile/bob.test/post/3kbeuduu7m22v',
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
       false,
     ],
     [
-      'https://bsky.app/',
-      'http://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
+      'http://humming.social/',
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
       false,
     ],
     [
-      'http://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
+      'https://humming.social/',
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
+      false,
+    ],
+    [
+      'http://humming.social/profile/bob.test/post/3kbeuduu7m22v',
       'https://google.com',
       true,
     ],
     [
-      'https://bsky.app/profile/bob.test/post/3kbeuduu7m22v',
+      'https://humming.social/profile/bob.test/post/3kbeuduu7m22v',
       'https://google.com',
       true,
     ],
-    ['http://bsky.app/', 'https://google.com', true],
-    ['https://bsky.app/', 'https://google.com', true],
+    ['http://humming.social/', 'https://google.com', true],
+    ['https://humming.social/', 'https://google.com', true],
 
     // case insensitive
     ['https://Example.com', 'example.com', false],
@@ -79,7 +87,13 @@ describe('linkRequiresWarning', () => {
     ['/profile', 'Username', false],
     ['#', 'Show More', false],
     ['https://docs.bsky.app', 'https://docs.bsky.app', false],
-    ['https://bsky.app/compose/intent?text=test', 'Compose a post', false],
+    [
+      'https://humming.social/compose/intent?text=test',
+      'Compose a post',
+      false,
+    ],
+    // bsky.app is a foreign site now — a non-URL label on it must warn
+    ['https://bsky.app/compose/intent?text=test', 'Compose a post', true],
   ]
 
   it.each(cases)(
@@ -154,24 +168,22 @@ describe('isTrustedUrl', () => {
     ['/profile', true],
     ['/profile/', true],
     ['/profile/bob.test', true],
-    ['https://bsky.app', true],
-    ['https://bsky.app/', true],
-    ['https://bsky.app/profile/bob.test', true],
-    ['https://www.bsky.app', true],
-    ['https://www.bsky.app/', true],
-    ['https://docs.bsky.app', true],
-    ['https://bsky.social', true],
-    ['https://bsky.social/blog', true],
-    ['https://blueskyweb.xyz', true],
-    ['https://blueskyweb.zendesk.com', true],
-    ['http://bsky.app', true],
-    ['http://bsky.social', true],
-    ['http://blueskyweb.xyz', true],
-    ['http://blueskyweb.zendesk.com', true],
+    ['https://humming.social', true],
+    ['https://humming.social/', true],
+    ['https://humming.social/profile/bob.test', true],
+    ['https://www.humming.social', true],
+    ['https://www.humming.social/', true],
+    ['https://api.humming.social', true],
+    ['http://humming.social', true],
+    // Bluesky's own hosts are third-party sites for Humming
+    ['https://bsky.app', false],
+    ['https://bsky.social', false],
+    ['https://blueskyweb.xyz', false],
+    ['https://blueskyweb.zendesk.com', false],
     ['https://google.com', false],
     ['https://docs.google.com', false],
     ['https://google.com/#', false],
-    ['https://blueskywebxzendesk.com', false],
+    ['https://hummingxsocial.com', false],
   ]
 
   it.each(cases)('given input uri %p, returns %p', (str, expected) => {
@@ -184,31 +196,31 @@ describe('getChatInviteCodeFromUrl', () => {
   type Case = [string, string | undefined]
 
   const cases: Case[] = [
-    ['https://bsky.app/chat/abcdefg', 'abcdefg'],
-    ['https://bsky.app/chat/abcdefghij', 'abcdefghij'],
-    // http is not recognized as a bsky.app url
-    ['http://bsky.app/chat/abcdefg', undefined],
-    ['https://bsky.app/chat/abcdefg?utm=foo', 'abcdefg'],
-    ['https://bsky.app/chat/abcdefg#section', 'abcdefg'],
+    ['https://humming.social/chat/abcdefg', 'abcdefg'],
+    ['https://humming.social/chat/abcdefghij', 'abcdefghij'],
+    // http is not recognized as an app url
+    ['http://humming.social/chat/abcdefg', undefined],
+    ['https://humming.social/chat/abcdefg?utm=foo', 'abcdefg'],
+    ['https://humming.social/chat/abcdefg#section', 'abcdefg'],
     ['/chat/abcdefg', 'abcdefg'],
     ['/chat/abcdefg?utm=foo', 'abcdefg'],
     ['/chat/abcdefg#section', 'abcdefg'],
 
     // too short
-    ['https://bsky.app/chat/abcdef', undefined],
+    ['https://humming.social/chat/abcdef', undefined],
     ['/chat/abcdef', undefined],
     // too long
-    ['https://bsky.app/chat/abcdefghijk', undefined],
+    ['https://humming.social/chat/abcdefghijk', undefined],
     ['/chat/abcdefghijk', undefined],
     // invalid characters
-    ['https://bsky.app/chat/abc-def', undefined],
+    ['https://humming.social/chat/abc-def', undefined],
     ['/chat/abc def', undefined],
     // trailing path
-    ['https://bsky.app/chat/abcdefg/extra', undefined],
+    ['https://humming.social/chat/abcdefg/extra', undefined],
     ['/chat/abcdefg/extra', undefined],
     // wrong path
-    ['https://bsky.app/profile/abcdefg', undefined],
-    ['https://bsky.app/chat', undefined],
+    ['https://humming.social/profile/abcdefg', undefined],
+    ['https://humming.social/chat', undefined],
     // wrong host
     ['https://example.com/chat/abcdefg', undefined],
     // not a url, not a path

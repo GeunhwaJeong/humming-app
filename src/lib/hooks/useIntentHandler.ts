@@ -3,6 +3,7 @@ import {Alert} from 'react-native'
 import * as Linking from 'expo-linking'
 import * as WebBrowser from 'expo-web-browser'
 
+import {HUMMING_APP_HOST} from '#/lib/constants'
 import {useOpenComposer} from '#/lib/hooks/useOpenComposer'
 import {parseLinkingUrl} from '#/lib/parseLinkingUrl'
 import {CHAT_INVITE_CODE_REGEX} from '#/lib/strings/url-helpers'
@@ -41,7 +42,10 @@ export function useIntentHandler() {
       }
 
       const referrerInfo = Referrer.getReferrerInfo()
-      if (referrerInfo && referrerInfo.hostname !== 'bsky.app') {
+      if (
+        referrerInfo &&
+        referrerInfo.hostname !== new URL(HUMMING_APP_HOST).hostname
+      ) {
         ax.metric('deepLink:referrerReceived', {
           to: url,
           referrer: referrerInfo?.referrer,

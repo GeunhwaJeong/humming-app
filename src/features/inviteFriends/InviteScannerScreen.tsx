@@ -10,6 +10,7 @@ import {
 import {useLingui} from '@lingui/react/macro'
 import {useNavigation} from '@react-navigation/native'
 
+import {HUMMING_APP_HOST} from '#/lib/constants'
 import {type NavigationProp} from '#/lib/routes/types'
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
@@ -42,9 +43,16 @@ export function InviteScannerScreen() {
       const url = result.data?.trim()
       if (!url) return
 
-      // Match bsky.app/profile/{handle} URLs (with or without https://).
+      // Match {app host}/profile/{handle} URLs (with or without https://).
+      const appHostname = new URL(HUMMING_APP_HOST).hostname.replace(
+        /\./g,
+        '\\.',
+      )
       const profileMatch = url.match(
-        /^(?:https?:\/\/)?bsky\.app\/profile\/([^/?#]+)/i,
+        new RegExp(
+          `^(?:https?:\\/\\/)?${appHostname}\\/profile\\/([^/?#]+)`,
+          'i',
+        ),
       )
       if (!profileMatch) {
         ax.metric('invite:scanner:scanned', {result: 'invalidQr'})
