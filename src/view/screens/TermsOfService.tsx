@@ -137,7 +137,7 @@ function SectionText({
 }) {
   const pal = usePalette('default')
   return (
-    <Text style={[pal.text, a.leading_snug]}>
+    <Text lineHeight={1.3} style={pal.text}>
       <Text type="lg-bold" style={pal.text}>
         {title}
         {'\n'}
