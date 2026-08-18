@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {EventEmitter} from 'eventemitter3'
 
 import {networkRetry} from '#/lib/async/retry'
+import {GEOLOCATION_URL} from '#/env'
 import {
   FALLBACK_GEOLOCATION_SERVICE_RESPONSE,
   GEOLOCATION_SERVICE_URL,
@@ -60,6 +61,12 @@ export async function resolve() {
         logger.info(`resolve(): failed`)
       }
     }
+  } else if (!GEOLOCATION_URL) {
+    // No geolocation service configured: skip the network entirely.
+    // Consumers already fall back to FALLBACK_GEOLOCATION_SERVICE_RESPONSE
+    // when no response is cached.
+    logger.debug(`resolve(): no service configured, using fallback`)
+    geolocationServicePromise = Promise.resolve({success: false})
   } else {
     logger.debug(`resolve(): initiating`)
 
