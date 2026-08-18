@@ -32,6 +32,13 @@ const TIMEOUT_INIT = 2000 // TODO should base on p99 or something
 const TIMEOUT_PREFER_LOW_LATENCY = 250
 const TIMEOUT_PREFER_FRESH_GATES = 1500
 
+// Without a configured host and key there is no remote to talk to: the
+// GrowthBook instance still evaluates locally (all gates default off) but we
+// never fetch, so no attribute data leaves the device.
+const REMOTE_FEATURES_ENABLED = Boolean(
+  env.GROWTHBOOK_API_HOST && env.GROWTHBOOK_CLIENT_KEY,
+)
+
 export const features = new GrowthBook({
   apiHost: env.GROWTHBOOK_API_HOST,
   clientKey: env.GROWTHBOOK_CLIENT_KEY,
@@ -44,22 +51,25 @@ export const features = new GrowthBook({
  * that case, we may see a flash of uncustomized content until the
  * initialization completes.
  */
-export const init = new Promise<void>(async y => {
-  const res = await features.init({timeout: TIMEOUT_INIT})
-  if (!res.success) {
-    logger.warn('GrowthBook initialization failed or timed out', {
-      source: res.source,
-      safeMessage: res.error?.toString(),
+export const init = REMOTE_FEATURES_ENABLED
+  ? new Promise<void>(async y => {
+      const res = await features.init({timeout: TIMEOUT_INIT})
+      if (!res.success) {
+        logger.warn('GrowthBook initialization failed or timed out', {
+          source: res.source,
+          safeMessage: res.error?.toString(),
+        })
+      }
+      y()
     })
-  }
-  y()
-})
+  : Promise.resolve()
 
 /**
  * Refresh feature gates from GrowthBook. Updates attributes based on the
  * provided account, if any.
  */
 export async function refresh({strategy}: {strategy: FeatureFetchStrategy}) {
+  if (!REMOTE_FEATURES_ENABLED) return
   await features.refreshFeatures({
     timeout:
       strategy === 'prefer-low-latency'

@@ -2,7 +2,7 @@ import {type Insets, Platform} from 'react-native'
 import {type AppBskyActorDefs, BSKY_LABELER_DID} from '@atproto/api'
 
 import {type ProxyHeaderValue} from '#/state/session/agent'
-import {BLUESKY_PROXY_DID, CHAT_PROXY_DID, IS_DEV} from '#/env'
+import {BLUESKY_PROXY_DID, CHAT_PROXY_DID} from '#/env'
 
 export const LOCAL_DEV_SERVICE =
   Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'
@@ -120,17 +120,14 @@ export const IMAGE_SIZE_CONFIG_2K_1MB = {
   maxSize: 1000000,
 }
 
-export const STAGING_LINK_META_PROXY =
-  'https://cardyb.staging.bsky.dev/v1/extract?url='
-
-export const PROD_LINK_META_PROXY = 'https://cardyb.bsky.app/v1/extract?url='
+// Humming: link-card extraction sends every URL a user pastes to the proxy,
+// so it must never default to Bluesky's cardyb service. Empty (the default)
+// disables extraction — composer falls back to a bare link card.
+export const LINK_META_PROXY_URL: string =
+  process.env.EXPO_PUBLIC_LINK_META_PROXY || ''
 
 export function LINK_META_PROXY(_serviceUrl: string) {
-  if (IS_DEV) {
-    return STAGING_LINK_META_PROXY
-  }
-
-  return PROD_LINK_META_PROXY
+  return LINK_META_PROXY_URL
 }
 
 export const STATUS_PAGE_URL = 'https://status.bsky.app/'

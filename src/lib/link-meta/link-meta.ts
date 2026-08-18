@@ -75,16 +75,20 @@ export async function getLinkMeta(
     return meta
   }
 
+  const proxy = LINK_META_PROXY(agent.serviceUrl.toString() || '')
+  if (!proxy) {
+    // No extraction proxy configured — return the bare link meta rather than
+    // leaking the pasted URL to a third party.
+    return meta
+  }
+
   const controller = new AbortController()
   const to = setTimeout(() => controller.abort(), timeout || 5e3)
 
   try {
-    const response = await fetch(
-      `${LINK_META_PROXY(agent.serviceUrl.toString() || '')}${encodeURIComponent(
-        url,
-      )}`,
-      {signal: controller.signal},
-    )
+    const response = await fetch(`${proxy}${encodeURIComponent(url)}`, {
+      signal: controller.signal,
+    })
 
     const body = await response.json()
 

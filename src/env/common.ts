@@ -85,22 +85,25 @@ export const CHAT_PROXY_DID: Did =
   process.env.EXPO_PUBLIC_CHAT_PROXY_DID || 'did:web:api.bsky.chat'
 
 /**
- * Metrics API host
+ * Metrics API host. Humming: empty by default — telemetry stays off unless a
+ * self-hosted collector is configured at build time. Never point this at
+ * Bluesky infrastructure.
  */
 export const METRICS_API_HOST: string =
-  process.env.EXPO_PUBLIC_METRICS_API_HOST || 'https://events.bsky.app'
+  process.env.EXPO_PUBLIC_METRICS_API_HOST || ''
 
 /**
- * Growthbook API host
+ * Growthbook API host. Humming: empty by default — feature gates must never
+ * be remotely controlled by a third party's Growthbook instance.
  */
 export const GROWTHBOOK_API_HOST: string =
-  process.env.EXPO_PUBLIC_GROWTHBOOK_API_HOST || `${METRICS_API_HOST}/gb`
+  process.env.EXPO_PUBLIC_GROWTHBOOK_API_HOST || ''
 
 /**
  * Growthbook client key
  */
 export const GROWTHBOOK_CLIENT_KEY: string =
-  process.env.EXPO_PUBLIC_GROWTHBOOK_CLIENT_KEY || 'sdk-7gkUkGy9wguUjyFe'
+  process.env.EXPO_PUBLIC_GROWTHBOOK_CLIENT_KEY || ''
 
 /**
  * Sentry DSN for telemetry
@@ -126,8 +129,13 @@ export const GCP_PROJECT_ID: number =
  * URLs for the app config web worker. Can be a
  * locally running server, see `env.example` for more.
  */
+// Humming: the three worker URLs below are empty by default so no traffic
+// reaches Bluesky's workers. Each consumer falls back to its built-in default
+// config when the URL is unset. Point these at self-hosted services to
+// re-enable.
 export const GEOLOCATION_DEV_URL = process.env.GEOLOCATION_DEV_URL
-export const GEOLOCATION_PROD_URL = `https://ip.bsky.app`
+export const GEOLOCATION_PROD_URL =
+  process.env.EXPO_PUBLIC_GEOLOCATION_URL || ''
 export const GEOLOCATION_URL = IS_DEV
   ? (GEOLOCATION_DEV_URL ?? GEOLOCATION_PROD_URL)
   : GEOLOCATION_PROD_URL
@@ -137,7 +145,8 @@ export const GEOLOCATION_URL = IS_DEV
  * locally running server, see `env.example` for more.
  */
 export const LIVE_EVENTS_DEV_URL = process.env.LIVE_EVENTS_DEV_URL
-export const LIVE_EVENTS_PROD_URL = `https://live-events.workers.bsky.app`
+export const LIVE_EVENTS_PROD_URL =
+  process.env.EXPO_PUBLIC_LIVE_EVENTS_URL || ''
 export const LIVE_EVENTS_URL = IS_DEV
   ? (LIVE_EVENTS_DEV_URL ?? LIVE_EVENTS_PROD_URL)
   : LIVE_EVENTS_PROD_URL
@@ -147,7 +156,7 @@ export const LIVE_EVENTS_URL = IS_DEV
  * locally running server, see `env.example` for more.
  */
 export const APP_CONFIG_DEV_URL = process.env.APP_CONFIG_DEV_URL
-export const APP_CONFIG_PROD_URL = `https://app-config.workers.bsky.app`
+export const APP_CONFIG_PROD_URL = process.env.EXPO_PUBLIC_APP_CONFIG_URL || ''
 export const APP_CONFIG_URL = IS_DEV
   ? (APP_CONFIG_DEV_URL ?? APP_CONFIG_PROD_URL)
   : APP_CONFIG_PROD_URL

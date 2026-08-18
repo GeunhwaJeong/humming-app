@@ -8,6 +8,7 @@ import {
   type PersistQueryClientProviderProps,
 } from '@tanstack/react-query-persist-client'
 
+import {DEFAULT_SERVICE} from '#/lib/constants'
 import {createPersistedQueryStorage} from '#/lib/persisted-query-storage'
 import {listenNetworkConfirmed, listenNetworkLost} from '#/state/events'
 import {isQueryPersisted} from '#/state/queries/util'
@@ -27,16 +28,15 @@ async function checkIsOnline(): Promise<boolean> {
     setTimeout(() => {
       controller.abort()
     }, 15e3)
-    const res = await fetch('https://public.api.bsky.app/xrpc/_health', {
+    // Probe our own home server: this measures the connectivity that actually
+    // matters to the app, instead of misreporting "offline" when a third
+    // party is down. Any HTTP response proves the network path is up — the
+    // facade answers 503 while its chain index is still warming.
+    await fetch(new URL('/health', DEFAULT_SERVICE).href, {
       cache: 'no-store',
       signal: controller.signal,
     })
-    const json = await res.json()
-    if (json.version) {
-      return true
-    } else {
-      return false
-    }
+    return true
   } catch (e) {
     return false
   }

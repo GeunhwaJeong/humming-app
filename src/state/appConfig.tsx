@@ -29,6 +29,10 @@ export const DEFAULT_APP_CONFIG_RESPONSE: AppConfigResponse = {
 let fetchAppConfigPromise: Promise<AppConfigResponse> | undefined
 
 async function fetchAppConfig(): Promise<AppConfigResponse | null> {
+  // No app-config service configured: settle as a success with no data so the
+  // query does not fall into its 60s error-retry loop. Consumers use
+  // DEFAULT_APP_CONFIG_RESPONSE.
+  if (!APP_CONFIG_URL) return null
   try {
     if (!fetchAppConfigPromise) {
       fetchAppConfigPromise = (async () => {
