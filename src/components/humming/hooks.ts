@@ -1,10 +1,16 @@
 // Humming: shared creator-info query + subscribe mutation, used by the
 // profile header button, the profile subscribe card, and locked post cards.
+import {useCallback, useRef} from 'react'
 import {type AppBskyFeedDefs} from '@atproto/api'
 import {type I18n} from '@lingui/core'
 import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
-import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
+import {
+  useMutation,
+  type UseMutationOptions,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query'
 
 import {useAgent, useSession} from '#/state/session'
 import * as Toast from '#/components/Toast'
@@ -18,6 +24,40 @@ import {
   purchasePost,
   subscribeToCreator,
 } from './api'
+
+/**
+ * `useMutation` wrapper for on-chain payments: while a mutation is in flight,
+ * further `mutate()` calls are dropped, so a double-tap cannot charge twice.
+ * The trigger buttons are disabled via `isPending`, but that state updates
+ * asynchronously: a rapid second tap (especially on the confirm dialog's
+ * button) can still observe `isPending === false` in the same frame. The ref
+ * locks synchronously and `onSettled` releases it. Only `mutate` is guarded;
+ * no payment path uses `mutateAsync`.
+ */
+export function useSingleFlightMutation<TData, TVariables = void>(
+  options: UseMutationOptions<TData, Error, TVariables>,
+) {
+  const inFlight = useRef(false)
+  const mutation = useMutation({
+    ...options,
+    onSettled: (...args) => {
+      inFlight.current = false
+      return options.onSettled?.(...args)
+    },
+  })
+  const {mutate: rawMutate} = mutation
+  // The cast preserves react-query's void-variables overload, which
+  // `Parameters<>` would otherwise collapse into a required argument.
+  const mutate = useCallback(
+    (...args: Parameters<typeof rawMutate>) => {
+      if (inFlight.current) return
+      inFlight.current = true
+      rawMutate(...args)
+    },
+    [rawMutate],
+  ) as typeof rawMutate
+  return {...mutation, mutate}
+}
 
 export function useCreatorInfo(did: string) {
   const agent = useAgent()
@@ -33,7 +73,7 @@ export function useSubscribeMutation(did: string) {
   const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
-  return useMutation({
+  return useSingleFlightMutation({
     mutationFn: () => subscribeToCreator(agent, did),
     onSuccess: res => {
       const tx = res.digest.slice(0, 8)
@@ -54,7 +94,7 @@ export function usePurchaseMutation(postUri: string) {
   const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
-  return useMutation({
+  return useSingleFlightMutation({
     mutationFn: () => {
       const postId = /\/(\d+)$/.exec(postUri)?.[1]
       if (!postId) throw new Error(_(msg`This post cannot be purchased`))
@@ -105,7 +145,7 @@ export function useBecomeCreatorMutation() {
   const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
-  return useMutation({
+  return useSingleFlightMutation({
     mutationFn: (input: {
       priceGeunhwa: number
       periodDays: number

@@ -5,7 +5,6 @@ import {type AppBskyFeedDefs} from '@atproto/api'
 import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
-import {useMutation} from '@tanstack/react-query'
 
 import {type Shadow} from '#/state/cache/types'
 import {useAgent, useSession} from '#/state/session'
@@ -18,6 +17,7 @@ import {
 import * as Prompt from '#/components/Prompt'
 import * as Toast from '#/components/Toast'
 import {formatHaneul, GEUNHWA_PER_HANEUL, tipCreator} from './api'
+import {useSingleFlightMutation} from './hooks'
 
 const TIP_GEUNHWA = GEUNHWA_PER_HANEUL / 10 // 0.1 HANEUL
 
@@ -33,7 +33,7 @@ export function HummingTipButton({
   const {hasSession, currentAccount} = useSession()
   const promptControl = Prompt.usePromptControl()
 
-  const {mutate: tip, isPending} = useMutation({
+  const {mutate: tip, isPending} = useSingleFlightMutation({
     mutationFn: () =>
       tipCreator(
         agent,
