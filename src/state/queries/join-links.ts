@@ -12,6 +12,7 @@ import {logger} from '#/logger'
 import {STALE} from '#/state/queries/index'
 import {createQueryKey, type StructuredQueryKey} from '#/state/queries/util'
 import {useAgent} from '#/state/session'
+import {CHAT_ENABLED} from '#/env'
 
 /**
  * The three preview shapes we currently support. Excludes the `{$type: string}`
@@ -163,6 +164,13 @@ async function fetchJoinLinkPreviews({
   codes: string[]
   hasSession: boolean
 }) {
+  // Humming: the chat backend does not exist; never call out to CHAT_SERVICE
+  if (!CHAT_ENABLED) {
+    const empty: ChatBskyGroupGetJoinLinkPreviews.OutputSchema = {
+      joinLinkPreviews: [],
+    }
+    return empty
+  }
   const previewAgent = new AtpAgent({service: CHAT_SERVICE})
   const res = hasSession
     ? await agent.chat.bsky.group.getJoinLinkPreviews(

@@ -5,22 +5,18 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
-import {urls} from '#/lib/constants'
 import {atoms as a, useBreakpoints, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
 import {useNuxDialogContext} from '#/components/dialogs/nuxs'
 import {Sparkle_Stroke2_Corner0_Rounded as SparkleIcon} from '#/components/icons/Sparkle'
 import {VerifierCheck} from '#/components/icons/VerifierCheck'
-import {Link} from '#/components/Link'
 import {Span, Text} from '#/components/Typography'
-import {useAnalytics} from '#/analytics'
 import {IS_NATIVE} from '#/env'
 
 export function InitialVerificationAnnouncement() {
   const t = useTheme()
   const {_} = useLingui()
-  const ax = useAnalytics()
   const {gtMobile} = useBreakpoints()
   const nuxDialogs = useNuxDialogContext()
   const control = Dialog.useDialogControl()
@@ -156,23 +152,6 @@ export function InitialVerificationAnnouncement() {
           </View>
 
           <View style={[a.w_full, a.gap_md]}>
-            <Link
-              overridePresentation
-              to={urls.website.blog.initialVerificationAnnouncement}
-              label={_(msg`Read blog post`)}
-              size="small"
-              variant="solid"
-              color="primary"
-              style={[a.justify_center, a.w_full]}
-              onPress={() => {
-                ax.metric('verification:learn-more', {
-                  location: 'initialAnnouncementeNux',
-                })
-              }}>
-              <ButtonText>
-                <Trans>Read blog post</Trans>
-              </ButtonText>
-            </Link>
             {IS_NATIVE && (
               <Button
                 label={_(msg`Close`)}

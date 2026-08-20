@@ -87,6 +87,7 @@ import {Text} from '#/components/Typography'
 import {useAgeAssurance} from '#/ageAssurance'
 import {useAnalytics} from '#/analytics'
 import {type Events} from '#/analytics/metrics/types'
+import {CHAT_ENABLED} from '#/env'
 import {useActorStatus} from '#/features/liveNow'
 import {router} from '#/routes'
 import {PlatformInfo} from '../../../../modules/expo-bluesky-swiss-army'
@@ -696,20 +697,22 @@ export function DesktopLeftNav({routeName}: {routeName: string}) {
               active: BellFilledIcon,
             }}
           />
-          <NavItem
-            label={l`Chat`}
-            href="/messages"
-            navItem="chat"
-            minimal={leftNavMinimal}
-            count={
-              aa.flags.chatDisabled ? undefined : numUnreadMessages.numUnread
-            }
-            hasNew={!aa.flags.chatDisabled && numUnreadMessages.hasNew}
-            icons={{
-              inactive: MessageIcon,
-              active: MessageFilledIcon,
-            }}
-          />
+          {CHAT_ENABLED && (
+            <NavItem
+              label={l`Chat`}
+              href="/messages"
+              navItem="chat"
+              minimal={leftNavMinimal}
+              count={
+                aa.flags.chatDisabled ? undefined : numUnreadMessages.numUnread
+              }
+              hasNew={!aa.flags.chatDisabled && numUnreadMessages.hasNew}
+              icons={{
+                inactive: MessageIcon,
+                active: MessageFilledIcon,
+              }}
+            />
+          )}
           <NavItem
             label={l`Feeds`}
             href="/feeds"

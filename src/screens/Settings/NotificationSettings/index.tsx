@@ -1,5 +1,6 @@
 import {useEffect} from 'react'
 import {Linking, View} from 'react-native'
+import * as Application from 'expo-application'
 import * as Notification from 'expo-notifications'
 import {Trans, useLingui} from '@lingui/react/macro'
 import {useQuery, useQueryClient} from '@tanstack/react-query'
@@ -104,7 +105,8 @@ export function NotificationSettingsScreen({}: Props) {
             [
               {
                 key: 'android.provider.extra.APP_PACKAGE',
-                value: 'xyz.blueskyweb.app',
+                // The running app's own package name, never a hard-coded id
+                value: Application.applicationId ?? '',
               },
             ],
           )

@@ -5,6 +5,7 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
+import {HUMMING_APP_HOST} from '#/lib/constants'
 import {getLabelingServiceTitle, isAppLabeler} from '#/lib/moderation'
 import {
   type CommonNavigatorParams,
@@ -412,14 +413,14 @@ export function ModerationScreenInner({
                     <Trans>
                       Adult content can only be enabled via the Web at{' '}
                       <InlineLinkText
-                        label={_(msg`The Bluesky web application`)}
+                        label={_(msg`The Humming web application`)}
                         to=""
                         onPress={evt => {
                           evt.preventDefault()
-                          Linking.openURL('https://bsky.app/')
+                          Linking.openURL(HUMMING_APP_HOST)
                           return false
                         }}>
-                        bsky.app
+                        humming.social
                       </InlineLinkText>
                       .
                     </Trans>

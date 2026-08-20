@@ -122,6 +122,23 @@ export const GIF_PICKER_ENABLED: boolean =
   process.env.EXPO_PUBLIC_GIF_PICKER_ENABLED === 'true'
 
 /**
+ * Whether direct messages are offered in the UI. Humming: off by default,
+ * the chat backend (api.bsky.chat) does not exist for our network. Nav
+ * entries are hidden; the /messages routes stay registered so nothing
+ * crashes if the flag flips.
+ */
+export const CHAT_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_CHAT_ENABLED === 'true'
+
+/**
+ * Whether the "Embed post" menu option is offered. Humming: off by default,
+ * the generated snippet loads embed.bsky.app's script and cannot render
+ * Humming posts.
+ */
+export const EMBED_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_EMBED_ENABLED === 'true'
+
+/**
  * Sentry DSN for telemetry
  */
 export const SENTRY_DSN: string | undefined = process.env.EXPO_PUBLIC_SENTRY_DSN

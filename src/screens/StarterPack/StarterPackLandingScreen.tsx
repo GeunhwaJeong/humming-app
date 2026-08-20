@@ -11,7 +11,6 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
-import {JOINED_THIS_WEEK} from '#/lib/constants'
 import {useWebMediaQueries} from '#/lib/hooks/useWebMediaQueries'
 import {createStarterPackGooglePlayUri} from '#/lib/strings/starter-pack'
 import {useModerationOpts} from '#/state/preferences/moderation-opts'
@@ -21,14 +20,12 @@ import {
   useSetActiveStarterPack,
 } from '#/state/shell/landing'
 import {LoggedOutScreenState} from '#/view/com/auth/LoggedOut'
-import {formatCount} from '#/view/com/util/numeric/format'
 import {Logo} from '#/view/icons/Logo'
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
 import {useDialogControl} from '#/components/Dialog'
 import * as FeedCard from '#/components/FeedCard'
 import {useRichText} from '#/components/hooks/useRichText'
-import {Trending3_Stroke2_Corner1_Rounded as TrendingIcon} from '#/components/icons/Trending'
 import * as Layout from '#/components/Layout'
 import {LinearGradientBackground} from '#/components/LinearGradientBackground'
 import {ListMaybePlaceholder} from '#/components/Lists'
@@ -37,7 +34,7 @@ import * as Prompt from '#/components/Prompt'
 import {RichText} from '#/components/RichText'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
-import {IS_WEB, IS_WEB_MOBILE_ANDROID} from '#/env'
+import {IS_WEB_MOBILE_ANDROID} from '#/env'
 import * as bsky from '#/types/bsky'
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable)
@@ -119,7 +116,7 @@ function LandingScreenLoaded({
   moderationOpts: ModerationOpts
 }) {
   const {creator, listItemsSample, feeds} = starterPack
-  const {_, i18n} = useLingui()
+  const {_} = useLingui()
   const ax = useAnalytics()
   const t = useTheme()
   const activeStarterPack = useActiveStarterPack()
@@ -212,26 +209,9 @@ function LandingScreenLoaded({
               color="primary"
               size="large">
               <ButtonText style={[a.text_lg]}>
-                <Trans>Join Bluesky</Trans>
+                <Trans>Join Humming</Trans>
               </ButtonText>
             </Button>
-            <View style={[a.flex_row, a.align_center, a.gap_xs]}>
-              <TrendingIcon
-                width={16}
-                style={{color: t.atoms.text_contrast_medium.color}}
-              />
-              <Text
-                style={[
-                  a.font_semi_bold,
-                  a.text_sm,
-                  t.atoms.text_contrast_medium,
-                ]}
-                numberOfLines={1}>
-                <Trans>
-                  {formatCount(i18n, JOINED_THIS_WEEK)} joined this week
-                </Trans>
-              </Text>
-            </View>
           </View>
           <View style={[a.gap_3xl]}>
             {Boolean(listItemsSample?.length) && (
@@ -359,12 +339,6 @@ function LandingScreenLoaded({
           />
         </Prompt.Actions>
       </Prompt.Outer>
-      {IS_WEB && (
-        <meta
-          name="apple-itunes-app"
-          content="app-id=xyz.blueskyweb.app, app-clip-bundle-id=xyz.blueskyweb.app.AppClip, app-clip-display=card"
-        />
-      )}
     </View>
   )
 }

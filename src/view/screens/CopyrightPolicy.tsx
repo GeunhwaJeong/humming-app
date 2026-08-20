@@ -3,6 +3,7 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
+import {HELP_DESK_URL, SUPPORT_EMAIL} from '#/lib/constants'
 import {usePalette} from '#/lib/hooks/usePalette'
 import {
   type CommonNavigatorParams,
@@ -27,11 +28,12 @@ export const CopyrightPolicyScreen = (_props: Props) => {
         <View style={[s.p20]}>
           <Text style={pal.text}>
             <Trans>
-              The Copyright Policy has been moved to{' '}
+              Our Copyright Policy will be published here. In the meantime, if
+              you have questions or a copyright complaint, contact us at{' '}
               <TextLink
                 style={pal.link}
-                href="https://bsky.social/about/support/copyright"
-                text="bsky.social/about/support/copyright"
+                href={HELP_DESK_URL}
+                text={SUPPORT_EMAIL}
               />
             </Trans>
           </Text>

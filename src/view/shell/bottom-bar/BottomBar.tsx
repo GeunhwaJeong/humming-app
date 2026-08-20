@@ -56,6 +56,7 @@ import * as Toast from '#/components/Toast'
 import {Text} from '#/components/Typography'
 import {useAgeAssurance} from '#/ageAssurance'
 import {useAnalytics} from '#/analytics'
+import {CHAT_ENABLED} from '#/env'
 import {useActorStatus} from '#/features/liveNow'
 import {useDemoMode} from '#/storage/hooks/demo-mode'
 import {styles} from './BottomBarStyles'
@@ -216,47 +217,53 @@ export function BottomBar({navigation}: BottomTabBarProps) {
               accessibilityLabel={l`Search`}
               accessibilityHint=""
             />
-            <Btn
-              testID="bottomBarMessagesBtn"
-              icon={
-                isAtMessages ? (
-                  <MessageFilled
-                    width={iconWidth - 1}
-                    style={[styles.ctrlIcon, t.atoms.text, styles.feedsIcon]}
-                  />
-                ) : (
-                  <Message
-                    width={iconWidth - 1}
-                    style={[styles.ctrlIcon, t.atoms.text, styles.feedsIcon]}
-                  />
-                )
-              }
-              onPress={onPressMessages}
-              onLongPress={onLongPressMessages}
-              notificationCount={
-                aa.flags.chatDisabled ? undefined : numUnreadMessages.numUnread
-              }
-              hasNew={aa.flags.chatDisabled ? false : numUnreadMessages.hasNew}
-              accessible={true}
-              accessibilityRole="tab"
-              accessibilityLabel={l`Chat`}
-              accessibilityHint={
-                !aa.flags.chatDisabled && numUnreadMessages.count > 0
-                  ? numUnreadMessages.numUnread?.includes('+')
-                    ? l({
-                        message: `${numUnreadMessages.numUnread} unread items`,
-                        comment:
-                          'Accessibility hint for the bottom bar chat icon when the number of unread messages exceeds the cap, with the + symbol already included – for example, 99+ unread items',
-                      })
-                    : l({
-                        message: plural(numUnreadMessages.numUnread ?? 0, {
-                          one: '# unread item',
-                          other: '# unread items',
-                        }),
-                      })
-                  : ''
-              }
-            />
+            {CHAT_ENABLED && (
+              <Btn
+                testID="bottomBarMessagesBtn"
+                icon={
+                  isAtMessages ? (
+                    <MessageFilled
+                      width={iconWidth - 1}
+                      style={[styles.ctrlIcon, t.atoms.text, styles.feedsIcon]}
+                    />
+                  ) : (
+                    <Message
+                      width={iconWidth - 1}
+                      style={[styles.ctrlIcon, t.atoms.text, styles.feedsIcon]}
+                    />
+                  )
+                }
+                onPress={onPressMessages}
+                onLongPress={onLongPressMessages}
+                notificationCount={
+                  aa.flags.chatDisabled
+                    ? undefined
+                    : numUnreadMessages.numUnread
+                }
+                hasNew={
+                  aa.flags.chatDisabled ? false : numUnreadMessages.hasNew
+                }
+                accessible={true}
+                accessibilityRole="tab"
+                accessibilityLabel={l`Chat`}
+                accessibilityHint={
+                  !aa.flags.chatDisabled && numUnreadMessages.count > 0
+                    ? numUnreadMessages.numUnread?.includes('+')
+                      ? l({
+                          message: `${numUnreadMessages.numUnread} unread items`,
+                          comment:
+                            'Accessibility hint for the bottom bar chat icon when the number of unread messages exceeds the cap, with the + symbol already included – for example, 99+ unread items',
+                        })
+                      : l({
+                          message: plural(numUnreadMessages.numUnread ?? 0, {
+                            one: '# unread item',
+                            other: '# unread items',
+                          }),
+                        })
+                    : ''
+                }
+              />
+            )}
             <Btn
               testID="bottomBarNotificationsBtn"
               icon={

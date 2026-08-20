@@ -29,18 +29,11 @@ export const HELP_DESK_URL = `mailto:${SUPPORT_EMAIL}`
 export const CHAT_SERVICE = 'https://api.bsky.chat'
 export const EMBED_SERVICE = 'https://embed.bsky.app'
 export const EMBED_SCRIPT = `${EMBED_SERVICE}/static/embed.js`
-export const BSKY_DOWNLOAD_URL = 'https://bsky.app/download'
+// Humming: internal /download links share our web app itself, there is no
+// separate store listing yet.
+export const BSKY_DOWNLOAD_URL = HUMMING_APP_HOST
 export const STARTER_PACK_MAX_SIZE = 150
 export const CARD_ASPECT_RATIO = 1200 / 630
-
-// HACK
-// Yes, this is exactly what it looks like. It's a hard-coded constant
-// reflecting the number of new users in the last week. We don't have
-// time to add a route to the servers for this so we're just going to hard
-// code and update this number with each release until we can get the
-// server route done.
-// -prf
-export const JOINED_THIS_WEEK = 560000 // estimate as of 12/18/24
 
 export const DISCOVER_DEBUG_DIDS: Record<string, true> = {
   'did:plc:oisofpd7lj26yvgiivf3lxsi': true, // hailey.at
@@ -115,8 +108,6 @@ export const LINK_META_PROXY_URL: string =
 export function LINK_META_PROXY(_serviceUrl: string) {
   return LINK_META_PROXY_URL
 }
-
-export const STATUS_PAGE_URL = 'https://status.bsky.app/'
 
 // Hitslop constants
 export const createHitslop = (size: number): Insets => ({
@@ -203,21 +194,6 @@ export const SUPPORTED_MIME_TYPES = [
 export type SupportedMimeTypes = (typeof SUPPORTED_MIME_TYPES)[number]
 
 export const EMOJI_REACTION_LIMIT = 5
-
-export const urls = {
-  website: {
-    blog: {
-      findFriendsAnnouncement:
-        'https://bsky.social/about/blog/12-16-2025-find-friends',
-      initialVerificationAnnouncement: `https://bsky.social/about/blog/04-21-2025-verification`,
-      searchTipsAndTricks: 'https://bsky.social/about/blog/05-31-2024-search',
-    },
-    support: {
-      findFriendsPrivacyPolicy:
-        'https://bsky.social/about/support/find-friends-privacy-policy',
-    },
-  },
-}
 
 export const PUBLIC_APPVIEW = 'https://api.bsky.app'
 export const PUBLIC_APPVIEW_DID = 'did:web:api.bsky.app'

@@ -5,7 +5,7 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Plural, Trans} from '@lingui/react/macro'
 
-import {MAX_DESCRIPTION, MAX_DISPLAY_NAME, urls} from '#/lib/constants'
+import {MAX_DESCRIPTION, MAX_DISPLAY_NAME} from '#/lib/constants'
 import {cleanError} from '#/lib/strings/errors'
 import {isOverMaxGraphemeCount} from '#/lib/strings/helpers'
 import {logger} from '#/logger'
@@ -19,7 +19,6 @@ import {Admonition} from '#/components/Admonition'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
 import * as TextField from '#/components/forms/TextField'
-import {InlineLinkText} from '#/components/Link'
 import {Loader} from '#/components/Loader'
 import * as Prompt from '#/components/Prompt'
 import * as Toast from '#/components/Toast'
@@ -340,17 +339,7 @@ function DialogInner({
             <Admonition type="error">
               <Trans>
                 You are verified. You will lose your verification status if you
-                change your display name.{' '}
-                <InlineLinkText
-                  label={_(
-                    msg({
-                      message: `Learn more`,
-                      context: `english-only-resource`,
-                    }),
-                  )}
-                  to={urls.website.blog.initialVerificationAnnouncement}>
-                  <Trans context="english-only-resource">Learn more.</Trans>
-                </InlineLinkText>
+                change your display name.
               </Trans>
             </Admonition>
           )}
