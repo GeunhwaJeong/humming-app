@@ -33,6 +33,12 @@ import {atoms as a, tokens, useTheme, web} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {useDialogControl} from '#/components/Dialog'
 import {Divider} from '#/components/Divider'
+import {
+  BecomeCreatorDialog,
+  EarningsDialog,
+} from '#/components/humming/CreatorHub'
+import {useEarnings} from '#/components/humming/hooks'
+import {WalletDialog} from '#/components/humming/Wallet'
 import {ArrowShareRight_Stroke2_Corner2_Rounded as ArrowShareRight} from '#/components/icons/ArrowShareRight'
 import {
   Bell_Filled_Corner0_Rounded as BellFilled,
@@ -57,10 +63,12 @@ import {
   Message_Stroke2_Corner0_Rounded_Filled as MessageFilled,
 } from '#/components/icons/Message'
 import {SettingsGear2_Stroke2_Corner0_Rounded as Settings} from '#/components/icons/SettingsGear2'
+import {Sparkle_Stroke2_Corner0_Rounded as Sparkle} from '#/components/icons/Sparkle'
 import {
   UserCircle_Filled_Corner0_Rounded as UserCircleFilled,
   UserCircle_Stroke2_Corner0_Rounded as UserCircle,
 } from '#/components/icons/UserCircle'
+import {Wallet_Stroke2_Corner0_Rounded as Wallet} from '#/components/icons/Wallet'
 import {InlineLinkText} from '#/components/Link'
 import {ProfileBadges} from '#/components/ProfileBadges'
 import {Text} from '#/components/Typography'
@@ -360,6 +368,10 @@ let DrawerContent = ({}: React.PropsWithoutRef<{}>): React.ReactNode => {
               isActive={isAtMyProfile}
               onPress={onPressProfile}
             />
+            {/* Humming: same wallet and creator entries as the desktop
+                LeftNav, in the same profile-to-settings slot. */}
+            <CreatorMenuItem />
+            <WalletMenuItem />
             <SettingsMenuItem onPress={onPressSettings} />
           </>
         ) : (
@@ -666,6 +678,47 @@ let SettingsMenuItem = ({onPress}: {onPress: () => void}): React.ReactNode => {
   )
 }
 SettingsMenuItem = memo(SettingsMenuItem)
+
+// Humming: mobile counterparts of the desktop LeftNav creator and wallet
+// entries; they open the same dialogs. Not memoized: they take no props, and
+// the surrounding DrawerContent is already memoized.
+function CreatorMenuItem(): React.ReactNode {
+  const {_} = useLingui()
+  const t = useTheme()
+  const {data: earnings} = useEarnings()
+  const control = useDialogControl()
+  const isCreator = !!earnings?.isCreator
+  return (
+    <>
+      <MenuItem
+        icon={<Sparkle style={[t.atoms.text]} width={iconWidth} />}
+        label={isCreator ? _(msg`My earnings`) : _(msg`Become a creator`)}
+        onPress={() => control.open()}
+      />
+      {isCreator ? (
+        <EarningsDialog control={control} />
+      ) : (
+        <BecomeCreatorDialog control={control} />
+      )}
+    </>
+  )
+}
+
+function WalletMenuItem(): React.ReactNode {
+  const {_} = useLingui()
+  const t = useTheme()
+  const control = useDialogControl()
+  return (
+    <>
+      <MenuItem
+        icon={<Wallet style={[t.atoms.text]} width={iconWidth} />}
+        label={_(msg`Wallet`)}
+        onPress={() => control.open()}
+      />
+      <WalletDialog control={control} />
+    </>
+  )
+}
 
 function MenuItem({icon, label, count, bold, onPress}: MenuItemProps) {
   const t = useTheme()
