@@ -13,7 +13,7 @@ import * as Dialog from '#/components/Dialog'
 import * as TextField from '#/components/forms/TextField'
 import {Lock_Stroke2_Corner0_Rounded as LockIcon} from '#/components/icons/Lock'
 import {Text} from '#/components/Typography'
-import {GEUNHWA_PER_HANEUL} from './api'
+import {parseHaneulToGeunhwa} from './api'
 
 export function PaywallButton({
   valueHaneul,
@@ -27,9 +27,11 @@ export function PaywallButton({
   const control = Dialog.useDialogControl()
   const [draft, setDraft] = useState(valueHaneul ?? '0.5')
 
-  const draftGeunhwa = Math.round(Number(draft) * GEUNHWA_PER_HANEUL)
+  const draftGeunhwa = parseHaneulToGeunhwa(draft)
   const draftValid =
-    draftGeunhwa >= 10_000_000 && draftGeunhwa <= 100_000_000_000
+    draftGeunhwa !== null &&
+    draftGeunhwa >= 10_000_000 &&
+    draftGeunhwa <= 100_000_000_000
   const isSet = valueHaneul !== null
 
   return (
@@ -122,7 +124,7 @@ export function PaywallButton({
                 }}
                 testID="hummingPaywallApply">
                 <ButtonText>
-                  <Trans>Set as paid — {draft} HANEUL</Trans>
+                  <Trans>Set as paid: {draft} HANEUL</Trans>
                 </ButtonText>
               </Button>
             </View>

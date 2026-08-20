@@ -15,8 +15,31 @@ export interface CreatorInfo {
 }
 
 export function formatHaneul(geunhwa: number): string {
-  const whole = geunhwa / GEUNHWA_PER_HANEUL
-  return `${Number.isInteger(whole) ? whole : whole.toFixed(2)} HANEUL`
+  // BigInt division avoids float precision loss on large amounts. Up to 4
+  // decimals, trimmed, so a 0.001 HANEUL tip does not display as 0.
+  const negative = geunhwa < 0
+  const abs = BigInt(Math.round(Math.abs(geunhwa)))
+  const whole = abs / BigInt(GEUNHWA_PER_HANEUL)
+  const remainder = abs % BigInt(GEUNHWA_PER_HANEUL)
+  const frac = (remainder / 100_000n)
+    .toString()
+    .padStart(4, '0')
+    .replace(/0+$/, '')
+  const sign = negative ? '-' : ''
+  return `${sign}${whole}${frac ? `.${frac}` : ''} HANEUL`
+}
+
+/**
+ * Locale-tolerant HANEUL price string to geunhwa ("1,5" and "1.5" both parse).
+ * Returns null when the input is not a positive amount; callers apply their
+ * own min/max bounds on top.
+ */
+export function parseHaneulToGeunhwa(input: string): number | null {
+  const normalized = input.trim().replace(',', '.')
+  if (!/^\d*\.?\d+$/.test(normalized)) return null
+  const value = Number(normalized)
+  if (!Number.isFinite(value) || value <= 0) return null
+  return Math.round(value * GEUNHWA_PER_HANEUL)
 }
 
 async function callFacade<T>(
@@ -41,12 +64,24 @@ async function callFacade<T>(
     headers,
     body: body !== undefined ? JSON.stringify(body) : undefined,
   })
-  const json: unknown = await res.json()
+  let json: unknown
+  try {
+    json = await res.json()
+  } catch {
+    // Non-JSON body (e.g. an HTML 502 from the proxy): don't surface a raw
+    // SyntaxError in the toast.
+    throw new Error('Server temporarily unavailable. Please try again.')
+  }
   if (!res.ok) {
     const message =
       json && typeof json === 'object' && 'message' in json
         ? String(json.message)
         : `${nsid} failed (${res.status})`
+    if (/insufficient/i.test(message)) {
+      throw new Error(
+        'Insufficient balance in your wallet. Top up HANEUL and try again.',
+      )
+    }
     throw new Error(message)
   }
   return json as T
@@ -117,7 +152,8 @@ export interface Earnings {
   isCreator: boolean
 }
 
-// 티어 생성(+잠금 모드)을 본인 지갑 서명으로 온체인 확정 — KYC 통과 시 verified 배지
+// 티어 생성(+잠금 모드)을 본인 지갑 서명으로 온체인 확정. verified 배지는
+// 실제 신원 인증이 연결되기 전까지 발급하지 않는다.
 export function becomeCreator(
   agent: AtpAgent,
   input: {priceGeunhwa: number; periodDays: number; lockMode: LockMode},

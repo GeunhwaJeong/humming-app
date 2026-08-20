@@ -126,6 +126,7 @@ import {atoms as a, native, useBreakpoints, useTheme, web} from '#/alf'
 import {Admonition} from '#/components/Admonition'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as EmojiPicker from '#/components/EmojiPicker'
+import {parseHaneulToGeunhwa} from '#/components/humming/api'
 import {PaywallButton} from '#/components/humming/PaywallButton'
 import {CircleInfo_Stroke2_Corner0_Rounded as CircleInfoIcon} from '#/components/icons/CircleInfo'
 import {EmojiArc_Stroke2_Corner0_Rounded as EmojiSmileIcon} from '#/components/icons/Emoji'
@@ -1059,7 +1060,7 @@ export const ComposePost = ({
           onStateChange: setPublishingStage,
           langs: currentLanguages,
           paywallGeunhwa: paywallHaneul
-            ? Math.round(Number(paywallHaneul) * 1_000_000_000)
+            ? (parseHaneulToGeunhwa(paywallHaneul) ?? undefined)
             : undefined,
         })
       ).uris[0]
