@@ -33,26 +33,24 @@ export function HummingTipButton({
   const {hasSession, currentAccount} = useSession()
   const promptControl = Prompt.usePromptControl()
 
-  const {mutate: tip, isPending} = useSingleFlightMutation({
-    mutationFn: () =>
-      tipCreator(
-        agent,
-        post.author.did,
-        TIP_GEUNHWA,
-        /\/(\d+)$/.exec(post.uri)?.[1],
-      ),
-    onSuccess: res => {
-      const amount = formatHaneul(res.amountGeunhwa)
-      const handle = post.author.handle
-      const tx = res.digest.slice(0, 8)
-      Toast.show(_(msg`Tip sent! ${amount} → @${handle} (tx: ${tx}…)`), {
-        type: 'success',
-      })
+  const postId = /\/(\d+)$/.exec(post.uri)?.[1]
+  const {mutate: tip, isPending} = useSingleFlightMutation(
+    `tip:${postId ?? post.uri}`,
+    {
+      mutationFn: () => tipCreator(agent, post.author.did, TIP_GEUNHWA, postId),
+      onSuccess: res => {
+        const amount = formatHaneul(res.amountGeunhwa)
+        const handle = post.author.handle
+        const tx = res.digest.slice(0, 8)
+        Toast.show(_(msg`Tip sent! ${amount} → @${handle} (tx: ${tx}…)`), {
+          type: 'success',
+        })
+      },
+      onError: e => {
+        Toast.show(_(msg`Tip failed: ${String(e)}`), {type: 'error'})
+      },
     },
-    onError: e => {
-      Toast.show(_(msg`Tip failed: ${String(e)}`), {type: 'error'})
-    },
-  })
+  )
 
   if (!hasSession || currentAccount?.did === post.author.did) return null
 

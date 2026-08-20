@@ -3,6 +3,7 @@
 // so these custom methods go over raw fetch with the session's auth token;
 // the facade signs chain transactions with the wallet bound to the DID.
 import {type AtpAgent} from '@atproto/api'
+import {nanoid} from 'nanoid/non-secure'
 
 export const GEUNHWA_PER_HANEUL = 1_000_000_000
 
@@ -29,7 +30,12 @@ async function callFacade<T>(
   const headers: Record<string, string> = {}
   const token = agent.session?.accessJwt
   if (token) headers.Authorization = `Bearer ${token}`
-  if (body !== undefined) headers['Content-Type'] = 'application/json'
+  if (body !== undefined) {
+    headers['Content-Type'] = 'application/json'
+    // All POSTs here move money: a fresh key per attempt lets the facade
+    // dedupe a request that reaches it twice (e.g. a network-layer retry).
+    headers['Idempotency-Key'] = nanoid()
+  }
   const res = await fetch(url.toString(), {
     method: body !== undefined ? 'POST' : 'GET',
     headers,
