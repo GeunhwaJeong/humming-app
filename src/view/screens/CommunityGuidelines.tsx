@@ -3,6 +3,7 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
+import {HELP_DESK_URL, SUPPORT_EMAIL} from '#/lib/constants'
 import {usePalette} from '#/lib/hooks/usePalette'
 import {
   type CommonNavigatorParams,
@@ -30,11 +31,12 @@ export const CommunityGuidelinesScreen = (_props: Props) => {
         <View style={[s.p20]}>
           <Text style={pal.text}>
             <Trans>
-              The Community Guidelines have been moved to{' '}
+              Our Community Guidelines will be published here. In the meantime,
+              if you have questions, contact us at{' '}
               <TextLink
                 style={pal.link}
-                href="https://bsky.social/about/support/community-guidelines"
-                text="bsky.social/about/support/community-guidelines"
+                href={HELP_DESK_URL}
+                text={SUPPORT_EMAIL}
               />
             </Trans>
           </Text>

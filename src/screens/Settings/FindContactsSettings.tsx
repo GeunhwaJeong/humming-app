@@ -13,7 +13,7 @@ import {useIsFocused} from '@react-navigation/native'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
 import {wait} from '#/lib/async/wait'
-import {HITSLOP_10, urls} from '#/lib/constants'
+import {HITSLOP_10} from '#/lib/constants'
 import {isBlockedOrBlocking, isMuted} from '#/lib/moderation/blocked-and-muted'
 import {
   type AllNavigatorParams,
@@ -44,7 +44,7 @@ import {ArrowRotateClockwise_Stroke2_Corner0_Rounded as ResyncIcon} from '#/comp
 import {TimesLarge_Stroke2_Corner0_Rounded as XIcon} from '#/components/icons/Times'
 import {Trash_Stroke2_Corner0_Rounded as TrashIcon} from '#/components/icons/Trash'
 import * as Layout from '#/components/Layout'
-import {InlineLinkText, Link} from '#/components/Link'
+import {Link} from '#/components/Link'
 import {Loader} from '#/components/Loader'
 import * as ProfileCard from '#/components/ProfileCard'
 import * as Toast from '#/components/Toast'
@@ -131,20 +131,9 @@ function Intro() {
       </Text>
       <Text style={[a.text_md, a.leading_snug, t.atoms.text_contrast_medium]}>
         <Trans>
-          Find your friends on Bluesky by verifying your phone number and
+          Find your friends on Humming by verifying your phone number and
           matching with your contacts. We protect your information and you
-          control what happens next.{' '}
-          <InlineLinkText
-            to={urls.website.blog.findFriendsAnnouncement}
-            label={_(
-              msg({
-                message: `Learn more about importing contacts`,
-                context: `english-only-resource`,
-              }),
-            )}
-            style={[a.text_md, a.leading_snug]}>
-            <Trans context="english-only-resource">Learn more</Trans>
-          </InlineLinkText>
+          control what happens next.
         </Trans>
       </Text>
       {isAvailable ? (

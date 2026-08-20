@@ -26,22 +26,38 @@ import {
 } from './api'
 
 /**
- * `useMutation` wrapper for on-chain payments: while a mutation is in flight,
- * further `mutate()` calls are dropped, so a double-tap cannot charge twice.
- * The trigger buttons are disabled via `isPending`, but that state updates
- * asynchronously: a rapid second tap (especially on the confirm dialog's
- * button) can still observe `isPending === false` in the same frame. The ref
- * locks synchronously and `onSettled` releases it. Only `mutate` is guarded;
- * no payment path uses `mutateAsync`.
+ * Payment operations currently in flight, keyed by logical operation (e.g.
+ * `subscribe:<did>`). Module-level because the same operation is reachable
+ * from several component instances at once (the profile header button and
+ * the subscribe card, or multiple locked cards of one post): a per-instance
+ * ref would let two confirms within the on-chain window fire two txs.
+ */
+const inFlightPayments = new Set<string>()
+
+/**
+ * `useMutation` wrapper for on-chain payments: while a mutation for the same
+ * `lockKey` is in flight anywhere in the app, further `mutate()` calls are
+ * dropped, so a double-tap cannot charge twice. The trigger buttons are
+ * disabled via `isPending`, but that state updates asynchronously: a rapid
+ * second tap (especially on the confirm dialog's button) can still observe
+ * `isPending === false` in the same frame. The set locks synchronously and
+ * `onSettled` releases it. Only `mutate` is guarded; no payment path uses
+ * `mutateAsync`.
  */
 export function useSingleFlightMutation<TData, TVariables = void>(
+  lockKey: string,
   options: UseMutationOptions<TData, Error, TVariables>,
 ) {
-  const inFlight = useRef(false)
+  // Remembers the key this instance locked, so the release matches the
+  // acquisition even if `lockKey` changes across renders mid-flight.
+  const heldKey = useRef<string | null>(null)
   const mutation = useMutation({
     ...options,
     onSettled: (...args) => {
-      inFlight.current = false
+      if (heldKey.current !== null) {
+        inFlightPayments.delete(heldKey.current)
+        heldKey.current = null
+      }
       return options.onSettled?.(...args)
     },
   })
@@ -50,11 +66,12 @@ export function useSingleFlightMutation<TData, TVariables = void>(
   // `Parameters<>` would otherwise collapse into a required argument.
   const mutate = useCallback(
     (...args: Parameters<typeof rawMutate>) => {
-      if (inFlight.current) return
-      inFlight.current = true
+      if (inFlightPayments.has(lockKey)) return
+      inFlightPayments.add(lockKey)
+      heldKey.current = lockKey
       rawMutate(...args)
     },
-    [rawMutate],
+    [lockKey, rawMutate],
   ) as typeof rawMutate
   return {...mutation, mutate}
 }
@@ -73,7 +90,7 @@ export function useSubscribeMutation(did: string) {
   const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
-  return useSingleFlightMutation({
+  return useSingleFlightMutation(`subscribe:${did}`, {
     mutationFn: () => subscribeToCreator(agent, did),
     onSuccess: res => {
       const tx = res.digest.slice(0, 8)
@@ -94,7 +111,7 @@ export function usePurchaseMutation(postUri: string) {
   const {_} = useLingui()
   const agent = useAgent()
   const queryClient = useQueryClient()
-  return useSingleFlightMutation({
+  return useSingleFlightMutation(`purchase:${postUri}`, {
     mutationFn: () => {
       const postId = /\/(\d+)$/.exec(postUri)?.[1]
       if (!postId) throw new Error(_(msg`This post cannot be purchased`))
@@ -144,8 +161,9 @@ export function useEarnings() {
 export function useBecomeCreatorMutation() {
   const {_} = useLingui()
   const agent = useAgent()
+  const {currentAccount} = useSession()
   const queryClient = useQueryClient()
-  return useSingleFlightMutation({
+  return useSingleFlightMutation(`becomeCreator:${currentAccount?.did}`, {
     mutationFn: (input: {
       priceGeunhwa: number
       periodDays: number

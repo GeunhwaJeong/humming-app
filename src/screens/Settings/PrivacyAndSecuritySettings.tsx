@@ -16,7 +16,6 @@ import {EyeSlash_Stroke2_Corner0_Rounded as EyeSlashIcon} from '#/components/ico
 import {Key_Stroke2_Corner2_Rounded as KeyIcon} from '#/components/icons/Key'
 import {ShieldCheck_Stroke2_Corner0_Rounded as ShieldIcon} from '#/components/icons/Shield'
 import * as Layout from '#/components/Layout'
-import {InlineLinkText} from '#/components/Link'
 import {Email2FAToggle} from './components/Email2FAToggle'
 import {PwiOptOut} from './components/PwiOptOut'
 import {ItemTextWithSubtitle} from './NotificationSettings/components/ItemTextWithSubtitle'
@@ -115,21 +114,12 @@ export function PrivacyAndSecuritySettingsScreen({}: Props) {
                 <Admonition.Content>
                   <Admonition.Text>
                     <Trans>
-                      Note: Bluesky is an open and public network. This setting
-                      only limits the visibility of your content on the Bluesky
+                      Note: Humming is an open and public network. This setting
+                      only limits the visibility of your content on the Humming
                       app and website, and other apps may not respect this
                       setting. Your content may still be shown to logged-out
                       users by other apps and websites.
                     </Trans>
-                  </Admonition.Text>
-                  <Admonition.Text>
-                    <InlineLinkText
-                      label={_(
-                        msg`Learn more about what is public on Bluesky.`,
-                      )}
-                      to="https://blueskyweb.zendesk.com/hc/en-us/articles/15835264007693-Data-Privacy">
-                      <Trans>Learn more about what is public on Bluesky.</Trans>
-                    </InlineLinkText>
                   </Admonition.Text>
                 </Admonition.Content>
               </Admonition.Row>

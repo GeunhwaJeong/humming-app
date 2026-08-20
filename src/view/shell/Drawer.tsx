@@ -21,7 +21,6 @@ import {type NavigationProp} from '#/lib/routes/types'
 import {sanitizeHandle} from '#/lib/strings/handles'
 import {colors} from '#/lib/styles'
 import {emitSoftReset} from '#/state/events'
-import {useKawaiiMode} from '#/state/preferences/kawaii'
 import {useUnreadNotifications} from '#/state/queries/notifications/unread'
 import {useProfileQuery} from '#/state/queries/profile'
 import {type SessionAccount, useSession} from '#/state/session'
@@ -33,6 +32,12 @@ import {atoms as a, tokens, useTheme, web} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {useDialogControl} from '#/components/Dialog'
 import {Divider} from '#/components/Divider'
+import {
+  BecomeCreatorDialog,
+  EarningsDialog,
+} from '#/components/humming/CreatorHub'
+import {useEarnings} from '#/components/humming/hooks'
+import {WalletDialog} from '#/components/humming/Wallet'
 import {ArrowShareRight_Stroke2_Corner2_Rounded as ArrowShareRight} from '#/components/icons/ArrowShareRight'
 import {
   Bell_Filled_Corner0_Rounded as BellFilled,
@@ -57,15 +62,17 @@ import {
   Message_Stroke2_Corner0_Rounded_Filled as MessageFilled,
 } from '#/components/icons/Message'
 import {SettingsGear2_Stroke2_Corner0_Rounded as Settings} from '#/components/icons/SettingsGear2'
+import {Sparkle_Stroke2_Corner0_Rounded as Sparkle} from '#/components/icons/Sparkle'
 import {
   UserCircle_Filled_Corner0_Rounded as UserCircleFilled,
   UserCircle_Stroke2_Corner0_Rounded as UserCircle,
 } from '#/components/icons/UserCircle'
+import {Wallet_Stroke2_Corner0_Rounded as Wallet} from '#/components/icons/Wallet'
 import {InlineLinkText} from '#/components/Link'
 import {ProfileBadges} from '#/components/ProfileBadges'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
-import {IS_NATIVE, IS_WEB} from '#/env'
+import {CHAT_ENABLED, IS_NATIVE, IS_WEB} from '#/env'
 import {InviteFriendsDialog} from '#/features/inviteFriends'
 import {useActorStatus} from '#/features/liveNow'
 
@@ -293,13 +300,8 @@ let DrawerContent = ({}: React.PropsWithoutRef<{}>): React.ReactNode => {
   }, [navigation, setDrawerOpen, ax])
 
   const onPressFeedback = useCallback(() => {
-    Linking.openURL(
-      FEEDBACK_FORM_URL({
-        email: currentAccount?.email,
-        handle: currentAccount?.handle,
-      }),
-    )
-  }, [currentAccount])
+    Linking.openURL(FEEDBACK_FORM_URL)
+  }, [])
 
   const onPressHelp = useCallback(() => {
     Linking.openURL(HELP_DESK_URL)
@@ -350,7 +352,9 @@ let DrawerContent = ({}: React.PropsWithoutRef<{}>): React.ReactNode => {
           <>
             <SearchMenuItem isActive={isAtSearch} onPress={onPressSearch} />
             <HomeMenuItem isActive={isAtHome} onPress={onPressHome} />
-            <ChatMenuItem isActive={isAtMessages} onPress={onPressMessages} />
+            {CHAT_ENABLED && (
+              <ChatMenuItem isActive={isAtMessages} onPress={onPressMessages} />
+            )}
             <NotificationsMenuItem
               isActive={isAtNotifications}
               onPress={onPressNotifications}
@@ -365,6 +369,10 @@ let DrawerContent = ({}: React.PropsWithoutRef<{}>): React.ReactNode => {
               isActive={isAtMyProfile}
               onPress={onPressProfile}
             />
+            {/* Humming: same wallet and creator entries as the desktop
+                LeftNav, in the same profile-to-settings slot. */}
+            <CreatorMenuItem />
+            <WalletMenuItem />
             <SettingsMenuItem onPress={onPressSettings} />
           </>
         ) : (
@@ -672,6 +680,47 @@ let SettingsMenuItem = ({onPress}: {onPress: () => void}): React.ReactNode => {
 }
 SettingsMenuItem = memo(SettingsMenuItem)
 
+// Humming: mobile counterparts of the desktop LeftNav creator and wallet
+// entries; they open the same dialogs. Not memoized: they take no props, and
+// the surrounding DrawerContent is already memoized.
+function CreatorMenuItem(): React.ReactNode {
+  const {_} = useLingui()
+  const t = useTheme()
+  const {data: earnings} = useEarnings()
+  const control = useDialogControl()
+  const isCreator = !!earnings?.isCreator
+  return (
+    <>
+      <MenuItem
+        icon={<Sparkle style={[t.atoms.text]} width={iconWidth} />}
+        label={isCreator ? _(msg`My earnings`) : _(msg`Become a creator`)}
+        onPress={() => control.open()}
+      />
+      {isCreator ? (
+        <EarningsDialog control={control} />
+      ) : (
+        <BecomeCreatorDialog control={control} />
+      )}
+    </>
+  )
+}
+
+function WalletMenuItem(): React.ReactNode {
+  const {_} = useLingui()
+  const t = useTheme()
+  const control = useDialogControl()
+  return (
+    <>
+      <MenuItem
+        icon={<Wallet style={[t.atoms.text]} width={iconWidth} />}
+        label={_(msg`Wallet`)}
+        onPress={() => control.open()}
+      />
+      <WalletDialog control={control} />
+    </>
+  )
+}
+
 function MenuItem({icon, label, count, bold, onPress}: MenuItemProps) {
   const t = useTheme()
   return (
@@ -746,8 +795,6 @@ function MenuItem({icon, label, count, bold, onPress}: MenuItemProps) {
 
 function ExtraLinks() {
   const {_} = useLingui()
-  const t = useTheme()
-  const kawaii = useKawaiiMode()
 
   return (
     <View style={[a.flex_col, a.gap_md, a.flex_wrap]}>
@@ -763,19 +810,6 @@ function ExtraLinks() {
         label={_(msg`Privacy Policy`)}>
         <Trans>Privacy Policy</Trans>
       </InlineLinkText>
-      {kawaii && (
-        <Text style={t.atoms.text_contrast_medium}>
-          <Trans>
-            Logo by{' '}
-            <InlineLinkText
-              style={[a.text_md]}
-              to="/profile/sawaratsuki.bsky.social"
-              label="@sawaratsuki.bsky.social">
-              @sawaratsuki.bsky.social
-            </InlineLinkText>
-          </Trans>
-        </Text>
-      )}
     </View>
   )
 }

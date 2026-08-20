@@ -22,7 +22,7 @@ import {PaperPlane_Stroke2_Corner0_Rounded as Send} from '#/components/icons/Pap
 import * as Menu from '#/components/Menu'
 import {useAgeAssurance} from '#/ageAssurance'
 import {useAnalytics} from '#/analytics'
-import {IS_WEB} from '#/env'
+import {EMBED_ENABLED, IS_WEB} from '#/env'
 import {useDevMode} from '#/storage/hooks/dev-mode'
 import {type ShareMenuItemsProps} from './ShareMenuItems.types'
 
@@ -72,7 +72,8 @@ let ShareMenuItems = ({
     })
   }
 
-  const canEmbed = IS_WEB && gtMobile && !hideInPWI
+  // Humming: EMBED_ENABLED is default-off, the embed snippet cannot work here
+  const canEmbed = EMBED_ENABLED && IS_WEB && gtMobile && !hideInPWI
 
   const onShareATURI = () => {
     shareText(postUri)

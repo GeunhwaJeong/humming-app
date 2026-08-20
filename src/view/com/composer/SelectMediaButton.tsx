@@ -22,7 +22,7 @@ import {Button} from '#/components/Button'
 import {useSheetWrapper} from '#/components/Dialog/sheet-wrapper'
 import {Image_Stroke2_Corner0_Rounded as ImageIcon} from '#/components/icons/Image'
 import * as toast from '#/components/Toast'
-import {IS_NATIVE, IS_WEB} from '#/env'
+import {IS_NATIVE, IS_WEB, VIDEO_UPLOAD_ENABLED} from '#/env'
 import {isAnimatedGif} from './videos/isAnimatedGif'
 import {hasWebCodecs} from './videos/metadata'
 
@@ -262,6 +262,13 @@ async function processImagePickerAssets(
     const {success, type, mimeType} = await classifyImagePickerAsset(asset)
 
     if (!success) {
+      errors.add(SelectedAssetError.Unsupported)
+      continue
+    }
+
+    // Humming: videos (and device GIFs, which upload as video) are disabled
+    // until video is self-hosted; see VIDEO_UPLOAD_ENABLED.
+    if (!VIDEO_UPLOAD_ENABLED && (type === 'video' || type === 'gif')) {
       errors.add(SelectedAssetError.Unsupported)
       continue
     }

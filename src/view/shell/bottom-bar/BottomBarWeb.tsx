@@ -45,6 +45,7 @@ import {
 import {Text} from '#/components/Typography'
 import {useAgeAssurance} from '#/ageAssurance'
 import {useAnalytics} from '#/analytics'
+import {CHAT_ENABLED} from '#/env'
 import {styles} from './BottomBarStyles'
 
 type NavItemValue = 'home' | 'search' | 'chat' | 'notifications' | 'profile'
@@ -127,33 +128,35 @@ export function BottomBarWeb() {
 
             {hasSession && (
               <>
-                <NavItem
-                  routeName="Messages"
-                  href="/messages"
-                  navItem="chat"
-                  notificationCount={
-                    aa.flags.chatDisabled
-                      ? undefined
-                      : unreadMessageCount.numUnread
-                  }
-                  hasNew={
-                    aa.flags.chatDisabled ? false : unreadMessageCount.hasNew
-                  }>
-                  {({isActive}) => {
-                    const Icon = isActive ? MessageFilled : Message
-                    return (
-                      <Icon
-                        aria-hidden={true}
-                        width={iconWidth - 1}
-                        style={[
-                          styles.ctrlIcon,
-                          t.atoms.text,
-                          styles.messagesIcon,
-                        ]}
-                      />
-                    )
-                  }}
-                </NavItem>
+                {CHAT_ENABLED && (
+                  <NavItem
+                    routeName="Messages"
+                    href="/messages"
+                    navItem="chat"
+                    notificationCount={
+                      aa.flags.chatDisabled
+                        ? undefined
+                        : unreadMessageCount.numUnread
+                    }
+                    hasNew={
+                      aa.flags.chatDisabled ? false : unreadMessageCount.hasNew
+                    }>
+                    {({isActive}) => {
+                      const Icon = isActive ? MessageFilled : Message
+                      return (
+                        <Icon
+                          aria-hidden={true}
+                          width={iconWidth - 1}
+                          style={[
+                            styles.ctrlIcon,
+                            t.atoms.text,
+                            styles.messagesIcon,
+                          ]}
+                        />
+                      )
+                    }}
+                  </NavItem>
+                )}
                 <NavItem
                   routeName="Notifications"
                   href="/notifications"

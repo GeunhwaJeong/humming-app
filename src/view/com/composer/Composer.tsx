@@ -126,6 +126,7 @@ import {atoms as a, native, useBreakpoints, useTheme, web} from '#/alf'
 import {Admonition} from '#/components/Admonition'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as EmojiPicker from '#/components/EmojiPicker'
+import {parseHaneulToGeunhwa} from '#/components/humming/api'
 import {PaywallButton} from '#/components/humming/PaywallButton'
 import {CircleInfo_Stroke2_Corner0_Rounded as CircleInfoIcon} from '#/components/icons/CircleInfo'
 import {EmojiArc_Stroke2_Corner0_Rounded as EmojiSmileIcon} from '#/components/icons/Emoji'
@@ -137,12 +138,14 @@ import * as Toast from '#/components/Toast'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 import {
+  GIF_PICKER_ENABLED,
   IS_ANDROID,
   IS_IOS,
   IS_LIQUID_GLASS,
   IS_NATIVE,
   IS_WEB,
   IS_WEB_SAFARI,
+  VIDEO_UPLOAD_ENABLED,
 } from '#/env'
 import {type Gif} from '#/features/gifPicker/types'
 import {BottomSheetPortalProvider} from '../../../../modules/bottom-sheet'
@@ -389,6 +392,12 @@ export const ComposePost = ({
 
   const selectVideo = useCallback(
     async (postId: string, asset: ImagePickerAsset) => {
+      // Humming: video upload is disabled until self-hosted; this also covers
+      // the share-extension and web paste paths that bypass the media picker.
+      if (!VIDEO_UPLOAD_ENABLED) {
+        setError(l`Video uploads are not available yet.`)
+        return
+      }
       /*
        * Share-extension deeplinks deliver a video URI without duration, so
        * probe before we decide whether to compress. The picker and web paste
@@ -1051,7 +1060,7 @@ export const ComposePost = ({
           onStateChange: setPublishingStage,
           langs: currentLanguages,
           paywallGeunhwa: paywallHaneul
-            ? Math.round(Number(paywallHaneul) * 1_000_000_000)
+            ? (parseHaneulToGeunhwa(paywallHaneul) ?? undefined)
             : undefined,
         })
       ).uris[0]
@@ -2251,7 +2260,11 @@ function ComposerFooter({
                 }
                 onAdd={onImageAdd}
               />
-              <SelectGifBtn onSelectGif={onSelectGif} disabled={!!media} />
+              {/* Humming: the GIF picker queries Bluesky's GIF proxy, so it
+                  stays hidden until GIF_PICKER_ENABLED points elsewhere. */}
+              {GIF_PICKER_ENABLED && (
+                <SelectGifBtn onSelectGif={onSelectGif} disabled={!!media} />
+              )}
               {/* Humming: 열람 설정 — 단건 가격이 글과 같은 tx로 온체인 확정 */}
               <PaywallButton
                 valueHaneul={paywallHaneul}

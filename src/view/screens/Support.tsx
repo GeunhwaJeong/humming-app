@@ -2,7 +2,7 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
-import {HELP_DESK_URL} from '#/lib/constants'
+import {HELP_DESK_URL, SUPPORT_EMAIL} from '#/lib/constants'
 import {usePalette} from '#/lib/hooks/usePalette'
 import {
   type CommonNavigatorParams,
@@ -29,13 +29,13 @@ export const SupportScreen = (_props: Props) => {
         </Text>
         <Text style={[pal.text, s.p20]}>
           <Trans>
-            The support form has been moved. If you need help, please{' '}
+            If you need help, please email us at{' '}
             <TextLink
               href={HELP_DESK_URL}
-              text={_(msg`click here`)}
+              text={SUPPORT_EMAIL}
               style={pal.link}
             />{' '}
-            or visit {HELP_DESK_URL} to get in touch with us.
+            and we will get back to you.
           </Trans>
         </Text>
       </CenteredView>

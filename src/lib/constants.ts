@@ -22,23 +22,18 @@ export const BSKY_SERVICE = HUMMING_SERVICE
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
 export const PUBLIC_BSKY_SERVICE = HUMMING_SERVICE
 export const DEFAULT_SERVICE = HUMMING_SERVICE
-const HELP_DESK_LANG = 'en-us'
-export const HELP_DESK_URL = `https://blueskyweb.zendesk.com/hc/${HELP_DESK_LANG}`
+// Humming: support requests go to our own mailbox. Never link to Bluesky's
+// Zendesk, and never put user data (email/handle) in support URL params.
+export const SUPPORT_EMAIL = 'support@humming.social'
+export const HELP_DESK_URL = `mailto:${SUPPORT_EMAIL}`
 export const CHAT_SERVICE = 'https://api.bsky.chat'
 export const EMBED_SERVICE = 'https://embed.bsky.app'
 export const EMBED_SCRIPT = `${EMBED_SERVICE}/static/embed.js`
-export const BSKY_DOWNLOAD_URL = 'https://bsky.app/download'
+// Humming: internal /download links share our web app itself, there is no
+// separate store listing yet.
+export const BSKY_DOWNLOAD_URL = HUMMING_APP_HOST
 export const STARTER_PACK_MAX_SIZE = 150
 export const CARD_ASPECT_RATIO = 1200 / 630
-
-// HACK
-// Yes, this is exactly what it looks like. It's a hard-coded constant
-// reflecting the number of new users in the last week. We don't have
-// time to add a route to the servers for this so we're just going to hard
-// code and update this number with each release until we can get the
-// server route done.
-// -prf
-export const JOINED_THIS_WEEK = 560000 // estimate as of 12/18/24
 
 export const DISCOVER_DEBUG_DIDS: Record<string, true> = {
   'did:plc:oisofpd7lj26yvgiivf3lxsi': true, // hailey.at
@@ -51,23 +46,7 @@ export const DISCOVER_DEBUG_DIDS: Record<string, true> = {
   'did:plc:2dzyut5lxna5ljiaasgeuffz': true, // darrin.bsky.team
 }
 
-const BASE_FEEDBACK_FORM_URL = `${HELP_DESK_URL}/requests/new`
-export function FEEDBACK_FORM_URL({
-  email,
-  handle,
-}: {
-  email?: string
-  handle?: string
-}): string {
-  let str = BASE_FEEDBACK_FORM_URL
-  if (email) {
-    str += `?tf_anonymous_requester_email=${encodeURIComponent(email)}`
-    if (handle) {
-      str += `&tf_17205412673421=${encodeURIComponent(handle)}`
-    }
-  }
-  return str
-}
+export const FEEDBACK_FORM_URL = HELP_DESK_URL
 
 export const MAX_DISPLAY_NAME = 64
 export const MAX_DESCRIPTION = 256
@@ -129,8 +108,6 @@ export const LINK_META_PROXY_URL: string =
 export function LINK_META_PROXY(_serviceUrl: string) {
   return LINK_META_PROXY_URL
 }
-
-export const STATUS_PAGE_URL = 'https://status.bsky.app/'
 
 // Hitslop constants
 export const createHitslop = (size: number): Insets => ({
@@ -218,21 +195,6 @@ export type SupportedMimeTypes = (typeof SUPPORTED_MIME_TYPES)[number]
 
 export const EMOJI_REACTION_LIMIT = 5
 
-export const urls = {
-  website: {
-    blog: {
-      findFriendsAnnouncement:
-        'https://bsky.social/about/blog/12-16-2025-find-friends',
-      initialVerificationAnnouncement: `https://bsky.social/about/blog/04-21-2025-verification`,
-      searchTipsAndTricks: 'https://bsky.social/about/blog/05-31-2024-search',
-    },
-    support: {
-      findFriendsPrivacyPolicy:
-        'https://bsky.social/about/support/find-friends-privacy-policy',
-    },
-  },
-}
-
 export const PUBLIC_APPVIEW = 'https://api.bsky.app'
 export const PUBLIC_APPVIEW_DID = 'did:web:api.bsky.app'
 export const PUBLIC_STAGING_APPVIEW_DID = 'did:web:api.staging.bsky.dev'
@@ -261,11 +223,4 @@ export const BLUESKY_MOD_SERVICE_HEADERS = {
 
 export const BLUESKY_NOTIF_SERVICE_HEADERS = {
   'atproto-proxy': `${BLUESKY_PROXY_DID}#bsky_notif`,
-}
-
-export const webLinks = {
-  tos: `https://bsky.social/about/support/tos`,
-  privacy: `https://bsky.social/about/support/privacy-policy`,
-  community: `https://bsky.social/about/support/community-guidelines`,
-  communityDeprecated: `https://bsky.social/about/support/community-guidelines-deprecated`,
 }

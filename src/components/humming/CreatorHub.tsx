@@ -14,11 +14,10 @@ import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
 import * as TextField from '#/components/forms/TextField'
-import {Check_Stroke2_Corner0_Rounded as CheckIcon} from '#/components/icons/Check'
 import {Sparkle_Stroke2_Corner0_Rounded as SparkleIcon} from '#/components/icons/Sparkle'
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
-import {formatHaneul, GEUNHWA_PER_HANEUL, type LockMode} from './api'
+import {formatHaneul, type LockMode, parseHaneulToGeunhwa} from './api'
 import {useBecomeCreatorMutation, useEarnings} from './hooks'
 
 const LOCK_MODES: {
@@ -101,7 +100,7 @@ export function CreatorNavItem({minimal}: {minimal: boolean}) {
   )
 }
 
-/** 전환 온보딩: KYC 동의(스텁) → 구독료 → 잠금 모드 → 온체인 확정 한 번. */
+/** 전환 온보딩: 구독료 → 잠금 모드 → 온체인 확정 한 번. (신원 인증은 예정) */
 export function BecomeCreatorDialog({
   control,
 }: {
@@ -109,17 +108,19 @@ export function BecomeCreatorDialog({
 }) {
   const {_, i18n} = useLingui()
   const t = useTheme()
-  const [kycAgreed, setKycAgreed] = useState(false)
   const [price, setPrice] = useState('1')
   const [lockMode, setLockMode] = useState<LockMode>('tease')
   const mutation = useBecomeCreatorMutation()
 
-  const priceGeunhwa = Math.round(Number(price) * GEUNHWA_PER_HANEUL)
+  const priceGeunhwa = parseHaneulToGeunhwa(price)
   const priceValid =
-    priceGeunhwa >= 10_000_000 && priceGeunhwa <= 100_000_000_000
-  const canSubmit = kycAgreed && priceValid && !mutation.isPending
+    priceGeunhwa !== null &&
+    priceGeunhwa >= 10_000_000 &&
+    priceGeunhwa <= 100_000_000_000
+  const canSubmit = priceValid && !mutation.isPending
 
   const onSubmit = () => {
+    if (priceGeunhwa === null) return
     mutation.mutate(
       {priceGeunhwa, periodDays: 30, lockMode},
       {onSuccess: () => control.close()},
@@ -148,7 +149,8 @@ export function BecomeCreatorDialog({
             </Text>
           </View>
 
-          {/* ① KYC — 의도적 오프체인. 데모에서는 동의 즉시 통과, 통과 시 인증 배지 */}
+          {/* ① 신원 인증: 아직 실제 검증이 없으므로 배지를 주장하지 않는
+              정직한 비활성 상태. 실제 KYC가 연결되면 여기서 활성화한다. */}
           <View style={[a.gap_sm]}>
             <Text
               style={[
@@ -159,21 +161,22 @@ export function BecomeCreatorDialog({
               <Trans>1. Identity verification</Trans>
             </Text>
             <Button
-              label={_(msg`Verify your identity`)}
+              label={_(msg`Identity verification coming soon`)}
               size="large"
               variant="solid"
-              color={kycAgreed ? 'secondary' : 'primary'}
-              onPress={() => setKycAgreed(v => !v)}
-              testID="hummingKycAgree">
-              {kycAgreed && <ButtonIcon icon={CheckIcon} />}
+              color="secondary"
+              disabled
+              testID="hummingKycComingSoon">
               <ButtonText>
-                {kycAgreed ? (
-                  <Trans>Identity verified (badge issued)</Trans>
-                ) : (
-                  <Trans>Verify your identity (KYC)</Trans>
-                )}
+                <Trans>Verification coming soon</Trans>
               </ButtonText>
             </Button>
+            <Text style={[a.text_xs, t.atoms.text_contrast_medium]}>
+              <Trans>
+                Identity verification is not available yet. You can become a
+                creator now and verify later to receive a badge.
+              </Trans>
+            </Text>
           </View>
 
           {/* ② 티어 가격 — subscriptions::create 인자 */}
@@ -252,7 +255,7 @@ export function BecomeCreatorDialog({
               {mutation.isPending ? (
                 <Trans>Confirming on-chain…</Trans>
               ) : (
-                <Trans>Convert — {priceLabel} / 30 days</Trans>
+                <Trans>Convert: {priceLabel} / 30 days</Trans>
               )}
             </ButtonText>
           </Button>

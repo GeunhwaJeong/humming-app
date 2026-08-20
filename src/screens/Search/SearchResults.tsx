@@ -3,7 +3,6 @@ import {ActivityIndicator, View} from 'react-native'
 import {type AppBskyFeedDefs} from '@atproto/api'
 import {Trans, useLingui} from '@lingui/react/macro'
 
-import {urls} from '#/lib/constants'
 import {usePostViewTracking} from '#/lib/hooks/usePostViewTracking'
 import {useCallOnce} from '#/lib/once'
 import {cleanError} from '#/lib/strings/errors'
@@ -192,7 +191,6 @@ function NoResultsText({
   query: string
 }) {
   const t = useTheme()
-  const {t: l} = useLingui()
 
   return (
     <>
@@ -230,28 +228,6 @@ function NoResultsText({
         ) : (
           <Trans>Try a different search term.</Trans>
         )}
-      </Text>
-      {'\n\n'}
-      <Text
-        style={[
-          a.mt_lg,
-          a.text_md,
-          a.leading_snug,
-          t.atoms.text_contrast_high,
-        ]}>
-        <Trans context="english-only-resource">
-          Learn more about{' '}
-          <InlineLinkText
-            label={l({
-              message: 'Read about how to use advanced search filters',
-              context: 'english-only-resource',
-            })}
-            to={urls.website.blog.searchTipsAndTricks}
-            style={[a.text_md, a.leading_snug]}>
-            how to use advanced search
-          </InlineLinkText>
-          .
-        </Trans>
       </Text>
     </>
   )

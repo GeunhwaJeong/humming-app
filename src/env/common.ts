@@ -106,6 +106,39 @@ export const GROWTHBOOK_CLIENT_KEY: string =
   process.env.EXPO_PUBLIC_GROWTHBOOK_CLIENT_KEY || ''
 
 /**
+ * Whether the composer offers video attachment. Humming: off by default,
+ * uploads would go to Bluesky's video service (video.bsky.app), which leaks
+ * user metadata and fails against our facade anyway. Enable once video is
+ * self-hosted.
+ */
+export const VIDEO_UPLOAD_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_VIDEO_UPLOAD_ENABLED === 'true'
+
+/**
+ * Whether the composer offers the external GIF picker. Humming: off by
+ * default, the picker queries Bluesky's GIF proxy (gifs.bsky.app).
+ */
+export const GIF_PICKER_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_GIF_PICKER_ENABLED === 'true'
+
+/**
+ * Whether direct messages are offered in the UI. Humming: off by default,
+ * the chat backend (api.bsky.chat) does not exist for our network. Nav
+ * entries are hidden; the /messages routes stay registered so nothing
+ * crashes if the flag flips.
+ */
+export const CHAT_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_CHAT_ENABLED === 'true'
+
+/**
+ * Whether the "Embed post" menu option is offered. Humming: off by default,
+ * the generated snippet loads embed.bsky.app's script and cannot render
+ * Humming posts.
+ */
+export const EMBED_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_EMBED_ENABLED === 'true'
+
+/**
  * Sentry DSN for telemetry
  */
 export const SENTRY_DSN: string | undefined = process.env.EXPO_PUBLIC_SENTRY_DSN
