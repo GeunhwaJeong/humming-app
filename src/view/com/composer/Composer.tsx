@@ -137,12 +137,14 @@ import * as Toast from '#/components/Toast'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 import {
+  GIF_PICKER_ENABLED,
   IS_ANDROID,
   IS_IOS,
   IS_LIQUID_GLASS,
   IS_NATIVE,
   IS_WEB,
   IS_WEB_SAFARI,
+  VIDEO_UPLOAD_ENABLED,
 } from '#/env'
 import {type Gif} from '#/features/gifPicker/types'
 import {BottomSheetPortalProvider} from '../../../../modules/bottom-sheet'
@@ -389,6 +391,12 @@ export const ComposePost = ({
 
   const selectVideo = useCallback(
     async (postId: string, asset: ImagePickerAsset) => {
+      // Humming: video upload is disabled until self-hosted; this also covers
+      // the share-extension and web paste paths that bypass the media picker.
+      if (!VIDEO_UPLOAD_ENABLED) {
+        setError(l`Video uploads are not available yet.`)
+        return
+      }
       /*
        * Share-extension deeplinks deliver a video URI without duration, so
        * probe before we decide whether to compress. The picker and web paste
@@ -2251,7 +2259,11 @@ function ComposerFooter({
                 }
                 onAdd={onImageAdd}
               />
-              <SelectGifBtn onSelectGif={onSelectGif} disabled={!!media} />
+              {/* Humming: the GIF picker queries Bluesky's GIF proxy, so it
+                  stays hidden until GIF_PICKER_ENABLED points elsewhere. */}
+              {GIF_PICKER_ENABLED && (
+                <SelectGifBtn onSelectGif={onSelectGif} disabled={!!media} />
+              )}
               {/* Humming: 열람 설정 — 단건 가격이 글과 같은 tx로 온체인 확정 */}
               <PaywallButton
                 valueHaneul={paywallHaneul}

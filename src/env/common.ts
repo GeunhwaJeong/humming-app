@@ -106,6 +106,22 @@ export const GROWTHBOOK_CLIENT_KEY: string =
   process.env.EXPO_PUBLIC_GROWTHBOOK_CLIENT_KEY || ''
 
 /**
+ * Whether the composer offers video attachment. Humming: off by default,
+ * uploads would go to Bluesky's video service (video.bsky.app), which leaks
+ * user metadata and fails against our facade anyway. Enable once video is
+ * self-hosted.
+ */
+export const VIDEO_UPLOAD_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_VIDEO_UPLOAD_ENABLED === 'true'
+
+/**
+ * Whether the composer offers the external GIF picker. Humming: off by
+ * default, the picker queries Bluesky's GIF proxy (gifs.bsky.app).
+ */
+export const GIF_PICKER_ENABLED: boolean =
+  process.env.EXPO_PUBLIC_GIF_PICKER_ENABLED === 'true'
+
+/**
  * Sentry DSN for telemetry
  */
 export const SENTRY_DSN: string | undefined = process.env.EXPO_PUBLIC_SENTRY_DSN

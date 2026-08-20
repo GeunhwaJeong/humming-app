@@ -22,8 +22,10 @@ export const BSKY_SERVICE = HUMMING_SERVICE
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
 export const PUBLIC_BSKY_SERVICE = HUMMING_SERVICE
 export const DEFAULT_SERVICE = HUMMING_SERVICE
-const HELP_DESK_LANG = 'en-us'
-export const HELP_DESK_URL = `https://blueskyweb.zendesk.com/hc/${HELP_DESK_LANG}`
+// Humming: support requests go to our own mailbox. Never link to Bluesky's
+// Zendesk, and never put user data (email/handle) in support URL params.
+export const SUPPORT_EMAIL = 'support@humming.social'
+export const HELP_DESK_URL = `mailto:${SUPPORT_EMAIL}`
 export const CHAT_SERVICE = 'https://api.bsky.chat'
 export const EMBED_SERVICE = 'https://embed.bsky.app'
 export const EMBED_SCRIPT = `${EMBED_SERVICE}/static/embed.js`
@@ -51,23 +53,7 @@ export const DISCOVER_DEBUG_DIDS: Record<string, true> = {
   'did:plc:2dzyut5lxna5ljiaasgeuffz': true, // darrin.bsky.team
 }
 
-const BASE_FEEDBACK_FORM_URL = `${HELP_DESK_URL}/requests/new`
-export function FEEDBACK_FORM_URL({
-  email,
-  handle,
-}: {
-  email?: string
-  handle?: string
-}): string {
-  let str = BASE_FEEDBACK_FORM_URL
-  if (email) {
-    str += `?tf_anonymous_requester_email=${encodeURIComponent(email)}`
-    if (handle) {
-      str += `&tf_17205412673421=${encodeURIComponent(handle)}`
-    }
-  }
-  return str
-}
+export const FEEDBACK_FORM_URL = HELP_DESK_URL
 
 export const MAX_DISPLAY_NAME = 64
 export const MAX_DESCRIPTION = 256
@@ -261,11 +247,4 @@ export const BLUESKY_MOD_SERVICE_HEADERS = {
 
 export const BLUESKY_NOTIF_SERVICE_HEADERS = {
   'atproto-proxy': `${BLUESKY_PROXY_DID}#bsky_notif`,
-}
-
-export const webLinks = {
-  tos: `https://bsky.social/about/support/tos`,
-  privacy: `https://bsky.social/about/support/privacy-policy`,
-  community: `https://bsky.social/about/support/community-guidelines`,
-  communityDeprecated: `https://bsky.social/about/support/community-guidelines-deprecated`,
 }

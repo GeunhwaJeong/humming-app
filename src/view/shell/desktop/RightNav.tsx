@@ -45,7 +45,7 @@ function useWebQueryParams() {
 export function DesktopRightNav({routeName}: {routeName: string}) {
   const t = useTheme()
   const {_} = useLingui()
-  const {hasSession, currentAccount} = useSession()
+  const {hasSession} = useSession()
   const kawaii = useKawaiiMode()
   const gutters = useGutters(['base', 0, 'base', 'wide'])
   const isSearchScreen = routeName === 'Search'
@@ -101,10 +101,7 @@ export function DesktopRightNav({routeName}: {routeName: string}) {
         {hasSession && (
           <>
             <InlineLinkText
-              to={FEEDBACK_FORM_URL({
-                email: currentAccount?.email,
-                handle: currentAccount?.handle,
-              })}
+              to={FEEDBACK_FORM_URL}
               style={[t.atoms.text_contrast_medium]}
               label={_(msg`Feedback`)}>
               {_(msg`Feedback`)}
