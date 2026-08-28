@@ -13,7 +13,11 @@ export const CURRENCY: 'USD' | 'HANEUL' =
 export const GEUNHWA_PER_HANEUL = CURRENCY === 'USD' ? 1_000_000 : 1_000_000_000
 // Unit label for static form copy ("price (USD)"); formatted amounts carry
 // their own symbol via formatHaneul.
-export const CURRENCY_LABEL = CURRENCY === 'USD' ? 'USD' : 'HANEUL'
+export const CURRENCY_LABEL = CURRENCY === 'USD' ? '$' : 'HANEUL'
+// Price bounds in base units (0.01 to 100 display units) — shared by the
+// creator tier and paywall forms so validation follows the coin's decimals.
+export const PRICE_MIN_GEUNHWA = GEUNHWA_PER_HANEUL / 100
+export const PRICE_MAX_GEUNHWA = 100 * GEUNHWA_PER_HANEUL
 
 export interface CreatorInfo {
   tier: {id: string; price: number; periodMs: number} | null
@@ -95,7 +99,7 @@ async function callFacade<T>(
         : `${nsid} failed (${res.status})`
     if (/insufficient/i.test(message)) {
       throw new Error(
-        `Insufficient balance in your wallet. Top up ${CURRENCY_LABEL} and try again.`,
+        'Insufficient balance in your wallet. Top it up and try again.',
       )
     }
     throw new Error(message)

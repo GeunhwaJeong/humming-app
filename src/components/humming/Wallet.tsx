@@ -29,12 +29,7 @@ import {Wallet_Stroke2_Corner0_Rounded as WalletIcon} from '#/components/icons/W
 import {Loader} from '#/components/Loader'
 import * as Toast from '#/components/Toast'
 import {Text} from '#/components/Typography'
-import {
-  CURRENCY_LABEL,
-  formatHaneul,
-  shortenAddress,
-  type WalletActivityItem,
-} from './api'
+import {formatHaneul, shortenAddress, type WalletActivityItem} from './api'
 import {useWalletInfo} from './hooks'
 
 const KIND_LABEL: Record<string, MessageDescriptor> = {
@@ -227,7 +222,7 @@ function HomeView({
 
       {/* 받기 — 유일한 액션. 보내기는 패스키(비수탁) 전환 후에 생긴다 */}
       <Button
-        label={_(msg`Receive ${CURRENCY_LABEL}`)}
+        label={_(msg`Receive funds`)}
         size="large"
         variant="solid"
         color="primary"
@@ -249,9 +244,9 @@ function HomeView({
           </Text>
           <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
             <Trans>
-              A wallet was created for you the moment you signed up. Send{' '}
-              {CURRENCY_LABEL} to your address from an exchange or another
-              wallet to subscribe, tip, and unlock posts.
+              A wallet was created for you the moment you signed up. Send funds
+              to your address from an exchange or another wallet to subscribe,
+              tip, and unlock posts.
             </Trans>
           </Text>
         </View>
@@ -356,7 +351,7 @@ function ReceiveView({
           <ButtonIcon icon={ChevronLeftIcon} />
         </Button>
         <Text style={[a.text_xl, a.font_semi_bold]}>
-          <Trans>Receive {CURRENCY_LABEL}</Trans>
+          <Trans>Receive funds</Trans>
         </Text>
       </View>
 
@@ -448,8 +443,8 @@ function ReceiveView({
         <CircleInfoIcon size="sm" style={[t.atoms.text_contrast_medium]} />
         <Text style={[a.flex_1, a.text_sm, t.atoms.text_contrast_medium]}>
           <Trans>
-            Use this address to receive {CURRENCY_LABEL} — from an exchange or
-            any other wallet.
+            Use this address to receive funds — from an exchange or any other
+            wallet.
           </Trans>
         </Text>
       </View>

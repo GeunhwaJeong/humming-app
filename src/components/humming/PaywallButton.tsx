@@ -13,7 +13,13 @@ import * as Dialog from '#/components/Dialog'
 import * as TextField from '#/components/forms/TextField'
 import {Lock_Stroke2_Corner0_Rounded as LockIcon} from '#/components/icons/Lock'
 import {Text} from '#/components/Typography'
-import {CURRENCY_LABEL, parseHaneulToGeunhwa} from './api'
+import {
+  CURRENCY,
+  CURRENCY_LABEL,
+  parseHaneulToGeunhwa,
+  PRICE_MAX_GEUNHWA,
+  PRICE_MIN_GEUNHWA,
+} from './api'
 
 export function PaywallButton({
   valueHaneul,
@@ -30,8 +36,8 @@ export function PaywallButton({
   const draftGeunhwa = parseHaneulToGeunhwa(draft)
   const draftValid =
     draftGeunhwa !== null &&
-    draftGeunhwa >= 10_000_000 &&
-    draftGeunhwa <= 100_000_000_000
+    draftGeunhwa >= PRICE_MIN_GEUNHWA &&
+    draftGeunhwa <= PRICE_MAX_GEUNHWA
   const isSet = valueHaneul !== null
 
   return (
@@ -40,7 +46,9 @@ export function PaywallButton({
         style={a.p_sm}
         label={
           isSet
-            ? _(msg`Paid post (${valueHaneul} ${CURRENCY_LABEL})`)
+            ? CURRENCY === 'USD'
+              ? _(msg`Paid post ($${valueHaneul})`)
+              : _(msg`Paid post (${valueHaneul} HANEUL)`)
             : _(msg`Viewing access`)
         }
         variant="ghost"
@@ -89,9 +97,11 @@ export function PaywallButton({
               </TextField.Root>
               {!draftValid && draft !== '' && (
                 <Text style={[a.text_sm, {color: t.palette.negative_500}]}>
-                  <Trans>
-                    Enter a price between 0.01 and 100 {CURRENCY_LABEL}
-                  </Trans>
+                  {CURRENCY === 'USD' ? (
+                    <Trans>Enter a price between $0.01 and $100</Trans>
+                  ) : (
+                    <Trans>Enter a price between 0.01 and 100 HANEUL</Trans>
+                  )}
                 </Text>
               )}
             </View>
@@ -126,9 +136,11 @@ export function PaywallButton({
                 }}
                 testID="hummingPaywallApply">
                 <ButtonText>
-                  <Trans>
-                    Set as paid: {draft} {CURRENCY_LABEL}
-                  </Trans>
+                  {CURRENCY === 'USD' ? (
+                    <Trans>Set as paid: ${draft}</Trans>
+                  ) : (
+                    <Trans>Set as paid: {draft} HANEUL</Trans>
+                  )}
                 </ButtonText>
               </Button>
             </View>

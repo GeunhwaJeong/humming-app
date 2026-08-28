@@ -18,10 +18,13 @@ import {Sparkle_Stroke2_Corner0_Rounded as SparkleIcon} from '#/components/icons
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
 import {
+  CURRENCY,
   CURRENCY_LABEL,
   formatHaneul,
   type LockMode,
   parseHaneulToGeunhwa,
+  PRICE_MAX_GEUNHWA,
+  PRICE_MIN_GEUNHWA,
 } from './api'
 import {useBecomeCreatorMutation, useEarnings} from './hooks'
 
@@ -120,8 +123,8 @@ export function BecomeCreatorDialog({
   const priceGeunhwa = parseHaneulToGeunhwa(price)
   const priceValid =
     priceGeunhwa !== null &&
-    priceGeunhwa >= 10_000_000 &&
-    priceGeunhwa <= 100_000_000_000
+    priceGeunhwa >= PRICE_MIN_GEUNHWA &&
+    priceGeunhwa <= PRICE_MAX_GEUNHWA
   const canSubmit = priceValid && !mutation.isPending
 
   const onSubmit = () => {
@@ -209,9 +212,11 @@ export function BecomeCreatorDialog({
             </TextField.Root>
             {!priceValid && price !== '' && (
               <Text style={[a.text_sm, {color: t.palette.negative_500}]}>
-                <Trans>
-                  Enter a price between 0.01 and 100 {CURRENCY_LABEL}
-                </Trans>
+                {CURRENCY === 'USD' ? (
+                  <Trans>Enter a price between $0.01 and $100</Trans>
+                ) : (
+                  <Trans>Enter a price between 0.01 and 100 HANEUL</Trans>
+                )}
               </Text>
             )}
           </View>
