@@ -18,6 +18,7 @@ import {Sparkle_Stroke2_Corner0_Rounded as SparkleIcon} from '#/components/icons
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
 import {
+  creatorSharePercent,
   CURRENCY,
   CURRENCY_LABEL,
   formatHaneul,
@@ -57,6 +58,11 @@ export function CreatorNavItem({minimal}: {minimal: boolean}) {
   const {data: earnings} = useEarnings()
   const control = Dialog.useDialogControl()
   const isCreator = !!earnings?.isCreator
+  // The fee is on-chain state, so the share is unknown until the facade has
+  // answered; render the subtitle only once it is known rather than flashing
+  // a placeholder number.
+  const sharePct =
+    earnings?.feeBps != null ? creatorSharePercent(earnings.feeBps) : null
 
   return (
     <>
@@ -91,9 +97,9 @@ export function CreatorNavItem({minimal}: {minimal: boolean}) {
                 <Trans>Become a creator</Trans>
               )}
             </Text>
-            {!isCreator && (
+            {!isCreator && sharePct !== null && (
               <Text style={[a.text_xs, t.atoms.text_contrast_medium]}>
-                <Trans>Keep 95% of what you earn</Trans>
+                <Trans>Keep {sharePct}% of what you earn</Trans>
               </Text>
             )}
           </View>
@@ -119,6 +125,11 @@ export function BecomeCreatorDialog({
   const [price, setPrice] = useState('1')
   const [lockMode, setLockMode] = useState<LockMode>('tease')
   const mutation = useBecomeCreatorMutation()
+  // Shares the cached earnings query with the nav item; only `feeBps` is
+  // read here.
+  const {data: earnings} = useEarnings()
+  const sharePct =
+    earnings?.feeBps != null ? creatorSharePercent(earnings.feeBps) : null
 
   const priceGeunhwa = parseHaneulToGeunhwa(price)
   const priceValid =
@@ -149,11 +160,19 @@ export function BecomeCreatorDialog({
               <Trans>Become a creator</Trans>
             </Text>
             <Text style={[a.text_md, t.atoms.text_contrast_medium]}>
-              <Trans>
-                95% of every subscription settles straight to your Haneul
-                wallet. No payout queue, no withdrawal request — the money
-                arrives on-chain the moment a fan pays.
-              </Trans>
+              {sharePct !== null ? (
+                <Trans>
+                  {sharePct}% of every subscription settles straight to your
+                  wallet. No payout queue, no withdrawal request: the money
+                  arrives on-chain the moment a fan pays.
+                </Trans>
+              ) : (
+                <Trans>
+                  Every subscription settles straight to your wallet. No payout
+                  queue, no withdrawal request: the money arrives on-chain the
+                  moment a fan pays.
+                </Trans>
+              )}
             </Text>
           </View>
 
@@ -308,10 +327,17 @@ export function EarningsDialog({
               <Trans>My earnings</Trans>
             </Text>
             <Text style={[a.text_sm, t.atoms.text_contrast_medium]}>
-              <Trans>
-                Every line is aggregated from Haneul on-chain events (net of the
-                5% platform fee)
-              </Trans>
+              {earnings?.feeBps ? (
+                <Trans>
+                  Every line is aggregated from on-chain events (net of the{' '}
+                  {earnings.feeBps / 100}% platform fee)
+                </Trans>
+              ) : (
+                <Trans>
+                  Every line is aggregated from on-chain events (no platform fee
+                  is taken)
+                </Trans>
+              )}
             </Text>
           </View>
           {isLoading || !earnings ? (

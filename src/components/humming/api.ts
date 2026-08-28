@@ -170,6 +170,17 @@ export interface Earnings {
   items: EarningsItem[]
   tier: {id: string; priceGeunhwa: number; periodMs: number} | null
   isCreator: boolean
+  /** Platform fee in basis points, read from the on-chain FeeConfig. */
+  feeBps: number | null
+}
+
+/**
+ * Creator's share of a payment as a whole percentage (e.g. 100 at a 0 bps
+ * fee, 95 at 500 bps). The fee lives on-chain and can change, so copy that
+ * quotes it must derive from `feeBps` rather than a literal.
+ */
+export function creatorSharePercent(feeBps: number): number {
+  return Math.round((10_000 - feeBps) / 100)
 }
 
 // 티어 생성(+잠금 모드)을 본인 지갑 서명으로 온체인 확정. verified 배지는
