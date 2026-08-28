@@ -13,7 +13,7 @@ import * as Dialog from '#/components/Dialog'
 import * as TextField from '#/components/forms/TextField'
 import {Lock_Stroke2_Corner0_Rounded as LockIcon} from '#/components/icons/Lock'
 import {Text} from '#/components/Typography'
-import {parseHaneulToGeunhwa} from './api'
+import {CURRENCY_LABEL, parseHaneulToGeunhwa} from './api'
 
 export function PaywallButton({
   valueHaneul,
@@ -40,7 +40,7 @@ export function PaywallButton({
         style={a.p_sm}
         label={
           isSet
-            ? _(msg`Paid post (${valueHaneul} HANEUL)`)
+            ? _(msg`Paid post (${valueHaneul} ${CURRENCY_LABEL})`)
             : _(msg`Viewing access`)
         }
         variant="ghost"
@@ -79,7 +79,7 @@ export function PaywallButton({
               <TextField.Root isInvalid={!draftValid && draft !== ''}>
                 <TextField.Input
                   testID="hummingPaywallPrice"
-                  label={_(msg`Price per post (HANEUL)`)}
+                  label={_(msg`Price per post (${CURRENCY_LABEL})`)}
                   value={draft}
                   onChangeText={setDraft}
                   keyboardType="decimal-pad"
@@ -89,7 +89,9 @@ export function PaywallButton({
               </TextField.Root>
               {!draftValid && draft !== '' && (
                 <Text style={[a.text_sm, {color: t.palette.negative_500}]}>
-                  <Trans>Enter a price between 0.01 and 100 HANEUL</Trans>
+                  <Trans>
+                    Enter a price between 0.01 and 100 {CURRENCY_LABEL}
+                  </Trans>
                 </Text>
               )}
             </View>
@@ -124,7 +126,9 @@ export function PaywallButton({
                 }}
                 testID="hummingPaywallApply">
                 <ButtonText>
-                  <Trans>Set as paid: {draft} HANEUL</Trans>
+                  <Trans>
+                    Set as paid: {draft} {CURRENCY_LABEL}
+                  </Trans>
                 </ButtonText>
               </Button>
             </View>

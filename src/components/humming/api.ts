@@ -5,7 +5,15 @@
 import {type AtpAgent} from '@atproto/api'
 import {nanoid} from 'nanoid/non-secure'
 
-export const GEUNHWA_PER_HANEUL = 1_000_000_000
+// Display currency. 'USD' renders money as $1.50 over a 6-decimal payment
+// coin (USDC networks); the default renders whole-coin HANEUL over 9 decimals.
+// Baked at build time like every EXPO_PUBLIC_* value.
+export const CURRENCY: 'USD' | 'HANEUL' =
+  process.env.EXPO_PUBLIC_HUMMING_CURRENCY === 'USD' ? 'USD' : 'HANEUL'
+export const GEUNHWA_PER_HANEUL = CURRENCY === 'USD' ? 1_000_000 : 1_000_000_000
+// Unit label for static form copy ("price (USD)"); formatted amounts carry
+// their own symbol via formatHaneul.
+export const CURRENCY_LABEL = CURRENCY === 'USD' ? 'USD' : 'HANEUL'
 
 export interface CreatorInfo {
   tier: {id: string; price: number; periodMs: number} | null
@@ -16,16 +24,24 @@ export interface CreatorInfo {
 
 export function formatHaneul(geunhwa: number): string {
   // BigInt division avoids float precision loss on large amounts. Up to 4
-  // decimals, trimmed, so a 0.001 HANEUL tip does not display as 0.
+  // decimals, trimmed, so a 0.001 HANEUL tip does not display as 0. USD mode
+  // keeps the conventional two decimals and only extends to show a sub-cent
+  // amount as non-zero.
   const negative = geunhwa < 0
   const abs = BigInt(Math.round(Math.abs(geunhwa)))
   const whole = abs / BigInt(GEUNHWA_PER_HANEUL)
   const remainder = abs % BigInt(GEUNHWA_PER_HANEUL)
-  const frac = (remainder / 100_000n)
+  const fracScale = CURRENCY === 'USD' ? 100n : 100_000n
+  const fracDigits = CURRENCY === 'USD' ? 4 : 4
+  let frac = (remainder / fracScale)
     .toString()
-    .padStart(4, '0')
+    .padStart(fracDigits, '0')
     .replace(/0+$/, '')
   const sign = negative ? '-' : ''
+  if (CURRENCY === 'USD') {
+    if (frac.length < 2) frac = frac.padEnd(2, '0')
+    return `${sign}$${whole}.${frac}`
+  }
   return `${sign}${whole}${frac ? `.${frac}` : ''} HANEUL`
 }
 
@@ -79,7 +95,7 @@ async function callFacade<T>(
         : `${nsid} failed (${res.status})`
     if (/insufficient/i.test(message)) {
       throw new Error(
-        'Insufficient balance in your wallet. Top up HANEUL and try again.',
+        `Insufficient balance in your wallet. Top up ${CURRENCY_LABEL} and try again.`,
       )
     }
     throw new Error(message)

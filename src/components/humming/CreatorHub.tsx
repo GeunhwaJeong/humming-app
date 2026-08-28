@@ -17,7 +17,12 @@ import * as TextField from '#/components/forms/TextField'
 import {Sparkle_Stroke2_Corner0_Rounded as SparkleIcon} from '#/components/icons/Sparkle'
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
-import {formatHaneul, type LockMode, parseHaneulToGeunhwa} from './api'
+import {
+  CURRENCY_LABEL,
+  formatHaneul,
+  type LockMode,
+  parseHaneulToGeunhwa,
+} from './api'
 import {useBecomeCreatorMutation, useEarnings} from './hooks'
 
 const LOCK_MODES: {
@@ -187,12 +192,14 @@ export function BecomeCreatorDialog({
                 a.font_semi_bold,
                 t.atoms.text_contrast_medium,
               ]}>
-              <Trans>2. Monthly subscription price (30 days, HANEUL)</Trans>
+              <Trans>
+                2. Monthly subscription price (30 days, {CURRENCY_LABEL})
+              </Trans>
             </Text>
             <TextField.Root isInvalid={!priceValid && price !== ''}>
               <TextField.Input
                 testID="hummingTierPrice"
-                label={_(msg`Subscription price (HANEUL)`)}
+                label={_(msg`Subscription price (${CURRENCY_LABEL})`)}
                 value={price}
                 onChangeText={setPrice}
                 keyboardType="decimal-pad"
@@ -202,7 +209,9 @@ export function BecomeCreatorDialog({
             </TextField.Root>
             {!priceValid && price !== '' && (
               <Text style={[a.text_sm, {color: t.palette.negative_500}]}>
-                <Trans>Enter a price between 0.01 and 100 HANEUL</Trans>
+                <Trans>
+                  Enter a price between 0.01 and 100 {CURRENCY_LABEL}
+                </Trans>
               </Text>
             )}
           </View>
