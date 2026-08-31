@@ -1,4 +1,8 @@
-import {type IsValidHandle, validateServiceHandle} from '#/lib/strings/handles'
+import {
+  isHummingDid,
+  type IsValidHandle,
+  validateServiceHandle,
+} from '#/lib/strings/handles'
 
 describe('handle validation', () => {
   const valid = [
@@ -39,4 +43,27 @@ describe('handle validation', () => {
       expect(result[expectedError]).toEqual(false)
     },
   )
+})
+
+describe('isHummingDid', () => {
+  const humming = [
+    'did:web:alice.hum.haneul',
+    'did:web:younggg.hum.sui',
+    'did:web:a-1.hum.haneul',
+  ]
+  it.each(humming)('recognises a facade identity: %s', did => {
+    expect(isHummingDid(did)).toEqual(true)
+  })
+
+  const other = [
+    'did:plc:oisofpd7lj26yvgiivf3lxsi',
+    'did:web:alice.bsky.social',
+    'did:web:alice.hum',
+    'did:web:hum.sui',
+    'did:web:alice.hum.sui.evil.com',
+    'did:web:Alice.hum.sui',
+  ]
+  it.each(other)('leaves any other DID to DID-document resolution: %s', did => {
+    expect(isHummingDid(did)).toEqual(false)
+  })
 })

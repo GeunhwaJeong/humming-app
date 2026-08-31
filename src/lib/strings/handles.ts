@@ -28,6 +28,17 @@ export function isInvalidHandle(handle: string): boolean {
   return handle === 'handle.invalid'
 }
 
+/**
+ * Humming identities are `did:web:<name>.hum.<tld>`: the handle domain is
+ * `hum.` plus the chain's TLD on every network the facade serves (`hum.haneul`,
+ * `hum.sui`, ...), so the DID is recognised by that shape rather than by one
+ * hardcoded domain. They live on-chain and resolve through the facade, not
+ * DNS, so no did:web document exists for them.
+ */
+export function isHummingDid(did: string): boolean {
+  return /^did:web:[a-z0-9][a-z0-9-]*\.hum\.[a-z][a-z0-9-]*$/.test(did)
+}
+
 export function sanitizeHandle(
   handle: string,
   prefix = '',

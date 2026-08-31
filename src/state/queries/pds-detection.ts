@@ -9,6 +9,7 @@ import {
 } from '#/lib/constants'
 import {useDebouncedValue} from '#/lib/hooks/useDebouncedValue'
 import {isNetworkError} from '#/lib/strings/errors'
+import {isHummingDid} from '#/lib/strings/handles'
 import {logger} from '#/logger'
 import {STALE} from '#/state/queries'
 import {Agent} from '#/state/session/agent'
@@ -166,9 +167,10 @@ export async function resolvePdsForIdentifier(
       identifier: norm,
       did,
     })
-    // Humming: *.hum.haneul identities live on the Haneul chain and resolve
-    // through the facade, not DNS — did:web documents don't exist for them.
-    if (did.startsWith('did:web:') && did.endsWith('.hum.haneul')) {
+    // Humming identities resolve through the facade, not DNS: no did:web
+    // document exists for them, and a `.well-known` fetch against the bare
+    // handle would fail (or surface as a network error and block sign-in).
+    if (isHummingDid(did)) {
       return {did, pdsUrl: HUMMING_SERVICE}
     }
     const doc = await withResolveTimeout(signal => resolveDidDoc(did, signal))
