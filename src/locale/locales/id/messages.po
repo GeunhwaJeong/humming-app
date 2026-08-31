@@ -1344,8 +1344,8 @@ msgstr "Tambah media ke postingan"
 msgid "Add members"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:528
-#: src/components/moderation/ReportDialog/index.tsx:532
+#: src/components/moderation/ReportDialog/index.tsx:530
+#: src/components/moderation/ReportDialog/index.tsx:534
 msgid "Add more details (optional)"
 msgstr "Tambahkan rincian lengkap (optional)"
 
@@ -1451,7 +1451,7 @@ msgstr "Menambahkan anggota pada daftar..."
 msgid "Additional details (limit 1000 characters)"
 msgstr "Rincian tambahan (batas 1000 karakter)"
 
-#: src/components/moderation/ReportDialog/index.tsx:546
+#: src/components/moderation/ReportDialog/index.tsx:548
 msgid "Additional details (limit 300 characters)"
 msgstr "Rincian tambahan (batas 300 karakter)"
 
@@ -2370,10 +2370,6 @@ msgstr "Pemblokiran bersifat publik. Akun yang diblokir tidak dapat membalas uta
 msgid "Blocking will not prevent labels from being applied on your account, but it will stop this account from replying in your threads or interacting with you."
 msgstr "Memblokir tidak akan mencegah label diterapkan pada akun Anda, tetapi akan menghentikan akun ini untuk membalas atau berinteraksi dengan Anda."
 
-#: src/view/com/auth/SplashScreen.web.tsx:174
-msgid "Blog"
-msgstr "Blog"
-
 #. Advanced search: Examples of hashtags
 #: src/screens/Search/components/AdvancedSearchDialog/hooks.tsx:17
 msgid "bloomscrolling booksky"
@@ -2518,10 +2514,6 @@ msgstr "Jelajahi topik {0}"
 msgid "Browse topic {displayName}"
 msgstr "Jelajahi topik {displayName}"
 
-#: src/view/com/auth/SplashScreen.web.tsx:169
-msgid "Business"
-msgstr "Bisnis"
-
 #: src/screens/Bookmarks.tsx:295
 msgid "Button to go back to the home timeline"
 msgstr ""
@@ -2540,7 +2532,7 @@ msgstr ""
 #. placeholder {0}: sanitizeHandle(handle, '@')
 #. placeholder {0}: sanitizeHandle(item.feed.creator.handle, '@')
 #: src/components/LabelingServiceCard/index.tsx:62
-#: src/components/moderation/ReportDialog/index.tsx:847
+#: src/components/moderation/ReportDialog/index.tsx:849
 #: src/screens/Messages/JoinRequest.tsx:177
 #: src/screens/Search/components/StarterPackCard.tsx:107
 #: src/screens/Search/Explore.tsx:971
@@ -2730,7 +2722,7 @@ msgstr "Ubah Panggilan"
 msgid "Change hosting provider"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:445
+#: src/components/moderation/ReportDialog/index.tsx:447
 msgid "Change moderation service"
 msgstr "Ubah layanan moderasi"
 
@@ -2743,11 +2735,11 @@ msgstr ""
 msgid "Change password dialog"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:312
+#: src/components/moderation/ReportDialog/index.tsx:314
 msgid "Change report category"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:390
+#: src/components/moderation/ReportDialog/index.tsx:392
 msgid "Change report reason"
 msgstr "Ubah alasan melapor"
 
@@ -3798,8 +3790,8 @@ msgstr ""
 
 #. Accessibility label for button to create a moderation report for the selected option
 #. placeholder {0}: option.title
-#: src/components/moderation/ReportDialog/index.tsx:709
-#: src/components/moderation/ReportDialog/index.tsx:754
+#: src/components/moderation/ReportDialog/index.tsx:711
+#: src/components/moderation/ReportDialog/index.tsx:756
 msgid "Create report for {0}"
 msgstr "Buat laporan untuk {0}"
 
@@ -3827,6 +3819,10 @@ msgstr "Pembuat telah diblokir"
 
 #: src/view/screens/TermsOfService.tsx:80
 msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr ""
+
+#: src/components/WelcomeModal.tsx:147
+msgid "Creators set the price."
 msgstr ""
 
 #: src/lib/interests.ts:57
@@ -4796,6 +4792,10 @@ msgstr ""
 msgid "Every line is aggregated from on-chain events (no platform fee is taken)"
 msgstr ""
 
+#: src/components/WelcomeModal.tsx:151
+msgid "Every payment settles on-chain."
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:170
 msgid "Every subscription settles straight to your wallet. No payout queue, no withdrawal request: the money arrives on-chain the moment a fan pays."
 msgstr ""
@@ -5302,6 +5302,10 @@ msgstr "Akun palsu atau bot"
 msgid "False information about elections"
 msgstr "Informasi palsu tentang pemilihan umum"
 
+#: src/components/WelcomeModal.tsx:149
+msgid "Fans pay them directly."
+msgstr ""
+
 #: src/Navigation.tsx:292
 msgid "Feed"
 msgstr "Feed"
@@ -5694,7 +5698,7 @@ msgstr "Preferensi feed Mengikuti"
 msgid "Following Feed Preferences"
 msgstr "Preferensi Feed Mengikuti"
 
-#: src/components/Pills.tsx:212
+#: src/components/Pills.tsx:214
 #: src/screens/Profile/Header/Handle.tsx:33
 msgid "Follows you"
 msgstr "Mengikuti Anda"
@@ -6799,7 +6803,7 @@ msgstr ""
 msgid "Invalid phone number"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:102
 msgid "Invalid report subject"
 msgstr "Subjek laporan tidak valid"
 
@@ -6920,11 +6924,6 @@ msgstr "Hanya ada Anda saat ini! Tambahkan lebih banyak orang ke paket pemula An
 #: src/view/com/composer/Composer.tsx:2642
 msgid "Job ID: {0}"
 msgstr "ID Kerja: {0}"
-
-#. Link to a page with job openings at Bluesky
-#: src/view/com/auth/SplashScreen.web.tsx:179
-msgid "Jobs"
-msgstr "Karir"
 
 #: src/components/dms/ChatInvite/Root.tsx:117
 #: src/components/intents/GroupChatJoinDialog.tsx:296
@@ -7054,10 +7053,6 @@ msgstr "Pelajari Lebih Lanjut"
 #: src/components/ageAssurance/AgeAssuranceDismissibleFeedBanner.tsx:66
 msgid "Learn more about age assurance"
 msgstr ""
-
-#: src/view/com/auth/SplashScreen.web.tsx:167
-msgid "Learn more about Bluesky"
-msgstr "Pelajari lebih lanjut tentang Bluesky"
 
 #: src/components/contacts/components/InviteInfo.tsx:33
 msgid "Learn more about how inviting friends works"
@@ -7989,8 +7984,8 @@ msgstr "Menuju ke layar berikutnya"
 msgid "Navigates to your profile"
 msgstr "Menuju ke profil Anda"
 
-#: src/components/moderation/ReportDialog/index.tsx:342
-#: src/components/moderation/ReportDialog/index.tsx:358
+#: src/components/moderation/ReportDialog/index.tsx:344
+#: src/components/moderation/ReportDialog/index.tsx:360
 msgid "Need to report a copyright violation, legal request, or regulatory compliance issue?"
 msgstr "Ingin melaporkan pelanggaran hak cipta, permintaan hukum, atau masalah kepatuhan terhadap peraturan?"
 
@@ -9639,6 +9634,7 @@ msgstr ""
 msgid "Primary language"
 msgstr ""
 
+#: src/view/com/auth/SplashScreen.web.tsx:170
 #: src/view/shell/desktop/RightNav.tsx:112
 #: src/view/shell/desktop/RightNav.tsx:113
 msgid "Privacy"
@@ -9665,6 +9661,7 @@ msgstr "Pengaturan Privasi dan Keamanan"
 #: src/Navigation.tsx:337
 #: src/screens/Settings/AboutSettings.tsx:100
 #: src/screens/Settings/AboutSettings.tsx:103
+#: src/view/com/auth/SplashScreen.web.tsx:169
 #: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:810
 #: src/view/shell/Drawer.tsx:811
@@ -9876,10 +9873,6 @@ msgstr "Baca lebih banyak balasan"
 msgid "Read our blog post"
 msgstr ""
 
-#: src/view/com/auth/SplashScreen.web.tsx:172
-msgid "Read the Bluesky blog"
-msgstr "Baca blog Bluesky"
-
 #: src/screens/Signup/StepInfo/Policies.tsx:53
 #: src/screens/Signup/StepInfo/Policies.tsx:79
 msgid "Read the Bluesky Privacy Policy"
@@ -9896,14 +9889,6 @@ msgstr ""
 
 #: src/screens/Signup/StepHandle/index.tsx:334
 msgid "Read the Humming Terms of Service"
-msgstr ""
-
-#: src/components/WelcomeModal.tsx:149
-msgid "Real conversations."
-msgstr ""
-
-#: src/components/WelcomeModal.tsx:147
-msgid "Real people."
 msgstr ""
 
 #: src/screens/Takendown.tsx:158
@@ -10317,8 +10302,8 @@ msgstr "Laporkan akun"
 msgid "Report conversation"
 msgstr "Laporkan percakapan"
 
-#: src/components/moderation/ReportDialog/index.tsx:98
-#: src/components/moderation/ReportDialog/index.tsx:263
+#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:265
 msgid "Report dialog"
 msgstr "Dialog laporan"
 
@@ -10579,7 +10564,7 @@ msgstr "Mencoba kembali tindakan terakhir yang gagal"
 #: src/components/contacts/screens/VerifyNumber.tsx:355
 #: src/components/Error.tsx:60
 #: src/components/Lists.tsx:115
-#: src/components/moderation/ReportDialog/index.tsx:297
+#: src/components/moderation/ReportDialog/index.tsx:299
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:56
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:59
 #: src/components/StarterPack/ProfileStarterPacks.tsx:377
@@ -10602,7 +10587,7 @@ msgstr "Mencoba kembali tindakan terakhir yang gagal"
 msgid "Retry"
 msgstr "Ulangi"
 
-#: src/components/moderation/ReportDialog/index.tsx:294
+#: src/components/moderation/ReportDialog/index.tsx:296
 #: src/view/screens/Storybook/Admonitions.tsx:61
 msgid "Retry loading report options"
 msgstr "Ulangi memuat opsi laporan"
@@ -10927,10 +10912,6 @@ msgstr "Lihat postingan #{tag}"
 msgid "See #{tag} posts by user"
 msgstr "Lihat postingan #{tag} dari pengguna"
 
-#: src/view/com/auth/SplashScreen.web.tsx:177
-msgid "See jobs at Bluesky"
-msgstr "Lihat lowongan pekerjaan di Bluesky"
-
 #: src/components/FeedInterstitials.tsx:491
 #: src/components/FeedInterstitials.tsx:549
 msgid "See more"
@@ -10976,7 +10957,7 @@ msgstr ""
 msgid "Select a color"
 msgstr "Pilih warna"
 
-#: src/components/moderation/ReportDialog/index.tsx:380
+#: src/components/moderation/ReportDialog/index.tsx:382
 msgid "Select a reason"
 msgstr ""
 
@@ -11072,7 +11053,7 @@ msgstr "Pilih bahasa..."
 msgid "Select languages"
 msgstr "Pilih bahasa"
 
-#: src/components/moderation/ReportDialog/index.tsx:430
+#: src/components/moderation/ReportDialog/index.tsx:432
 msgid "Select moderation service"
 msgstr "Pilih layanan moderasi"
 
@@ -11183,7 +11164,7 @@ msgstr "Kirim postingan ke {name}"
 msgid "Send post to..."
 msgstr "Kirim postingan ke..."
 
-#: src/components/moderation/ReportDialog/index.tsx:818
+#: src/components/moderation/ReportDialog/index.tsx:820
 msgid "Send report to {title}"
 msgstr "Kirim laporan ke {title}"
 
@@ -11739,10 +11720,6 @@ msgstr "Menunda pengingat"
 msgid "So many thoughts, you should post one"
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:151
-msgid "Social media you control."
-msgstr ""
-
 #: src/lib/interests.ts:58
 msgid "Software Dev"
 msgstr "Pengembang Perangkat Lunak"
@@ -11809,7 +11786,7 @@ msgstr ""
 msgid "Someone was removed from the group"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:103
+#: src/components/moderation/ReportDialog/index.tsx:105
 msgid "Something wasn't quite right with the data you're trying to report. Please contact support."
 msgstr "Ada sesuatu yang kurang benar dengan data yang Anda laporkan. Silakan hubungi bantuan."
 
@@ -11820,7 +11797,7 @@ msgid "Something went wrong"
 msgstr "Ada yang tidak beres"
 
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:139
-#: src/components/moderation/ReportDialog/index.tsx:289
+#: src/components/moderation/ReportDialog/index.tsx:291
 #: src/screens/Deactivated.tsx:86
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:59
 #: src/view/screens/Storybook/Admonitions.tsx:56
@@ -11840,7 +11817,7 @@ msgstr "Ada yang tidak beres!"
 msgid "Something went wrong. Please try again in a moment."
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:247
+#: src/components/moderation/ReportDialog/index.tsx:249
 msgid "Something went wrong. Please try again."
 msgstr "Ada yang tidak beres. Silakan coba lagi."
 
@@ -12004,9 +11981,9 @@ msgstr "Ajukan banding"
 msgid "Submit Appeal"
 msgstr "Ajukan Banding"
 
-#: src/components/moderation/ReportDialog/index.tsx:508
-#: src/components/moderation/ReportDialog/index.tsx:569
-#: src/components/moderation/ReportDialog/index.tsx:576
+#: src/components/moderation/ReportDialog/index.tsx:510
+#: src/components/moderation/ReportDialog/index.tsx:571
+#: src/components/moderation/ReportDialog/index.tsx:578
 msgid "Submit report"
 msgstr "Kirim laporan"
 
@@ -12186,6 +12163,8 @@ msgid "Sunset"
 msgstr "Terbenam"
 
 #: src/Navigation.tsx:332
+#: src/view/com/auth/SplashScreen.web.tsx:172
+#: src/view/com/auth/SplashScreen.web.tsx:173
 #: src/view/screens/Support.tsx:25
 #: src/view/screens/Support.tsx:28
 msgid "Support"
@@ -12358,6 +12337,7 @@ msgstr "Beritahu kami lebih lanjut"
 msgid "Temporarily deactivate your account"
 msgstr ""
 
+#: src/view/com/auth/SplashScreen.web.tsx:167
 #: src/view/shell/desktop/RightNav.tsx:119
 #: src/view/shell/desktop/RightNav.tsx:120
 msgid "Terms"
@@ -12369,6 +12349,7 @@ msgstr "Ketentuan"
 #: src/Navigation.tsx:342
 #: src/screens/Settings/AboutSettings.tsx:92
 #: src/screens/Settings/AboutSettings.tsx:95
+#: src/view/com/auth/SplashScreen.web.tsx:166
 #: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:803
 #: src/view/shell/Drawer.tsx:805
@@ -13417,16 +13398,16 @@ msgstr "Berhenti ikuti akun"
 msgid "Unfollows the user"
 msgstr "Berhenti mengikuti pengguna"
 
-#: src/components/moderation/ReportDialog/index.tsx:492
+#: src/components/moderation/ReportDialog/index.tsx:494
 msgid "Unfortunately, none of your subscribed labelers supports this report type."
 msgstr "Sayangnya, tidak ada dari labeler yang Anda langgani mendukung tipe laporan ini."
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:263
-msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Bluesky."
+msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Humming."
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:247
-msgid "Unfortunately, your declared age indicates that you are not old enough to access Bluesky in your region."
+msgid "Unfortunately, your declared age indicates that you are not old enough to access Humming in your region."
 msgstr ""
 
 #: src/components/verification/VerificationsDialog.tsx:183
@@ -14637,7 +14618,7 @@ msgid "You are a trusted verifier"
 msgstr "Anda adalah verifikator terpercaya"
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:174
-msgid "You are accessing Bluesky from a region that legally requires us to verify your age before allowing you to access the app."
+msgid "You are accessing Humming from a region that legally requires us to verify your age before allowing you to access the app."
 msgstr ""
 
 #. placeholder {0}: sanitizeHandle(profile.handle, '@')
@@ -14661,9 +14642,12 @@ msgstr "Anda akan membuat akun pada"
 msgid "You are currently blocked from using the Go Live feature. To appeal this moderation decision, please submit the form below."
 msgstr ""
 
-#: src/ageAssurance/components/NoAccessScreen.tsx:400
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:124
 msgid "You are currently unable to access Bluesky's Age Assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
+msgstr ""
+
+#: src/ageAssurance/components/NoAccessScreen.tsx:400
+msgid "You are currently unable to access Humming's age assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
 msgstr ""
 
 #: src/screens/SignupQueued.tsx:160
@@ -15357,7 +15341,7 @@ msgid "Your reply was sent"
 msgstr ""
 
 #. placeholder {0}: state.selectedLabeler?.creator.displayName
-#: src/components/moderation/ReportDialog/index.tsx:519
+#: src/components/moderation/ReportDialog/index.tsx:521
 msgid "Your report will be sent to <0>{0}</0>."
 msgstr "Laporan anda akan dikirimkan ke <0>{0}</0>."
 

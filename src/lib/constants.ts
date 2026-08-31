@@ -1,5 +1,5 @@
 import {type Insets, Platform} from 'react-native'
-import {type AppBskyActorDefs, BSKY_LABELER_DID} from '@atproto/api'
+import {type AppBskyActorDefs} from '@atproto/api'
 
 import {type ProxyHeaderValue} from '#/state/session/agent'
 import {BLUESKY_PROXY_DID, CHAT_PROXY_DID} from '#/env'
@@ -18,6 +18,11 @@ export const HUMMING_SERVICE: string =
 const RAW_HUMMING_APP_HOST: string =
   process.env.EXPO_PUBLIC_HUMMING_APP_URL || 'https://humming.social'
 export const HUMMING_APP_HOST: string = RAW_HUMMING_APP_HOST.replace(/\/+$/, '')
+// Humming: the moderation (labeler) identity reports are addressed to. The facade
+// answers app.bsky.labeler.getServices for this DID and receives the reports; it is
+// the service's own identity, so it does not change with the network.
+export const HUMMING_LABELER_DID: string =
+  process.env.EXPO_PUBLIC_HUMMING_SERVICE_DID || 'did:web:humming.social'
 export const BSKY_SERVICE = HUMMING_SERVICE
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
 export const PUBLIC_BSKY_SERVICE = HUMMING_SERVICE
@@ -218,7 +223,7 @@ export const DM_SERVICE_HEADERS = {
 }
 
 export const BLUESKY_MOD_SERVICE_HEADERS = {
-  'atproto-proxy': `${BSKY_LABELER_DID}#atproto_labeler`,
+  'atproto-proxy': `${HUMMING_LABELER_DID}#atproto_labeler`,
 }
 
 export const BLUESKY_NOTIF_SERVICE_HEADERS = {

@@ -1344,8 +1344,8 @@ msgstr "Ychwanegu cyfrwng i bostiad"
 msgid "Add members"
 msgstr "Ychwanegu aelodau"
 
-#: src/components/moderation/ReportDialog/index.tsx:528
-#: src/components/moderation/ReportDialog/index.tsx:532
+#: src/components/moderation/ReportDialog/index.tsx:530
+#: src/components/moderation/ReportDialog/index.tsx:534
 msgid "Add more details (optional)"
 msgstr "Ychwanegu rhagor o fanylion (dewisol)"
 
@@ -1451,7 +1451,7 @@ msgstr "Yn ychwanegu aelodau i restr..."
 msgid "Additional details (limit 1000 characters)"
 msgstr "Manylion ychwanegol (terfyn o 1000 nod)"
 
-#: src/components/moderation/ReportDialog/index.tsx:546
+#: src/components/moderation/ReportDialog/index.tsx:548
 msgid "Additional details (limit 300 characters)"
 msgstr "Manylion ychwanegol (terfyn o 300 nod)"
 
@@ -2370,10 +2370,6 @@ msgstr "Mae rhwystro'n beth cyhoeddus. Nid oes modd i gyfrifon sydd wedi'u rhwys
 msgid "Blocking will not prevent labels from being applied on your account, but it will stop this account from replying in your threads or interacting with you."
 msgstr "Fydd rhwystro ddim yn atal labeli rhag cael eu gosod ar eich cyfrif, ond bydd yn atal y cyfrif hwn rhag ateb yn eich trywyddau neu ryngweithio â chi."
 
-#: src/view/com/auth/SplashScreen.web.tsx:174
-msgid "Blog"
-msgstr "Blog"
-
 #. Advanced search: Examples of hashtags
 #: src/screens/Search/components/AdvancedSearchDialog/hooks.tsx:17
 msgid "bloomscrolling booksky"
@@ -2518,10 +2514,6 @@ msgstr "Porwi pwnc {0}"
 msgid "Browse topic {displayName}"
 msgstr "Porwch bwnc {displayName}"
 
-#: src/view/com/auth/SplashScreen.web.tsx:169
-msgid "Business"
-msgstr "Busnes"
-
 #: src/screens/Bookmarks.tsx:295
 msgid "Button to go back to the home timeline"
 msgstr "Botwm i fynd nôl i'r llinell amser cartref"
@@ -2540,7 +2532,7 @@ msgstr ""
 #. placeholder {0}: sanitizeHandle(handle, '@')
 #. placeholder {0}: sanitizeHandle(item.feed.creator.handle, '@')
 #: src/components/LabelingServiceCard/index.tsx:62
-#: src/components/moderation/ReportDialog/index.tsx:847
+#: src/components/moderation/ReportDialog/index.tsx:849
 #: src/screens/Messages/JoinRequest.tsx:177
 #: src/screens/Search/components/StarterPackCard.tsx:107
 #: src/screens/Search/Explore.tsx:971
@@ -2730,7 +2722,7 @@ msgstr "Newid Enw Dangos"
 msgid "Change hosting provider"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:445
+#: src/components/moderation/ReportDialog/index.tsx:447
 msgid "Change moderation service"
 msgstr "Newid y gwasanaeth cymedroli"
 
@@ -2743,11 +2735,11 @@ msgstr "Newid cyfrinair"
 msgid "Change password dialog"
 msgstr "Newid deialog cyfrinair"
 
-#: src/components/moderation/ReportDialog/index.tsx:312
+#: src/components/moderation/ReportDialog/index.tsx:314
 msgid "Change report category"
 msgstr "Newid categori adrodd"
 
-#: src/components/moderation/ReportDialog/index.tsx:390
+#: src/components/moderation/ReportDialog/index.tsx:392
 msgid "Change report reason"
 msgstr "Newid y rheswm am adrodd"
 
@@ -3798,8 +3790,8 @@ msgstr "Crëwch neu addasu dolen gwahodd ar gyfer y grŵp sgwrsio yma"
 
 #. Accessibility label for button to create a moderation report for the selected option
 #. placeholder {0}: option.title
-#: src/components/moderation/ReportDialog/index.tsx:709
-#: src/components/moderation/ReportDialog/index.tsx:754
+#: src/components/moderation/ReportDialog/index.tsx:711
+#: src/components/moderation/ReportDialog/index.tsx:756
 msgid "Create report for {0}"
 msgstr "Creu adroddiad ar gyfer {0}"
 
@@ -3827,6 +3819,10 @@ msgstr "Mae'r crëwr wedi'i rwystro"
 
 #: src/view/screens/TermsOfService.tsx:80
 msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr ""
+
+#: src/components/WelcomeModal.tsx:147
+msgid "Creators set the price."
 msgstr ""
 
 #: src/lib/interests.ts:57
@@ -4796,6 +4792,10 @@ msgstr ""
 msgid "Every line is aggregated from on-chain events (no platform fee is taken)"
 msgstr ""
 
+#: src/components/WelcomeModal.tsx:151
+msgid "Every payment settles on-chain."
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:170
 msgid "Every subscription settles straight to your wallet. No payout queue, no withdrawal request: the money arrives on-chain the moment a fan pays."
 msgstr ""
@@ -5302,6 +5302,10 @@ msgstr "Cyfrif ffug neu fot"
 msgid "False information about elections"
 msgstr "Gwybodaeth ffug am etholiadau"
 
+#: src/components/WelcomeModal.tsx:149
+msgid "Fans pay them directly."
+msgstr ""
+
 #: src/Navigation.tsx:292
 msgid "Feed"
 msgstr "Ffrwd"
@@ -5694,7 +5698,7 @@ msgstr "Dewisiadau ffrydio Yn dilyn"
 msgid "Following Feed Preferences"
 msgstr "Dewisiadau Ffrydio Yn Dilyn"
 
-#: src/components/Pills.tsx:212
+#: src/components/Pills.tsx:214
 #: src/screens/Profile/Header/Handle.tsx:33
 msgid "Follows you"
 msgstr "Yn eich dilyn chi"
@@ -6799,7 +6803,7 @@ msgstr "Gosodiadau rhyngweithio annilys."
 msgid "Invalid phone number"
 msgstr "Rhif ffôn annilys"
 
-#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:102
 msgid "Invalid report subject"
 msgstr "Pwnc adrodd annilys"
 
@@ -6920,11 +6924,6 @@ msgstr "Dim ond chi ar hyn o bryd! Ychwanegwch fwy o bobl at eich pecyn cychwyn 
 #: src/view/com/composer/Composer.tsx:2642
 msgid "Job ID: {0}"
 msgstr "ID gwaith: {0}"
-
-#. Link to a page with job openings at Bluesky
-#: src/view/com/auth/SplashScreen.web.tsx:179
-msgid "Jobs"
-msgstr "Swyddi"
 
 #: src/components/dms/ChatInvite/Root.tsx:117
 #: src/components/intents/GroupChatJoinDialog.tsx:296
@@ -7054,10 +7053,6 @@ msgstr "Dysgu Rhagor"
 #: src/components/ageAssurance/AgeAssuranceDismissibleFeedBanner.tsx:66
 msgid "Learn more about age assurance"
 msgstr "Rhagor o wybodaeth am sicrwydd oed"
-
-#: src/view/com/auth/SplashScreen.web.tsx:167
-msgid "Learn more about Bluesky"
-msgstr "Dysgwch ragor am Bluesky"
 
 #: src/components/contacts/components/InviteInfo.tsx:33
 msgid "Learn more about how inviting friends works"
@@ -7989,8 +7984,8 @@ msgstr "Yn llywio i'r sgrin nesaf"
 msgid "Navigates to your profile"
 msgstr "Yn llywio i'ch proffil"
 
-#: src/components/moderation/ReportDialog/index.tsx:342
-#: src/components/moderation/ReportDialog/index.tsx:358
+#: src/components/moderation/ReportDialog/index.tsx:344
+#: src/components/moderation/ReportDialog/index.tsx:360
 msgid "Need to report a copyright violation, legal request, or regulatory compliance issue?"
 msgstr "Angen adrodd ar fater torri hawlfraint, cais cyfreithiol, neu gydymffurfiad rheolaethol?"
 
@@ -9639,6 +9634,7 @@ msgstr ""
 msgid "Primary language"
 msgstr "Prif iaith"
 
+#: src/view/com/auth/SplashScreen.web.tsx:170
 #: src/view/shell/desktop/RightNav.tsx:112
 #: src/view/shell/desktop/RightNav.tsx:113
 msgid "Privacy"
@@ -9665,6 +9661,7 @@ msgstr "Gosodiadau Preifatrwydd a Diogelwch"
 #: src/Navigation.tsx:337
 #: src/screens/Settings/AboutSettings.tsx:100
 #: src/screens/Settings/AboutSettings.tsx:103
+#: src/view/com/auth/SplashScreen.web.tsx:169
 #: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:810
 #: src/view/shell/Drawer.tsx:811
@@ -9876,10 +9873,6 @@ msgstr "Darllen rhagor o atebion"
 msgid "Read our blog post"
 msgstr "Darllenwch ein cofnod blog"
 
-#: src/view/com/auth/SplashScreen.web.tsx:172
-msgid "Read the Bluesky blog"
-msgstr "Darllenwch y blog Bluesky"
-
 #: src/screens/Signup/StepInfo/Policies.tsx:53
 #: src/screens/Signup/StepInfo/Policies.tsx:79
 msgid "Read the Bluesky Privacy Policy"
@@ -9897,14 +9890,6 @@ msgstr ""
 #: src/screens/Signup/StepHandle/index.tsx:334
 msgid "Read the Humming Terms of Service"
 msgstr ""
-
-#: src/components/WelcomeModal.tsx:149
-msgid "Real conversations."
-msgstr "Sgyrsiau go-iawn."
-
-#: src/components/WelcomeModal.tsx:147
-msgid "Real people."
-msgstr "Pobl go-iawn."
 
 #: src/screens/Takendown.tsx:158
 #: src/screens/Takendown.tsx:166
@@ -10317,8 +10302,8 @@ msgstr "Adrodd ar gyfrif"
 msgid "Report conversation"
 msgstr "Adrodd ar sgwrs"
 
-#: src/components/moderation/ReportDialog/index.tsx:98
-#: src/components/moderation/ReportDialog/index.tsx:263
+#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:265
 msgid "Report dialog"
 msgstr "Deialog adrodd"
 
@@ -10579,7 +10564,7 @@ msgstr "Yn ceisio'r weithred olaf eto, oedd yn wallus"
 #: src/components/contacts/screens/VerifyNumber.tsx:355
 #: src/components/Error.tsx:60
 #: src/components/Lists.tsx:115
-#: src/components/moderation/ReportDialog/index.tsx:297
+#: src/components/moderation/ReportDialog/index.tsx:299
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:56
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:59
 #: src/components/StarterPack/ProfileStarterPacks.tsx:377
@@ -10602,7 +10587,7 @@ msgstr "Yn ceisio'r weithred olaf eto, oedd yn wallus"
 msgid "Retry"
 msgstr "Ceisio eto"
 
-#: src/components/moderation/ReportDialog/index.tsx:294
+#: src/components/moderation/ReportDialog/index.tsx:296
 #: src/view/screens/Storybook/Admonitions.tsx:61
 msgid "Retry loading report options"
 msgstr "Ceisio llwytho dewisiadau adrodd eto"
@@ -10927,10 +10912,6 @@ msgstr "Gweld #{tag} postiad"
 msgid "See #{tag} posts by user"
 msgstr "Gweld #{tag} postiad yn ôl defnyddiwr"
 
-#: src/view/com/auth/SplashScreen.web.tsx:177
-msgid "See jobs at Bluesky"
-msgstr "Gweld swyddi yn Bluesky"
-
 #: src/components/FeedInterstitials.tsx:491
 #: src/components/FeedInterstitials.tsx:549
 msgid "See more"
@@ -10976,7 +10957,7 @@ msgstr "Dewis {langName}"
 msgid "Select a color"
 msgstr "Dewiswch liw"
 
-#: src/components/moderation/ReportDialog/index.tsx:380
+#: src/components/moderation/ReportDialog/index.tsx:382
 msgid "Select a reason"
 msgstr "Dewis rheswm"
 
@@ -11072,7 +11053,7 @@ msgstr "Dewiswch iaith..."
 msgid "Select languages"
 msgstr "Dewiswch ieithoedd"
 
-#: src/components/moderation/ReportDialog/index.tsx:430
+#: src/components/moderation/ReportDialog/index.tsx:432
 msgid "Select moderation service"
 msgstr "Dewis gwasanaeth cymedroli"
 
@@ -11183,7 +11164,7 @@ msgstr "Anfon postiad at {name}"
 msgid "Send post to..."
 msgstr "Anfonwch bostiad i..."
 
-#: src/components/moderation/ReportDialog/index.tsx:818
+#: src/components/moderation/ReportDialog/index.tsx:820
 msgid "Send report to {title}"
 msgstr "Anfon adroddiad at {title}"
 
@@ -11739,10 +11720,6 @@ msgstr "Yn tewi'r nodyn atgoffa"
 msgid "So many thoughts, you should post one"
 msgstr "Gymaint o syniadau, dylech chi bostio un"
 
-#: src/components/WelcomeModal.tsx:151
-msgid "Social media you control."
-msgstr "Y cyfrwng cymdeithasol rydych chi'n ei reoli."
-
 #: src/lib/interests.ts:58
 msgid "Software Dev"
 msgstr "Datblygwr Meddalwedd"
@@ -11809,7 +11786,7 @@ msgstr "Mae rhywun wedi'i dynnu"
 msgid "Someone was removed from the group"
 msgstr "Mae rhywun wedi'i dynnu o'r grŵp"
 
-#: src/components/moderation/ReportDialog/index.tsx:103
+#: src/components/moderation/ReportDialog/index.tsx:105
 msgid "Something wasn't quite right with the data you're trying to report. Please contact support."
 msgstr "Doedd rhywbeth ddim yn hollol iawn gyda'r data rydych yn ceisio'i adrodd. Cysylltwch â'n cefnogaeth."
 
@@ -11820,7 +11797,7 @@ msgid "Something went wrong"
 msgstr "Aeth rhywbeth o'i le"
 
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:139
-#: src/components/moderation/ReportDialog/index.tsx:289
+#: src/components/moderation/ReportDialog/index.tsx:291
 #: src/screens/Deactivated.tsx:86
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:59
 #: src/view/screens/Storybook/Admonitions.tsx:56
@@ -11840,7 +11817,7 @@ msgstr "Aeth rhywbeth o'i le!"
 msgid "Something went wrong. Please try again in a moment."
 msgstr "Aeth rhywbeth o'i le. Ceisiwch eto cyn bo hir."
 
-#: src/components/moderation/ReportDialog/index.tsx:247
+#: src/components/moderation/ReportDialog/index.tsx:249
 msgid "Something went wrong. Please try again."
 msgstr "Aeth rhywbeth o'i le. Ceisiwch eto."
 
@@ -12004,9 +11981,9 @@ msgstr "Cyflwyno apêl"
 msgid "Submit Appeal"
 msgstr "Cyflwyno Apêl"
 
-#: src/components/moderation/ReportDialog/index.tsx:508
-#: src/components/moderation/ReportDialog/index.tsx:569
-#: src/components/moderation/ReportDialog/index.tsx:576
+#: src/components/moderation/ReportDialog/index.tsx:510
+#: src/components/moderation/ReportDialog/index.tsx:571
+#: src/components/moderation/ReportDialog/index.tsx:578
 msgid "Submit report"
 msgstr "Cyflwyno adroddiad"
 
@@ -12186,6 +12163,8 @@ msgid "Sunset"
 msgstr "Machlud Haul"
 
 #: src/Navigation.tsx:332
+#: src/view/com/auth/SplashScreen.web.tsx:172
+#: src/view/com/auth/SplashScreen.web.tsx:173
 #: src/view/screens/Support.tsx:25
 #: src/view/screens/Support.tsx:28
 msgid "Support"
@@ -12358,6 +12337,7 @@ msgstr "Dywedwch ychydig mwy wrthym"
 msgid "Temporarily deactivate your account"
 msgstr "Dadweithredu eich cyfrif dros dro"
 
+#: src/view/com/auth/SplashScreen.web.tsx:167
 #: src/view/shell/desktop/RightNav.tsx:119
 #: src/view/shell/desktop/RightNav.tsx:120
 msgid "Terms"
@@ -12369,6 +12349,7 @@ msgstr "Telerau"
 #: src/Navigation.tsx:342
 #: src/screens/Settings/AboutSettings.tsx:92
 #: src/screens/Settings/AboutSettings.tsx:95
+#: src/view/com/auth/SplashScreen.web.tsx:166
 #: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:803
 #: src/view/shell/Drawer.tsx:805
@@ -13417,17 +13398,17 @@ msgstr "Dad-ddilyn y cyfrif"
 msgid "Unfollows the user"
 msgstr "Dad-ddilyn defnyddiwr"
 
-#: src/components/moderation/ReportDialog/index.tsx:492
+#: src/components/moderation/ReportDialog/index.tsx:494
 msgid "Unfortunately, none of your subscribed labelers supports this report type."
 msgstr "Yn anffodus, nid yw un o'ch labelwyr wedi'u tanysgrifio'n cefnogi'r math yma o adroddiad."
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:263
-msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Bluesky."
-msgstr "Yn anffodus, mae'r dyddiad geni rydych wedi ei gadw i'ch proffil yn eich gwneud yn rhy ifanc i gael mynediad at Bluesky."
+msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Humming."
+msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:247
-msgid "Unfortunately, your declared age indicates that you are not old enough to access Bluesky in your region."
-msgstr "Yn anffodus, mae'ch oed yn awgrymu nad ydych yn ddigon hen i gael mynediad ar Bluesky yn eich ardal chi."
+msgid "Unfortunately, your declared age indicates that you are not old enough to access Humming in your region."
+msgstr ""
 
 #: src/components/verification/VerificationsDialog.tsx:183
 msgid "Unknown verifier"
@@ -14637,8 +14618,8 @@ msgid "You are a trusted verifier"
 msgstr "Rydych chi'n ddilysydd dibynadwy"
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:174
-msgid "You are accessing Bluesky from a region that legally requires us to verify your age before allowing you to access the app."
-msgstr "Rydych yn cael mynediad at Bluesky mewn ardal sydd â gofyniad cyfreithiol i ni wirio eich oed cyn caniatáu i chi gael mynediad at yr ap."
+msgid "You are accessing Humming from a region that legally requires us to verify your age before allowing you to access the app."
+msgstr ""
 
 #. placeholder {0}: sanitizeHandle(profile.handle, '@')
 #: src/components/dms/MessageItem.tsx:719
@@ -14661,10 +14642,13 @@ msgstr "Rydych chi'n creu cyfrif ar"
 msgid "You are currently blocked from using the Go Live feature. To appeal this moderation decision, please submit the form below."
 msgstr "Ar hyn o bryd, rydych wedi'ch gwahardd rhag defnyddio'r nodwedd Mynd yn Fyw dros dro. I apelio canlyniad y cymedroli hwn, cyflwynwch y ffurflen isod."
 
-#: src/ageAssurance/components/NoAccessScreen.tsx:400
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:124
 msgid "You are currently unable to access Bluesky's Age Assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
 msgstr "Does dim modd i chi gael mynediad at lif Sicrwydd Oed Bluesky. Cysylltwch â'n <0>tîm cymedroli</0> os ydych yn teimlo fod hyn yn wall."
+
+#: src/ageAssurance/components/NoAccessScreen.tsx:400
+msgid "You are currently unable to access Humming's age assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
+msgstr ""
 
 #: src/screens/SignupQueued.tsx:160
 msgid "You are in line."
@@ -15357,7 +15341,7 @@ msgid "Your reply was sent"
 msgstr "Mae eich ateb wedi'i anfon"
 
 #. placeholder {0}: state.selectedLabeler?.creator.displayName
-#: src/components/moderation/ReportDialog/index.tsx:519
+#: src/components/moderation/ReportDialog/index.tsx:521
 msgid "Your report will be sent to <0>{0}</0>."
 msgstr "Bydd eich adroddiad yn cael ei anfon at <0>{0}</0>."
 

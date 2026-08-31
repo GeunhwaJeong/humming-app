@@ -7,10 +7,11 @@ import {
   useState,
 } from 'react'
 import {Pressable, type ScrollView, View} from 'react-native'
-import {type AppBskyLabelerDefs, BSKY_LABELER_DID} from '@atproto/api'
+import {type AppBskyLabelerDefs} from '@atproto/api'
 import {Trans, useLingui} from '@lingui/react/macro'
 
 import {wait} from '#/lib/async/wait'
+import {HUMMING_LABELER_DID} from '#/lib/constants'
 import {getLabelingServiceTitle} from '#/lib/moderation'
 import {useCallOnce} from '#/lib/once'
 import {sanitizeHandle} from '#/lib/strings/handles'
@@ -177,7 +178,7 @@ function Inner(props: ReportDialogProps) {
       .filter(l => {
         if (!state.selectedOption) return false
         if (isBskyOnlyReason || isBskyOnlySubject) {
-          return l.creator.did === BSKY_LABELER_DID
+          return l.creator.did === HUMMING_LABELER_DID
         }
         const supportedReasonTypes: string[] | undefined = l.reasonTypes
         if (supportedReasonTypes === undefined) return true
