@@ -59,7 +59,7 @@ export function ProfileSubscribeCard({
           color="secondary"
           disabled
           style={[a.self_stretch]}
-          label={_(msg`Subscribed — ${monthly}`)}>
+          label={_(msg`Subscribed · ${monthly}`)}>
           <ButtonText>
             {untilDate ? (
               <Trans>Subscribed ✓ · until {untilDate}</Trans>
@@ -76,13 +76,13 @@ export function ProfileSubscribeCard({
             color="primary"
             disabled={isPending}
             style={[a.self_stretch]}
-            label={_(msg`Subscribe — ${monthly}`)}
+            label={_(msg`Subscribe · ${monthly}`)}
             onPress={() => promptControl.open()}>
             <ButtonText>
               {isPending ? (
                 <Trans>Paying on-chain…</Trans>
               ) : (
-                <Trans>Subscribe — {monthly}</Trans>
+                <Trans>Subscribe · {monthly}</Trans>
               )}
             </ButtonText>
           </Button>
@@ -90,7 +90,7 @@ export function ProfileSubscribeCard({
             control={promptControl}
             title={_(msg`Subscribe to @${profile.handle}`)}
             description={_(
-              msg`${monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period.`,
+              msg`${monthly} will be charged from your wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period.`,
             )}
             onConfirm={() => subscribe()}
             confirmButtonCta={_(msg`Pay on-chain`)}

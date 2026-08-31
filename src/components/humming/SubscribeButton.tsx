@@ -38,7 +38,7 @@ export function HummingSubscribeButton({
         testID="hummingSubscribedBtn"
         size="small"
         color="secondary"
-        label={_(msg`Subscribed — ${monthly}`)}
+        label={_(msg`Subscribed · ${monthly}`)}
         onPress={() => {
           const until = viewer.expiresMs
             ? new Date(viewer.expiresMs).toLocaleDateString(i18n.locale)
@@ -62,7 +62,7 @@ export function HummingSubscribeButton({
         size="small"
         color="primary"
         disabled={isPending}
-        label={_(msg`Subscribe — ${monthly}`)}
+        label={_(msg`Subscribe · ${monthly}`)}
         onPress={() => promptControl.open()}>
         <ButtonText>
           {isPending ? (
@@ -76,7 +76,7 @@ export function HummingSubscribeButton({
         control={promptControl}
         title={_(msg`Subscribe to @${profile.handle}`)}
         description={_(
-          msg`${monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period.`,
+          msg`${monthly} will be charged from your wallet. Everything except the platform fee settles to the creator instantly on-chain, and the chain itself enforces the subscription period.`,
         )}
         onConfirm={() => subscribe()}
         confirmButtonCta={_(msg`Pay on-chain`)}

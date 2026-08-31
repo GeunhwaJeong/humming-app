@@ -37,7 +37,7 @@ const LOCK_MODES: {
   {
     value: 'open',
     label: msg`Open`,
-    desc: msg`Posts stay public — put a price only on the ones you choose`,
+    desc: msg`Posts stay public; put a price only on the ones you choose`,
   },
   {
     value: 'tease',
@@ -374,7 +374,7 @@ export function EarningsDialog({
                 {earnings.items.length === 0 && (
                   <Text style={[t.atoms.text_contrast_medium]}>
                     <Trans>
-                      No earnings yet — waiting for your first subscriber!
+                      No earnings yet, waiting for your first subscriber!
                     </Trans>
                   </Text>
                 )}

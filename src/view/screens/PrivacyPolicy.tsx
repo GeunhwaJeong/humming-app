@@ -34,15 +34,15 @@ function PrivacyBody() {
     <ScrollView style={[s.hContentRegion, pal.view]}>
       <View style={[s.p20, a.gap_md]}>
         <Text type="sm" style={pal.textLight}>
-          <Trans>Last updated: July 17, 2026</Trans>
+          <Trans>Last updated: August 31, 2026</Trans>
         </Text>
 
         <SectionText title={_(msg`1. What we collect`)}>
           <Trans>
             When you sign up, Humming stores your chosen nickname and a salted
-            hash of your password — never the password itself. During the
-            current early-access period we also generate and hold the private
-            key of your Haneul wallet (custodial). Media you upload is stored on
+            hash of your password, never the password itself. During the current
+            early-access period we also generate and hold the private key of
+            your blockchain wallet (custodial). Media you upload is stored on
             our servers. We do not collect your email address, phone number, or
             real name, and we do not use third-party trackers or advertising
             identifiers.
@@ -52,10 +52,10 @@ function PrivacyBody() {
         <SectionText title={_(msg`2. What lives on the blockchain`)}>
           <Trans>
             Your nickname registration, posts, subscriptions, purchases, and
-            tips are recorded on the Haneul blockchain, which is public and
-            permanent. Anyone can see the payment flows of a wallet address.
-            Post content itself is stored off-chain on our servers; the chain
-            holds only a content pointer.
+            tips are recorded on the blockchain, which is public and permanent.
+            Anyone can see the payment flows of a wallet address. Post content
+            itself is stored off-chain on our servers; the chain holds only a
+            content pointer.
           </Trans>
         </SectionText>
 
@@ -73,9 +73,9 @@ function PrivacyBody() {
           <Trans>
             You can delete your uploaded media and off-chain content by
             contacting us or using in-app deletion where available. Records
-            already committed to the Haneul blockchain cannot be erased by
-            anyone — this is a property of public blockchains, so post and pay
-            with that in mind.
+            already committed to the blockchain cannot be erased by anyone; this
+            is a property of public blockchains, so post and pay with that in
+            mind.
           </Trans>
         </SectionText>
 

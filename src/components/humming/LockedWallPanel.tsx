@@ -68,13 +68,13 @@ export function LockedWallPanel({did}: {did: string}) {
           color="primary"
           disabled={isPending}
           style={[a.self_stretch]}
-          label={_(msg`Subscribe to see their posts — ${monthly}`)}
+          label={_(msg`Subscribe to see their posts · ${monthly}`)}
           onPress={() => promptControl.open()}>
           <ButtonText>
             {isPending ? (
               <Trans>Paying on-chain…</Trans>
             ) : (
-              <Trans>Subscribe to see their posts — {monthly}</Trans>
+              <Trans>Subscribe to see their posts · {monthly}</Trans>
             )}
           </ButtonText>
         </Button>
@@ -83,7 +83,7 @@ export function LockedWallPanel({did}: {did: string}) {
         control={promptControl}
         title={_(msg`Subscribe to @${handle}`)}
         description={_(
-          msg`${monthly} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain.`,
+          msg`${monthly} will be charged from your wallet. Everything except the platform fee settles to the creator instantly on-chain.`,
         )}
         onConfirm={() => subscribe()}
         confirmButtonCta={_(msg`Pay on-chain`)}
