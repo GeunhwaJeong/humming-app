@@ -1344,8 +1344,8 @@ msgstr "Přidat média k příspěvku"
 msgid "Add members"
 msgstr "Přidat účastníky"
 
-#: src/components/moderation/ReportDialog/index.tsx:528
-#: src/components/moderation/ReportDialog/index.tsx:532
+#: src/components/moderation/ReportDialog/index.tsx:530
+#: src/components/moderation/ReportDialog/index.tsx:534
 msgid "Add more details (optional)"
 msgstr "Přidat více informací (volitelně)"
 
@@ -1451,7 +1451,7 @@ msgstr "Přidání členů do seznamu..."
 msgid "Additional details (limit 1000 characters)"
 msgstr "Další podrobnosti (limit 1000 znaků)"
 
-#: src/components/moderation/ReportDialog/index.tsx:546
+#: src/components/moderation/ReportDialog/index.tsx:548
 msgid "Additional details (limit 300 characters)"
 msgstr "Další podrobnosti (limit 300 znaků)"
 
@@ -2370,10 +2370,6 @@ msgstr "Blokování je veřejné. Zablokované účty nemohou odpovědět ve va�
 msgid "Blocking will not prevent labels from being applied on your account, but it will stop this account from replying in your threads or interacting with you."
 msgstr "Blokování nebrání použití štítků na Vašem účtu, ale zabrání tomu, aby tento účet odpovídal ve vašich vláknech nebo reagoval s vámi."
 
-#: src/view/com/auth/SplashScreen.web.tsx:174
-msgid "Blog"
-msgstr "Blog"
-
 #. Advanced search: Examples of hashtags
 #: src/screens/Search/components/AdvancedSearchDialog/hooks.tsx:17
 msgid "bloomscrolling booksky"
@@ -2518,10 +2514,6 @@ msgstr "Procházet téma {0}"
 msgid "Browse topic {displayName}"
 msgstr "Procházet téma {displayName}"
 
-#: src/view/com/auth/SplashScreen.web.tsx:169
-msgid "Business"
-msgstr "Byznys"
-
 #: src/screens/Bookmarks.tsx:295
 msgid "Button to go back to the home timeline"
 msgstr "Tlačítko pro návrat na domácí časovou osu"
@@ -2540,7 +2532,7 @@ msgstr ""
 #. placeholder {0}: sanitizeHandle(handle, '@')
 #. placeholder {0}: sanitizeHandle(item.feed.creator.handle, '@')
 #: src/components/LabelingServiceCard/index.tsx:62
-#: src/components/moderation/ReportDialog/index.tsx:847
+#: src/components/moderation/ReportDialog/index.tsx:849
 #: src/screens/Messages/JoinRequest.tsx:177
 #: src/screens/Search/components/StarterPackCard.tsx:107
 #: src/screens/Search/Explore.tsx:971
@@ -2730,7 +2722,7 @@ msgstr "Změnit uživatelské jméno"
 msgid "Change hosting provider"
 msgstr "Změnit poskytovatele hostingu"
 
-#: src/components/moderation/ReportDialog/index.tsx:445
+#: src/components/moderation/ReportDialog/index.tsx:447
 msgid "Change moderation service"
 msgstr "Změnit moderátorskou službu"
 
@@ -2743,11 +2735,11 @@ msgstr "Změnit heslo"
 msgid "Change password dialog"
 msgstr "Dialog pro změnu hesla"
 
-#: src/components/moderation/ReportDialog/index.tsx:312
+#: src/components/moderation/ReportDialog/index.tsx:314
 msgid "Change report category"
 msgstr "Změnit kategorii hlášení"
 
-#: src/components/moderation/ReportDialog/index.tsx:390
+#: src/components/moderation/ReportDialog/index.tsx:392
 msgid "Change report reason"
 msgstr "Změnit důvod hlášení"
 
@@ -3798,8 +3790,8 @@ msgstr "Vytvořit nebo upravit pozvánku pro tuto skupinovou konverzaci"
 
 #. Accessibility label for button to create a moderation report for the selected option
 #. placeholder {0}: option.title
-#: src/components/moderation/ReportDialog/index.tsx:709
-#: src/components/moderation/ReportDialog/index.tsx:754
+#: src/components/moderation/ReportDialog/index.tsx:711
+#: src/components/moderation/ReportDialog/index.tsx:756
 msgid "Create report for {0}"
 msgstr "Vytvořit hlášení pro {0}"
 
@@ -3827,6 +3819,10 @@ msgstr "Tvůrce byl zablokován"
 
 #: src/view/screens/TermsOfService.tsx:80
 msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr ""
+
+#: src/components/WelcomeModal.tsx:147
+msgid "Creators set the price."
 msgstr ""
 
 #: src/lib/interests.ts:57
@@ -4796,6 +4792,10 @@ msgstr ""
 msgid "Every line is aggregated from on-chain events (no platform fee is taken)"
 msgstr ""
 
+#: src/components/WelcomeModal.tsx:151
+msgid "Every payment settles on-chain."
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:170
 msgid "Every subscription settles straight to your wallet. No payout queue, no withdrawal request: the money arrives on-chain the moment a fan pays."
 msgstr ""
@@ -5302,6 +5302,10 @@ msgstr "Falešný účet nebo bot"
 msgid "False information about elections"
 msgstr "Nepravdivé informace o volbách"
 
+#: src/components/WelcomeModal.tsx:149
+msgid "Fans pay them directly."
+msgstr ""
+
 #: src/Navigation.tsx:292
 msgid "Feed"
 msgstr "Kanál"
@@ -5694,7 +5698,7 @@ msgstr "Předvolby kanálu Sledované"
 msgid "Following Feed Preferences"
 msgstr "Předvolby kanálu Sledované"
 
-#: src/components/Pills.tsx:212
+#: src/components/Pills.tsx:214
 #: src/screens/Profile/Header/Handle.tsx:33
 msgid "Follows you"
 msgstr "Sleduje vás"
@@ -6799,7 +6803,7 @@ msgstr "Neplatné nastavení interakcí."
 msgid "Invalid phone number"
 msgstr "Neplatné telefonní číslo"
 
-#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:102
 msgid "Invalid report subject"
 msgstr "Neplatný předmět hlášení"
 
@@ -6920,11 +6924,6 @@ msgstr "Zatím jste tu jen vy! Přidejte do svého startovacího balíčku dalš
 #: src/view/com/composer/Composer.tsx:2642
 msgid "Job ID: {0}"
 msgstr "ID úlohy: {0}"
-
-#. Link to a page with job openings at Bluesky
-#: src/view/com/auth/SplashScreen.web.tsx:179
-msgid "Jobs"
-msgstr "Úlohy"
 
 #: src/components/dms/ChatInvite/Root.tsx:117
 #: src/components/intents/GroupChatJoinDialog.tsx:296
@@ -7054,10 +7053,6 @@ msgstr "Zjistit více"
 #: src/components/ageAssurance/AgeAssuranceDismissibleFeedBanner.tsx:66
 msgid "Learn more about age assurance"
 msgstr "Zjistit více o ověření věku"
-
-#: src/view/com/auth/SplashScreen.web.tsx:167
-msgid "Learn more about Bluesky"
-msgstr "Zjistit více o Bluesky"
 
 #: src/components/contacts/components/InviteInfo.tsx:33
 msgid "Learn more about how inviting friends works"
@@ -7989,8 +7984,8 @@ msgstr "Přejde na další obrazovku"
 msgid "Navigates to your profile"
 msgstr "Přejde na váš profil"
 
-#: src/components/moderation/ReportDialog/index.tsx:342
-#: src/components/moderation/ReportDialog/index.tsx:358
+#: src/components/moderation/ReportDialog/index.tsx:344
+#: src/components/moderation/ReportDialog/index.tsx:360
 msgid "Need to report a copyright violation, legal request, or regulatory compliance issue?"
 msgstr "Potřebujete nahlásit porušení autorských práv, právní žádost nebo problém s dodržováním předpisů?"
 
@@ -9639,6 +9634,7 @@ msgstr ""
 msgid "Primary language"
 msgstr "Primární jazyk"
 
+#: src/view/com/auth/SplashScreen.web.tsx:170
 #: src/view/shell/desktop/RightNav.tsx:112
 #: src/view/shell/desktop/RightNav.tsx:113
 msgid "Privacy"
@@ -9665,6 +9661,7 @@ msgstr "Nastavení soukromí a zabezpečení"
 #: src/Navigation.tsx:337
 #: src/screens/Settings/AboutSettings.tsx:100
 #: src/screens/Settings/AboutSettings.tsx:103
+#: src/view/com/auth/SplashScreen.web.tsx:169
 #: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:810
 #: src/view/shell/Drawer.tsx:811
@@ -9876,10 +9873,6 @@ msgstr "Zobrazit další odpovědi"
 msgid "Read our blog post"
 msgstr "Přečíst náš blogový příspěvek"
 
-#: src/view/com/auth/SplashScreen.web.tsx:172
-msgid "Read the Bluesky blog"
-msgstr "Přečíst blog Bluesky"
-
 #: src/screens/Signup/StepInfo/Policies.tsx:53
 #: src/screens/Signup/StepInfo/Policies.tsx:79
 msgid "Read the Bluesky Privacy Policy"
@@ -9897,14 +9890,6 @@ msgstr ""
 #: src/screens/Signup/StepHandle/index.tsx:334
 msgid "Read the Humming Terms of Service"
 msgstr ""
-
-#: src/components/WelcomeModal.tsx:149
-msgid "Real conversations."
-msgstr "Skutečné konverzace."
-
-#: src/components/WelcomeModal.tsx:147
-msgid "Real people."
-msgstr "Skuteční lidé."
 
 #: src/screens/Takendown.tsx:158
 #: src/screens/Takendown.tsx:166
@@ -10317,8 +10302,8 @@ msgstr "Nahlásit účet"
 msgid "Report conversation"
 msgstr "Nahlásit konverzaci"
 
-#: src/components/moderation/ReportDialog/index.tsx:98
-#: src/components/moderation/ReportDialog/index.tsx:263
+#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:265
 msgid "Report dialog"
 msgstr "Dialog nahlášení"
 
@@ -10579,7 +10564,7 @@ msgstr "Zopakuje poslední akci, která skončila chybou"
 #: src/components/contacts/screens/VerifyNumber.tsx:355
 #: src/components/Error.tsx:60
 #: src/components/Lists.tsx:115
-#: src/components/moderation/ReportDialog/index.tsx:297
+#: src/components/moderation/ReportDialog/index.tsx:299
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:56
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:59
 #: src/components/StarterPack/ProfileStarterPacks.tsx:377
@@ -10602,7 +10587,7 @@ msgstr "Zopakuje poslední akci, která skončila chybou"
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: src/components/moderation/ReportDialog/index.tsx:294
+#: src/components/moderation/ReportDialog/index.tsx:296
 #: src/view/screens/Storybook/Admonitions.tsx:61
 msgid "Retry loading report options"
 msgstr "Zkusit znovu načíst možnosti nahlášení"
@@ -10927,10 +10912,6 @@ msgstr "Zobrazit příspěvky s #{tag}"
 msgid "See #{tag} posts by user"
 msgstr "Zobrazit příspěvky uživatele s #{tag}"
 
-#: src/view/com/auth/SplashScreen.web.tsx:177
-msgid "See jobs at Bluesky"
-msgstr "Pracovní nabídky v Bluesky"
-
 #: src/components/FeedInterstitials.tsx:491
 #: src/components/FeedInterstitials.tsx:549
 msgid "See more"
@@ -10976,7 +10957,7 @@ msgstr "Vybrat {langName}"
 msgid "Select a color"
 msgstr "Vyberte barvu"
 
-#: src/components/moderation/ReportDialog/index.tsx:380
+#: src/components/moderation/ReportDialog/index.tsx:382
 msgid "Select a reason"
 msgstr "Vyberte důvod"
 
@@ -11072,7 +11053,7 @@ msgstr "Vyberte jazyk..."
 msgid "Select languages"
 msgstr "Vybrat jazyky"
 
-#: src/components/moderation/ReportDialog/index.tsx:430
+#: src/components/moderation/ReportDialog/index.tsx:432
 msgid "Select moderation service"
 msgstr "Vybrat moderátorskou službu"
 
@@ -11183,7 +11164,7 @@ msgstr "Odeslat příspěvek uživateli {name}"
 msgid "Send post to..."
 msgstr "Odeslat příspěvek..."
 
-#: src/components/moderation/ReportDialog/index.tsx:818
+#: src/components/moderation/ReportDialog/index.tsx:820
 msgid "Send report to {title}"
 msgstr "Odeslat hlášení pro {title}"
 
@@ -11739,10 +11720,6 @@ msgstr "Odloží připomenutí"
 msgid "So many thoughts, you should post one"
 msgstr "Tolik myšlenek, měli byste nějakou zveřejnit"
 
-#: src/components/WelcomeModal.tsx:151
-msgid "Social media you control."
-msgstr "Sociální sítě pod vaší kontrolou."
-
 #: src/lib/interests.ts:58
 msgid "Software Dev"
 msgstr "Vývoj softwaru"
@@ -11809,7 +11786,7 @@ msgstr "Někdo byl odstraněn"
 msgid "Someone was removed from the group"
 msgstr "Někdo byl odstraněn ze skupiny"
 
-#: src/components/moderation/ReportDialog/index.tsx:103
+#: src/components/moderation/ReportDialog/index.tsx:105
 msgid "Something wasn't quite right with the data you're trying to report. Please contact support."
 msgstr "S daty, která se snažíte nahlásit, něco nebylo v pořádku. Kontaktujte prosím podporu."
 
@@ -11820,7 +11797,7 @@ msgid "Something went wrong"
 msgstr "Něco se pokazilo"
 
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:139
-#: src/components/moderation/ReportDialog/index.tsx:289
+#: src/components/moderation/ReportDialog/index.tsx:291
 #: src/screens/Deactivated.tsx:86
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:59
 #: src/view/screens/Storybook/Admonitions.tsx:56
@@ -11840,7 +11817,7 @@ msgstr "Něco se pokazilo!"
 msgid "Something went wrong. Please try again in a moment."
 msgstr "Něco se pokazilo. Zkuste to prosím za chvíli znovu."
 
-#: src/components/moderation/ReportDialog/index.tsx:247
+#: src/components/moderation/ReportDialog/index.tsx:249
 msgid "Something went wrong. Please try again."
 msgstr "Něco se pokazilo. Zkuste to prosím znovu."
 
@@ -12004,9 +11981,9 @@ msgstr "Odeslat odvolání"
 msgid "Submit Appeal"
 msgstr "Odeslat odvolání"
 
-#: src/components/moderation/ReportDialog/index.tsx:508
-#: src/components/moderation/ReportDialog/index.tsx:569
-#: src/components/moderation/ReportDialog/index.tsx:576
+#: src/components/moderation/ReportDialog/index.tsx:510
+#: src/components/moderation/ReportDialog/index.tsx:571
+#: src/components/moderation/ReportDialog/index.tsx:578
 msgid "Submit report"
 msgstr "Odeslat nahlášení"
 
@@ -12186,6 +12163,8 @@ msgid "Sunset"
 msgstr "Západ slunce"
 
 #: src/Navigation.tsx:332
+#: src/view/com/auth/SplashScreen.web.tsx:172
+#: src/view/com/auth/SplashScreen.web.tsx:173
 #: src/view/screens/Support.tsx:25
 #: src/view/screens/Support.tsx:28
 msgid "Support"
@@ -12358,6 +12337,7 @@ msgstr "Řekněte nám něco více"
 msgid "Temporarily deactivate your account"
 msgstr "Dočasně deaktivovat váš účet"
 
+#: src/view/com/auth/SplashScreen.web.tsx:167
 #: src/view/shell/desktop/RightNav.tsx:119
 #: src/view/shell/desktop/RightNav.tsx:120
 msgid "Terms"
@@ -12369,6 +12349,7 @@ msgstr "Podmínky"
 #: src/Navigation.tsx:342
 #: src/screens/Settings/AboutSettings.tsx:92
 #: src/screens/Settings/AboutSettings.tsx:95
+#: src/view/com/auth/SplashScreen.web.tsx:166
 #: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:803
 #: src/view/shell/Drawer.tsx:805
@@ -13417,17 +13398,17 @@ msgstr "Přestat sledovat účet"
 msgid "Unfollows the user"
 msgstr "Přestane sledovat uživatele"
 
-#: src/components/moderation/ReportDialog/index.tsx:492
+#: src/components/moderation/ReportDialog/index.tsx:494
 msgid "Unfortunately, none of your subscribed labelers supports this report type."
 msgstr "Bohužel žádný z vašich odebíraných labelerů nepodporuje tento typ nahlášení."
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:263
-msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Bluesky."
-msgstr "Datum narození uložené ve vašem profilu bohužel ukazuje, že jste příliš mladí na přístup k Bluesky."
+msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Humming."
+msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:247
-msgid "Unfortunately, your declared age indicates that you are not old enough to access Bluesky in your region."
-msgstr "Vámi uvedený věk bohužel naznačuje, že nejste dostatečně staří na přístup k Bluesky ve vašem regionu."
+msgid "Unfortunately, your declared age indicates that you are not old enough to access Humming in your region."
+msgstr ""
 
 #: src/components/verification/VerificationsDialog.tsx:183
 msgid "Unknown verifier"
@@ -14637,8 +14618,8 @@ msgid "You are a trusted verifier"
 msgstr "Jste důvěryhodný ověřovatel"
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:174
-msgid "You are accessing Bluesky from a region that legally requires us to verify your age before allowing you to access the app."
-msgstr "Přistupujete k Bluesky z regionu, který nám zákonně ukládá ověřit váš věk, než vám umožníme aplikaci používat."
+msgid "You are accessing Humming from a region that legally requires us to verify your age before allowing you to access the app."
+msgstr ""
 
 #. placeholder {0}: sanitizeHandle(profile.handle, '@')
 #: src/components/dms/MessageItem.tsx:719
@@ -14661,10 +14642,13 @@ msgstr "Vytváříte účet na"
 msgid "You are currently blocked from using the Go Live feature. To appeal this moderation decision, please submit the form below."
 msgstr "V současné době máte zablokované používání funkce Vysílat živě. Pokud chcete proti tomuto moderátorskému rozhodnutí podat odvolání, vyplňte prosím níže uvedený formulář."
 
-#: src/ageAssurance/components/NoAccessScreen.tsx:400
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:124
 msgid "You are currently unable to access Bluesky's Age Assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
 msgstr "V současné době nemáte přístup k procesu ověření věku na Bluesky. Pokud se domníváte, že jde o chybu, <0>kontaktujte náš moderátorský tým</0>."
+
+#: src/ageAssurance/components/NoAccessScreen.tsx:400
+msgid "You are currently unable to access Humming's age assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
+msgstr ""
 
 #: src/screens/SignupQueued.tsx:160
 msgid "You are in line."
@@ -15357,7 +15341,7 @@ msgid "Your reply was sent"
 msgstr "Vaše odpověď byla odeslána"
 
 #. placeholder {0}: state.selectedLabeler?.creator.displayName
-#: src/components/moderation/ReportDialog/index.tsx:519
+#: src/components/moderation/ReportDialog/index.tsx:521
 msgid "Your report will be sent to <0>{0}</0>."
 msgstr "Vaše hlášení bude odesláno na <0>{0}</0>."
 

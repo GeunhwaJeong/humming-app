@@ -1344,8 +1344,8 @@ msgstr "添加媒体内容至帖文"
 msgid "Add members"
 msgstr "添加成员"
 
-#: src/components/moderation/ReportDialog/index.tsx:528
-#: src/components/moderation/ReportDialog/index.tsx:532
+#: src/components/moderation/ReportDialog/index.tsx:530
+#: src/components/moderation/ReportDialog/index.tsx:534
 msgid "Add more details (optional)"
 msgstr "补充更多细节（可选）"
 
@@ -1451,7 +1451,7 @@ msgstr "正在添加成员至列表……"
 msgid "Additional details (limit 1000 characters)"
 msgstr "补充说明（一千个字以内）"
 
-#: src/components/moderation/ReportDialog/index.tsx:546
+#: src/components/moderation/ReportDialog/index.tsx:548
 msgid "Additional details (limit 300 characters)"
 msgstr "补充说明（300 个字以内）"
 
@@ -2370,10 +2370,6 @@ msgstr "屏蔽是公开可见的。被屏蔽的账户无法在你的帖文下回
 msgid "Blocking will not prevent labels from being applied on your account, but it will stop this account from replying in your threads or interacting with you."
 msgstr "屏蔽不会阻止其继续标记你的账户，但会阻止该账户在你发布的帖文下回复或与你互动。"
 
-#: src/view/com/auth/SplashScreen.web.tsx:174
-msgid "Blog"
-msgstr "博客"
-
 #. Advanced search: Examples of hashtags
 #: src/screens/Search/components/AdvancedSearchDialog/hooks.tsx:17
 msgid "bloomscrolling booksky"
@@ -2518,10 +2514,6 @@ msgstr "浏览 {0} 话题"
 msgid "Browse topic {displayName}"
 msgstr "浏览话题 {displayName}"
 
-#: src/view/com/auth/SplashScreen.web.tsx:169
-msgid "Business"
-msgstr "商务"
-
 #: src/screens/Bookmarks.tsx:295
 msgid "Button to go back to the home timeline"
 msgstr "返回到主页时间线的按钮"
@@ -2540,7 +2532,7 @@ msgstr ""
 #. placeholder {0}: sanitizeHandle(handle, '@')
 #. placeholder {0}: sanitizeHandle(item.feed.creator.handle, '@')
 #: src/components/LabelingServiceCard/index.tsx:62
-#: src/components/moderation/ReportDialog/index.tsx:847
+#: src/components/moderation/ReportDialog/index.tsx:849
 #: src/screens/Messages/JoinRequest.tsx:177
 #: src/screens/Search/components/StarterPackCard.tsx:107
 #: src/screens/Search/Explore.tsx:971
@@ -2730,7 +2722,7 @@ msgstr "更改账户代码"
 msgid "Change hosting provider"
 msgstr ""
 
-#: src/components/moderation/ReportDialog/index.tsx:445
+#: src/components/moderation/ReportDialog/index.tsx:447
 msgid "Change moderation service"
 msgstr "更改内容审核提供方"
 
@@ -2743,11 +2735,11 @@ msgstr "更改密码"
 msgid "Change password dialog"
 msgstr "更改密码对话框"
 
-#: src/components/moderation/ReportDialog/index.tsx:312
+#: src/components/moderation/ReportDialog/index.tsx:314
 msgid "Change report category"
 msgstr "更改举报类型"
 
-#: src/components/moderation/ReportDialog/index.tsx:390
+#: src/components/moderation/ReportDialog/index.tsx:392
 msgid "Change report reason"
 msgstr "更改举报原因"
 
@@ -3798,8 +3790,8 @@ msgstr "创建或修改此群组对话的邀请链接"
 
 #. Accessibility label for button to create a moderation report for the selected option
 #. placeholder {0}: option.title
-#: src/components/moderation/ReportDialog/index.tsx:709
-#: src/components/moderation/ReportDialog/index.tsx:754
+#: src/components/moderation/ReportDialog/index.tsx:711
+#: src/components/moderation/ReportDialog/index.tsx:756
 msgid "Create report for {0}"
 msgstr "创建针对 {0} 的举报"
 
@@ -3827,6 +3819,10 @@ msgstr "已屏蔽此列表的创建者"
 
 #: src/view/screens/TermsOfService.tsx:80
 msgid "Creators are solely responsible for the content they publish and for honoring what they advertise for paid content. Content that is illegal, infringes copyright, involves minors in any way, or depicts non-consensual acts is prohibited and will be removed, and the account terminated. Humming may remove content or restrict accounts that violate these terms."
+msgstr ""
+
+#: src/components/WelcomeModal.tsx:147
+msgid "Creators set the price."
 msgstr ""
 
 #: src/lib/interests.ts:57
@@ -4796,6 +4792,10 @@ msgstr ""
 msgid "Every line is aggregated from on-chain events (no platform fee is taken)"
 msgstr ""
 
+#: src/components/WelcomeModal.tsx:151
+msgid "Every payment settles on-chain."
+msgstr ""
+
 #: src/components/humming/CreatorHub.tsx:170
 msgid "Every subscription settles straight to your wallet. No payout queue, no withdrawal request: the money arrives on-chain the moment a fan pays."
 msgstr ""
@@ -5302,6 +5302,10 @@ msgstr "虚假账户或机器人"
 msgid "False information about elections"
 msgstr "散布选举相关虚假信息"
 
+#: src/components/WelcomeModal.tsx:149
+msgid "Fans pay them directly."
+msgstr ""
+
 #: src/Navigation.tsx:292
 msgid "Feed"
 msgstr "动态源"
@@ -5694,7 +5698,7 @@ msgstr "“Following”动态源偏好设置"
 msgid "Following Feed Preferences"
 msgstr "“Following”动态源偏好设置"
 
-#: src/components/Pills.tsx:212
+#: src/components/Pills.tsx:214
 #: src/screens/Profile/Header/Handle.tsx:33
 msgid "Follows you"
 msgstr "关注了你"
@@ -6799,7 +6803,7 @@ msgstr "无效的互动选项。"
 msgid "Invalid phone number"
 msgstr "无效的电话号码"
 
-#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:102
 msgid "Invalid report subject"
 msgstr "无效的举报内容"
 
@@ -6920,11 +6924,6 @@ msgstr "现在只有你一个！通过上面的列表将更多人添加到你的
 #: src/view/com/composer/Composer.tsx:2642
 msgid "Job ID: {0}"
 msgstr "作业 ID：{0}"
-
-#. Link to a page with job openings at Bluesky
-#: src/view/com/auth/SplashScreen.web.tsx:179
-msgid "Jobs"
-msgstr "工作"
 
 #: src/components/dms/ChatInvite/Root.tsx:117
 #: src/components/intents/GroupChatJoinDialog.tsx:296
@@ -7054,10 +7053,6 @@ msgstr "了解详情"
 #: src/components/ageAssurance/AgeAssuranceDismissibleFeedBanner.tsx:66
 msgid "Learn more about age assurance"
 msgstr "深入了解年龄验证"
-
-#: src/view/com/auth/SplashScreen.web.tsx:167
-msgid "Learn more about Bluesky"
-msgstr "深入了解有关 Bluesky 的信息"
 
 #: src/components/contacts/components/InviteInfo.tsx:33
 msgid "Learn more about how inviting friends works"
@@ -7989,8 +7984,8 @@ msgstr "转到下一页"
 msgid "Navigates to your profile"
 msgstr "转到个人资料"
 
-#: src/components/moderation/ReportDialog/index.tsx:342
-#: src/components/moderation/ReportDialog/index.tsx:358
+#: src/components/moderation/ReportDialog/index.tsx:344
+#: src/components/moderation/ReportDialog/index.tsx:360
 msgid "Need to report a copyright violation, legal request, or regulatory compliance issue?"
 msgstr "需要举报侵害版权、法律要求及合规性问题吗？"
 
@@ -9639,6 +9634,7 @@ msgstr ""
 msgid "Primary language"
 msgstr "首选语言"
 
+#: src/view/com/auth/SplashScreen.web.tsx:170
 #: src/view/shell/desktop/RightNav.tsx:112
 #: src/view/shell/desktop/RightNav.tsx:113
 msgid "Privacy"
@@ -9665,6 +9661,7 @@ msgstr "隐私与安全设置"
 #: src/Navigation.tsx:337
 #: src/screens/Settings/AboutSettings.tsx:100
 #: src/screens/Settings/AboutSettings.tsx:103
+#: src/view/com/auth/SplashScreen.web.tsx:169
 #: src/view/screens/PrivacyPolicy.tsx:24
 #: src/view/shell/Drawer.tsx:810
 #: src/view/shell/Drawer.tsx:811
@@ -9876,10 +9873,6 @@ msgstr "查看更多回复"
 msgid "Read our blog post"
 msgstr "阅读我们的博客文章"
 
-#: src/view/com/auth/SplashScreen.web.tsx:172
-msgid "Read the Bluesky blog"
-msgstr "浏览 Bluesky 博客"
-
 #: src/screens/Signup/StepInfo/Policies.tsx:53
 #: src/screens/Signup/StepInfo/Policies.tsx:79
 msgid "Read the Bluesky Privacy Policy"
@@ -9897,14 +9890,6 @@ msgstr ""
 #: src/screens/Signup/StepHandle/index.tsx:334
 msgid "Read the Humming Terms of Service"
 msgstr ""
-
-#: src/components/WelcomeModal.tsx:149
-msgid "Real conversations."
-msgstr "真实的对话。"
-
-#: src/components/WelcomeModal.tsx:147
-msgid "Real people."
-msgstr "真实的用户。"
 
 #: src/screens/Takendown.tsx:158
 #: src/screens/Takendown.tsx:166
@@ -10317,8 +10302,8 @@ msgstr "举报账户"
 msgid "Report conversation"
 msgstr "举报对话"
 
-#: src/components/moderation/ReportDialog/index.tsx:98
-#: src/components/moderation/ReportDialog/index.tsx:263
+#: src/components/moderation/ReportDialog/index.tsx:100
+#: src/components/moderation/ReportDialog/index.tsx:265
 msgid "Report dialog"
 msgstr "举报页面"
 
@@ -10579,7 +10564,7 @@ msgstr "重试上次出错的操作"
 #: src/components/contacts/screens/VerifyNumber.tsx:355
 #: src/components/Error.tsx:60
 #: src/components/Lists.tsx:115
-#: src/components/moderation/ReportDialog/index.tsx:297
+#: src/components/moderation/ReportDialog/index.tsx:299
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:56
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:59
 #: src/components/StarterPack/ProfileStarterPacks.tsx:377
@@ -10602,7 +10587,7 @@ msgstr "重试上次出错的操作"
 msgid "Retry"
 msgstr "重试"
 
-#: src/components/moderation/ReportDialog/index.tsx:294
+#: src/components/moderation/ReportDialog/index.tsx:296
 #: src/view/screens/Storybook/Admonitions.tsx:61
 msgid "Retry loading report options"
 msgstr "重新加载举报选项"
@@ -10927,10 +10912,6 @@ msgstr "查看 #{tag} 的帖文"
 msgid "See #{tag} posts by user"
 msgstr "查看该用户包含 #{tag} 的帖文"
 
-#: src/view/com/auth/SplashScreen.web.tsx:177
-msgid "See jobs at Bluesky"
-msgstr "查看 Bluesky 的工作职缺"
-
 #: src/components/FeedInterstitials.tsx:491
 #: src/components/FeedInterstitials.tsx:549
 msgid "See more"
@@ -10976,7 +10957,7 @@ msgstr "选择 {langName}"
 msgid "Select a color"
 msgstr "选择一个颜色"
 
-#: src/components/moderation/ReportDialog/index.tsx:380
+#: src/components/moderation/ReportDialog/index.tsx:382
 msgid "Select a reason"
 msgstr "选择一个原因"
 
@@ -11072,7 +11053,7 @@ msgstr "选择语言……"
 msgid "Select languages"
 msgstr "选择语言"
 
-#: src/components/moderation/ReportDialog/index.tsx:430
+#: src/components/moderation/ReportDialog/index.tsx:432
 msgid "Select moderation service"
 msgstr "选择内容审核服务提供方"
 
@@ -11183,7 +11164,7 @@ msgstr "发送帖文给 {name}"
 msgid "Send post to..."
 msgstr "发送帖文给……"
 
-#: src/components/moderation/ReportDialog/index.tsx:818
+#: src/components/moderation/ReportDialog/index.tsx:820
 msgid "Send report to {title}"
 msgstr "将举报提交给 {title}"
 
@@ -11739,10 +11720,6 @@ msgstr "暂停提醒"
 msgid "So many thoughts, you should post one"
 msgstr "总有一个想法值得被看见，挑一则发布吧"
 
-#: src/components/WelcomeModal.tsx:151
-msgid "Social media you control."
-msgstr "由你掌控的社交媒体。"
-
 #: src/lib/interests.ts:58
 msgid "Software Dev"
 msgstr "程序开发"
@@ -11809,7 +11786,7 @@ msgstr "有人被移除了"
 msgid "Someone was removed from the group"
 msgstr "有人已被移除出群组"
 
-#: src/components/moderation/ReportDialog/index.tsx:103
+#: src/components/moderation/ReportDialog/index.tsx:105
 msgid "Something wasn't quite right with the data you're trying to report. Please contact support."
 msgstr "你试图提交的举报信息可能有误，请联系支持获取帮助。"
 
@@ -11820,7 +11797,7 @@ msgid "Something went wrong"
 msgstr "出了点问题"
 
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:139
-#: src/components/moderation/ReportDialog/index.tsx:289
+#: src/components/moderation/ReportDialog/index.tsx:291
 #: src/screens/Deactivated.tsx:86
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:59
 #: src/view/screens/Storybook/Admonitions.tsx:56
@@ -11840,7 +11817,7 @@ msgstr "出了点问题！"
 msgid "Something went wrong. Please try again in a moment."
 msgstr "发生错误，请稍后重试。"
 
-#: src/components/moderation/ReportDialog/index.tsx:247
+#: src/components/moderation/ReportDialog/index.tsx:249
 msgid "Something went wrong. Please try again."
 msgstr "发生错误，请重试。"
 
@@ -12004,9 +11981,9 @@ msgstr "提交申诉"
 msgid "Submit Appeal"
 msgstr "提交申诉"
 
-#: src/components/moderation/ReportDialog/index.tsx:508
-#: src/components/moderation/ReportDialog/index.tsx:569
-#: src/components/moderation/ReportDialog/index.tsx:576
+#: src/components/moderation/ReportDialog/index.tsx:510
+#: src/components/moderation/ReportDialog/index.tsx:571
+#: src/components/moderation/ReportDialog/index.tsx:578
 msgid "Submit report"
 msgstr "提交举报"
 
@@ -12186,6 +12163,8 @@ msgid "Sunset"
 msgstr "日落"
 
 #: src/Navigation.tsx:332
+#: src/view/com/auth/SplashScreen.web.tsx:172
+#: src/view/com/auth/SplashScreen.web.tsx:173
 #: src/view/screens/Support.tsx:25
 #: src/view/screens/Support.tsx:28
 msgid "Support"
@@ -12358,6 +12337,7 @@ msgstr "告诉我们更多"
 msgid "Temporarily deactivate your account"
 msgstr "暂时停用你的账户"
 
+#: src/view/com/auth/SplashScreen.web.tsx:167
 #: src/view/shell/desktop/RightNav.tsx:119
 #: src/view/shell/desktop/RightNav.tsx:120
 msgid "Terms"
@@ -12369,6 +12349,7 @@ msgstr "条款"
 #: src/Navigation.tsx:342
 #: src/screens/Settings/AboutSettings.tsx:92
 #: src/screens/Settings/AboutSettings.tsx:95
+#: src/view/com/auth/SplashScreen.web.tsx:166
 #: src/view/screens/TermsOfService.tsx:24
 #: src/view/shell/Drawer.tsx:803
 #: src/view/shell/Drawer.tsx:805
@@ -13417,17 +13398,17 @@ msgstr "取消关注账户"
 msgid "Unfollows the user"
 msgstr "取消关注用户"
 
-#: src/components/moderation/ReportDialog/index.tsx:492
+#: src/components/moderation/ReportDialog/index.tsx:494
 msgid "Unfortunately, none of your subscribed labelers supports this report type."
 msgstr "抱歉，你订阅的标记者不支持此举报类型。"
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:263
-msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Bluesky."
-msgstr "很抱歉，你在个人资料中保存的出生日期信息显示你的年龄太小，暂时还不能使用 Bluesky。"
+msgid "Unfortunately, the birthdate you have saved to your profile makes you too young to access Humming."
+msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:247
-msgid "Unfortunately, your declared age indicates that you are not old enough to access Bluesky in your region."
-msgstr "很抱歉，你设置的年龄无法在你所在的地区使用 Bluesky。"
+msgid "Unfortunately, your declared age indicates that you are not old enough to access Humming in your region."
+msgstr ""
 
 #: src/components/verification/VerificationsDialog.tsx:183
 msgid "Unknown verifier"
@@ -14637,8 +14618,8 @@ msgid "You are a trusted verifier"
 msgstr "你是可信的认证人"
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:174
-msgid "You are accessing Bluesky from a region that legally requires us to verify your age before allowing you to access the app."
-msgstr "你所在的地区依法要求我们在允许您使用 Bluesky 应用之前验证你的年龄。"
+msgid "You are accessing Humming from a region that legally requires us to verify your age before allowing you to access the app."
+msgstr ""
 
 #. placeholder {0}: sanitizeHandle(profile.handle, '@')
 #: src/components/dms/MessageItem.tsx:719
@@ -14661,10 +14642,13 @@ msgstr "你的账户将创建在"
 msgid "You are currently blocked from using the Go Live feature. To appeal this moderation decision, please submit the form below."
 msgstr "你目前已被禁止使用直播功能，如需对此审核决定提出申诉，请填写以下表格并提交。"
 
-#: src/ageAssurance/components/NoAccessScreen.tsx:400
 #: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:124
 msgid "You are currently unable to access Bluesky's Age Assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
 msgstr "你现在无法访问 Bluesky 的年龄验证流程，如果你认为这是系统误判，请<0>联系我们的支持团队</0>。"
+
+#: src/ageAssurance/components/NoAccessScreen.tsx:400
+msgid "You are currently unable to access Humming's age assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
+msgstr ""
 
 #: src/screens/SignupQueued.tsx:160
 msgid "You are in line."
@@ -15357,7 +15341,7 @@ msgid "Your reply was sent"
 msgstr "已发布你的回复"
 
 #. placeholder {0}: state.selectedLabeler?.creator.displayName
-#: src/components/moderation/ReportDialog/index.tsx:519
+#: src/components/moderation/ReportDialog/index.tsx:521
 msgid "Your report will be sent to <0>{0}</0>."
 msgstr "你的举报信息将提交给 <0>{0}</0>。"
 

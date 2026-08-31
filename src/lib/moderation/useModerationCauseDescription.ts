@@ -1,12 +1,9 @@
 import {useMemo} from 'react'
-import {
-  BSKY_LABELER_DID,
-  type ModerationCause,
-  type ModerationCauseSource,
-} from '@atproto/api'
+import {type ModerationCause, type ModerationCauseSource} from '@atproto/api'
 import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 
+import {HUMMING_LABELER_DID} from '#/lib/constants'
 import {sanitizeHandle} from '#/lib/strings/handles'
 import {useLabelDefinitions} from '#/state/preferences'
 import {useSession} from '#/state/session'
@@ -138,9 +135,9 @@ export function useModerationCauseDescription(
         : undefined
       let sourceDisplayName = labeler?.creator.displayName
       if (!source) {
-        if (cause.label.src === BSKY_LABELER_DID) {
-          source = 'moderation.bsky.app'
-          sourceDisplayName = 'Bluesky Moderation Service'
+        if (cause.label.src === HUMMING_LABELER_DID) {
+          source = 'humming.social'
+          sourceDisplayName = 'Humming Moderation'
         } else {
           source = _(msg`an unknown labeler`)
         }

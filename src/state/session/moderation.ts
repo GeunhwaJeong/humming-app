@@ -1,5 +1,6 @@
-import {AtpAgent, BSKY_LABELER_DID} from '@atproto/api'
+import {AtpAgent} from '@atproto/api'
 
+import {HUMMING_LABELER_DID} from '#/lib/constants'
 import {IS_TEST_USER} from '#/lib/constants'
 import {configureAdditionalModerationAuthorities} from './additional-moderation-authorities'
 import {readLabelers} from './agent-config'
@@ -27,7 +28,7 @@ export async function configureModerationForAccount(
   const labelerDids = await readLabelers(account.did).catch(_ => {})
   if (labelerDids) {
     agent.configureLabelersHeader(
-      labelerDids.filter(did => did !== BSKY_LABELER_DID),
+      labelerDids.filter(did => did !== HUMMING_LABELER_DID),
     )
   } else {
     // If there are no headers in the storage, we'll not send them on the initial requests.
@@ -38,7 +39,7 @@ export async function configureModerationForAccount(
 }
 
 function switchToBskyAppLabeler() {
-  AtpAgent.configure({appLabelers: [BSKY_LABELER_DID]})
+  AtpAgent.configure({appLabelers: [HUMMING_LABELER_DID]})
 }
 
 async function trySwitchToTestAppLabeler(agent: AtpAgent) {

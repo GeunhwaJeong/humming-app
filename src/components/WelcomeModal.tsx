@@ -144,11 +144,11 @@ export function WelcomeModal({control}: WelcomeModalProps) {
                       letterSpacing: -0.5,
                     }),
                   ]}>
-                  <Trans>Real people.</Trans>
+                  <Trans>Creators set the price.</Trans>
                   {'\n'}
-                  <Trans>Real conversations.</Trans>
+                  <Trans>Fans pay them directly.</Trans>
                   {'\n'}
-                  <Trans>Social media you control.</Trans>
+                  <Trans>Every payment settles on-chain.</Trans>
                 </Text>
               </View>
               <View style={[a.gap_md, a.align_center]}>

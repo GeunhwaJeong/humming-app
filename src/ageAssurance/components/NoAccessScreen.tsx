@@ -6,6 +6,7 @@ import {Trans, useLingui} from '@lingui/react/macro'
 import {dateDiff, useGetTimeAgo} from '#/lib/hooks/useTimeAgo'
 import {useIsBirthdateUpdateAllowed} from '#/state/birthdate'
 import {useSessionApi} from '#/state/session'
+import {LogomarkWithType} from '#/view/icons/LogomarkWithType'
 import {DeactivateAccountDialog} from '#/screens/Settings/components/DeactivateAccountDialog'
 import {DeleteAccountDialog} from '#/screens/Settings/components/DeleteAccountDialog'
 import {atoms as a, useBreakpoints, useTheme, web} from '#/alf'
@@ -18,7 +19,6 @@ import * as Dialog from '#/components/Dialog'
 import {useDialogControl} from '#/components/Dialog'
 import {BirthDateSettingsDialog} from '#/components/dialogs/BirthDateSettings'
 import {DeviceLocationRequestDialog} from '#/components/dialogs/DeviceLocationRequestDialog'
-import {Full as Logo} from '#/components/icons/Logo'
 import {ShieldCheck_Stroke2_Corner0_Rounded as ShieldIcon} from '#/components/icons/Shield'
 import {createStaticClick, SimpleInlineLinkText} from '#/components/Link'
 import {Loader} from '#/components/Loader'
@@ -172,7 +172,7 @@ export function NoAccessScreen() {
                         </Text>
                         <Text style={[textStyles]}>
                           <Trans>
-                            You are accessing Bluesky from a region that legally
+                            You are accessing Humming from a region that legally
                             requires us to verify your age before allowing you
                             to access the app.
                           </Trans>
@@ -246,7 +246,7 @@ export function NoAccessScreen() {
                           <Text style={[textStyles]}>
                             <Trans>
                               Unfortunately, your declared age indicates that
-                              you are not old enough to access Bluesky in your
+                              you are not old enough to access Humming in your
                               region.
                             </Trans>
                           </Text>
@@ -262,7 +262,7 @@ export function NoAccessScreen() {
                       <Text style={[textStyles]}>
                         <Trans>
                           Unfortunately, the birthdate you have saved to your
-                          profile makes you too young to access Bluesky.
+                          profile makes you too young to access Humming.
                         </Trans>
                       </Text>
 
@@ -304,7 +304,7 @@ export function NoAccessScreen() {
             </View>
 
             <View style={[a.pt_lg, a.gap_xl, {maxWidth: 280}]}>
-              <Logo width={120} textFill={t.atoms.text.color} />
+              <LogomarkWithType width={120} fill={t.atoms.text.color} />
               <Text
                 style={[
                   a.text_sm,
@@ -398,7 +398,7 @@ function AccessSection() {
         {isBlocked ? (
           <Admonition type="warning">
             <Trans>
-              You are currently unable to access Bluesky's Age Assurance flow.
+              You are currently unable to access Humming's age assurance flow.
               Please{' '}
               <SimpleInlineLinkText
                 label={l`Contact our moderation team`}
