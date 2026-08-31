@@ -1,5 +1,5 @@
 // Humming: rendered in place of a gated post body — lock glyph, teaser
-// copy, and a full-width subscribe CTA that settles on the Haneul chain.
+// copy, and a full-width subscribe CTA that settles on-chain.
 import {View} from 'react-native'
 import {type AppBskyFeedDefs} from '@atproto/api'
 import {msg, plural} from '@lingui/core/macro'
@@ -72,8 +72,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
       )}
       <Text style={[a.text_sm, a.text_center, t.atoms.text_contrast_medium]}>
         <Trans>
-          Access is verified by your on-chain subscription and purchase state on
-          Haneul
+          Access is verified by your on-chain subscription and purchase state
         </Trans>
       </Text>
       {lock.tier && (
@@ -84,7 +83,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             color="primary"
             disabled={isPending}
             style={[a.self_stretch, a.mt_xs]}
-            label={_(msg`Subscribe to view — ${tierLabel}`)}
+            label={_(msg`Subscribe to view · ${tierLabel}`)}
             onPress={e => {
               e.preventDefault()
               e.stopPropagation()
@@ -94,7 +93,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
               {isPending ? (
                 <Trans>Paying on-chain…</Trans>
               ) : (
-                <Trans>Subscribe to view — {tierLabel}</Trans>
+                <Trans>Subscribe to view · {tierLabel}</Trans>
               )}
             </ButtonText>
           </Button>
@@ -102,7 +101,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             control={promptControl}
             title={_(msg`Subscribe to @${post.author.handle}`)}
             description={_(
-              msg`${tierLabel} will be charged from your Haneul wallet. Everything except the platform fee settles to the creator instantly on-chain.`,
+              msg`${tierLabel} will be charged from your wallet. Everything except the platform fee settles to the creator instantly on-chain.`,
             )}
             onConfirm={() => subscribe()}
             confirmButtonCta={_(msg`Pay on-chain`)}
@@ -117,7 +116,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             color="secondary"
             disabled={isPurchasing}
             style={[a.self_stretch]}
-            label={_(msg`Buy this post only — ${price}`)}
+            label={_(msg`Buy this post only · ${price}`)}
             onPress={e => {
               e.preventDefault()
               e.stopPropagation()
@@ -127,7 +126,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
               {isPurchasing ? (
                 <Trans>Paying on-chain…</Trans>
               ) : (
-                <Trans>Buy this post only — {price}</Trans>
+                <Trans>Buy this post only · {price}</Trans>
               )}
             </ButtonText>
           </Button>
@@ -135,7 +134,7 @@ export function LockedPostCard({post}: {post: AppBskyFeedDefs.PostView}) {
             control={purchasePromptControl}
             title={_(msg`Buy this post`)}
             description={_(
-              msg`${price} will be charged from your Haneul wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain.`,
+              msg`${price} will be charged from your wallet and this post stays unlocked for you permanently, no subscription needed. The purchase is recorded on-chain.`,
             )}
             onConfirm={() => purchase()}
             confirmButtonCta={_(msg`Pay on-chain`)}

@@ -34,14 +34,14 @@ function TermsBody() {
     <ScrollView style={[s.hContentRegion, pal.view]}>
       <View style={[s.p20, a.gap_md]}>
         <Text type="sm" style={pal.textLight}>
-          <Trans>Last updated: July 17, 2026</Trans>
+          <Trans>Last updated: August 31, 2026</Trans>
         </Text>
 
         <SectionText title={_(msg`1. About Humming`)}>
           <Trans>
             Humming is a social platform where creators publish content and
-            receive payments directly through the Haneul blockchain. By creating
-            an account or using Humming, you agree to these terms. If you do not
+            receive payments directly on a public blockchain. By creating an
+            account or using Humming, you agree to these terms. If you do not
             agree, do not use the service.
           </Trans>
         </SectionText>
@@ -57,21 +57,20 @@ function TermsBody() {
         <SectionText title={_(msg`3. On-chain payments are final`)}>
           <Trans>
             Subscriptions, post purchases, and tips are executed as transactions
-            on the Haneul blockchain and settle directly to the creator. Once
-            confirmed on-chain, a payment cannot be reversed by Humming.
-            Purchase records are permanently stored on-chain, including a
-            pointer to the content as it existed at the moment of purchase.
-            Creators may voluntarily refund a payment, but Humming cannot force
-            them to do so.
+            on the blockchain and settle directly to the creator. Once confirmed
+            on-chain, a payment cannot be reversed by Humming. Purchase records
+            are permanently stored on-chain, including a pointer to the content
+            as it existed at the moment of purchase. Creators may voluntarily
+            refund a payment, but Humming cannot force them to do so.
           </Trans>
         </SectionText>
 
         <SectionText title={_(msg`4. Your wallet`)}>
           <Trans>
             During the current early-access period, Humming creates and holds a
-            Haneul wallet on your behalf (a custodial wallet). Your password
-            protects access to this wallet — use a strong, unique password. Keep
-            balances small: this is an early-stage service and self-custody
+            blockchain wallet on your behalf (a custodial wallet). Your password
+            protects access to this wallet, so use a strong, unique password.
+            Keep balances small: this is an early-stage service and self-custody
             support is on the roadmap. Humming is not responsible for losses
             caused by sharing or losing your password.
           </Trans>
@@ -101,7 +100,7 @@ function TermsBody() {
             Humming is provided "as is" during early access. We do not guarantee
             uninterrupted availability. Content is stored off-chain and may be
             removed for legal or policy reasons; on-chain records (payments,
-            subscriptions, name registrations) persist on the Haneul blockchain
+            subscriptions, name registrations) persist on the blockchain
             independently of Humming.
           </Trans>
         </SectionText>
@@ -110,8 +109,8 @@ function TermsBody() {
           <Trans>
             You may stop using Humming at any time. We may suspend or terminate
             accounts that violate these terms. Because wallets and payment
-            records live on the Haneul blockchain, on-chain assets and records
-            are unaffected by account termination.
+            records live on the blockchain, on-chain assets and records are
+            unaffected by account termination.
           </Trans>
         </SectionText>
 

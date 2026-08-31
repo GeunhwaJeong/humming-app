@@ -60,7 +60,7 @@ export function WalletNavItem({minimal}: {minimal: boolean}) {
         onPress={() => control.open()}
         accessibilityRole="button"
         accessibilityLabel={_(msg`Wallet`)}
-        accessibilityHint={_(msg`Opens your Haneul wallet`)}
+        accessibilityHint={_(msg`Opens your wallet`)}
         testID="hummingWalletNavItem">
         <View
           style={[a.align_center, a.justify_center, {width: 24, height: 24}]}>
@@ -443,7 +443,7 @@ function ReceiveView({
         <CircleInfoIcon size="sm" style={[t.atoms.text_contrast_medium]} />
         <Text style={[a.flex_1, a.text_sm, t.atoms.text_contrast_medium]}>
           <Trans>
-            Use this address to receive funds — from an exchange or any other
+            Use this address to receive funds from an exchange or any other
             wallet.
           </Trans>
         </Text>

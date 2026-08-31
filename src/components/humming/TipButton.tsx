@@ -1,5 +1,5 @@
 // Humming: on-chain tip button in the post controls row.
-// Fixed demo amount; the transfer settles on the Haneul chain with the
+// Fixed demo amount; the transfer settles on-chain with the
 // platform fee split applied by the contract.
 import {type AppBskyFeedDefs} from '@atproto/api'
 import {msg} from '@lingui/core/macro'
@@ -75,7 +75,7 @@ export function HummingTipButton({
         control={promptControl}
         title={_(msg`Send a tip to @${post.author.handle}`)}
         description={_(
-          msg`${tipAmount} will be sent on-chain from your Haneul wallet straight to the creator's wallet (platform fee deducted automatically).`,
+          msg`${tipAmount} will be sent on-chain from your wallet straight to the creator's wallet (platform fee deducted automatically).`,
         )}
         onConfirm={() => tip()}
         confirmButtonCta={_(msg`Send tip`)}
