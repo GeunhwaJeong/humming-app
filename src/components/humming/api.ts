@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming monetization API — custom XRPC methods served by the facade.
 // agent.call() only dispatches nsids registered in the bundled lexicons,
 // so these custom methods go over raw fetch with the session's auth token;

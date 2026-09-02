@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: 크리에이터 되기 온보딩 + 내 수익 대시보드.
 // 사이드바 진입점(프로필~설정 사이)에서 열리는 다이얼로그 두 개 —
 // 비크리에이터에겐 전환 온보딩(KYC 스텁 → 티어 가격 → 잠금 모드),

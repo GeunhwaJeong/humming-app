@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {forwardRef} from 'react'
 import {type TextProps} from 'react-native'
 import Svg, {Path, type PathProps, type SvgProps} from 'react-native-svg'

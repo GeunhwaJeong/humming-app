@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Regex from the go implementation
 // https://github.com/bluesky-social/indigo/blob/main/atproto/syntax/handle.go#L10
 import {i18n} from '@lingui/core'

@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {memo, useMemo} from 'react'
 import {Text as RNText, View} from 'react-native'
 import {

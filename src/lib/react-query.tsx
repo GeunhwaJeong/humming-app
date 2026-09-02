@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {useEffect, useRef, useState} from 'react'
 import {AppState, type AppStateStatus} from 'react-native'
 import {createAsyncStoragePersister} from '@tanstack/query-async-storage-persister'

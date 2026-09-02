@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {MMKV} from '@bsky.app/react-native-mmkv'
 import {setPolyfills} from '@growthbook/growthbook'
 import {GrowthBook} from '@growthbook/growthbook-react'

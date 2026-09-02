@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: shared creator-info query + subscribe mutation, used by the
 // profile header button, the profile subscribe card, and locked post cards.
 import {useCallback, useRef} from 'react'

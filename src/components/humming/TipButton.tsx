@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: on-chain tip button in the post controls row.
 // Fixed demo amount; the transfer settles on-chain with the
 // platform fee split applied by the contract.

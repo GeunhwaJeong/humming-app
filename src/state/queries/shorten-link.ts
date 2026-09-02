@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: upstream POSTs to Bluesky's go.bsky.app shortener. We run no
 // shortlink service, and starter-pack paths must not leak to Bluesky infra —
 // hand back the canonical URL unchanged (callers already treat this shape as
