@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: rendered in place of a gated post body — lock glyph, teaser
 // copy, and a full-width subscribe CTA that settles on-chain.
 import {View} from 'react-native'

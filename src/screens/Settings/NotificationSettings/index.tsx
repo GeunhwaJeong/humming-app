@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {useEffect} from 'react'
 import {Linking, View} from 'react-native'
 import * as Application from 'expo-application'

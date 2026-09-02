@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {type AppBskyEmbedExternal, type AtpAgent} from '@atproto/api'
 
 import {LINK_META_PROXY} from '#/lib/constants'

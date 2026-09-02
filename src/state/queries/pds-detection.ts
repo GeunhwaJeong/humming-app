@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {useState} from 'react'
 import {type DidDocument, getPdsEndpoint} from '@atproto/common-web'
 import {useQuery, useQueryClient} from '@tanstack/react-query'

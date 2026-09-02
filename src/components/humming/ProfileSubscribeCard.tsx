@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: full-width subscription card under the profile header —
 // tier price, on-chain subscribe CTA, post stats, locked-profile notice.
 import {View} from 'react-native'

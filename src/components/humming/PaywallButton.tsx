@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: 컴포저 "열람 설정" — 이 글에 단건 가격을 붙이면 글 작성과 같은
 // 트랜잭션에서 온체인 페이월이 생성된다 (공개 글이 기본값).
 // Bluesky의 threadgate(답글 제한)와는 별개의 축: 저건 상호작용, 이건 열람.

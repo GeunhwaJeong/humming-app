@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: compact on-chain subscription button for the profile header
 // action row. The full card below the bio is ProfileSubscribeCard.
 import {type AppBskyActorDefs} from '@atproto/api'

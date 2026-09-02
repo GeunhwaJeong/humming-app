@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: regression tests for the payment double-fire guard. A rapid
 // double-tap must never start two on-chain payments.
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'

@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: 지갑 패널 — "가입=지갑"을 UI에 드러낸다.
 // 사이드바 진입점에서 열리는 다이얼로그: 주소·잔고·최근 온체인 활동 + 받기(QR).
 // 받기 전용(읽기)이며 보내기는 의도적으로 없다 — 수탁 파사드가 임의 이체까지

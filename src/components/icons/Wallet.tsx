@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {createSinglePathSVG} from './TEMPLATE'
 
 export const Wallet_Stroke2_Corner0_Rounded = createSinglePathSVG({

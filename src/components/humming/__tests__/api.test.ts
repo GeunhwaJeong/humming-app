@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: money display and price parsing must be exact. A wrong number
 // here is a wrong number in a payment confirm dialog.
 import {formatHaneul, GEUNHWA_PER_HANEUL, parseHaneulToGeunhwa} from '../api'

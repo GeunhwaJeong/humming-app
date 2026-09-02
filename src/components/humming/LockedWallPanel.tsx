@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 // Humming: the locked "wall" shown in place of a fully locked profile's
 // feed — a large lock glyph over a muted area, an aggregate stats bar,
 // and a full-width subscribe CTA. Mirrors the classic paysite layout.

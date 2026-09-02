@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {AtUri} from '@atproto/api'
 import {parse} from 'psl'
 import TLDs from 'tlds'

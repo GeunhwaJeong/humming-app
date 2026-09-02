@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {createContext, useContext, useMemo} from 'react'
 import {hasMutedWord} from '@atproto/api'
 import {QueryClient, useQuery} from '@tanstack/react-query'

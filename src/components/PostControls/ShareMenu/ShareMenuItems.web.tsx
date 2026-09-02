@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {memo, useMemo} from 'react'
 import {AtUri} from '@atproto/api'
 import {msg} from '@lingui/core/macro'

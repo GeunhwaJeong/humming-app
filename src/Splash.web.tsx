@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 /*
  * This is a reimplementation of what exists in our HTML template files
  * already. Once the React tree mounts, this is what gets rendered first, until

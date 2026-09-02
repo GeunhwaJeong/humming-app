@@ -1,3 +1,7 @@
+// Copyright (c) 2023-2026 Bluesky Social PBC
+// Modifications Copyright (c) 2026 Geunhwa Jeong
+// SPDX-License-Identifier: MIT
+
 import {onAppStateChange} from '#/lib/appState'
 import {isNetworkError} from '#/lib/strings/errors'
 import {Logger} from '#/logger'
