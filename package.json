@@ -157,7 +157,7 @@
     "eventemitter3": "^5.0.1",
     "expo": "54.0.34",
     "expo-age-range": "0.2.18",
-    "expo-application": "~7.0.8",
+    "expo-application": "~57.0.2",
     "expo-blur": "~15.0.8",
     "expo-build-properties": "~1.0.10",
     "expo-camera": "~17.0.10",
