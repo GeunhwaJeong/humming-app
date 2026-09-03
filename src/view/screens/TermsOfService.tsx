@@ -38,7 +38,7 @@ function TermsBody() {
     <ScrollView style={[s.hContentRegion, pal.view]}>
       <View style={[s.p20, a.gap_md]}>
         <Text type="sm" style={pal.textLight}>
-          <Trans>Last updated: August 31, 2026</Trans>
+          <Trans>Last updated: September 3, 2026</Trans>
         </Text>
 
         <SectionText title={_(msg`1. About Humming`)}>
@@ -123,6 +123,15 @@ function TermsBody() {
             We may update these terms as the service evolves. Material changes
             will be announced in the app. Continued use after a change means you
             accept the updated terms.
+          </Trans>
+        </SectionText>
+
+        <SectionText title={_(msg`10. Platform fee`)}>
+          <Trans>
+            The platform fee is currently 0% of each payment. The on-chain
+            contract caps the fee at 5%, and it cannot be raised above that cap
+            without a contract upgrade. Any change to the fee will be announced
+            in the app at least 30 days before it takes effect.
           </Trans>
         </SectionText>
       </View>
